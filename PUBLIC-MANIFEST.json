@@ -1,0 +1,163 @@
+{
+  "status": "PUBLIC_SELECTION_CANDIDATE_PENDING_REVIEW",
+  "publication": false,
+  "scope": "Explicit introduction site and transitive BankApp production sources plus exact original frontend lock and deployment configuration. No backend or internal evidence.",
+  "files": [
+    {
+      "source": "competition/pages/pages.yml",
+      "destination": ".github/workflows/pages.yml",
+      "bytes": 1056,
+      "sha256": "485cb233cc2960edf4db1aa2d41b9dd8e0344071534c052fa4772710f4355641"
+    },
+    {
+      "source": "competition/README-PUBLIC.md",
+      "destination": "README.md",
+      "bytes": 2419,
+      "sha256": "ba4f3a4245e0d8e44bbb2ac0d12ac88be640b8a67fe4e219b9bc8cc36fbdf4fb"
+    },
+    {
+      "source": "competition/bank/configure-netlify.mjs",
+      "destination": "bank/configure-netlify.mjs",
+      "bytes": 1937,
+      "sha256": "3beb5a75c312a37741384931681626716aa7e87febeea8babd0c4cf6a63f218e"
+    },
+    {
+      "source": "frontend/index.html",
+      "destination": "bank/index.html",
+      "bytes": 521,
+      "sha256": "51ec22046a6d957068f1790f927f80b93fa9c1b5beb02456929c4c16afb1a549"
+    },
+    {
+      "source": "competition/bank/netlify.toml",
+      "destination": "bank/netlify.toml",
+      "bytes": 735,
+      "sha256": "7982985bf1f1f6e8157a240be4b86b47baf3382fcc505fc48fa0bca7516bd16c"
+    },
+    {
+      "source": "frontend/package-lock.json",
+      "destination": "bank/package-lock.json",
+      "bytes": 77764,
+      "sha256": "55eca8f4f08d8c35433b7327e2a745b3e9064b79764493d023d01bd76f8c64e6"
+    },
+    {
+      "source": "competition/bank/package.json",
+      "destination": "bank/package.json",
+      "bytes": 737,
+      "sha256": "10e857b4c7c69feb726d8c2b4ee22c80f24b5b7e931807a386fe1db44a8686b2"
+    },
+    {
+      "source": "frontend/public/favicon.svg",
+      "destination": "bank/public/favicon.svg",
+      "bytes": 174,
+      "sha256": "9a44c95440a324be932da2044ba145d3c4df1184671b3ff9739bced409b711cf"
+    },
+    {
+      "source": "frontend/src/BankApp.tsx",
+      "destination": "bank/src/BankApp.tsx",
+      "bytes": 57325,
+      "sha256": "259ec43dae64a15b4d813a3c7604756b0327de178d773b147bf45cf8062304b6"
+    },
+    {
+      "source": "frontend/src/bank.css",
+      "destination": "bank/src/bank.css",
+      "bytes": 8934,
+      "sha256": "5a1fd0e9d0547c4ab7bfe4b7e97b5c4daa1436604fc77ac170c880e2bd5240dc"
+    },
+    {
+      "source": "frontend/src/main.tsx",
+      "destination": "bank/src/main.tsx",
+      "bytes": 246,
+      "sha256": "f5443f0076aa2e8a290b9c097b0a3257193e4b6c73030cee7ea4061635dda714"
+    },
+    {
+      "source": "frontend/src/runtime/DemoVerification.tsx",
+      "destination": "bank/src/runtime/DemoVerification.tsx",
+      "bytes": 2933,
+      "sha256": "e2ea70cbb5dd09fe37cb33d49c0a5ef3acc24e330373d219a5b26f586ab3a293"
+    },
+    {
+      "source": "frontend/src/runtime/agent-client.ts",
+      "destination": "bank/src/runtime/agent-client.ts",
+      "bytes": 18488,
+      "sha256": "18ce81bd01a32ada4ed9cdde75b86101c1feb42b6b219369d087390619b5e635"
+    },
+    {
+      "source": "frontend/src/runtime/billing-feedback-client.ts",
+      "destination": "bank/src/runtime/billing-feedback-client.ts",
+      "bytes": 6178,
+      "sha256": "7704c9d05990127ef74fa257986958e5c9e97e6a2789cb8eef8f279f6c606936"
+    },
+    {
+      "source": "frontend/src/runtime/billing-recovery-client.ts",
+      "destination": "bank/src/runtime/billing-recovery-client.ts",
+      "bytes": 9407,
+      "sha256": "7b91498a0f72596dbdf2bbc353aedeeb5c2aedb5d1e6e8109f48b131f606b36e"
+    },
+    {
+      "source": "frontend/src/runtime/billing-schema.ts",
+      "destination": "bank/src/runtime/billing-schema.ts",
+      "bytes": 7351,
+      "sha256": "8549b75bbecc137ed5c5d191a769c8348acb228d1497efe299a7056ecec1f8ee"
+    },
+    {
+      "source": "frontend/src/runtime/client.ts",
+      "destination": "bank/src/runtime/client.ts",
+      "bytes": 4921,
+      "sha256": "09d26cb2207644394096cc130affab6c7b25facf4815a76288f213be733ccfe7"
+    },
+    {
+      "source": "frontend/src/runtime/payment-schema.ts",
+      "destination": "bank/src/runtime/payment-schema.ts",
+      "bytes": 21757,
+      "sha256": "8b1b5bef72b0fbbc698f2ea9d30be3a54e099f7af578d7b3ba1812218ffe068b"
+    },
+    {
+      "source": "frontend/src/runtime/schema.ts",
+      "destination": "bank/src/runtime/schema.ts",
+      "bytes": 3502,
+      "sha256": "449eb09fa7c682868571c4df0312c842e52a3504240c71b9046fae0355c09d83"
+    },
+    {
+      "source": "frontend/src/styles.css",
+      "destination": "bank/src/styles.css",
+      "bytes": 70622,
+      "sha256": "bca947c35182a5faf1439e4e921bb6e4a2f5b94d433771ef58f010b13c9c0215"
+    },
+    {
+      "source": "competition/bank/tsconfig.json",
+      "destination": "bank/tsconfig.json",
+      "bytes": 467,
+      "sha256": "4475100ccdd5cd7553e4580739f3e2cbdd05a3495e18279648e2765e52edd347"
+    },
+    {
+      "source": "competition/bank/validate-netlify.mjs",
+      "destination": "bank/validate-netlify.mjs",
+      "bytes": 444,
+      "sha256": "87dff443d857d4e0b31ffdeedf3c266c0f508617238cdd1b260ce70c9d619e3e"
+    },
+    {
+      "source": "competition/bank/vite.config.ts",
+      "destination": "bank/vite.config.ts",
+      "bytes": 166,
+      "sha256": "8051e416851e47e8a09b6e1dafc9b038434c7c28d80ffa97d7686c6c06015481"
+    },
+    {
+      "source": "competition/pages/build.mjs",
+      "destination": "pages/build.mjs",
+      "bytes": 1525,
+      "sha256": "7d2d3f284dbfa513a0e9fab5770f01ad0c947d7d38a612ee2207ed7fa6d270aa"
+    },
+    {
+      "source": "competition/pages/index.html",
+      "destination": "pages/index.html",
+      "bytes": 4093,
+      "sha256": "641dbd65d94d7987a610d0f5be39d09e1c2d31647ba1bd6d78244ac01bd24b9f"
+    },
+    {
+      "source": "competition/pages/site.css",
+      "destination": "pages/site.css",
+      "bytes": 3776,
+      "sha256": "6c6b7e644a060a3281bff2b346a27b4453d8ddfc626fdb3f8a8b41e8882cea01"
+    }
+  ]
+}

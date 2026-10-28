@@ -1,0 +1,29 @@
+# Current deployment: Netlify. Proxy response cache behavior requires live verification.
+[build]
+  command = "npm run build"
+  publish = "dist"
+[build.environment]
+  NODE_VERSION = "24.14.0"
+
+# First rule retains /api and precedes SPA fallback. No Origin/authorization spoofing.
+[[redirects]]
+  from = "/api/*"
+  to = "https://111.230.157.111/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Static headers are not proof of headers on external proxy responses. Backend sends no-store.
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "no-store"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
