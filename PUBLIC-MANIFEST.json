@@ -7,7 +7,7 @@
       "source": "competition/pages/pages.yml",
       "destination": ".github/workflows/pages.yml",
       "bytes": 1056,
-      "sha256": "485cb233cc2960edf4db1aa2d41b9dd8e0344071534c052fa4772710f4355641"
+      "sha256": "72d4b0827742b2517e96de71e3da02fd1a199edabfa1c38cb3a34f23be277c3f"
     },
     {
       "source": "competition/README-PUBLIC.md",
