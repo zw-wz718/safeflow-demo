@@ -1,15 +1,25 @@
-# SafeFlow 比赛网页候选
+# SafeFlow 银行 Agent
 
-本仓库仅包含介绍站和银行前端。银行使用虚构演示账户与模拟资金，共用账户操作结果保留，不自动重置。真实LLM尚未配置，不发送真实短信/通知，不连接真实银行。
+SafeFlow 将自然语言需求组织为可确认、可核查、可恢复的模拟银行办理流程。模型负责理解与规划，服务端负责可信来源、安全校验、明确确认、许可、最终事务与原号恢复。
 
-Pages的Actions只构建pages目录。使用绝对输出路径执行`node pages/build.mjs <新输出目录>`；资源相对路径兼容`/safeflow-demo/`。只有实际验证过的Netlify正式网址才能设置为仓库变量BANK_APP_URL，未设置时按钮禁用。启用Pages须由获授权部署人员设置Actions发布来源。
+- [项目介绍与材料下载](https://zw-wz718.github.io/safeflow-demo/)
+- [评委使用指南](https://zw-wz718.github.io/safeflow-demo/guide.html)
+- [银行交互站](https://candid-blini-c4fe97.netlify.app/)
+- [系统架构与核心算法](https://zw-wz718.github.io/safeflow-demo/technical.html)
+- [安全自评与已知风险](https://zw-wz718.github.io/safeflow-demo/security.html)
 
-Netlify项目根选择bank，Node24、原锁npm ci、dist输出。先由部署人员确认腾讯云HTTPS证书与回源，再在bank目录以非秘密SAFEFLOW_PUBLIC_API_ORIGIN环境变量运行`node configure-netlify.mjs`生成netlify.toml。值是精确HTTPS origin（无路径、认证、query或通配），未知配置直接报错；生成文件不能替代线上TLS/Set-Cookie/退出/刷新验证。Netlify部署时必须使用经核的生成配置。此变量不是VITE_*，不放控制凭据进JS。
+## 体验范围
 
-API使用同源/api路径，配置no-store。演示登录口令只由组织者私下提供；不向源码、平台构建变量或站点写入数据库、controller或模型Key。预览域名不自动受信，后端只采用明确生产Origin。已创建Netlify项目网址为https://candid-blini-c4fe97.netlify.app；初始导入不是可用银行。Pages仍不启用体验链接。
+支持账户查询、对话转账准备、本地订阅管理、月度账单与本人反馈、主动冻结及原号查询。服务端已接入 Command Code 模型供应商。业务使用虚构账户和模拟资金，不连接真实银行，不发送真实短信或通知，订阅取消仅记录本地意图。模型可能误解或超时，关键写操作仍需逐项确认与服务端校验。
 
-当前候选netlify.toml采用部署侧已核TLS上游https://111.230.157.111，保留/api/:splat并置于SPA回退之前。实际Netlify生产Origin已明确为https://candid-blini-c4fe97.netlify.app，后端精确采用；真实代理行为仍待部署核验。代理26秒超时不是业务失败证明；前端8秒请求超时与后端最长30秒处理均可能先后到达，原号查询恢复保持，不自动重试写入。未来LLM长请求/流式须另核兼容性。静态headers不证明外部代理响应头，须实际检查后端no-store及平台缓存、Cookie。
+登录方式由组织者私下提供，不在本仓库公开。评委共用虚构账户，操作记录持续保存、不自动重置。当前尾号6628卡仍冻结，网页无自助解冻入口；余额充足不能绕过冻结，当前可验证安全拒绝出账。100万元为2026年10月31日调整时的余额快照，实际余额、卡片状态及订阅候选以登录后的读取为准。
 
-Pages构建只有同时设置BANK_APP_URL和BANK_APP_READY=true才启用体验入口；后者只可在真实体验验证后设置。已知域名本身不代表体验就绪。当前保持READY未设置。
+## 公开目录与构建
 
-本候选已含基于确认HTTPS上游的netlify.toml，无需再次生成；生成器拒绝覆盖，改配置须在新副本进行并重新核验。
+`pages/` 是介绍站、独立指南和三份公开PDF的发布源。`pages/content/`保存与PDF同稿的公开Markdown供构建渲染，`pages/downloads/`仅包含明确允许的PDF。`PUBLIC-MANIFEST.json`列出公开仓库文件摘要，不包含它自身，不代表任何银行业务授权。
+
+使用Node 24.14.0，执行 `node pages/build.mjs <不存在的绝对输出目录>`。构建只复制明确列出的静态页、样式、图标和已核摘要的PDF，不复制整个源码树，不需要安装依赖。相对链接兼容GitHub Pages的`/safeflow-demo/`项目路径。正式文稿或PDF未固定、摘要不符、文件缺失时构建失败；`--preview`仅用于本地结构预览，不用于发布。
+
+现有手动Pages工作流将构建输出发布到GitHub Pages。只有`BANK_APP_URL`为已核实的HTTPS正式origin且`BANK_APP_READY=true`时启用银行入口；缺少任一条件时入口禁用。公开说明不能代替实际入口可用性核验。
+
+`bank/`保留已有公开前端文件，本次介绍站更新不改变其字节或部署配置；现用交互银行以独立线上版本及实际状态为准。银行使用同源`/api`代理，真实配置、数据库凭据、模型Key和控制权限由服务端私有管理，不进入本仓库或公开下载。请勿在公开issue提交口令、验证码或真实银行卡资料。

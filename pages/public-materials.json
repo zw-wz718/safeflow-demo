@@ -1,0 +1,51 @@
+{
+  "status": "FINAL_CONTENT_READY",
+  "version": "2026-10-31",
+  "documents": [
+    {
+      "id": "technical",
+      "title": "SafeFlow 技术文档",
+      "description": "系统架构、核心算法与安全执行设计。",
+      "pdf": {
+        "path": "downloads/safeflow-technical.pdf",
+        "bytes": 388675,
+        "sha256": "205a63bee511334aef991b82021b540d5571785e7711c32fd3a23c20508905de"
+      },
+      "markdown": {
+        "path": "content/technical.md",
+        "bytes": 11716,
+        "sha256": "6e5c18cd1d3573eb4ca42a3ce4f20ccb0ea75ae4ee37ef62910c9e4c16aa0f18"
+      }
+    },
+    {
+      "id": "security",
+      "title": "SafeFlow 安全自评报告",
+      "description": "权限分级、AI 风险控制、已知风险与验证边界。",
+      "pdf": {
+        "path": "downloads/safeflow-security.pdf",
+        "bytes": 331319,
+        "sha256": "2e6f53e9e6ca8425ac442ec9d9e0b5d0e66f41116138d2180a94d9e0da3c409a"
+      },
+      "markdown": {
+        "path": "content/security.md",
+        "bytes": 9767,
+        "sha256": "3c0a93929fa41e46b84dbd97f4792c6fdee405ffe01042ad275d2b4a8c3f12d5"
+      }
+    },
+    {
+      "id": "guide",
+      "title": "SafeFlow 评委使用手册",
+      "description": "账户、对话、转账、订阅、账单反馈与银行卡的逐步使用说明。",
+      "pdf": {
+        "path": "downloads/safeflow-guide.pdf",
+        "bytes": 325266,
+        "sha256": "517ea85b4954ddff09456124d0eb9041c0a8fe7276d47136e02228f462b17845"
+      },
+      "markdown": {
+        "path": "content/guide.md",
+        "bytes": 12858,
+        "sha256": "fd02bc92a93ca59a56370af93e8afdf049e759dbefed2d53e3cb1af29cb2feb3"
+      }
+    }
+  ]
+}
