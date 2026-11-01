@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "version": "2026-11-01",
+  "version": "2026-11-01-feature-risk",
   "scope": "Complete public repository file inventory. Pages builds copy only explicitly selected static assets. Existing bank files and workflow are preserved.",
   "excluded": [
     "PUBLIC-MANIFEST.json"
@@ -118,38 +118,38 @@
     },
     {
       "path": "pages/build.mjs",
-      "bytes": 9076,
-      "sha256": "754a1b6904c2516c3b57085fa0f8f1e55183f0bfce962c05f7c6df48a9e6fc7b"
+      "bytes": 9581,
+      "sha256": "b4de5a5590aee88a1bed2701ba9d03ad41b2ad616f17876e239ca6ad4a834640"
     },
     {
       "path": "pages/content/guide.md",
-      "bytes": 13153,
-      "sha256": "eddf16eeea2bd2cd82a30f0476d3b92d22735d12b839fa067f3a097ae1ac2ba1"
+      "bytes": 15879,
+      "sha256": "c57d4b188f397f4b49df7d3b92f3275b6c82ed939a92d0654d0cec0ce2be3d7d"
     },
     {
       "path": "pages/content/security.md",
-      "bytes": 11840,
-      "sha256": "0ddb33d8dc7141bbddb5960ecc1c6ea122e05fb068893e669afc8e49100585c2"
+      "bytes": 13881,
+      "sha256": "46c4faaac3217edd16ffa6fe08e5fe13386254b6c29ad3730620fb8a2f2c75e6"
     },
     {
       "path": "pages/content/technical.md",
-      "bytes": 11727,
-      "sha256": "a7a6014d424e938083f5e37d76842388d8c6c2967b09a42169edbe5289d131a2"
+      "bytes": 18753,
+      "sha256": "716045855e137e674a26c0c973bb294c194543d347d7fde19f89a665271c3406"
     },
     {
       "path": "pages/downloads/safeflow-guide.pdf",
-      "bytes": 323863,
-      "sha256": "c0908c32fc4376026d81edb05a313c213ad968deae3b980d8e34b1e9a6195d05"
+      "bytes": 366097,
+      "sha256": "5b4314cfd33fa5788786a8c1882d4d02afcacae590a51010afac9d2408a835e3"
     },
     {
       "path": "pages/downloads/safeflow-security.pdf",
-      "bytes": 357458,
-      "sha256": "6729b5374cace1d5e0410ab265ca347a7a66e91de040f1f078b63c1c11b390e2"
+      "bytes": 401556,
+      "sha256": "7d73461eb3059978b9e78622e20e7c75a39c84bb2c24327e4678d9d5512a4835"
     },
     {
       "path": "pages/downloads/safeflow-technical.pdf",
-      "bytes": 387651,
-      "sha256": "3248f05545c912ada030697a873855b3397fb80e6c80907709443c843d54331f"
+      "bytes": 459108,
+      "sha256": "439bf4a050fd0a41753c52ac0b6bfe7336ff663aad0c90fd5ae6e5d21257fffb"
     },
     {
       "path": "pages/favicon.svg",
@@ -158,18 +158,18 @@
     },
     {
       "path": "pages/guide.html",
-      "bytes": 2139,
-      "sha256": "f50bde6d62dbd55fc4e8de204e4ebdd660cd7cdc6a81d5db3fc2f4706747ef35"
+      "bytes": 2227,
+      "sha256": "efa9842fbc355bbc95149d842925352dc473eb90a8e8a1e0a44e4f95531cdae8"
     },
     {
       "path": "pages/index.html",
-      "bytes": 8821,
-      "sha256": "24eb50374fe6596707fc4f29fe6ba98a10399ac53a3ae4eb844d03befcf8c1c9"
+      "bytes": 12291,
+      "sha256": "43b30cf66185177b1116e055bc4754155adcdf7639db5c4471b2371e5ba2b564"
     },
     {
       "path": "pages/public-materials.json",
-      "bytes": 1730,
-      "sha256": "62d1616a1e5353523d2f57080b173b574df050920e324937ab2f8d27eb0a38b1"
+      "bytes": 1743,
+      "sha256": "a3161532edacf30025224d5577a4bbf637a69542dfe968f23a0dd4d39b0fa496"
     },
     {
       "path": "pages/security.html",
@@ -188,8 +188,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2867,
-      "sha256": "d381b3746231688df47b71157676312b889b9e336af68c831c4c3dbe675560ca"
+      "bytes": 3497,
+      "sha256": "5203afe98a59fef4f04d31d679905bedeef7fe494f2deed3a0c4b2c127601374"
     }
   ]
 }

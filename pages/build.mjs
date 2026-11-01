@@ -39,6 +39,10 @@ function markdown(text,id){
     if(heading){flush();closeList();const level=Math.max(2,heading[1].length),title=heading[2];let anchor='section-'+(++count);
       if(id==='guide'){const match=guideAnchors.find(([name,pattern])=>!used.has(name)&&pattern.test(title));if(match){anchor=match[0];used.add(anchor);}}
       if(id==='security'&&!used.has('risks')&&/风险|限制/.test(title)){anchor='risks';used.add(anchor);}
+      if(id==='technical'&&title==='转账危险性累加：当前执行机制')anchor='cumulative-risk';
+      if(id==='technical'&&title==='中央软风险计算：扩展设计')anchor='central-risk';
+      if(id==='security'&&title==='累计暴露的威胁与控制')anchor='cumulative-controls';
+      if(id==='guide'&&title==='累计阈值体验与提示解释')anchor='cumulative-experience';
       result+='<h'+level+' id="'+anchor+'">'+inline(title)+'</h'+level+'>\n';continue;
     }
     if(line.includes('|')&&/^\s*\|?\s*:?-{3,}/.test(lines[i+1]||'')){
