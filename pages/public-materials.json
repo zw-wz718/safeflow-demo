@@ -1,6 +1,6 @@
 {
   "status": "FINAL_CONTENT_READY",
-  "version": "2026-11-01-feature-risk",
+  "version": "2026-11-01-validity46-editorial",
   "documents": [
     {
       "id": "technical",
@@ -8,13 +8,13 @@
       "description": "系统架构、核心算法与安全执行设计。",
       "pdf": {
         "path": "downloads/safeflow-technical.pdf",
-        "bytes": 459108,
-        "sha256": "439bf4a050fd0a41753c52ac0b6bfe7336ff663aad0c90fd5ae6e5d21257fffb"
+        "bytes": 458887,
+        "sha256": "0da5f13b5a07327ea80b60b8a119d33173d50802499f136c06dc90fa1cd2eabb"
       },
       "markdown": {
         "path": "content/technical.md",
-        "bytes": 18753,
-        "sha256": "716045855e137e674a26c0c973bb294c194543d347d7fde19f89a665271c3406"
+        "bytes": 18898,
+        "sha256": "472634da2173c388d8cde4b51dbdcdc665bc302b2d4956c39ca3c14058d54cd7"
       }
     },
     {
@@ -23,13 +23,13 @@
       "description": "权限分级、AI 风险控制、已知风险与验证边界。",
       "pdf": {
         "path": "downloads/safeflow-security.pdf",
-        "bytes": 401556,
-        "sha256": "7d73461eb3059978b9e78622e20e7c75a39c84bb2c24327e4678d9d5512a4835"
+        "bytes": 402427,
+        "sha256": "7746aa03d35906210ebcc1da9a7200d6d5de918844bb8655c8ccecadc9dd1ab9"
       },
       "markdown": {
         "path": "content/security.md",
-        "bytes": 13881,
-        "sha256": "46c4faaac3217edd16ffa6fe08e5fe13386254b6c29ad3730620fb8a2f2c75e6"
+        "bytes": 13995,
+        "sha256": "5bca1979eb600929bb09de34cbbf11ad5325fb25c52b017b60f15c9f869eee0b"
       }
     },
     {
@@ -38,13 +38,13 @@
       "description": "账户、对话、转账、订阅、账单反馈与银行卡的逐步使用说明。",
       "pdf": {
         "path": "downloads/safeflow-guide.pdf",
-        "bytes": 366097,
-        "sha256": "5b4314cfd33fa5788786a8c1882d4d02afcacae590a51010afac9d2408a835e3"
+        "bytes": 367005,
+        "sha256": "383e06b79e240356309905ad5c049e129673e257c6b65141ed69f420d47d474f"
       },
       "markdown": {
         "path": "content/guide.md",
-        "bytes": 15879,
-        "sha256": "c57d4b188f397f4b49df7d3b92f3275b6c82ed939a92d0654d0cec0ce2be3d7d"
+        "bytes": 16102,
+        "sha256": "5f76a23c70634b4a80245c30bc47ab44ecc0fae179e49ed293fd8cfa867ba385"
       }
     }
   ]
