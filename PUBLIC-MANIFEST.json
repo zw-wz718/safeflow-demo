@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "version": "2026-11-01-validity46-editorial",
+  "version": "2026-11-01-monthly47",
   "scope": "Complete public repository file inventory. Pages builds copy only explicitly selected static assets. Existing bank files and workflow are preserved.",
   "excluded": [
     "PUBLIC-MANIFEST.json"
@@ -123,33 +123,33 @@
     },
     {
       "path": "pages/content/guide.md",
-      "bytes": 16102,
-      "sha256": "5f76a23c70634b4a80245c30bc47ab44ecc0fae179e49ed293fd8cfa867ba385"
+      "bytes": 17742,
+      "sha256": "45f2212aa99f66524f4896ad2e9acbda68be63ab0c67f2205df76f4e76a165aa"
     },
     {
       "path": "pages/content/security.md",
-      "bytes": 13995,
-      "sha256": "5bca1979eb600929bb09de34cbbf11ad5325fb25c52b017b60f15c9f869eee0b"
+      "bytes": 14025,
+      "sha256": "051f97992fcae4b2f3694af04e7902deb7d219c0e723e4f9090277f0a61faa8b"
     },
     {
       "path": "pages/content/technical.md",
-      "bytes": 18898,
-      "sha256": "472634da2173c388d8cde4b51dbdcdc665bc302b2d4956c39ca3c14058d54cd7"
+      "bytes": 20916,
+      "sha256": "7ebfc8392c92417251c1dc3cbf6a43b815a2a5e4d17a67b9c0310034534a524f"
     },
     {
       "path": "pages/downloads/safeflow-guide.pdf",
-      "bytes": 367005,
-      "sha256": "383e06b79e240356309905ad5c049e129673e257c6b65141ed69f420d47d474f"
+      "bytes": 385546,
+      "sha256": "9373dc5d050a3c82246921a2206f9f362e08aaac249844f1b6f80f6869796741"
     },
     {
       "path": "pages/downloads/safeflow-security.pdf",
-      "bytes": 402427,
-      "sha256": "7746aa03d35906210ebcc1da9a7200d6d5de918844bb8655c8ccecadc9dd1ab9"
+      "bytes": 403533,
+      "sha256": "1e74eaeecdd8f198ef40ddc6613e87b86059095cbf6685638f869aeb1d8e5ca2"
     },
     {
       "path": "pages/downloads/safeflow-technical.pdf",
-      "bytes": 458887,
-      "sha256": "0da5f13b5a07327ea80b60b8a119d33173d50802499f136c06dc90fa1cd2eabb"
+      "bytes": 479265,
+      "sha256": "c76ac1ca6a7c7bdafa71fbe58e4dca263253d03580d1033b1617a00f91dc79f4"
     },
     {
       "path": "pages/favicon.svg",
@@ -168,8 +168,8 @@
     },
     {
       "path": "pages/public-materials.json",
-      "bytes": 1751,
-      "sha256": "4e335cf2ba6bd00faae7ca7e1e0dabd44d94806aa2474dbb2ae90d5b2d9afe13"
+      "bytes": 1740,
+      "sha256": "cca89c560dadf841162d4000c7c16c354b79eca5f6beb51f6d9be7a72a2dcfb2"
     },
     {
       "path": "pages/security.html",
