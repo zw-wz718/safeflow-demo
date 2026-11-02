@@ -1,0 +1,60 @@
+{
+  "scope": "TRANSFER_BACKEND_BUSINESS_ONLY_NOT_PUBLIC_FUNDS_INTEGRATION",
+  "date": "2026-10-17",
+  "branch": "codex/transfer",
+  "base_commit": "0f22c2fa3f43ccbf3580fe6354f114586decef80",
+  "foundation_reference_not_merged": "f747f05c5cb51b02505b0bcf4da64b473a4bb46a",
+  "rust": "stable 1.99.0; pinned 1.98.1 not installed or rerun",
+  "rustflags": "-Dwarnings",
+  "cargo_incremental": "0",
+  "dependency_policy": "--locked --offline; Cargo.lock unchanged",
+  "business_rule_versions": [
+    "transfer-daily-usage-2026-10-17-v1",
+    "transfer-shared-demo-2026-10-17-v1"
+  ],
+  "tests": {
+    "new_daily_usage": {"passed": 9, "failed": 0, "ignored": 0},
+    "new_shared_demo": {"passed": 4, "failed": 0, "ignored": 0},
+    "workspace_all_targets_all_features": {"passed": 208, "failed": 0, "ignored": 23},
+    "workspace_doc_command": {"passed": 0, "failed": 0, "ignored": 0, "exit_code": 0},
+    "actual_postgres_business": {"passed": 7, "failed": 0, "ignored": 0},
+    "actual_postgres_funds": {"passed": 16, "failed": 0, "ignored": 0},
+    "fmt_check_exit_code": 0,
+    "transfer_clippy_all_targets_all_features_no_deps_exit_code": 0,
+    "database_and_process_restart": "PASS; seven prior funds scenarios unchanged",
+    "draft_recovery": "PASS; four distinct processes preserve IDs, version, expiry through modify/cancel/read"
+  },
+  "sample": {
+    "path": "fixtures/transfer/daily_usage_and_shared_demo_actual_v1.json",
+    "process_output_parsed_and_checked": true,
+    "first_pending_total_cents": 25000,
+    "after_older_success_total_cents": 5000,
+    "after_older_failure_total_cents": 5000,
+    "funds_executed": false,
+    "shared_identity_or_sql_initialized": false,
+    "recipient_ids": "LOCAL_FIXTURE_ONLY_NOT_ADOPTED_BY_FOUNDATION"
+  },
+  "local_evidence": {
+    "logs": "target/daily-usage-shared-demo-2026-10-17/",
+    "postgres_run": "target/transfer-pg-isolated-a03719d0cc664bdcb0cf72c180a63022/",
+    "pg_ctl_status_exit_code_after_run": 3,
+    "postgres_stopped": true,
+    "data_retained": true
+  },
+  "unchanged_boundaries": [
+    "public contracts, Runtime, authorization and migrations",
+    "funds_store and business_store",
+    "old read-only and independent demo fixtures",
+    "existing seven SQL samples and prior common-foundation verification artifacts"
+  ],
+  "still_requires_foundation": [
+    "map existing public submitted_at / first_submission.recorded_at to matching funds order; no new timestamp field requested",
+    "consistent complete owner-wide snapshot and concurrency protection through submission",
+    "adopted recipient identity/account mapping and shared provisioning",
+    "final funds authorization, card-lock consistency and external audit integration"
+  ],
+  "known_existing_warning": "sqlx-postgres 0.7.4 future-incompatibility; no driver upgrade",
+  "new_daily_limit_amount_approved": false,
+  "messages_sent": false,
+  "pull_requests_merged": false
+}

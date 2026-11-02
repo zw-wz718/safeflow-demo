@@ -1,0 +1,15 @@
+[package]
+name = "safeflow-card-postgres-store"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Card catalog and locked account facts over a borrowed public PgConnection"
+
+[dependencies]
+safeflow-card-facts = { path = ".." }
+sqlx = { version = "=0.8.6", default-features = false, features = ["runtime-tokio-rustls", "postgres"] }
+home = "=0.5.5"
+
+[dev-dependencies]
+tokio = { version = "1.53", features = ["macros", "rt-multi-thread", "sync", "time"] }
+serde_json = "1.0"

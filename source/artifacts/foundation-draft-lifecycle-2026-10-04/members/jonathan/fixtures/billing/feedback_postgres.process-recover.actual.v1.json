@@ -1,0 +1,49 @@
+{
+  "state": "SAVED",
+  "persisted": true,
+  "lock_authorized": false,
+  "card_handoff": "BLOCKED_NO_CARD",
+  "evidence": {
+    "public_operation_id": "restart_demo_op1",
+    "owner_user_id": "user_demo",
+    "report_id": "restart_demo_report1",
+    "rule_version": "LOCAL_BASIC_SPENDING_2026_10_16_V1",
+    "snapshot_id": "fictional_restart_snapshot1",
+    "calculated_at": "2026-10-19T12:00:00+08:00",
+    "request": {
+      "account_ids": [
+        "account_001",
+        "account_002"
+      ],
+      "window": {
+        "as_of": "2026-10-19T12:00:00+08:00",
+        "start_inclusive": "2026-10-01T00:00:00+08:00",
+        "end_exclusive": "2026-10-19T12:00:00+08:00",
+        "timezone": "Asia/Shanghai"
+      }
+    },
+    "reference": {
+      "source_id": "fictional-pg",
+      "account_id": "account_001",
+      "transaction_id": "tx1"
+    },
+    "transaction": {
+      "transaction_id": "tx1",
+      "account_id": "account_001",
+      "card_id": null,
+      "amount": "30.00",
+      "currency": "CNY",
+      "direction": "OUT",
+      "transaction_type": "CONSUMPTION",
+      "status": "COMPLETED",
+      "completed_at": "2026-10-10T00:00:00Z",
+      "merchant_id": "fictional_merchant"
+    },
+    "choice": "UNSURE"
+  },
+  "event": {
+    "event_id": 1,
+    "event_kind": "BILLING_FEEDBACK_RECORDED_LOCAL_V1",
+    "recorded_at": "2026-10-20T03:41:42.071177Z"
+  }
+}

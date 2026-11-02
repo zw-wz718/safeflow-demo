@@ -1,0 +1,156 @@
+{
+  "provenance": "Owned new PG captured by site_qa_p0_recovery_directory_and_subscription_retry; no funds executed",
+  "draft": {
+    "action": "CREATE_MOCK_DRAFT",
+    "confirmation": null,
+    "contract_version": 2,
+    "current_draft_verified": false,
+    "display_ticket": null,
+    "execution_status": "SUCCEEDED",
+    "facts_version": 7,
+    "is_current_action": true,
+    "mode": "PROJECT_SIMULATION",
+    "next_action": {
+      "kind": "SELECT_ACTION"
+    },
+    "observed_draft": null,
+    "operation_id": "operation_53b27d25-dfa8-4fa8-9629-c21fed7617a5",
+    "operation_plan_version": 1,
+    "operation_revision": 4,
+    "operation_state": "SUCCEEDED",
+    "parameters": {
+      "amount": "100.00",
+      "currency": "CNY",
+      "payee_id": "payee_008",
+      "payer_account_id": "account_001",
+      "remark": "",
+      "replaces": null
+    },
+    "plan_version": 1,
+    "receipt": {
+      "action": "CREATE_MOCK_DRAFT",
+      "business_operation_id": "operation-30780-2",
+      "draft_id": "draft-30780-1",
+      "draft_version": 1,
+      "executed_at": "2026-10-30T02:16:15.024937Z",
+      "expected_draft_version": null,
+      "operation_id": "operation_53b27d25-dfa8-4fa8-9629-c21fed7617a5",
+      "plan_version": 1,
+      "tool_result_ref": "mock_draft_result_lifecycle_claim_bb337a6a-ca7d-44a4-8266-61f1618ce265"
+    },
+    "receipt_scope": "HISTORICAL_EXECUTION_RECEIPT",
+    "replayed": true,
+    "scope": "MOCK_DRAFT_LIFECYCLE_ONLY",
+    "selection_ticket": "lifecycle_7aead5fadd0642bd8a66c67ea4aaed82",
+    "target_parameters": null,
+    "task_id": "bank_payment_44c91275-78ab-4480-b0aa-527437807234",
+    "task_revision": 2,
+    "task_state": "WAITING_USER",
+    "unknown_operation_id": null
+  },
+  "payment": {
+    "agent_binding": null,
+    "business_preflight": {
+      "formal_execution_binding_adopted": false,
+      "freshness": "NOT_EVALUATED",
+      "missing_sources": ["CARD_TRANSACTION_REPOSITORY_NOT_CONNECTED"],
+      "not_evaluated_checks": ["BALANCE_SUFFICIENCY", "DAILY_USAGE_BUSINESS_POLICY"],
+      "observations": [],
+      "scope": "PAYMENT_BUSINESS_OBSERVATION_ONLY"
+    },
+    "business_recovery_required": false,
+    "confirmation_ref": "confirmation_ef882ad6-a809-4398-a725-31e25cf6c26c",
+    "confirmation_status": "REVOKED",
+    "confirmed_at": null,
+    "contract_version": 1,
+    "decision_freshness": "NOT_EVALUATED",
+    "display_ticket": "payment_display_e2bbfee1-e989-42f7-a2db-260b2a9128a4",
+    "execution": {
+      "automatic_retry": false,
+      "enabled": true,
+      "execute_path": "/api/sim/payment-preparations/bank_payment_44c91275-78ab-4480-b0aa-527437807234/payment_64466b03-a099-46cd-a423-3167fd76dc46/execute",
+      "reason": "RECHECKED_AT_EXPLICIT_EXECUTION",
+      "result_path": "/api/sim/payment-preparations/bank_payment_44c91275-78ab-4480-b0aa-527437807234/payment_64466b03-a099-46cd-a423-3167fd76dc46/funds-result"
+    },
+    "execution_conditions": [],
+    "execution_link": null,
+    "execution_link_path": "/api/sim/payment-preparations/bank_payment_44c91275-78ab-4480-b0aa-527437807234/payment_64466b03-a099-46cd-a423-3167fd76dc46/execution-link",
+    "expires_at": "2026-10-30T02:21:15.183213Z",
+    "funds_execution_enabled": true,
+    "invalid_reason": "SESSION_CHANGED",
+    "operation": {
+      "arguments_hash": "be62c09a698892d4db5e442c38ab42b8dfddf6e4354dd9b240fb3d4e14c75738",
+      "business_operation_ref": null,
+      "facts_version": 7,
+      "node_id": "payment_a50b127f-a4ad-4cbd-bd66-c6721794f979",
+      "operation_id": "payment_64466b03-a099-46cd-a423-3167fd76dc46",
+      "plan_version": 1,
+      "revision": 1,
+      "state": "DRAFT",
+      "task_id": "bank_payment_44c91275-78ab-4480-b0aa-527437807234"
+    },
+    "original_result_path": "/api/sim/payment-preparations/bank_payment_44c91275-78ab-4480-b0aa-527437807234/payment_64466b03-a099-46cd-a423-3167fd76dc46/original-result",
+    "prepared_at": "2026-10-30T02:16:15.183213Z",
+    "replayed": false,
+    "scope": "PAYMENT_INTENT_ONLY",
+    "security_decisions": [],
+    "snapshot": {
+      "display_details": {
+        "account": {
+          "account_id": "account_001",
+          "currency": "CNY",
+          "display_name": "工资卡",
+          "masked_account_no": "**** 6628"
+        },
+        "amount": "100.00",
+        "available_balance": "1288.00",
+        "balance_as_of": "2026-10-30T02:16:15.023368+00:00",
+        "currency": "CNY",
+        "payee": {
+          "bank_name": "示例银行",
+          "display_name": "小李",
+          "masked_account_no": "**** 1024",
+          "payee_id": "payee_008"
+        },
+        "remark": ""
+      },
+      "draft_expires_at": 1793327175,
+      "transfer": {
+        "amount": "100.00",
+        "currency": "CNY",
+        "draft_id": "draft-30780-1",
+        "draft_version": 1,
+        "operation_id": "operation-30780-2",
+        "payee_id": "payee_008",
+        "payer_account_id": "account_001",
+        "remark": "",
+        "task_id": "bank_payment_44c91275-78ab-4480-b0aa-527437807234"
+      }
+    },
+    "snapshot_digest": "be62c09a698892d4db5e442c38ab42b8dfddf6e4354dd9b240fb3d4e14c75738",
+    "state": "INVALIDATED",
+    "task_id": "bank_payment_44c91275-78ab-4480-b0aa-527437807234"
+  },
+  "funds": {
+    "automatic_retry": false,
+    "contract_version": 1,
+    "execution_operation_id": null,
+    "preparation_operation_id": "payment_64466b03-a099-46cd-a423-3167fd76dc46",
+    "scope": "PAYMENT_FUNDS_RESULT_ONLY",
+    "snapshot_digest": "be62c09a698892d4db5e442c38ab42b8dfddf6e4354dd9b240fb3d4e14c75738",
+    "state": "UNSUBMITTED",
+    "submitted": false,
+    "task_id": "bank_payment_44c91275-78ab-4480-b0aa-527437807234",
+    "transfer": {
+      "amount": "100.00",
+      "currency": "CNY",
+      "draft_id": "draft-30780-1",
+      "draft_version": 1,
+      "operation_id": "operation-30780-2",
+      "payee_id": "payee_008",
+      "payer_account_id": "account_001",
+      "remark": "",
+      "task_id": "bank_payment_44c91275-78ab-4480-b0aa-527437807234"
+    }
+  }
+}

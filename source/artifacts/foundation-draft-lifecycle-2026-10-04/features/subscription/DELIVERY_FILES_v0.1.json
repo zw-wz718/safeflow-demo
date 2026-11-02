@@ -1,0 +1,220 @@
+{
+  "version": 1,
+  "scope": "LOCAL_REVIEW_ONLY",
+  "published": false,
+  "git_staged": false,
+  "base_commit": "70dc9eaaf4331a05eac16c90ccd26948689dbee7",
+  "branch": "feature/subscription/SUB-03-reminder-plan",
+  "file_count": 41,
+  "files": [
+    {
+      "path": "backend/src/features/subscription/BUSINESS_RECORDS_HANDOFF_v0.1.md",
+      "sha256": "efa0940f2d510db7e035de89ff44c33a32cb9458390e985fb2ecf55ba6dc3817",
+      "bytes": 2990
+    },
+    {
+      "path": "backend/src/features/subscription/CHANGE_RECORD_STORAGE_BATCH_VERIFICATION_v0.1.json",
+      "sha256": "22372245cd358e5061193ffb1cb9c36fdd285cee9cea0fd852814fc14db63d34",
+      "bytes": 2932
+    },
+    {
+      "path": "backend/src/features/subscription/CHANGE_RECORD_STORAGE_BATCH_v0.1.md",
+      "sha256": "1e23541a8185a4c3dd1ecb55b8456b586335d9d71a72edff65f4a8d41a5700dd",
+      "bytes": 3124
+    },
+    {
+      "path": "backend/src/features/subscription/CONNECTION_STORE_ADAPTATION_v0.1.md",
+      "sha256": "57006be330c585c792a231221597da11dfab3f8de1828478a369363812e16ec5",
+      "bytes": 4566
+    },
+    {
+      "path": "backend/src/features/subscription/CONNECTION_STORE_VERIFICATION_v0.1.json",
+      "sha256": "2b03ebadfc3b3e247890b83e7d09a8d9a05b573bcea51a67860fee9091ae8b5d",
+      "bytes": 1361
+    },
+    {
+      "path": "backend/src/features/subscription/CONNECTION_STORE_VERIFICATION_v0.2.json",
+      "sha256": "41f57f16124ba5ea76e852ae58d7188ec951518039f1d7fb21152d81c8ccdd1b",
+      "bytes": 1959
+    },
+    {
+      "path": "backend/src/features/subscription/Cargo.lock",
+      "sha256": "1552b0c0c081dee623f65fccfe5eeae701d6b9ab68c196f2bdc5b93983fc5208",
+      "bytes": 44691
+    },
+    {
+      "path": "backend/src/features/subscription/Cargo.toml",
+      "sha256": "f2c1a3ee4ef739b73a9e79d7f72d7be9aeb37df32f09b9424b51e8c882ccdebc",
+      "bytes": 660
+    },
+    {
+      "path": "backend/src/features/subscription/DELIVERY_REVIEW_v0.1.md",
+      "sha256": "cde310a47c6fb90a44061be49b5fd388d1dc039f9638abc66889916487a3db5f",
+      "bytes": 2875
+    },
+    {
+      "path": "backend/src/features/subscription/DELIVERY_VERIFICATION_v0.1.json",
+      "sha256": "6e9c26a3f40ca24899dc4772aeba95f5113e814335f1199ca3cf5187ec877f72",
+      "bytes": 4784
+    },
+    {
+      "path": "backend/src/features/subscription/HANDOFF_BATCH_VERIFICATION_v0.1.json",
+      "sha256": "0f82e44b2425905fb8b6c80c7fc6f175de2a6eca84ddc4decbd98103c76eab69",
+      "bytes": 1886
+    },
+    {
+      "path": "backend/src/features/subscription/HANDOFF_BATCH_v0.1.md",
+      "sha256": "fb575faebb455a8588c65d99243654856b68bc3a69dd58d6a0839bb31fb61485",
+      "bytes": 4263
+    },
+    {
+      "path": "backend/src/features/subscription/INTEGRATION_QUESTIONS.md",
+      "sha256": "03722fb86a02a4003537859806af61bec826d06f89f530f058432b3c819ad4dc",
+      "bytes": 17824
+    },
+    {
+      "path": "backend/src/features/subscription/INTERFACE_HANDOFF_v0.1.json",
+      "sha256": "dadd373f0e558ae71ffd0c69f10613325c7f7f07a146214e4f792abd62ac19e1",
+      "bytes": 4964
+    },
+    {
+      "path": "backend/src/features/subscription/INTERFACE_HANDOFF_v0.1.md",
+      "sha256": "0c3bcbe2c11e74df534d3d7c6dac708c0608c5487ab11736d4428ea30d527e39",
+      "bytes": 6651
+    },
+    {
+      "path": "backend/src/features/subscription/INTERNAL_HANDOFF_v0.1.md",
+      "sha256": "08d0b0f3586e8910258d68782738cecfc5797efdac27793459b70b86334d7092",
+      "bytes": 3208
+    },
+    {
+      "path": "backend/src/features/subscription/ORIGINAL_RECOVERY_PAGING_BATCH_v0.1.md",
+      "sha256": "b37f64c3f281dd867e78cb5cc918d166d09f628a30ed5eb1ba171d0e95f04d91",
+      "bytes": 2676
+    },
+    {
+      "path": "backend/src/features/subscription/ORIGINAL_RECOVERY_PAGING_VERIFICATION_v0.1.json",
+      "sha256": "9e740bd8beca025d89da8107bdbcf8a0f52dea7a59908f478698bf5ebc11552c",
+      "bytes": 2413
+    },
+    {
+      "path": "backend/src/features/subscription/ORIGINAL_RECOVERY_PAGING_v0.1.md",
+      "sha256": "aa081e40518b0228da27cdf1079dbeb04b38e7b7330df32b89d9273bad2711a4",
+      "bytes": 5330
+    },
+    {
+      "path": "backend/src/features/subscription/README.md",
+      "sha256": "6e5bdc5390415ce7545674113f715401b12dbcb3a790316fac85aebcb903d9e7",
+      "bytes": 21819
+    },
+    {
+      "path": "backend/src/features/subscription/READONLY_RECOVERY_ADAPTATION_v0.1.md",
+      "sha256": "08e4fa59c78e9b2c823bc50ca05174a0d23fcdc676898dabd26f45c3997df67e",
+      "bytes": 3923
+    },
+    {
+      "path": "backend/src/features/subscription/READONLY_RECOVERY_VERIFICATION_v0.1.json",
+      "sha256": "978570295c55c77d6bf5e4f1f9a8fb58bd65c6ccd0ca83afe1ec17740943dbdc",
+      "bytes": 1181
+    },
+    {
+      "path": "backend/src/features/subscription/SQLX_074_ADAPTATION_v0.1.md",
+      "sha256": "be2305684d5a9f6510a41b5f5e2bbc54e1a4ec272a57b734d5bad8f5e625e724",
+      "bytes": 2403
+    },
+    {
+      "path": "backend/src/features/subscription/SQLX_074_VERIFICATION_v0.1.json",
+      "sha256": "881d6a7109ebfcd541e7c5042cb5ea329bf3f44c9aad81fed5ea9e3f6fd8268c",
+      "bytes": 2523
+    },
+    {
+      "path": "backend/src/features/subscription/STORAGE_HANDOFF_v0.1.md",
+      "sha256": "13919420ed38c6c99f72e0f8c5acf9baea1e992fa3e56c0df2511b7539f12264",
+      "bytes": 5001
+    },
+    {
+      "path": "backend/src/features/subscription/examples/run_connection_handoff_mock.rs",
+      "sha256": "24b65ebe51e3c77e2d79e51412a1abae0cacf0e4df4895e688300ee89eb27bd0",
+      "bytes": 17311
+    },
+    {
+      "path": "backend/src/features/subscription/fixtures/business_page_memory_replay.v1.json",
+      "sha256": "4d6684b701edd9594f8610f524550a342cde8d6e5b3bc1d25dc6d39e8da9b40c",
+      "bytes": 156
+    },
+    {
+      "path": "backend/src/features/subscription/fixtures/business_records_memory_replay.v1.json",
+      "sha256": "51c7ccabc94fc3f3a59a1d3bd1eee1960ff29ed27aa09bbc3c0b2ff077767b80",
+      "bytes": 10976
+    },
+    {
+      "path": "backend/src/features/subscription/fixtures/original_recovery_memory_replay.v1.json",
+      "sha256": "c0037de709fa07e5f94bd6e6fb51d1809e6e45890a0f3317dcda0fe038151ed1",
+      "bytes": 651
+    },
+    {
+      "path": "backend/src/features/subscription/fixtures/runtime_database_verification.v1.json",
+      "sha256": "bee3e9c5f9c28197036f35ae82c40febaf920e485e8af9b3ec1c6d10adeb0acb",
+      "bytes": 1415
+    },
+    {
+      "path": "backend/src/features/subscription/fixtures/seven_capability_database_handoff.v1.json",
+      "sha256": "f8b6a003016a96a59720de20860dc74f2b2a063a8947bc99c481fa45d9397e54",
+      "bytes": 41562
+    },
+    {
+      "path": "backend/src/features/subscription/sql/shared_runtime_storage_v1.proposed.sql",
+      "sha256": "1c20aa4e8ae7318992c693556db352742e7048b2d54d5389177ffc71cd38a013",
+      "bytes": 1188
+    },
+    {
+      "path": "backend/src/features/subscription/src/confirmation_mock.rs",
+      "sha256": "7ac0ee2811465d0f3c0716f012b52b1af57acf048f40a2ab7d9d2100745efccd",
+      "bytes": 18643
+    },
+    {
+      "path": "backend/src/features/subscription/src/confirmation_mock/runtime_recovery.rs",
+      "sha256": "7172e49766db01283a7c8ae2cad9c5197abb062b7c9793faf6cf2aff2d3c83f1",
+      "bytes": 42877
+    },
+    {
+      "path": "backend/src/features/subscription/src/confirmation_mock/runtime_recovery/queries.rs",
+      "sha256": "ab8d46072b849370ff84fef68544ad5beae50c74a692596775c0fdf32c28210b",
+      "bytes": 19807
+    },
+    {
+      "path": "backend/src/features/subscription/tests/confirmation_mock.rs",
+      "sha256": "d92e1b5f7084525a6b6286fd0f7231659f7a188bf6b0770fff1d9496f998ece9",
+      "bytes": 23310
+    },
+    {
+      "path": "backend/src/features/subscription/tests/subscription_runtime_recovery_mock.rs",
+      "sha256": "291e7b66256de808b4501a79f9407dfdd8239c905ff2f081102a454111a8f293",
+      "bytes": 81705
+    },
+    {
+      "path": "backend/src/features/subscription/tools/check_subscription.ps1",
+      "sha256": "58dd1bdd948d508f7803a1275640d55e019c1f213e33d737eae48715d6f6e98f",
+      "bytes": 4404
+    },
+    {
+      "path": "backend/src/features/subscription/tools/check_subscription_runtime_mock.ps1",
+      "sha256": "b47f8b4fa64c3bf62376524c05941712f947ee693755cd621a80dfcc2a862d7e",
+      "bytes": 12811
+    },
+    {
+      "path": "docs/collaboration/deliverables/04_结夏/SafeFlow_SUB-02-03_公共事务接入对照_v0.2.md",
+      "sha256": "f72a63cadb7ec852566deb200ef41f1e6e997ad9e9376ea7ced1bb4cde25c820",
+      "bytes": 5745
+    },
+    {
+      "path": "fixtures/subscription/SafeFlow_SUB-02-03_公共事务接入代码对照_v0.2.json",
+      "sha256": "4ff9e235a060f071b3751af44b4cebd01c2cbb6b2511841c24c07eee51dfdfd4",
+      "bytes": 1949
+    }
+  ],
+  "unrelated_untracked_excluded_count": 512,
+  "self_excluded_from_hash_list": true,
+  "review_entry": "backend/src/features/subscription/DELIVERY_REVIEW_v0.1.md",
+  "verification": "backend/src/features/subscription/DELIVERY_VERIFICATION_v0.1.json"
+}

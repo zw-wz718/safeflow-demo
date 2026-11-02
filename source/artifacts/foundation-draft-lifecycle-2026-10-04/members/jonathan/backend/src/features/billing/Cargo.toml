@@ -1,0 +1,37 @@
+[package]
+name = "safeflow-billing-source-reader"
+version = "0.1.0"
+edition = "2021"
+publish = false
+default-run = "billing-read"
+
+# Standalone verification package until Echo supplies the shared integration.
+[workspace]
+
+[features]
+postgres = ["dep:sqlx", "dep:tokio"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+chrono = { version = "0.4", default-features = false, features = ["std"] }
+sqlx = { version = "=0.8.6", optional = true, default-features = false, features = ["runtime-tokio-rustls", "postgres", "json"] }
+tokio = { version = "1.36", optional = true, features = ["macros", "rt-multi-thread"] }
+
+[[bin]]
+name = "billing-read"
+path = "src/main.rs"
+
+[[bin]]
+name = "billing-consumption"
+path = "src/bin/consumption.rs"
+
+[[example]]
+name = "feedback_postgres"
+path = "examples/feedback_postgres.rs"
+required-features = ["postgres"]
+
+[[example]]
+name = "feedback_card_handoff"
+path = "examples/feedback_card_handoff.rs"
+required-features = ["postgres"]

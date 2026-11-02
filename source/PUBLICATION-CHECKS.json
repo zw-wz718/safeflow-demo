@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-02",
+  "rust_all_targets": {
+    "status": "PASS",
+    "command": "python source/tools/build.py check --offline --target-dir <external-directory>",
+    "meaning": "cargo check --workspace --all-targets --locked --offline; no database tests or production calls"
+  },
+  "frontend": {
+    "locked_install": "PASS",
+    "selected_tests_passed": 15,
+    "selected_tests_failed": 0,
+    "typescript_and_vite_build": "PASS",
+    "built_assets_equal_original_candidate": [
+      {
+        "name": "workbench-BOkhGy96.js",
+        "sha256": "ff00f1f15a803c76f5aa2c48ecb1e4dc732d39ebfc7d918ff447131b8b7bfeca"
+      },
+      {
+        "name": "workbench-DSK4CLDN.css",
+        "sha256": "db506c00c8679aa6002fc90ecbd4e0f60f30d5d18052ce92c757a6c4615ea77c"
+      }
+    ]
+  },
+  "audit_receiver_unit_tests": {
+    "passed": 50,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "isolated local Node test suite"
+  },
+  "source_completeness": {
+    "all_backend_rust_and_sql_present_unchanged": true,
+    "latest_eight_changed_files_hashes_match": true
+  },
+  "secret_scan": {
+    "high_confidence_token_and_private_key_hits": 0,
+    "credential_literal_locations_reviewed": 22,
+    "credential_literals": "test-only fixtures, variables or generated private input; production credentials not included"
+  },
+  "private_validation_log_hashes": {
+    "cargo-check.log": "25f5c690569867e89d47cde716f9064ed2bc7d2ab8bb71c1986c01e2debb489f",
+    "frontend-tests.log": "53ac5b3695e50057819ea8ddfe310f741e26ed9c48303f090399dad28125f745",
+    "frontend-build.log": "c5efa35f336dbebf11503a1eca4327069344722fc85fe055cf332fa6426bbbe5",
+    "audit-tests.log": "7d15172c282e3a7fa431b53b428a41f4e391a5cd17da581481d95191c1b1a7f3"
+  },
+  "not_performed": [
+    "production deployment or database changes",
+    "production transfers/card changes/LLM calls",
+    "full security review or all browser/PG test suites",
+    "new-machine end-to-end deployment"
+  ],
+  "pages_workflow_and_pages_content_unchanged": true
+}

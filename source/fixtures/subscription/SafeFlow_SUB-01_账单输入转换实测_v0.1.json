@@ -1,0 +1,197 @@
+{
+  "mode": "OFFLINE_BILLREAD_NORMALIZATION_REPLAY",
+  "billing_commit": "3beed995bd8ed93517899144c3957d7928da45de",
+  "upstream_output_sha256": "1cfc3ea3635cf5d0e73570a3573ee18e120a6d19132199a4844c5d1519c8836f",
+  "recognition_executed": false,
+  "production_registered": false,
+  "cases": [
+    {
+      "case": "success",
+      "input": {
+        "added": 1,
+        "entries": [
+          {
+            "card_note": "流水未提供对应卡片",
+            "consumption": "TRANSFER_EXCLUDED",
+            "transaction": {
+              "account_id": "account_001",
+              "amount": "200.00",
+              "card_id": null,
+              "completed_at": "2026-10-07T00:00:00Z",
+              "currency": "CNY",
+              "direction": "DEBIT",
+              "merchant_id": null,
+              "operation_id": "business-transfer-001",
+              "status": "COMPLETED",
+              "transaction_id": "business-transfer-001:debit",
+              "transaction_type": "TRANSFER"
+            }
+          }
+        ],
+        "excluded_out_of_scope": 0,
+        "source_id": "transfer-mock:2a72b5d7ebfd7c77520b936333b2e13f8eccdcaf",
+        "subscription_evidence": "UNAVAILABLE",
+        "unchanged": 0
+      },
+      "normalized": {
+        "mode": "LOCAL_BILLING_NORMALIZATION_ONLY",
+        "source_id": "transfer-mock:2a72b5d7ebfd7c77520b936333b2e13f8eccdcaf",
+        "entries": [
+          {
+            "key": {
+              "source_id": "transfer-mock:2a72b5d7ebfd7c77520b936333b2e13f8eccdcaf",
+              "account_id": "account_001",
+              "transaction_id": "business-transfer-001:debit"
+            },
+            "operation_id": "business-transfer-001",
+            "card_id": null,
+            "merchant_id": null,
+            "category_code": null,
+            "transaction_type": "TRANSFER",
+            "direction": "OUT",
+            "original_amount": "200.00",
+            "canonical_amount": "200.00",
+            "amount_minor_units": 20000,
+            "currency": "CNY",
+            "status": "COMPLETED",
+            "completed_at": "2026-10-07T00:00:00Z",
+            "consumption_check": "TRANSFER_EXCLUDED"
+          }
+        ],
+        "source_added": 1,
+        "source_unchanged": 0,
+        "excluded_out_of_scope": 0,
+        "subscription_evidence": "UNAVAILABLE",
+        "recognition_executed": false,
+        "production_registered": false
+      }
+    },
+    {
+      "case": "failure",
+      "input": {
+        "added": 0,
+        "entries": [],
+        "excluded_out_of_scope": 0,
+        "source_id": "transfer-mock:2a72b5d7ebfd7c77520b936333b2e13f8eccdcaf",
+        "subscription_evidence": "UNAVAILABLE",
+        "unchanged": 0
+      },
+      "normalized": {
+        "mode": "LOCAL_BILLING_NORMALIZATION_ONLY",
+        "source_id": "transfer-mock:2a72b5d7ebfd7c77520b936333b2e13f8eccdcaf",
+        "entries": [],
+        "source_added": 0,
+        "source_unchanged": 0,
+        "excluded_out_of_scope": 0,
+        "subscription_evidence": "UNAVAILABLE",
+        "recognition_executed": false,
+        "production_registered": false
+      }
+    },
+    {
+      "case": "processing",
+      "input": {
+        "added": 0,
+        "entries": [],
+        "excluded_out_of_scope": 0,
+        "source_id": "transfer-mock:2a72b5d7ebfd7c77520b936333b2e13f8eccdcaf",
+        "subscription_evidence": "UNAVAILABLE",
+        "unchanged": 0
+      },
+      "normalized": {
+        "mode": "LOCAL_BILLING_NORMALIZATION_ONLY",
+        "source_id": "transfer-mock:2a72b5d7ebfd7c77520b936333b2e13f8eccdcaf",
+        "entries": [],
+        "source_added": 0,
+        "source_unchanged": 0,
+        "excluded_out_of_scope": 0,
+        "subscription_evidence": "UNAVAILABLE",
+        "recognition_executed": false,
+        "production_registered": false
+      }
+    },
+    {
+      "case": "lost-reply",
+      "input": {
+        "added": 1,
+        "entries": [
+          {
+            "card_note": "流水未提供对应卡片",
+            "consumption": "TRANSFER_EXCLUDED",
+            "transaction": {
+              "account_id": "account_001",
+              "amount": "200.00",
+              "card_id": null,
+              "completed_at": "2026-10-07T00:00:00Z",
+              "currency": "CNY",
+              "direction": "DEBIT",
+              "merchant_id": null,
+              "operation_id": "business-transfer-001",
+              "status": "COMPLETED",
+              "transaction_id": "business-transfer-001:debit",
+              "transaction_type": "TRANSFER"
+            }
+          }
+        ],
+        "excluded_out_of_scope": 0,
+        "source_id": "transfer-mock:2a72b5d7ebfd7c77520b936333b2e13f8eccdcaf",
+        "subscription_evidence": "UNAVAILABLE",
+        "unchanged": 0
+      },
+      "normalized": {
+        "mode": "LOCAL_BILLING_NORMALIZATION_ONLY",
+        "source_id": "transfer-mock:2a72b5d7ebfd7c77520b936333b2e13f8eccdcaf",
+        "entries": [
+          {
+            "key": {
+              "source_id": "transfer-mock:2a72b5d7ebfd7c77520b936333b2e13f8eccdcaf",
+              "account_id": "account_001",
+              "transaction_id": "business-transfer-001:debit"
+            },
+            "operation_id": "business-transfer-001",
+            "card_id": null,
+            "merchant_id": null,
+            "category_code": null,
+            "transaction_type": "TRANSFER",
+            "direction": "OUT",
+            "original_amount": "200.00",
+            "canonical_amount": "200.00",
+            "amount_minor_units": 20000,
+            "currency": "CNY",
+            "status": "COMPLETED",
+            "completed_at": "2026-10-07T00:00:00Z",
+            "consumption_check": "TRANSFER_EXCLUDED"
+          }
+        ],
+        "source_added": 1,
+        "source_unchanged": 0,
+        "excluded_out_of_scope": 0,
+        "subscription_evidence": "UNAVAILABLE",
+        "recognition_executed": false,
+        "production_registered": false
+      }
+    }
+  ],
+  "cli_failure_checks": [
+    {
+      "case": "missing",
+      "passed": true
+    },
+    {
+      "case": "bad-json",
+      "passed": true
+    },
+    {
+      "case": "bad-utf8",
+      "passed": true
+    },
+    {
+      "case": "whole-billing-envelope",
+      "passed": true
+    },
+    {
+      "case": "extra-argument",
+      "passed": true
+    }
+  ]
+}

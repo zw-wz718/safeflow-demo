@@ -1,0 +1,8 @@
+[package]
+name = "safeflow-card-facts"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Read-only card ownership and lock facts from simulated trusted inputs"
+
+[dependencies]

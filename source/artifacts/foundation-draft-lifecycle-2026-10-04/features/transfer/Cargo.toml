@@ -1,0 +1,8 @@
+[package]
+name = "safeflow-transfer"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "SafeFlow transfer draft domain logic; no execution or authorization"
+
+[dependencies]

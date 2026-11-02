@@ -1,0 +1,28 @@
+[workspace]
+members = [
+    "crates/contracts",
+    "crates/runtime",
+    "crates/bank-gateway",
+    "crates/mock-bank",
+    "features/transfer",
+    "features/subscription",
+    "crates/transfer",
+    "crates/storage",
+    "crates/api",
+    "features/card",
+    "features/card/runtime-adapter",
+    "features/card/postgres-store",
+    "features/card/billing-feedback-adapter",
+]
+resolver = "2"
+exclude = ["members/jonathan/backend/src/features/billing"]
+
+[workspace.package]
+edition = "2021"
+rust-version = "1.79"
+license = "UNLICENSED"
+
+[workspace.dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"

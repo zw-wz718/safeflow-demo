@@ -1,0 +1,2656 @@
+{
+  "schema_kind": "SafeFlow subscription fixture proposal; not a public API",
+  "schema_version": 1,
+  "document_version": "v0.1",
+  "owner": "结夏（Hannah）",
+  "created_on": "2026-10-05",
+  "task": "SUB-01",
+  "status": "review_draft_not_executed",
+  "base_branch": "feature/subscription/SUB-01",
+  "fictional": true,
+  "rule_version": null,
+  "production_registration": false,
+  "notes": [
+    "全部用户、账户、商户、服务、交易及台账是虚构资料；各样例独立重置。",
+    "未实现业务识别；expected是设计预期，不是实际执行结果。",
+    "mock_service_ref是服务端可信服务标识的临时字段提案，须Jonathan与不高兴确认来源；聊天文本不得生成可信身份或商户标识。",
+    "正向周期、服务区分和已在管匹配预期均以批准规则接受证据为条件；未默认采用草案>=3次、10%且2元或月±3天。",
+    "window是本样例固定四个月范围，不冻结正式滚动窗口、月末算法或区间边界。",
+    "business_write_count等是未来识别功能的验收预期，未执行工具、数据库或银行。"
+  ],
+  "sample_count": 18,
+  "samples": [
+    {
+      "sample_id": "SUB-MOCK-01",
+      "title": "按月规律扣款",
+      "user_request": "帮我看看这些周期性消费是否可能是订阅。",
+      "trusted_context_fixture": {
+        "user_id": "U-A",
+        "requested_account_ids": [
+          "ACCOUNT-A"
+        ],
+        "origin": "虚构的已认证服务端上下文，不是聊天参数或真实认证结果"
+      },
+      "snapshot": {
+        "snapshot_id": "SNAP-SUB-01",
+        "window": {
+          "as_of": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai",
+          "purpose": "固定四个完整自然月的模拟输入；不是正式滚动窗口算法或区间边界决定"
+        },
+        "accounts": [
+          {
+            "account_id": "ACCOUNT-A",
+            "user_id": "U-A"
+          },
+          {
+            "account_id": "ACCOUNT-B",
+            "user_id": "U-B"
+          }
+        ],
+        "transactions_read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "managed_subscriptions_read": {
+          "state": "COMPLETE",
+          "is_complete": true
+        },
+        "transactions": [
+          {
+            "transaction_id": "M01-1",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M01-2",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M01-3",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M01-4",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          }
+        ],
+        "managed_subscriptions": []
+      },
+      "expected": {
+        "expectation_status": "CONDITIONAL_NOT_APPROVED",
+        "business_write_count": 0,
+        "subscription_rows_created": 0,
+        "bank_actions": 0,
+        "notification_actions": 0,
+        "merchant_service_changed": false,
+        "required_decisions": [
+          "D-22周期/次数/容差",
+          "C-TXN字段及可信来源",
+          "C-SUB服务区分键"
+        ],
+        "condition": "仅当团队批准的识别规则接受本例时间分布、出现次数及可信服务引用时，才采用所列候选预期；本样例不批准规则",
+        "result_kind": "CANDIDATES_IF_RULE_APPROVED",
+        "candidate_expectations": [
+          {
+            "sample_candidate_ref": "C-MOCK-01",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "currency": "CNY",
+            "observed_amounts": [
+              "20.00"
+            ],
+            "proposed_cycle": "MONTHLY",
+            "evidence_transaction_ids": [
+              "M01-1",
+              "M01-2",
+              "M01-3",
+              "M01-4"
+            ],
+            "confirmed": false
+          }
+        ],
+        "user_message_proposal": "示例影音平台有4笔相隔一个自然月、每笔20.00元的已完成消费，可能是周期订阅，请您核对服务名称。"
+      }
+    },
+    {
+      "sample_id": "SUB-MOCK-02",
+      "title": "按周规律扣款",
+      "user_request": "帮我看看这些周期性消费是否可能是订阅。",
+      "trusted_context_fixture": {
+        "user_id": "U-A",
+        "requested_account_ids": [
+          "ACCOUNT-A"
+        ],
+        "origin": "虚构的已认证服务端上下文，不是聊天参数或真实认证结果"
+      },
+      "snapshot": {
+        "snapshot_id": "SNAP-SUB-02",
+        "window": {
+          "as_of": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai",
+          "purpose": "固定四个完整自然月的模拟输入；不是正式滚动窗口算法或区间边界决定"
+        },
+        "accounts": [
+          {
+            "account_id": "ACCOUNT-A",
+            "user_id": "U-A"
+          },
+          {
+            "account_id": "ACCOUNT-B",
+            "user_id": "U-B"
+          }
+        ],
+        "transactions_read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "managed_subscriptions_read": {
+          "state": "COMPLETE",
+          "is_complete": true
+        },
+        "transactions": [
+          {
+            "transaction_id": "M02-1",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "15.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-07T10:00:00+08:00",
+            "merchant_id": "MERCHANT-GYM",
+            "merchant_display_name": "示例健身服务",
+            "category_code": "MOCK_FITNESS",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-GYM"
+          },
+          {
+            "transaction_id": "M02-2",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "15.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-14T10:00:00+08:00",
+            "merchant_id": "MERCHANT-GYM",
+            "merchant_display_name": "示例健身服务",
+            "category_code": "MOCK_FITNESS",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-GYM"
+          },
+          {
+            "transaction_id": "M02-3",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "15.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-21T10:00:00+08:00",
+            "merchant_id": "MERCHANT-GYM",
+            "merchant_display_name": "示例健身服务",
+            "category_code": "MOCK_FITNESS",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-GYM"
+          },
+          {
+            "transaction_id": "M02-4",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "15.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-28T10:00:00+08:00",
+            "merchant_id": "MERCHANT-GYM",
+            "merchant_display_name": "示例健身服务",
+            "category_code": "MOCK_FITNESS",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-GYM"
+          }
+        ],
+        "managed_subscriptions": []
+      },
+      "expected": {
+        "expectation_status": "CONDITIONAL_NOT_APPROVED",
+        "business_write_count": 0,
+        "subscription_rows_created": 0,
+        "bank_actions": 0,
+        "notification_actions": 0,
+        "merchant_service_changed": false,
+        "required_decisions": [
+          "D-22周期/次数/容差",
+          "C-TXN字段及可信来源",
+          "C-SUB服务区分键"
+        ],
+        "condition": "仅当团队批准的识别规则接受本例时间分布、出现次数及可信服务引用时，才采用所列候选预期；本样例不批准规则",
+        "result_kind": "CANDIDATES_IF_RULE_APPROVED",
+        "candidate_expectations": [
+          {
+            "sample_candidate_ref": "C-MOCK-02",
+            "merchant_id": "MERCHANT-GYM",
+            "mock_service_ref": "SERVICE-GYM",
+            "currency": "CNY",
+            "observed_amounts": [
+              "15.00"
+            ],
+            "proposed_cycle": "WEEKLY",
+            "evidence_transaction_ids": [
+              "M02-1",
+              "M02-2",
+              "M02-3",
+              "M02-4"
+            ],
+            "confirmed": false
+          }
+        ],
+        "user_message_proposal": "示例健身服务有4笔相隔7天的已完成消费，可能是按周付费，请核对。"
+      }
+    },
+    {
+      "sample_id": "SUB-MOCK-03",
+      "title": "按日规律扣款",
+      "user_request": "帮我看看这些周期性消费是否可能是订阅。",
+      "trusted_context_fixture": {
+        "user_id": "U-A",
+        "requested_account_ids": [
+          "ACCOUNT-A"
+        ],
+        "origin": "虚构的已认证服务端上下文，不是聊天参数或真实认证结果"
+      },
+      "snapshot": {
+        "snapshot_id": "SNAP-SUB-03",
+        "window": {
+          "as_of": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai",
+          "purpose": "固定四个完整自然月的模拟输入；不是正式滚动窗口算法或区间边界决定"
+        },
+        "accounts": [
+          {
+            "account_id": "ACCOUNT-A",
+            "user_id": "U-A"
+          },
+          {
+            "account_id": "ACCOUNT-B",
+            "user_id": "U-B"
+          }
+        ],
+        "transactions_read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "managed_subscriptions_read": {
+          "state": "COMPLETE",
+          "is_complete": true
+        },
+        "transactions": [
+          {
+            "transaction_id": "M03-1",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "2.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-27T10:00:00+08:00",
+            "merchant_id": "MERCHANT-READ",
+            "merchant_display_name": "示例阅读服务",
+            "category_code": "MOCK_READING",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-READ"
+          },
+          {
+            "transaction_id": "M03-2",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "2.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-28T10:00:00+08:00",
+            "merchant_id": "MERCHANT-READ",
+            "merchant_display_name": "示例阅读服务",
+            "category_code": "MOCK_READING",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-READ"
+          },
+          {
+            "transaction_id": "M03-3",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "2.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-29T10:00:00+08:00",
+            "merchant_id": "MERCHANT-READ",
+            "merchant_display_name": "示例阅读服务",
+            "category_code": "MOCK_READING",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-READ"
+          },
+          {
+            "transaction_id": "M03-4",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "2.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-30T10:00:00+08:00",
+            "merchant_id": "MERCHANT-READ",
+            "merchant_display_name": "示例阅读服务",
+            "category_code": "MOCK_READING",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-READ"
+          }
+        ],
+        "managed_subscriptions": []
+      },
+      "expected": {
+        "expectation_status": "CONDITIONAL_NOT_APPROVED",
+        "business_write_count": 0,
+        "subscription_rows_created": 0,
+        "bank_actions": 0,
+        "notification_actions": 0,
+        "merchant_service_changed": false,
+        "required_decisions": [
+          "D-22周期/次数/容差",
+          "C-TXN字段及可信来源",
+          "C-SUB服务区分键"
+        ],
+        "condition": "仅当团队批准的识别规则接受本例时间分布、出现次数及可信服务引用时，才采用所列候选预期；本样例不批准规则",
+        "result_kind": "CANDIDATES_IF_RULE_APPROVED",
+        "candidate_expectations": [
+          {
+            "sample_candidate_ref": "C-MOCK-03",
+            "merchant_id": "MERCHANT-READ",
+            "mock_service_ref": "SERVICE-READ",
+            "currency": "CNY",
+            "observed_amounts": [
+              "2.00"
+            ],
+            "proposed_cycle": "DAILY",
+            "evidence_transaction_ids": [
+              "M03-1",
+              "M03-2",
+              "M03-3",
+              "M03-4"
+            ],
+            "confirmed": false
+          }
+        ],
+        "user_message_proposal": "示例阅读服务连续4天各有一笔2.00元已完成消费，可能是按日付费，请核对；规律消费也可能是普通购买。"
+      }
+    },
+    {
+      "sample_id": "SUB-MOCK-04",
+      "title": "同商户同金额但服务引用可区分",
+      "user_request": "帮我看看这些周期性消费是否可能是订阅。",
+      "trusted_context_fixture": {
+        "user_id": "U-A",
+        "requested_account_ids": [
+          "ACCOUNT-A"
+        ],
+        "origin": "虚构的已认证服务端上下文，不是聊天参数或真实认证结果"
+      },
+      "snapshot": {
+        "snapshot_id": "SNAP-SUB-04",
+        "window": {
+          "as_of": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai",
+          "purpose": "固定四个完整自然月的模拟输入；不是正式滚动窗口算法或区间边界决定"
+        },
+        "accounts": [
+          {
+            "account_id": "ACCOUNT-A",
+            "user_id": "U-A"
+          },
+          {
+            "account_id": "ACCOUNT-B",
+            "user_id": "U-B"
+          }
+        ],
+        "transactions_read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "managed_subscriptions_read": {
+          "state": "COMPLETE",
+          "is_complete": true
+        },
+        "transactions": [
+          {
+            "transaction_id": "M04-A-1",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-A"
+          },
+          {
+            "transaction_id": "M04-A-2",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-A"
+          },
+          {
+            "transaction_id": "M04-A-3",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-A"
+          },
+          {
+            "transaction_id": "M04-A-4",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-A"
+          },
+          {
+            "transaction_id": "M04-B-1",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-B"
+          },
+          {
+            "transaction_id": "M04-B-2",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-B"
+          },
+          {
+            "transaction_id": "M04-B-3",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-B"
+          },
+          {
+            "transaction_id": "M04-B-4",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-B"
+          }
+        ],
+        "managed_subscriptions": []
+      },
+      "expected": {
+        "expectation_status": "CONDITIONAL_NOT_APPROVED",
+        "business_write_count": 0,
+        "subscription_rows_created": 0,
+        "bank_actions": 0,
+        "notification_actions": 0,
+        "merchant_service_changed": false,
+        "required_decisions": [
+          "D-22周期/次数/容差",
+          "C-TXN字段及可信来源",
+          "C-SUB服务区分键"
+        ],
+        "condition": "仅当团队批准的识别规则接受本例时间分布、出现次数及可信服务引用时，才采用所列候选预期；本样例不批准规则",
+        "result_kind": "TWO_CANDIDATES_IF_RULE_APPROVED",
+        "candidate_expectations": [
+          {
+            "sample_candidate_ref": "C-MOCK-04-A",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-A",
+            "currency": "CNY",
+            "observed_amounts": [
+              "20.00"
+            ],
+            "proposed_cycle": "MONTHLY",
+            "evidence_transaction_ids": [
+              "M04-A-1",
+              "M04-A-2",
+              "M04-A-3",
+              "M04-A-4"
+            ],
+            "confirmed": false
+          },
+          {
+            "sample_candidate_ref": "C-MOCK-04-B",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-B",
+            "currency": "CNY",
+            "observed_amounts": [
+              "20.00"
+            ],
+            "proposed_cycle": "MONTHLY",
+            "evidence_transaction_ids": [
+              "M04-B-1",
+              "M04-B-2",
+              "M04-B-3",
+              "M04-B-4"
+            ],
+            "confirmed": false
+          }
+        ],
+        "must_preserve_separation": true,
+        "user_message_proposal": "两组扣款来自同一平台，但可信服务引用不同。可分别作为候选核对，不能仅因金额相同就合成一项。"
+      }
+    },
+    {
+      "sample_id": "SUB-MOCK-05",
+      "title": "同商户同金额缺服务引用",
+      "user_request": "帮我看看这些周期性消费是否可能是订阅。",
+      "trusted_context_fixture": {
+        "user_id": "U-A",
+        "requested_account_ids": [
+          "ACCOUNT-A"
+        ],
+        "origin": "虚构的已认证服务端上下文，不是聊天参数或真实认证结果"
+      },
+      "snapshot": {
+        "snapshot_id": "SNAP-SUB-05",
+        "window": {
+          "as_of": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai",
+          "purpose": "固定四个完整自然月的模拟输入；不是正式滚动窗口算法或区间边界决定"
+        },
+        "accounts": [
+          {
+            "account_id": "ACCOUNT-A",
+            "user_id": "U-A"
+          },
+          {
+            "account_id": "ACCOUNT-B",
+            "user_id": "U-B"
+          }
+        ],
+        "transactions_read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "managed_subscriptions_read": {
+          "state": "COMPLETE",
+          "is_complete": true
+        },
+        "transactions": [
+          {
+            "transaction_id": "M05-A-1",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          },
+          {
+            "transaction_id": "M05-A-2",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          },
+          {
+            "transaction_id": "M05-A-3",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          },
+          {
+            "transaction_id": "M05-A-4",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          },
+          {
+            "transaction_id": "M05-B-1",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          },
+          {
+            "transaction_id": "M05-B-2",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          },
+          {
+            "transaction_id": "M05-B-3",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          },
+          {
+            "transaction_id": "M05-B-4",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          }
+        ],
+        "managed_subscriptions": []
+      },
+      "expected": {
+        "expectation_status": "CONDITIONAL_NOT_APPROVED",
+        "business_write_count": 0,
+        "subscription_rows_created": 0,
+        "bank_actions": 0,
+        "notification_actions": 0,
+        "merchant_service_changed": false,
+        "required_decisions": [
+          "D-22周期/次数/容差",
+          "C-TXN字段及可信来源",
+          "C-SUB服务区分键"
+        ],
+        "condition": "仅当团队批准的周期与次数规则接受本例时间分布和出现次数时，按服务引用缺失的既定边界给出待核对组；不推断确定服务数量，本样例不批准规则",
+        "result_kind": "ONE_UNRESOLVED_GROUP_IF_RULE_APPROVED",
+        "candidate_expectations": [
+          {
+            "sample_candidate_ref": "C-MOCK-05-REVIEW",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": null,
+            "currency": "CNY",
+            "observed_amounts": ["20.00"],
+            "proposed_cycle": "MONTHLY",
+            "evidence_transaction_ids": [
+              "M05-A-1",
+              "M05-A-2",
+              "M05-A-3",
+              "M05-A-4",
+              "M05-B-1",
+              "M05-B-2",
+              "M05-B-3",
+              "M05-B-4"
+            ],
+            "confirmed": false,
+            "service_count_known": false,
+            "needs_user_review": true
+          }
+        ],
+        "cannot_assert_two_services": true,
+        "cannot_merge_or_write_ledger": true,
+        "user_message_proposal": "这组扣款疑似存在重复或多个服务，暂时无法可靠区分，请核对。"
+      }
+    },
+    {
+      "sample_id": "SUB-MOCK-06",
+      "title": "可信服务标识精确匹配已在管",
+      "user_request": "帮我看看这些周期性消费是否可能是订阅。",
+      "trusted_context_fixture": {
+        "user_id": "U-A",
+        "requested_account_ids": [
+          "ACCOUNT-A"
+        ],
+        "origin": "虚构的已认证服务端上下文，不是聊天参数或真实认证结果"
+      },
+      "snapshot": {
+        "snapshot_id": "SNAP-SUB-06",
+        "window": {
+          "as_of": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai",
+          "purpose": "固定四个完整自然月的模拟输入；不是正式滚动窗口算法或区间边界决定"
+        },
+        "accounts": [
+          {
+            "account_id": "ACCOUNT-A",
+            "user_id": "U-A"
+          },
+          {
+            "account_id": "ACCOUNT-B",
+            "user_id": "U-B"
+          }
+        ],
+        "transactions_read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "managed_subscriptions_read": {
+          "state": "COMPLETE",
+          "is_complete": true
+        },
+        "transactions": [
+          {
+            "transaction_id": "M06-A-1",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-A"
+          },
+          {
+            "transaction_id": "M06-A-2",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-A"
+          },
+          {
+            "transaction_id": "M06-A-3",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-A"
+          },
+          {
+            "transaction_id": "M06-A-4",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-A"
+          }
+        ],
+        "managed_subscriptions": [
+          {
+            "subscription_id": "SUBSCRIPTION-A",
+            "user_id": "U-A",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-A",
+            "currency": "CNY",
+            "cycle_unit": "MONTHLY",
+            "status": "ACTIVE",
+            "origin": "本例虚构的已确认台账快照，不是本次识别写入"
+          }
+        ]
+      },
+      "expected": {
+        "expectation_status": "CONDITIONAL_NOT_APPROVED",
+        "business_write_count": 0,
+        "subscription_rows_created": 0,
+        "bank_actions": 0,
+        "notification_actions": 0,
+        "merchant_service_changed": false,
+        "required_decisions": [
+          "D-22周期/次数/容差",
+          "C-TXN字段及可信来源",
+          "C-SUB服务区分键"
+        ],
+        "condition": "仅当团队批准的识别规则接受本例时间分布、出现次数及可信服务引用时，才采用所列候选预期；本样例不批准规则",
+        "result_kind": "NO_NEW_CANDIDATE_AFTER_EXACT_MATCH",
+        "candidate_expectations": [],
+        "matched_existing_subscription_ids": [
+          "SUBSCRIPTION-A"
+        ],
+        "user_message_proposal": "这组可信服务引用与已在管记录匹配，本次不重复推荐；已有记录保持原样。"
+      }
+    },
+    {
+      "sample_id": "SUB-MOCK-07",
+      "title": "已有服务A不能误滤掉服务B",
+      "user_request": "帮我看看这些周期性消费是否可能是订阅。",
+      "trusted_context_fixture": {
+        "user_id": "U-A",
+        "requested_account_ids": [
+          "ACCOUNT-A"
+        ],
+        "origin": "虚构的已认证服务端上下文，不是聊天参数或真实认证结果"
+      },
+      "snapshot": {
+        "snapshot_id": "SNAP-SUB-07",
+        "window": {
+          "as_of": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai",
+          "purpose": "固定四个完整自然月的模拟输入；不是正式滚动窗口算法或区间边界决定"
+        },
+        "accounts": [
+          {
+            "account_id": "ACCOUNT-A",
+            "user_id": "U-A"
+          },
+          {
+            "account_id": "ACCOUNT-B",
+            "user_id": "U-B"
+          }
+        ],
+        "transactions_read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "managed_subscriptions_read": {
+          "state": "COMPLETE",
+          "is_complete": true
+        },
+        "transactions": [
+          {
+            "transaction_id": "M07-A-1",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-A"
+          },
+          {
+            "transaction_id": "M07-A-2",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-A"
+          },
+          {
+            "transaction_id": "M07-A-3",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-A"
+          },
+          {
+            "transaction_id": "M07-A-4",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-A"
+          },
+          {
+            "transaction_id": "M07-B-1",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-B"
+          },
+          {
+            "transaction_id": "M07-B-2",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-B"
+          },
+          {
+            "transaction_id": "M07-B-3",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-B"
+          },
+          {
+            "transaction_id": "M07-B-4",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-B"
+          }
+        ],
+        "managed_subscriptions": [
+          {
+            "subscription_id": "SUBSCRIPTION-A",
+            "user_id": "U-A",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-A",
+            "currency": "CNY",
+            "cycle_unit": "MONTHLY",
+            "status": "ACTIVE",
+            "origin": "本例虚构的已确认台账快照，不是本次识别写入"
+          }
+        ]
+      },
+      "expected": {
+        "expectation_status": "CONDITIONAL_NOT_APPROVED",
+        "business_write_count": 0,
+        "subscription_rows_created": 0,
+        "bank_actions": 0,
+        "notification_actions": 0,
+        "merchant_service_changed": false,
+        "required_decisions": [
+          "D-22周期/次数/容差",
+          "C-TXN字段及可信来源",
+          "C-SUB服务区分键"
+        ],
+        "condition": "仅当团队批准的识别规则接受本例时间分布、出现次数及可信服务引用时，才采用所列候选预期；本样例不批准规则",
+        "result_kind": "SECOND_SERVICE_CANDIDATE_RETAINED",
+        "candidate_expectations": [
+          {
+            "sample_candidate_ref": "C-MOCK-07-B",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-B",
+            "currency": "CNY",
+            "observed_amounts": [
+              "20.00"
+            ],
+            "proposed_cycle": "MONTHLY",
+            "evidence_transaction_ids": [
+              "M07-B-1",
+              "M07-B-2",
+              "M07-B-3",
+              "M07-B-4"
+            ],
+            "confirmed": false
+          }
+        ],
+        "matched_existing_subscription_ids": [
+          "SUBSCRIPTION-A"
+        ],
+        "user_message_proposal": "服务A已在管；服务B有不同的可信服务引用，仍保留为新候选供核对。"
+      }
+    },
+    {
+      "sample_id": "SUB-MOCK-08",
+      "title": "已有台账但新扣款无法精确归属服务",
+      "user_request": "帮我看看这些周期性消费是否可能是订阅。",
+      "trusted_context_fixture": {
+        "user_id": "U-A",
+        "requested_account_ids": [
+          "ACCOUNT-A"
+        ],
+        "origin": "虚构的已认证服务端上下文，不是聊天参数或真实认证结果"
+      },
+      "snapshot": {
+        "snapshot_id": "SNAP-SUB-08",
+        "window": {
+          "as_of": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai",
+          "purpose": "固定四个完整自然月的模拟输入；不是正式滚动窗口算法或区间边界决定"
+        },
+        "accounts": [
+          {
+            "account_id": "ACCOUNT-A",
+            "user_id": "U-A"
+          },
+          {
+            "account_id": "ACCOUNT-B",
+            "user_id": "U-B"
+          }
+        ],
+        "transactions_read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "managed_subscriptions_read": {
+          "state": "COMPLETE",
+          "is_complete": true
+        },
+        "transactions": [
+          {
+            "transaction_id": "M08-X-1",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          },
+          {
+            "transaction_id": "M08-X-2",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          },
+          {
+            "transaction_id": "M08-X-3",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          },
+          {
+            "transaction_id": "M08-X-4",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          },
+          {
+            "transaction_id": "M08-Y-1",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          },
+          {
+            "transaction_id": "M08-Y-2",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          },
+          {
+            "transaction_id": "M08-Y-3",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          },
+          {
+            "transaction_id": "M08-Y-4",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          }
+        ],
+        "managed_subscriptions": [
+          {
+            "subscription_id": "SUBSCRIPTION-A",
+            "user_id": "U-A",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-A",
+            "currency": "CNY",
+            "cycle_unit": "MONTHLY",
+            "status": "ACTIVE",
+            "origin": "本例虚构的已确认台账快照，不是本次识别写入"
+          }
+        ]
+      },
+      "expected": {
+        "expectation_status": "CONDITIONAL_NOT_APPROVED",
+        "business_write_count": 0,
+        "subscription_rows_created": 0,
+        "bank_actions": 0,
+        "notification_actions": 0,
+        "merchant_service_changed": false,
+        "required_decisions": [
+          "D-22周期/次数/容差",
+          "C-TXN字段及可信来源",
+          "C-SUB服务区分键"
+        ],
+        "condition": "仅当团队批准的周期与次数规则接受本例时间分布和出现次数时，按服务引用缺失的既定边界保留待核对组；不得粗过滤已有台账，本样例不批准规则",
+        "result_kind": "UNRESOLVED_GROUP_MUST_NOT_BE_FILTERED",
+        "candidate_expectations": [
+          {
+            "sample_candidate_ref": "C-MOCK-08-REVIEW",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": null,
+            "currency": "CNY",
+            "observed_amounts": ["20.00"],
+            "proposed_cycle": "MONTHLY",
+            "evidence_transaction_ids": [
+              "M08-X-1",
+              "M08-X-2",
+              "M08-X-3",
+              "M08-X-4",
+              "M08-Y-1",
+              "M08-Y-2",
+              "M08-Y-3",
+              "M08-Y-4"
+            ],
+            "confirmed": false,
+            "needs_user_review": true,
+            "service_count_known": false
+          }
+        ],
+        "matched_existing_subscription_ids": [],
+        "user_message_proposal": "已有同平台订阅记录，但这些扣款缺少服务区分证据，不能确认是否属于同一服务；请核对。"
+      }
+    },
+    {
+      "sample_id": "SUB-MOCK-09",
+      "title": "用户询问年度订阅但只有四个月窗口",
+      "user_request": "我有没有按年续费的会员？",
+      "trusted_context_fixture": {
+        "user_id": "U-A",
+        "requested_account_ids": [
+          "ACCOUNT-A"
+        ],
+        "origin": "虚构的已认证服务端上下文，不是聊天参数或真实认证结果"
+      },
+      "snapshot": {
+        "snapshot_id": "SNAP-SUB-09",
+        "window": {
+          "as_of": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai",
+          "purpose": "固定四个完整自然月的模拟输入；不是正式滚动窗口算法或区间边界决定"
+        },
+        "accounts": [
+          {
+            "account_id": "ACCOUNT-A",
+            "user_id": "U-A"
+          },
+          {
+            "account_id": "ACCOUNT-B",
+            "user_id": "U-B"
+          }
+        ],
+        "transactions_read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "managed_subscriptions_read": {
+          "state": "COMPLETE",
+          "is_complete": true
+        },
+        "transactions": [
+          {
+            "transaction_id": "M09-1",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "198.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-07-01T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-ANNUAL"
+          }
+        ],
+        "managed_subscriptions": []
+      },
+      "expected": {
+        "expectation_status": "REQUIREMENT_EXPECTATION_NOT_EXECUTED",
+        "business_write_count": 0,
+        "subscription_rows_created": 0,
+        "bank_actions": 0,
+        "notification_actions": 0,
+        "merchant_service_changed": false,
+        "result_kind": "INSUFFICIENT_YEARLY_EVIDENCE",
+        "candidate_expectations": [],
+        "insufficient_evidence_transaction_ids": [
+          "M09-1"
+        ],
+        "cannot_claim_no_subscriptions": true,
+        "user_message_proposal": "本次只有四个月流水，不足以判断年度扣款规律；这不表示没有年度订阅。"
+      }
+    },
+    {
+      "sample_id": "SUB-MOCK-10",
+      "title": "第二页读取失败",
+      "user_request": "帮我看看这些周期性消费是否可能是订阅。",
+      "trusted_context_fixture": {
+        "user_id": "U-A",
+        "requested_account_ids": [
+          "ACCOUNT-A"
+        ],
+        "origin": "虚构的已认证服务端上下文，不是聊天参数或真实认证结果"
+      },
+      "snapshot": {
+        "snapshot_id": "SNAP-SUB-10",
+        "window": {
+          "as_of": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai",
+          "purpose": "固定四个完整自然月的模拟输入；不是正式滚动窗口算法或区间边界决定"
+        },
+        "accounts": [
+          {
+            "account_id": "ACCOUNT-A",
+            "user_id": "U-A"
+          },
+          {
+            "account_id": "ACCOUNT-B",
+            "user_id": "U-B"
+          }
+        ],
+        "transactions_read": {
+          "state": "INCOMPLETE",
+          "is_complete": false,
+          "next_cursor": "MOCK-CURSOR-PAGE-2",
+          "reason": "PAGE_READ_FAILED"
+        },
+        "managed_subscriptions_read": {
+          "state": "COMPLETE",
+          "is_complete": true
+        },
+        "transactions": [
+          {
+            "transaction_id": "M10-1",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M10-2",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          }
+        ],
+        "managed_subscriptions": []
+      },
+      "expected": {
+        "expectation_status": "REQUIREMENT_EXPECTATION_NOT_EXECUTED",
+        "business_write_count": 0,
+        "subscription_rows_created": 0,
+        "bank_actions": 0,
+        "notification_actions": 0,
+        "merchant_service_changed": false,
+        "result_kind": "DATA_INCOMPLETE",
+        "candidate_expectations": [],
+        "cannot_claim_complete_scan": true,
+        "cannot_claim_no_subscriptions": true,
+        "partial_evidence_not_a_final_result": [
+          "M10-1",
+          "M10-2"
+        ],
+        "user_message_proposal": "流水尚未取全，暂时不能给出完整订阅识别结果。"
+      }
+    },
+    {
+      "sample_id": "SUB-MOCK-11",
+      "title": "消费资格与窗口外数据反例",
+      "user_request": "帮我看看这些周期性消费是否可能是订阅。",
+      "trusted_context_fixture": {
+        "user_id": "U-A",
+        "requested_account_ids": [
+          "ACCOUNT-A"
+        ],
+        "origin": "虚构的已认证服务端上下文，不是聊天参数或真实认证结果"
+      },
+      "snapshot": {
+        "snapshot_id": "SNAP-SUB-11",
+        "window": {
+          "as_of": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai",
+          "purpose": "固定四个完整自然月的模拟输入；不是正式滚动窗口算法或区间边界决定"
+        },
+        "accounts": [
+          {
+            "account_id": "ACCOUNT-A",
+            "user_id": "U-A"
+          },
+          {
+            "account_id": "ACCOUNT-B",
+            "user_id": "U-B"
+          }
+        ],
+        "transactions_read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "managed_subscriptions_read": {
+          "state": "COMPLETE",
+          "is_complete": true
+        },
+        "transactions": [
+          {
+            "transaction_id": "M11-OK-1",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M11-OK-2",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M11-OK-3",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M11-OK-4",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M11-PROCESSING",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "PROCESSING",
+            "completed_at": null,
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M11-FAILED",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "FAILED",
+            "completed_at": null,
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M11-TRANSFER",
+            "account_id": "ACCOUNT-A",
+            "card_id": null,
+            "amount": "200.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "TRANSFER",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": null,
+            "merchant_display_name": null,
+            "category_code": "MOCK_FUNDS_TRANSFER",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          },
+          {
+            "transaction_id": "M11-REFUND",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "IN",
+            "transaction_type": "REFUND",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-20T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": "M11-OK-4",
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M11-INVESTMENT",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "200.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "OTHER",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MOCK-FUND-PROVIDER",
+            "merchant_display_name": "虚构基金定投",
+            "category_code": "MOCK_FUND_INVESTMENT",
+            "original_tx_id": null,
+            "mock_service_ref": "MOCK-FUND-PLAN"
+          },
+          {
+            "transaction_id": "M11-OUTSIDE",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-05-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          }
+        ],
+        "managed_subscriptions": []
+      },
+      "expected": {
+        "expectation_status": "CONDITIONAL_NOT_APPROVED",
+        "business_write_count": 0,
+        "subscription_rows_created": 0,
+        "bank_actions": 0,
+        "notification_actions": 0,
+        "merchant_service_changed": false,
+        "required_decisions": [
+          "D-22周期/次数/容差",
+          "C-TXN字段及可信来源",
+          "C-SUB服务区分键"
+        ],
+        "condition": "仅当团队批准的识别规则接受本例时间分布、出现次数及可信服务引用时，才采用所列候选预期；本样例不批准规则",
+        "result_kind": "ONLY_ELIGIBLE_EVIDENCE",
+        "candidate_expectations": [
+          {
+            "sample_candidate_ref": "C-MOCK-11",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "currency": "CNY",
+            "observed_amounts": [
+              "20.00"
+            ],
+            "proposed_cycle": "MONTHLY",
+            "evidence_transaction_ids": [
+              "M11-OK-1",
+              "M11-OK-2",
+              "M11-OK-3",
+              "M11-OK-4"
+            ],
+            "confirmed": false
+          }
+        ],
+        "must_exclude_transaction_ids": [
+          "M11-PROCESSING",
+          "M11-FAILED",
+          "M11-TRANSFER",
+          "M11-REFUND",
+          "M11-INVESTMENT",
+          "M11-OUTSIDE"
+        ],
+        "user_message_proposal": "候选证据只引用窗口内已完成的消费扣款；处理中、失败、转账、退款、基金定投及窗口外记录均不计入订阅扣款次数。"
+      }
+    },
+    {
+      "sample_id": "SUB-MOCK-12",
+      "title": "商户名称可见但可信商户ID缺失",
+      "user_request": "帮我看看这些周期性消费是否可能是订阅。",
+      "trusted_context_fixture": {
+        "user_id": "U-A",
+        "requested_account_ids": [
+          "ACCOUNT-A"
+        ],
+        "origin": "虚构的已认证服务端上下文，不是聊天参数或真实认证结果"
+      },
+      "snapshot": {
+        "snapshot_id": "SNAP-SUB-12",
+        "window": {
+          "as_of": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai",
+          "purpose": "固定四个完整自然月的模拟输入；不是正式滚动窗口算法或区间边界决定"
+        },
+        "accounts": [
+          {
+            "account_id": "ACCOUNT-A",
+            "user_id": "U-A"
+          },
+          {
+            "account_id": "ACCOUNT-B",
+            "user_id": "U-B"
+          }
+        ],
+        "transactions_read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "managed_subscriptions_read": {
+          "state": "COMPLETE",
+          "is_complete": true
+        },
+        "transactions": [
+          {
+            "transaction_id": "M12-1",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": null,
+            "merchant_display_name": "用户文本：示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          },
+          {
+            "transaction_id": "M12-2",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": null,
+            "merchant_display_name": "用户文本：示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          },
+          {
+            "transaction_id": "M12-3",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": null,
+            "merchant_display_name": "用户文本：示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          },
+          {
+            "transaction_id": "M12-4",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": null,
+            "merchant_display_name": "用户文本：示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": null
+          }
+        ],
+        "managed_subscriptions": []
+      },
+      "expected": {
+        "expectation_status": "REQUIREMENT_EXPECTATION_NOT_EXECUTED",
+        "business_write_count": 0,
+        "subscription_rows_created": 0,
+        "bank_actions": 0,
+        "notification_actions": 0,
+        "merchant_service_changed": false,
+        "result_kind": "NEEDS_MERCHANT_EVIDENCE",
+        "candidate_expectations": [],
+        "insufficient_evidence_transaction_ids": [
+          "M12-1",
+          "M12-2",
+          "M12-3",
+          "M12-4"
+        ],
+        "cannot_group_by_display_name_only": true,
+        "user_message_proposal": "这些记录缺少可信商户标识，不能仅凭名称、金额和日期认定订阅。"
+      }
+    },
+    {
+      "sample_id": "SUB-MOCK-13",
+      "title": "请求他人账户",
+      "user_request": "帮我看看这些周期性消费是否可能是订阅。",
+      "trusted_context_fixture": {
+        "user_id": "U-A",
+        "requested_account_ids": [
+          "ACCOUNT-B"
+        ],
+        "origin": "虚构服务端上下文；请求资源ID不证明归属"
+      },
+      "snapshot": {
+        "snapshot_id": "SNAP-SUB-13",
+        "window": {
+          "as_of": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai",
+          "purpose": "固定四个完整自然月的模拟输入；不是正式滚动窗口算法或区间边界决定"
+        },
+        "accounts": [
+          {
+            "account_id": "ACCOUNT-A",
+            "user_id": "U-A"
+          },
+          {
+            "account_id": "ACCOUNT-B",
+            "user_id": "U-B"
+          }
+        ],
+        "transactions_read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "managed_subscriptions_read": {
+          "state": "COMPLETE",
+          "is_complete": true
+        },
+        "transactions": [
+          {
+            "transaction_id": "M13-1",
+            "account_id": "ACCOUNT-B",
+            "card_id": "CARD-L",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M13-2",
+            "account_id": "ACCOUNT-B",
+            "card_id": "CARD-L",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M13-3",
+            "account_id": "ACCOUNT-B",
+            "card_id": "CARD-L",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M13-4",
+            "account_id": "ACCOUNT-B",
+            "card_id": "CARD-L",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          }
+        ],
+        "managed_subscriptions": []
+      },
+      "expected": {
+        "expectation_status": "REQUIREMENT_EXPECTATION_NOT_EXECUTED",
+        "business_write_count": 0,
+        "subscription_rows_created": 0,
+        "bank_actions": 0,
+        "notification_actions": 0,
+        "merchant_service_changed": false,
+        "result_kind": "RESOURCE_UNAVAILABLE",
+        "candidate_expectations": [],
+        "public_evidence_transaction_ids": [],
+        "public_account_details": [],
+        "must_not_return_other_user_data": true,
+        "user_message_proposal": "无法访问该账户的订阅信息。"
+      }
+    },
+    {
+      "sample_id": "SUB-MOCK-14",
+      "title": "消费没有卡引用",
+      "user_request": "帮我看看这些周期性消费是否可能是订阅。",
+      "trusted_context_fixture": {
+        "user_id": "U-A",
+        "requested_account_ids": [
+          "ACCOUNT-A"
+        ],
+        "origin": "虚构的已认证服务端上下文，不是聊天参数或真实认证结果"
+      },
+      "snapshot": {
+        "snapshot_id": "SNAP-SUB-14",
+        "window": {
+          "as_of": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai",
+          "purpose": "固定四个完整自然月的模拟输入；不是正式滚动窗口算法或区间边界决定"
+        },
+        "accounts": [
+          {
+            "account_id": "ACCOUNT-A",
+            "user_id": "U-A"
+          },
+          {
+            "account_id": "ACCOUNT-B",
+            "user_id": "U-B"
+          }
+        ],
+        "transactions_read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "managed_subscriptions_read": {
+          "state": "COMPLETE",
+          "is_complete": true
+        },
+        "transactions": [
+          {
+            "transaction_id": "M14-1",
+            "account_id": "ACCOUNT-A",
+            "card_id": null,
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M14-2",
+            "account_id": "ACCOUNT-A",
+            "card_id": null,
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M14-3",
+            "account_id": "ACCOUNT-A",
+            "card_id": null,
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M14-4",
+            "account_id": "ACCOUNT-A",
+            "card_id": null,
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          }
+        ],
+        "managed_subscriptions": []
+      },
+      "expected": {
+        "expectation_status": "CONDITIONAL_NOT_APPROVED",
+        "business_write_count": 0,
+        "subscription_rows_created": 0,
+        "bank_actions": 0,
+        "notification_actions": 0,
+        "merchant_service_changed": false,
+        "required_decisions": [
+          "D-22周期/次数/容差",
+          "C-TXN字段及可信来源",
+          "C-SUB服务区分键"
+        ],
+        "condition": "仅当团队批准的识别规则接受本例时间分布、出现次数及可信服务引用时，才采用所列候选预期；本样例不批准规则",
+        "result_kind": "CANDIDATES_WITHOUT_CARD_REFERENCE",
+        "candidate_expectations": [
+          {
+            "sample_candidate_ref": "C-MOCK-14",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "currency": "CNY",
+            "observed_amounts": [
+              "20.00"
+            ],
+            "proposed_cycle": "MONTHLY",
+            "evidence_transaction_ids": [
+              "M14-1",
+              "M14-2",
+              "M14-3",
+              "M14-4"
+            ],
+            "confirmed": false
+          }
+        ],
+        "must_not_invent_card_id": true,
+        "user_message_proposal": "这些消费记录没有可信卡片引用，但账户归属和消费证据可核对；不会猜测付款卡，也不会触发锁卡。"
+      }
+    },
+    {
+      "sample_id": "SUB-MOCK-15",
+      "title": "完整读取且窗口内没有交易",
+      "user_request": "帮我看看这些周期性消费是否可能是订阅。",
+      "trusted_context_fixture": {
+        "user_id": "U-A",
+        "requested_account_ids": [
+          "ACCOUNT-A"
+        ],
+        "origin": "虚构的已认证服务端上下文，不是聊天参数或真实认证结果"
+      },
+      "snapshot": {
+        "snapshot_id": "SNAP-SUB-15",
+        "window": {
+          "as_of": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai",
+          "purpose": "固定四个完整自然月的模拟输入；不是正式滚动窗口算法或区间边界决定"
+        },
+        "accounts": [
+          {
+            "account_id": "ACCOUNT-A",
+            "user_id": "U-A"
+          },
+          {
+            "account_id": "ACCOUNT-B",
+            "user_id": "U-B"
+          }
+        ],
+        "transactions_read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "managed_subscriptions_read": {
+          "state": "COMPLETE",
+          "is_complete": true
+        },
+        "transactions": [],
+        "managed_subscriptions": []
+      },
+      "expected": {
+        "expectation_status": "REQUIREMENT_EXPECTATION_NOT_EXECUTED",
+        "business_write_count": 0,
+        "subscription_rows_created": 0,
+        "bank_actions": 0,
+        "notification_actions": 0,
+        "merchant_service_changed": false,
+        "result_kind": "NO_CANDIDATE_EVIDENCE_IN_SCOPE",
+        "candidate_expectations": [],
+        "cannot_claim_no_subscriptions_globally": true,
+        "user_message_proposal": "本次完整读取的四个月流水中没有可供识别的消费证据；这不代表没有订阅或年度会员。"
+      }
+    },
+    {
+      "sample_id": "SUB-MOCK-16",
+      "title": "交易数据源整体不可用",
+      "user_request": "帮我看看这些周期性消费是否可能是订阅。",
+      "trusted_context_fixture": {
+        "user_id": "U-A",
+        "requested_account_ids": [
+          "ACCOUNT-A"
+        ],
+        "origin": "虚构的已认证服务端上下文，不是聊天参数或真实认证结果"
+      },
+      "snapshot": {
+        "snapshot_id": "SNAP-SUB-16",
+        "window": {
+          "as_of": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai",
+          "purpose": "固定四个完整自然月的模拟输入；不是正式滚动窗口算法或区间边界决定"
+        },
+        "accounts": [
+          {
+            "account_id": "ACCOUNT-A",
+            "user_id": "U-A"
+          },
+          {
+            "account_id": "ACCOUNT-B",
+            "user_id": "U-B"
+          }
+        ],
+        "transactions_read": {
+          "state": "UNAVAILABLE",
+          "is_complete": false,
+          "next_cursor": null,
+          "reason": "SOURCE_UNAVAILABLE"
+        },
+        "managed_subscriptions_read": {
+          "state": "COMPLETE",
+          "is_complete": true
+        },
+        "transactions": [],
+        "managed_subscriptions": []
+      },
+      "expected": {
+        "expectation_status": "REQUIREMENT_EXPECTATION_NOT_EXECUTED",
+        "business_write_count": 0,
+        "subscription_rows_created": 0,
+        "bank_actions": 0,
+        "notification_actions": 0,
+        "merchant_service_changed": false,
+        "result_kind": "LOOKUP_UNAVAILABLE",
+        "candidate_expectations": [],
+        "cannot_treat_failure_as_complete_empty": true,
+        "user_message_proposal": "暂时无法读取流水，未能完成订阅识别，请稍后重试。"
+      }
+    },
+    {
+      "sample_id": "SUB-MOCK-17",
+      "title": "只有两次规律扣款，最低次数未决",
+      "user_request": "帮我看看这些周期性消费是否可能是订阅。",
+      "trusted_context_fixture": {
+        "user_id": "U-A",
+        "requested_account_ids": [
+          "ACCOUNT-A"
+        ],
+        "origin": "虚构的已认证服务端上下文，不是聊天参数或真实认证结果"
+      },
+      "snapshot": {
+        "snapshot_id": "SNAP-SUB-17",
+        "window": {
+          "as_of": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai",
+          "purpose": "固定四个完整自然月的模拟输入；不是正式滚动窗口算法或区间边界决定"
+        },
+        "accounts": [
+          {
+            "account_id": "ACCOUNT-A",
+            "user_id": "U-A"
+          },
+          {
+            "account_id": "ACCOUNT-B",
+            "user_id": "U-B"
+          }
+        ],
+        "transactions_read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "managed_subscriptions_read": {
+          "state": "COMPLETE",
+          "is_complete": true
+        },
+        "transactions": [
+          {
+            "transaction_id": "M17-1",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M17-2",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          }
+        ],
+        "managed_subscriptions": []
+      },
+      "expected": {
+        "expectation_status": "REQUIREMENT_EXPECTATION_NOT_EXECUTED",
+        "business_write_count": 0,
+        "subscription_rows_created": 0,
+        "bank_actions": 0,
+        "notification_actions": 0,
+        "merchant_service_changed": false,
+        "result_kind": "RULE_DECISION_REQUIRED",
+        "required_decisions": [
+          "D-22最少扣款次数"
+        ],
+        "candidate_expectations": [],
+        "observed_evidence_transaction_ids": [
+          "M17-1",
+          "M17-2"
+        ],
+        "conditional_expectations": [
+          {
+            "if": "若批准的最低次数大于2",
+            "then": "证据不足，不生成确定候选"
+          },
+          {
+            "if": "若批准规则允许两次且满足其他条件",
+            "then": "可给待用户核对的候选，仍不确认入台账"
+          }
+        ],
+        "user_message_proposal": "本例有两笔相隔一个自然月的消费；是否足以推荐候选，等待最低次数规则确认。"
+      }
+    },
+    {
+      "sample_id": "SUB-MOCK-18",
+      "title": "金额变化与日期漂移，容差未决",
+      "user_request": "帮我看看这些周期性消费是否可能是订阅。",
+      "trusted_context_fixture": {
+        "user_id": "U-A",
+        "requested_account_ids": [
+          "ACCOUNT-A"
+        ],
+        "origin": "虚构的已认证服务端上下文，不是聊天参数或真实认证结果"
+      },
+      "snapshot": {
+        "snapshot_id": "SNAP-SUB-18",
+        "window": {
+          "as_of": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai",
+          "purpose": "固定四个完整自然月的模拟输入；不是正式滚动窗口算法或区间边界决定"
+        },
+        "accounts": [
+          {
+            "account_id": "ACCOUNT-A",
+            "user_id": "U-A"
+          },
+          {
+            "account_id": "ACCOUNT-B",
+            "user_id": "U-B"
+          }
+        ],
+        "transactions_read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "managed_subscriptions_read": {
+          "state": "COMPLETE",
+          "is_complete": true
+        },
+        "transactions": [
+          {
+            "transaction_id": "M18-1",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M18-2",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "22.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-07-16T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M18-3",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "20.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-08-14T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          },
+          {
+            "transaction_id": "M18-4",
+            "account_id": "ACCOUNT-A",
+            "card_id": "CARD-K",
+            "amount": "22.00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "transaction_type": "CONSUMPTION",
+            "status": "COMPLETED",
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "merchant_display_name": "示例影音平台",
+            "category_code": "VIDEO_SUBSCRIPTION",
+            "original_tx_id": null,
+            "mock_service_ref": "SERVICE-VIDEO"
+          }
+        ],
+        "managed_subscriptions": []
+      },
+      "expected": {
+        "expectation_status": "REQUIREMENT_EXPECTATION_NOT_EXECUTED",
+        "business_write_count": 0,
+        "subscription_rows_created": 0,
+        "bank_actions": 0,
+        "notification_actions": 0,
+        "merchant_service_changed": false,
+        "result_kind": "RULE_DECISION_REQUIRED",
+        "required_decisions": [
+          "D-22金额容差及比较基准",
+          "D-22月周期定义和日期漂移"
+        ],
+        "candidate_expectations": [],
+        "observed_evidence_transaction_ids": [
+          "M18-1",
+          "M18-2",
+          "M18-3",
+          "M18-4"
+        ],
+        "conditional_expectations": [
+          {
+            "if": "批准的金额与周期规则接受本分布",
+            "then": "给周期候选并保留实际金额与时间证据"
+          },
+          {
+            "if": "金额超出批准容差",
+            "then": "按批准规则评估分组，各组仍须满足样本要求；不能把单笔直接宣布为订阅"
+          },
+          {
+            "if": "周期不满足批准规则",
+            "then": "不声称已识别规律；说明未满足条件"
+          }
+        ],
+        "user_message_proposal": "本例金额20.00／22.00元且日期有漂移。是否属于同一周期订阅，须按批准容差核对。"
+      }
+    }
+  ]
+}

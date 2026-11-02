@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "fictional": true,
+  "production_registered": false,
+  "provenance": "HANNAH_OWN_FICTIONAL_INPUT_NOT_A_JONATHAN_CAPTURE",
+  "sample": {
+    "sample_id": "fictional-hannah-ready-date",
+    "trusted_context_fixture": {"user_id": "user_demo", "requested_account_ids": ["account_001"]},
+    "snapshot": {
+      "window": {"as_of": "2026-10-13T12:00:00+08:00", "start_inclusive": "2026-06-13T12:00:00+08:00", "end_exclusive": "2026-10-13T12:00:00+08:00", "timezone":"Asia/Shanghai"},
+      "accounts": [{"account_id": "account_001", "user_id": "user_demo"}],
+      "transactions_read": {"state": "COMPLETE", "is_complete": true, "next_cursor": null, "reason": null},
+      "managed_subscriptions_read": {"state": "UNAVAILABLE", "is_complete": false, "next_cursor": null, "reason": "USE_SEPARATE_SAVED_FICTIONAL_LEDGER"},
+      "transactions": [
+        {"source_id": "fictional-hannah-ready-v1", "transaction_id": "fictional-hannah-aug", "account_id": "account_001", "card_id": null, "amount": "19.90", "currency": "CNY", "direction": "OUT", "transaction_type": "CONSUMPTION", "status": "COMPLETED", "completed_at": "2026-08-17T08:00:00+08:00", "merchant_id": "fictional-hannah-video", "mock_service_ref": "fictional-hannah-video-service", "category_code": null},
+        {"source_id": "fictional-hannah-ready-v1", "transaction_id": "fictional-hannah-sep", "account_id": "account_001", "card_id": null, "amount": "19.90", "currency": "CNY", "direction": "OUT", "transaction_type": "CONSUMPTION", "status": "COMPLETED", "completed_at": "2026-09-17T08:00:00+08:00", "merchant_id": "fictional-hannah-video", "mock_service_ref": "fictional-hannah-video-service", "category_code": null}
+      ]
+    }
+  }
+}

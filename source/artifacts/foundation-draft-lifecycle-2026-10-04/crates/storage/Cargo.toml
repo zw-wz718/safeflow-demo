@@ -1,0 +1,41 @@
+[package]
+name = "safeflow-storage"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "PostgreSQL recovery checkpoints; no execution authorization"
+
+[dependencies]
+safeflow-card-billing-feedback-adapter = { path = "../../features/card/billing-feedback-adapter" }
+safeflow-subscription-evidence = { path = "../../features/subscription", features = ["postgres-mock-store"] }
+safeflow-billing-source-reader = { path = "../../members/jonathan/backend/src/features/billing", features = ["postgres"] }
+safeflow-card-facts = { path = "../../features/card" }
+safeflow-card-postgres-store = { path = "../../features/card/postgres-store" }
+safeflow-bank-gateway = { path = "../bank-gateway" }
+safeflow-contracts = { path = "../contracts" }
+safeflow-runtime = { path = "../runtime" }
+safeflow-transfer-integration = { path = "../transfer", features = ["postgres-store"] }
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+chrono = { version = "=0.4.38", default-features = false, features = ["std", "serde"] }
+sqlx = { version = "=0.8.6", default-features = false, features = ["runtime-tokio-rustls", "postgres", "json", "chrono", "migrate"] }
+tokio = { version = "1.36", features = ["macros", "rt-multi-thread", "time"] }
+uuid = { version = "=1.8.0", features = ["v4"] }
+getrandom = "=0.2.17"
+subtle = "=2.6.1"
+zeroize = "=1.7.0"
+reqwest = { version = "=0.12.24", default-features = false, features = ["rustls-tls"] }
+# Keep the existing home pin; SQLx 0.8 MSRV support is tracked in the integration delivery.
+home = "=0.5.5"
+
+[dev-dependencies]
+tokio = { version = "1.36", features = ["net", "io-util", "sync"] }
+safeflow-bank-gateway = { path = "../bank-gateway" }
+safeflow-mock-bank = { path = "../mock-bank" }
+
+[[test]]
+name = "postgres"
+path = "tests/postgres.rs"

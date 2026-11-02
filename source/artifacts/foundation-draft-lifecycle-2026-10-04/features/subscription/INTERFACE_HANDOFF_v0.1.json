@@ -1,0 +1,79 @@
+{
+  "version": "LOCAL_HANDOFF_V1",
+  "date": "2026-10-19",
+  "fictional": true,
+  "public_contract_frozen": false,
+  "http_registered": false,
+  "capabilities": [
+    {
+      "capability": "identify_subscriptions",
+      "kind": "只读识别",
+      "functions": "MemoryConfirmationMock::discover_mock",
+      "input": "MockContext + Snapshot，另从本人台账构造当前模型",
+      "output": "LedgerReview：候选、已登记、需核对及原因",
+      "permission_facts": "本人账户范围、消费窗口完整、来源/流水及商户服务证据、可用台账",
+      "state_and_failure": "消费不全/台账未知停止；资料缺失不补造；发现候选不等于登记",
+      "confirmation_and_version": "无新确认；采用LOCAL_RULE_VERSION及消费/台账证据版本"
+    },
+    {
+      "capability": "list_subscriptions",
+      "kind": "只读台账",
+      "functions": "SubscriptionReadSnapshotMock::load_on_connection_mock → ledger_mock().list_mock",
+      "input": "借出PgConnection + 可信本人范围",
+      "output": "本人LedgerEntry数组",
+      "permission_facts": "会话权限由底座核验；读取完整日志并校验归属",
+      "state_and_failure": "缺记录NotFound与真实空台账区分；数据库故障Unavailable；损坏InvalidJournal",
+      "confirmation_and_version": "snapshot.version_mock为当前读取版本；没有写确认"
+    },
+    {
+      "capability": "confirm_subscription",
+      "kind": "登记写入",
+      "functions": "prepare_registration_mock → register_mock，经stage_on_connection_mock及publish_after_commit_mock",
+      "input": "MockContext + Snapshot + MockOperationContext + group_index + expiry；后续draft_id/context/now/gate",
+      "output": "MockConfirmationBinding → MockConfirmationReceipt",
+      "permission_facts": "当前候选、本人及账户证据、完整操作绑定；正式许可待底座",
+      "state_and_failure": "过期/资料变化/越权/异参拒绝；原成功查原回执，不新建号码补做",
+      "confirmation_and_version": "绑定候选全文/账户/台账revision/as_of/expiry/plan_version；当前模拟YELLOW不代表公共等级已批准"
+    },
+    {
+      "capability": "update_reminder_settings",
+      "kind": "提醒配置写入",
+      "functions": "prepare_settings_mock → confirm_settings_mock，经stage/publish",
+      "input": "本人操作 + subscription_id + Schedule + now/expiry；后续ScheduleBinding/gate",
+      "output": "ScheduleBinding → ScheduleReceipt",
+      "permission_facts": "本人有效台账、服务资料、经确认日期周期及偏好",
+      "state_and_failure": "日期或服务不明拒绝；设置成功不代表通知已发送；旧设置重试不能覆盖新设置",
+      "confirmation_and_version": "绑定目标、ledger_revision/settings_revision、完整Schedule、计划及期限；模拟YELLOW"
+    },
+    {
+      "capability": "create_cancellation_intent",
+      "kind": "记录取消意图",
+      "functions": "prepare_intent_mock(Record) → commit_intent_mock，经stage/publish",
+      "input": "本人操作 + subscription_id + NOW/expiry；后续draft_id/context/now/gate",
+      "output": "MockIntentBinding → MockIntentReceipt",
+      "permission_facts": "本人台账当前状态和独立确认绑定",
+      "state_and_failure": "ACTIVE → CANCELLING仅本地意图，不表示商户停扣、退款或取消成功",
+      "confirmation_and_version": "绑定kind/目标全文/ledger_revision/plan_version/准备及过期时间；模拟YELLOW"
+    },
+    {
+      "capability": "revoke_cancellation_intent",
+      "kind": "撤回本地意图",
+      "functions": "prepare_intent_mock(Revoke) → commit_intent_mock，经stage/publish",
+      "input": "本人操作 + subscription_id + NOW/expiry；后续draft_id/context/now/gate",
+      "output": "MockIntentBinding → MockIntentReceipt",
+      "permission_facts": "本人当前取消中状态和新的独立确认",
+      "state_and_failure": "CANCELLING → ACTIVE仅本地撤回，不表示恢复商户服务；原取消历史保留",
+      "confirmation_and_version": "与取消相同绑定项目，kind为Revoke；使用新操作；模拟YELLOW"
+    },
+    {
+      "capability": "get_cancellation_status",
+      "kind": "只读当前状态和历史",
+      "functions": "SubscriptionReadSnapshotMock → ledger_mock().list_mock / intent_result_mock",
+      "input": "借出连接 + 可信本人 + 可选原operation_id",
+      "output": "当前LedgerStatus与原MockIntentReceipt分别返回",
+      "permission_facts": "本人和读取完整性；原号不能跨用户查询",
+      "state_and_failure": "历史取消回执不覆盖当前状态；未知原号保留错误；不补造商户回执",
+      "confirmation_and_version": "snapshot.version_mock；原operation_id只读，不发新确认"
+    }
+  ]
+}

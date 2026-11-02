@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SafeFlow 审计演示</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/updates.css"></head>
+<body><main class="page">
+  <header><p class="eyebrow">SAFEFLOW · AUD-01—03</p><h1>审计事件与本地链核验演示</h1><p>先演示转账草案创建、修改、取消的审计记录；另外保留一笔虚构转账示例。</p><div class="warning">仅为本地模拟：不会连接银行、不会真实转账、不会验证身份或作出安全决定。Hash Chain 只检查本地链内一致性，不等于外部可信存证。</div></header>
+  <section class="panel draft-panel">
+    <div><h2>第一阶段：转账草案事件</h2><p>对照转账方三步样例：创建 200 元草案、改为 300 元、取消；业务版本依次为 1 → 2 → 2。草案编号和业务操作号三步不变，每次动作另有编号。这里是本地模拟投影，并非 Rust 原始审计事件。</p></div>
+    <div class="buttons draft-buttons"><button id="draft-create" class="primary">创建 200 元草案</button><button id="draft-update" class="secondary" disabled>改为 300 元</button><button id="draft-cancel" class="secondary" disabled>取消草案</button><button id="draft-retry" class="secondary hidden">重试上次记录</button></div>
+    <div id="draft-summary" class="draft-summary" aria-live="polite">尚未创建草案演示记录。</div>
+  </section>
+  <section class="panel row"><div><h2>额外示例：模拟 200 元转账</h2><p>独立展示模拟成功或失败的转账审计时间线。</p></div><div class="buttons"><button id="success" class="primary">模拟成功</button><button id="failure" class="secondary">模拟失败</button></div></section>
+  <section id="summary" class="panel hidden" aria-live="polite"></section>
+  <section class="panel receipt-panel">
+    <div class="row"><div><h2>双方查看的脱敏回执</h2><p>本地演示视角切换，不是真实登录或跨设备同步；付款人与收款人看到同一份脱敏回执。</p></div>
+      <div class="view-switch" role="group" aria-label="回执视角"><button id="payer-view" class="selected" aria-pressed="true">付款人视角</button><button id="recipient-view" aria-pressed="false">收款人视角</button></div>
+    </div>
+    <div id="receipt-empty" class="empty">仅本地模拟转账可显示虚构双方的脱敏回执；草案和其他来源事件不生成此回执。</div>
+    <div id="receipt" class="receipt hidden" aria-live="polite"></div>
+  </section>
+  <section class="panel"><div class="row"><div><h2>审计时间线</h2><p>显示当前任务的记录；同一 task_id 可串起不同操作。草案不是扣款，卡片与订阅真实事件尚未接入；按动作名显示的分类不代替业务回执。点击“查看后台记录”仅供本机演示查看完整字段，正式查询仍需可信身份和权限。来源时间和可信用户缺失时保持未提供；审计写入时间只表示本机落库时间。</p></div><button id="verify" class="secondary">验证 Hash Chain</button></div><div id="chain" class="chain">尚未验证</div><div class="table-wrap"><table><thead><tr><th>事件时间 / 类型</th><th>审计写入时间</th><th>task_id / 动作号 / 草案业务号</th><th>确认 / 认证</th><th>业务结果</th><th></th></tr></thead><tbody id="events"><tr><td colspan="6" class="empty">创建草案事件或模拟转账后，这里会显示审计时间线。</td></tr></tbody></table></div></section>
+  <section id="detail" class="panel hidden"><div class="row"><h2>记录详情</h2><button id="close" class="secondary">关闭</button></div><pre id="json"></pre></section>
+  <footer>本地 SQLite 演示存储 · 链核验未使用外部可信锚点 · 尚未接入 PostgreSQL、正式授权或业务分支</footer>
+</main><script type="module" src="/app.js"></script></body></html>

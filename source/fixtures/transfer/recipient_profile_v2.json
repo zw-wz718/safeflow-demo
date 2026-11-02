@@ -1,0 +1,13 @@
+{
+  "revision": "safeflow-recipient-profile-20261029-v2",
+  "source_revision": "safeflow-team-simulation-20261026-v1",
+  "owner_id": "user_001",
+  "payee_id": "payee_008",
+  "recipient_account_id": "demo_account_li_v1",
+  "recipient_owner_id": "demo_user_li_v1",
+  "card_id": "demo_card_li_v1",
+  "display_name": "李明远",
+  "bank_name": "示例银行",
+  "masked_account_no": "**** 1024",
+  "simulation_card_number": "9900000000000001024"
+}

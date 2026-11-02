@@ -1,0 +1,684 @@
+{
+  "mode": "OFFLINE_MOCK_EVIDENCE_FILTER_ONLY",
+  "recognition_executed": false,
+  "reports": [
+    {
+      "report": {
+        "eligible_evidence": [
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "transaction_id": "M01-1"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "transaction_id": "M01-2"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "transaction_id": "M01-3"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "transaction_id": "M01-4"
+          }
+        ],
+        "excluded": [],
+        "message": "消费证据已筛选；周期、次数及容差待确认，尚未识别订阅。",
+        "next_cursor": null,
+        "outcome": "EVIDENCE_READY_RULE_PENDING"
+      },
+      "sample_id": "SUB-MOCK-01"
+    },
+    {
+      "report": {
+        "eligible_evidence": [
+          {
+            "amount_minor_units": 1500,
+            "completed_at": "2026-09-07T10:00:00+08:00",
+            "merchant_id": "MERCHANT-GYM",
+            "mock_service_ref": "SERVICE-GYM",
+            "transaction_id": "M02-1"
+          },
+          {
+            "amount_minor_units": 1500,
+            "completed_at": "2026-09-14T10:00:00+08:00",
+            "merchant_id": "MERCHANT-GYM",
+            "mock_service_ref": "SERVICE-GYM",
+            "transaction_id": "M02-2"
+          },
+          {
+            "amount_minor_units": 1500,
+            "completed_at": "2026-09-21T10:00:00+08:00",
+            "merchant_id": "MERCHANT-GYM",
+            "mock_service_ref": "SERVICE-GYM",
+            "transaction_id": "M02-3"
+          },
+          {
+            "amount_minor_units": 1500,
+            "completed_at": "2026-09-28T10:00:00+08:00",
+            "merchant_id": "MERCHANT-GYM",
+            "mock_service_ref": "SERVICE-GYM",
+            "transaction_id": "M02-4"
+          }
+        ],
+        "excluded": [],
+        "message": "消费证据已筛选；周期、次数及容差待确认，尚未识别订阅。",
+        "next_cursor": null,
+        "outcome": "EVIDENCE_READY_RULE_PENDING"
+      },
+      "sample_id": "SUB-MOCK-02"
+    },
+    {
+      "report": {
+        "eligible_evidence": [
+          {
+            "amount_minor_units": 200,
+            "completed_at": "2026-09-27T10:00:00+08:00",
+            "merchant_id": "MERCHANT-READ",
+            "mock_service_ref": "SERVICE-READ",
+            "transaction_id": "M03-1"
+          },
+          {
+            "amount_minor_units": 200,
+            "completed_at": "2026-09-28T10:00:00+08:00",
+            "merchant_id": "MERCHANT-READ",
+            "mock_service_ref": "SERVICE-READ",
+            "transaction_id": "M03-2"
+          },
+          {
+            "amount_minor_units": 200,
+            "completed_at": "2026-09-29T10:00:00+08:00",
+            "merchant_id": "MERCHANT-READ",
+            "mock_service_ref": "SERVICE-READ",
+            "transaction_id": "M03-3"
+          },
+          {
+            "amount_minor_units": 200,
+            "completed_at": "2026-09-30T10:00:00+08:00",
+            "merchant_id": "MERCHANT-READ",
+            "mock_service_ref": "SERVICE-READ",
+            "transaction_id": "M03-4"
+          }
+        ],
+        "excluded": [],
+        "message": "消费证据已筛选；周期、次数及容差待确认，尚未识别订阅。",
+        "next_cursor": null,
+        "outcome": "EVIDENCE_READY_RULE_PENDING"
+      },
+      "sample_id": "SUB-MOCK-03"
+    },
+    {
+      "report": {
+        "eligible_evidence": [
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-A",
+            "transaction_id": "M04-A-1"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-A",
+            "transaction_id": "M04-A-2"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-A",
+            "transaction_id": "M04-A-3"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-A",
+            "transaction_id": "M04-A-4"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-B",
+            "transaction_id": "M04-B-1"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-B",
+            "transaction_id": "M04-B-2"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-B",
+            "transaction_id": "M04-B-3"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-B",
+            "transaction_id": "M04-B-4"
+          }
+        ],
+        "excluded": [],
+        "message": "消费证据已筛选；周期、次数及容差待确认，尚未识别订阅。",
+        "next_cursor": null,
+        "outcome": "EVIDENCE_READY_RULE_PENDING"
+      },
+      "sample_id": "SUB-MOCK-04"
+    },
+    {
+      "report": {
+        "eligible_evidence": [
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": null,
+            "transaction_id": "M05-A-1"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": null,
+            "transaction_id": "M05-A-2"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": null,
+            "transaction_id": "M05-A-3"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": null,
+            "transaction_id": "M05-A-4"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": null,
+            "transaction_id": "M05-B-1"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": null,
+            "transaction_id": "M05-B-2"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": null,
+            "transaction_id": "M05-B-3"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": null,
+            "transaction_id": "M05-B-4"
+          }
+        ],
+        "excluded": [],
+        "message": "消费证据已筛选；周期、次数及容差待确认，尚未识别订阅。",
+        "next_cursor": null,
+        "outcome": "EVIDENCE_READY_RULE_PENDING"
+      },
+      "sample_id": "SUB-MOCK-05"
+    },
+    {
+      "report": {
+        "eligible_evidence": [
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-A",
+            "transaction_id": "M06-A-1"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-A",
+            "transaction_id": "M06-A-2"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-A",
+            "transaction_id": "M06-A-3"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-A",
+            "transaction_id": "M06-A-4"
+          }
+        ],
+        "excluded": [],
+        "message": "消费证据已筛选；周期、次数及容差待确认，尚未识别订阅。",
+        "next_cursor": null,
+        "outcome": "EVIDENCE_READY_RULE_PENDING"
+      },
+      "sample_id": "SUB-MOCK-06"
+    },
+    {
+      "report": {
+        "eligible_evidence": [
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-A",
+            "transaction_id": "M07-A-1"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-A",
+            "transaction_id": "M07-A-2"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-A",
+            "transaction_id": "M07-A-3"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-A",
+            "transaction_id": "M07-A-4"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-B",
+            "transaction_id": "M07-B-1"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-B",
+            "transaction_id": "M07-B-2"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-B",
+            "transaction_id": "M07-B-3"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-B",
+            "transaction_id": "M07-B-4"
+          }
+        ],
+        "excluded": [],
+        "message": "消费证据已筛选；周期、次数及容差待确认，尚未识别订阅。",
+        "next_cursor": null,
+        "outcome": "EVIDENCE_READY_RULE_PENDING"
+      },
+      "sample_id": "SUB-MOCK-07"
+    },
+    {
+      "report": {
+        "eligible_evidence": [
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": null,
+            "transaction_id": "M08-X-1"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": null,
+            "transaction_id": "M08-X-2"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": null,
+            "transaction_id": "M08-X-3"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": null,
+            "transaction_id": "M08-X-4"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": null,
+            "transaction_id": "M08-Y-1"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": null,
+            "transaction_id": "M08-Y-2"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": null,
+            "transaction_id": "M08-Y-3"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": null,
+            "transaction_id": "M08-Y-4"
+          }
+        ],
+        "excluded": [],
+        "message": "消费证据已筛选；周期、次数及容差待确认，尚未识别订阅。",
+        "next_cursor": null,
+        "outcome": "EVIDENCE_READY_RULE_PENDING"
+      },
+      "sample_id": "SUB-MOCK-08"
+    },
+    {
+      "report": {
+        "eligible_evidence": [
+          {
+            "amount_minor_units": 19800,
+            "completed_at": "2026-07-01T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-ANNUAL",
+            "transaction_id": "M09-1"
+          }
+        ],
+        "excluded": [],
+        "message": "消费证据已筛选；周期、次数及容差待确认，尚未识别订阅。",
+        "next_cursor": null,
+        "outcome": "EVIDENCE_READY_RULE_PENDING"
+      },
+      "sample_id": "SUB-MOCK-09"
+    },
+    {
+      "report": {
+        "eligible_evidence": [],
+        "excluded": [],
+        "message": "流水未取全，不能给出完整识别结论。",
+        "next_cursor": "MOCK-CURSOR-PAGE-2",
+        "outcome": "DATA_INCOMPLETE"
+      },
+      "sample_id": "SUB-MOCK-10"
+    },
+    {
+      "report": {
+        "eligible_evidence": [
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "transaction_id": "M11-OK-1"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "transaction_id": "M11-OK-2"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "transaction_id": "M11-OK-3"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "transaction_id": "M11-OK-4"
+          }
+        ],
+        "excluded": [
+          {
+            "reason": "NOT_COMPLETED",
+            "transaction_id": "M11-PROCESSING"
+          },
+          {
+            "reason": "NOT_COMPLETED",
+            "transaction_id": "M11-FAILED"
+          },
+          {
+            "reason": "NOT_CONSUMPTION",
+            "transaction_id": "M11-TRANSFER"
+          },
+          {
+            "reason": "NOT_CONSUMPTION",
+            "transaction_id": "M11-REFUND"
+          },
+          {
+            "reason": "NOT_CONSUMPTION",
+            "transaction_id": "M11-INVESTMENT"
+          },
+          {
+            "reason": "OUTSIDE_WINDOW",
+            "transaction_id": "M11-OUTSIDE"
+          }
+        ],
+        "message": "消费证据已筛选；周期、次数及容差待确认，尚未识别订阅。",
+        "next_cursor": null,
+        "outcome": "EVIDENCE_READY_RULE_PENDING"
+      },
+      "sample_id": "SUB-MOCK-11"
+    },
+    {
+      "report": {
+        "eligible_evidence": [],
+        "excluded": [
+          {
+            "reason": "MISSING_MERCHANT",
+            "transaction_id": "M12-1"
+          },
+          {
+            "reason": "MISSING_MERCHANT",
+            "transaction_id": "M12-2"
+          },
+          {
+            "reason": "MISSING_MERCHANT",
+            "transaction_id": "M12-3"
+          },
+          {
+            "reason": "MISSING_MERCHANT",
+            "transaction_id": "M12-4"
+          }
+        ],
+        "message": "部分消费缺可信商户标识，不能仅凭名称、金额和日期认定订阅。",
+        "next_cursor": null,
+        "outcome": "NEEDS_MERCHANT_EVIDENCE"
+      },
+      "sample_id": "SUB-MOCK-12"
+    },
+    {
+      "report": {
+        "eligible_evidence": [],
+        "excluded": [],
+        "message": "无法访问该范围的资料。",
+        "next_cursor": null,
+        "outcome": "RESOURCE_UNAVAILABLE"
+      },
+      "sample_id": "SUB-MOCK-13"
+    },
+    {
+      "report": {
+        "eligible_evidence": [
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "transaction_id": "M14-1"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-07-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "transaction_id": "M14-2"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "transaction_id": "M14-3"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "transaction_id": "M14-4"
+          }
+        ],
+        "excluded": [],
+        "message": "消费证据已筛选；周期、次数及容差待确认，尚未识别订阅。",
+        "next_cursor": null,
+        "outcome": "EVIDENCE_READY_RULE_PENDING"
+      },
+      "sample_id": "SUB-MOCK-14"
+    },
+    {
+      "report": {
+        "eligible_evidence": [],
+        "excluded": [],
+        "message": "本次模拟范围没有合格消费证据，不表示没有订阅。",
+        "next_cursor": null,
+        "outcome": "NO_ELIGIBLE_EVIDENCE"
+      },
+      "sample_id": "SUB-MOCK-15"
+    },
+    {
+      "report": {
+        "eligible_evidence": [],
+        "excluded": [],
+        "message": "流水查询失败，未完成证据筛选。",
+        "next_cursor": null,
+        "outcome": "LOOKUP_UNAVAILABLE"
+      },
+      "sample_id": "SUB-MOCK-16"
+    },
+    {
+      "report": {
+        "eligible_evidence": [
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-08-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "transaction_id": "M17-1"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "transaction_id": "M17-2"
+          }
+        ],
+        "excluded": [],
+        "message": "消费证据已筛选；周期、次数及容差待确认，尚未识别订阅。",
+        "next_cursor": null,
+        "outcome": "EVIDENCE_READY_RULE_PENDING"
+      },
+      "sample_id": "SUB-MOCK-17"
+    },
+    {
+      "report": {
+        "eligible_evidence": [
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-06-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "transaction_id": "M18-1"
+          },
+          {
+            "amount_minor_units": 2200,
+            "completed_at": "2026-07-16T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "transaction_id": "M18-2"
+          },
+          {
+            "amount_minor_units": 2000,
+            "completed_at": "2026-08-14T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "transaction_id": "M18-3"
+          },
+          {
+            "amount_minor_units": 2200,
+            "completed_at": "2026-09-15T10:00:00+08:00",
+            "merchant_id": "MERCHANT-VIDEO",
+            "mock_service_ref": "SERVICE-VIDEO",
+            "transaction_id": "M18-4"
+          }
+        ],
+        "excluded": [],
+        "message": "消费证据已筛选；周期、次数及容差待确认，尚未识别订阅。",
+        "next_cursor": null,
+        "outcome": "EVIDENCE_READY_RULE_PENDING"
+      },
+      "sample_id": "SUB-MOCK-18"
+    }
+  ],
+  "rule_version": null,
+  "sample_count": 18
+}

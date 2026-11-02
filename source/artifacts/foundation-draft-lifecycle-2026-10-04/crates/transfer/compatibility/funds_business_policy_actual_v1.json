@@ -1,0 +1,265 @@
+{
+  "cases": [
+    {
+      "actual_return": {
+        "disposition": "BUSINESS_CHECKS_PASSED_NOT_A_PERMIT",
+        "findings": []
+      },
+      "case": "pass",
+      "context": {
+        "arguments_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "auth_grant_ref": null,
+        "authenticated_user_id": "policy-owner",
+        "confirmation_ref": null,
+        "contract_version": 1,
+        "facts_version": 3,
+        "idempotency_key": "policy-key",
+        "node_id": "policy-node",
+        "normalized_arguments": {
+          "amount": "200.00",
+          "currency": "CNY",
+          "draft_id": "policy-draft",
+          "draft_version": 2,
+          "operation_id": "stable-business-operation",
+          "payee_id": "policy-payee",
+          "payer_account_id": "policy-payer",
+          "remark": "模拟业务检查，不扣款",
+          "task_id": "policy-task"
+        },
+        "operation_id": "runtime-operation-different-from-business",
+        "phase": "PRE_TOOL",
+        "plan_version": 7,
+        "task_id": "policy-task",
+        "tool_name": "execute_transfer"
+      }
+    },
+    {
+      "actual_return": {
+        "disposition": "DO_NOT_EXECUTE",
+        "findings": [
+          {
+            "check_id": "transfer-funds-business",
+            "dedup_key": null,
+            "event_ids": [],
+            "evidence_refs": [],
+            "kind": "HARD_DENY",
+            "observed_value": null,
+            "policy_version": "transfer-funds-business-2026-10-18-v1",
+            "reason_code": "ACCOUNT_OUTGOING_BLOCKED",
+            "source": "transfer-business",
+            "window_end_ms": null,
+            "window_start_ms": null
+          }
+        ]
+      },
+      "case": "blocked",
+      "context": {
+        "arguments_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "auth_grant_ref": null,
+        "authenticated_user_id": "policy-owner",
+        "confirmation_ref": null,
+        "contract_version": 1,
+        "facts_version": 3,
+        "idempotency_key": "policy-key",
+        "node_id": "policy-node",
+        "normalized_arguments": {
+          "amount": "200.00",
+          "currency": "CNY",
+          "draft_id": "policy-draft",
+          "draft_version": 2,
+          "operation_id": "stable-business-operation",
+          "payee_id": "policy-payee",
+          "payer_account_id": "policy-payer",
+          "remark": "模拟业务检查，不扣款",
+          "task_id": "policy-task"
+        },
+        "operation_id": "runtime-operation-different-from-business",
+        "phase": "PRE_TOOL",
+        "plan_version": 7,
+        "task_id": "policy-task",
+        "tool_name": "execute_transfer"
+      }
+    },
+    {
+      "actual_return": {
+        "disposition": "FACTS_REQUIRED_DO_NOT_EXECUTE",
+        "findings": [
+          {
+            "check_id": "transfer-funds-business",
+            "dedup_key": null,
+            "event_ids": [],
+            "evidence_refs": [],
+            "kind": "NEEDS_INPUT",
+            "observed_value": null,
+            "policy_version": "transfer-funds-business-2026-10-18-v1",
+            "reason_code": "DAILY_USAGE_UNAVAILABLE",
+            "source": "transfer-business",
+            "window_end_ms": null,
+            "window_start_ms": null
+          }
+        ]
+      },
+      "case": "incomplete",
+      "context": {
+        "arguments_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "auth_grant_ref": null,
+        "authenticated_user_id": "policy-owner",
+        "confirmation_ref": null,
+        "contract_version": 1,
+        "facts_version": 3,
+        "idempotency_key": "policy-key",
+        "node_id": "policy-node",
+        "normalized_arguments": {
+          "amount": "200.00",
+          "currency": "CNY",
+          "draft_id": "policy-draft",
+          "draft_version": 2,
+          "operation_id": "stable-business-operation",
+          "payee_id": "policy-payee",
+          "payer_account_id": "policy-payer",
+          "remark": "模拟业务检查，不扣款",
+          "task_id": "policy-task"
+        },
+        "operation_id": "runtime-operation-different-from-business",
+        "phase": "PRE_TOOL",
+        "plan_version": 7,
+        "task_id": "policy-task",
+        "tool_name": "execute_transfer"
+      }
+    },
+    {
+      "actual_return": {
+        "disposition": "DO_NOT_EXECUTE",
+        "findings": [
+          {
+            "check_id": "transfer-funds-business",
+            "dedup_key": null,
+            "event_ids": [],
+            "evidence_refs": [],
+            "kind": "HARD_DENY",
+            "observed_value": null,
+            "policy_version": "transfer-funds-business-2026-10-18-v1",
+            "reason_code": "FUNDS_ORIGINAL_REQUIRES_QUERY",
+            "source": "transfer-business",
+            "window_end_ms": null,
+            "window_start_ms": null
+          }
+        ]
+      },
+      "case": "original",
+      "context": {
+        "arguments_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "auth_grant_ref": null,
+        "authenticated_user_id": "policy-owner",
+        "confirmation_ref": null,
+        "contract_version": 1,
+        "facts_version": 3,
+        "idempotency_key": "policy-key",
+        "node_id": "policy-node",
+        "normalized_arguments": {
+          "amount": "200.00",
+          "currency": "CNY",
+          "draft_id": "policy-draft",
+          "draft_version": 2,
+          "operation_id": "stable-business-operation",
+          "payee_id": "policy-payee",
+          "payer_account_id": "policy-payer",
+          "remark": "模拟业务检查，不扣款",
+          "task_id": "policy-task"
+        },
+        "operation_id": "runtime-operation-different-from-business",
+        "phase": "PRE_TOOL",
+        "plan_version": 7,
+        "task_id": "policy-task",
+        "tool_name": "execute_transfer"
+      }
+    },
+    {
+      "actual_return": {
+        "disposition": "DO_NOT_EXECUTE",
+        "findings": [
+          {
+            "check_id": "transfer-funds-business",
+            "dedup_key": null,
+            "event_ids": [],
+            "evidence_refs": [],
+            "kind": "HARD_DENY",
+            "observed_value": null,
+            "policy_version": "transfer-funds-business-2026-10-18-v1",
+            "reason_code": "FUNDS_IDEMPOTENCY_CONFLICT",
+            "source": "transfer-business",
+            "window_end_ms": null,
+            "window_start_ms": null
+          }
+        ]
+      },
+      "case": "key_conflict",
+      "context": {
+        "arguments_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "auth_grant_ref": null,
+        "authenticated_user_id": "policy-owner",
+        "confirmation_ref": null,
+        "contract_version": 1,
+        "facts_version": 3,
+        "idempotency_key": "policy-key",
+        "node_id": "policy-node",
+        "normalized_arguments": {
+          "amount": "200.00",
+          "currency": "CNY",
+          "draft_id": "policy-draft",
+          "draft_version": 2,
+          "operation_id": "stable-business-operation",
+          "payee_id": "policy-payee",
+          "payer_account_id": "policy-payer",
+          "remark": "模拟业务检查，不扣款",
+          "task_id": "policy-task"
+        },
+        "operation_id": "runtime-operation-different-from-business",
+        "phase": "PRE_TOOL",
+        "plan_version": 7,
+        "task_id": "policy-task",
+        "tool_name": "execute_transfer"
+      }
+    },
+    {
+      "actual_return": {
+        "disposition": "SOURCE_ERROR_DO_NOT_EXECUTE",
+        "error": {
+          "message": "simulated source failure",
+          "reason_code": "STORAGE_UNAVAILABLE"
+        }
+      },
+      "case": "source_error",
+      "context": {
+        "arguments_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "auth_grant_ref": null,
+        "authenticated_user_id": "policy-owner",
+        "confirmation_ref": null,
+        "contract_version": 1,
+        "facts_version": 3,
+        "idempotency_key": "policy-key",
+        "node_id": "policy-node",
+        "normalized_arguments": {
+          "amount": "200.00",
+          "currency": "CNY",
+          "draft_id": "policy-draft",
+          "draft_version": 2,
+          "operation_id": "stable-business-operation",
+          "payee_id": "policy-payee",
+          "payer_account_id": "policy-payer",
+          "remark": "模拟业务检查，不扣款",
+          "task_id": "policy-task"
+        },
+        "operation_id": "runtime-operation-different-from-business",
+        "phase": "PRE_TOOL",
+        "plan_version": 7,
+        "task_id": "policy-task",
+        "tool_name": "execute_transfer"
+      }
+    }
+  ],
+  "funds_executed": false,
+  "permit_issued": false,
+  "scope": "OFFLINE_BUSINESS_POLICY_FIXTURES_NOT_PUBLIC_PAYMENT",
+  "source": "explicit synthetic backend facts; tool name/hash/identity/card permission are fixtures"
+}

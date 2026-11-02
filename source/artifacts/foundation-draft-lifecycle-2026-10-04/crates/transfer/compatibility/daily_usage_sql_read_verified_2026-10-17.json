@@ -1,0 +1,46 @@
+{
+  "scope": "TRANSFER_SQL_FACTS_ONLY_NOT_PUBLIC_TIME_BINDING_OR_FUNDS_PERMIT",
+  "date": "2026-10-17",
+  "branch": "codex/transfer",
+  "base_commit": "0317f0fb2230de32fe75a6cebcd9245f244f9cf4",
+  "foundation_reference_not_merged": "f747f05c5cb51b02505b0bcf4da64b473a4bb46a",
+  "api": "FundsStore::daily_usage_facts(&mut PgConnection, &UserId)",
+  "business_rule_unchanged": "transfer-daily-usage-2026-10-17-v1",
+  "rust": "stable 1.99.0; pinned 1.98.1 not rerun",
+  "rustflags": "-Dwarnings",
+  "cargo_incremental": "0",
+  "cargo_policy": "--locked --offline; Cargo.lock unchanged",
+  "tests": {
+    "new_postgres_daily_read_regressions": {"passed": 7, "failed": 0, "ignored": 0},
+    "workspace_all_targets_all_features": {"passed": 208, "failed": 0, "ignored": 30},
+    "actual_postgres_business": {"passed": 7, "failed": 0, "ignored": 0},
+    "actual_postgres_funds_including_daily_read": {"passed": 23, "failed": 0, "ignored": 0},
+    "workspace_doc_command": {"passed": 0, "failed": 0, "ignored": 0, "exit_code": 0},
+    "fmt_check_exit_code": 0,
+    "transfer_clippy_exit_code": 0,
+    "original_funds_database_process_restart": "PASS; seven previous cases unchanged",
+    "original_draft_restart_four_processes": "PASS; IDs/version/expiry preserved",
+    "daily_read_database_process_restart": "PASS; eight owner-scoped reads exactly equal"
+  },
+  "actual_output": "fixtures/transfer/postgres_daily_usage_facts_actual_v1.json",
+  "public_submission_time_bound": false,
+  "synthetic_public_times_in_tests": true,
+  "shared_foundation_auth_migrations_permits_modified": false,
+  "new_daily_limit_or_rules_invented": false,
+  "full_public_200_transfer_connected": false,
+  "local_evidence": {
+    "logs": "target/daily-usage-sql-read-2026-10-17/",
+    "isolated_database_and_outputs": "target/transfer-pg-isolated-121557f424c64de0899164839bc2473a/",
+    "owned_database_stopped": true,
+    "pg_ctl_status_exit_code": 3,
+    "test_data_retained": true
+  },
+  "remaining": [
+    "Bind existing immutable public first_submission.recorded_at by trusted owner and funds business operation",
+    "Foundation trusted identity/account scope, consistent complete snapshot and concurrency through commit",
+    "Shared demo recipient identity mapping and foundation initialization adoption",
+    "Final public funds permit, card lock consistency and external audit assembly remain with original owners"
+  ],
+  "messages_sent": false,
+  "pull_requests_merged": false
+}

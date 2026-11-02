@@ -1,0 +1,32 @@
+{
+  "verified": true,
+  "scope": "OFFLINE_RAW_RUNTIME_EVENTS_TO_SQLITE_NOT_PUBLIC_AUDIT",
+  "audit_commit": "213b0236a2cf66fadfa42ca4517eba670e30234a",
+  "node": "v24.14.1",
+  "checks": [
+    "existing_public_lifecycle_and_fixture_validation_reused",
+    "24_actual_events_preserve_content_and_missing_fields",
+    "same_event_replay_and_all_public_query_methods",
+    "changed_content_and_unsupported_fields_rejected_without_inserting",
+    "checker_detects_fabricated_occurrence_time_and_changed_operation",
+    "sqlite_reopen_replay_deduplicated_and_hash_chain_valid"
+  ],
+  "started_at": "2026-10-18T14:07:53.414Z",
+  "formal_integration": false,
+  "persistent_global_event_ids_verified": false,
+  "network_ack_retry_verified": false,
+  "transfer_commit": "ff4ccb661eda7e4a146572a6408dfbbfaf11e747",
+  "runner_sha256": "67bbafed052db5be527de3b4b9c8ba5edc86fcbe2c128cbd8ba00a13dc99b822",
+  "reused_checker_sha256": "0654f9fce3af1dcf2c3055439cbded018d00a1625de534b2d5d671b03a744143",
+  "rustc": "rustc 1.99.0 (b940084d7 2026-09-28)",
+  "audit_source_sha256": {
+    "audit-demo/src/audit-store.js": "4a210a37f96a767cd977985752cd63ec5685d8c2b9bbcb97c38698f07ca387b7",
+    "audit-demo/src/audit-recorder.js": "caa6e8d123d6ac87d1aef359185b69a9a39d0cf09858fc41ccd9c1097328a1e7"
+  },
+  "raw_stdout_sha256": "cfe367d92824672e15a36620894594c305e55bb0f45095244a631ffe528f7671",
+  "existing_fixture_sha256": "30b39b918348e5017a545bcf9338029a0733495c0343283f70ac3e9fe4e763c0",
+  "events_received": 24,
+  "events_stored_after_two_replays_and_reopen": 24,
+  "business_reexecuted_for_audit_retry": false,
+  "finished_at": "2026-10-18T14:07:54.401Z"
+}

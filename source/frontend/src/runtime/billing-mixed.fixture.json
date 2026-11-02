@@ -1,0 +1,307 @@
+{
+  "can_start": false,
+  "clarification": null,
+  "contract_version": 1,
+  "draft": null,
+  "kind": "READ",
+  "mode": "PROJECT_SIMULATION",
+  "planning_source": "OPENAI_COMPATIBLE",
+  "results": [
+    {
+      "contract_version": 1,
+      "data": {
+        "adapter_contract": "LOCAL_BILLING_REPORT_ADAPTER_V1",
+        "production_source_connected": false,
+        "report": {
+          "calculation_reason": null,
+          "calculation_status": "READY",
+          "capabilities": {
+            "anomalies": {
+              "executed": false,
+              "reason": "ANOMALY_DETECTION_NOT_IMPLEMENTED"
+            },
+            "comparison": {
+              "executed": false,
+              "reason": "COMPARISON_NOT_IMPLEMENTED_RULES_UNCONFIRMED"
+            },
+            "net_consumption": {
+              "executed": false,
+              "reason": "REFUND_FORMULA_NOT_CONFIRMED"
+            }
+          },
+          "contract": "LOCAL_BILLING_SPENDING_V1",
+          "evidence": [
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-basic-spending",
+                "transaction_id": "food-1"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": null,
+                "status": "COMPLETED",
+                "transaction_id": "food-1",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-basic-spending",
+                "transaction_id": "food-2"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "20.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": null,
+                "status": "COMPLETED",
+                "transaction_id": "food-2",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-basic-spending",
+                "transaction_id": "unclassified"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "10.00",
+                "card_id": null,
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": null,
+                "status": "COMPLETED",
+                "transaction_id": "unclassified",
+                "transaction_type": "CONSUMPTION"
+              }
+            }
+          ],
+          "exclusions": [
+            {
+              "reason": "NOT_CONSUMPTION",
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-basic-spending",
+                "transaction_id": "transfer"
+              }
+            },
+            {
+              "reason": "NOT_COMPLETED",
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-basic-spending",
+                "transaction_id": "pending"
+              }
+            },
+            {
+              "reason": "NOT_COMPLETED",
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-basic-spending",
+                "transaction_id": "failed"
+              }
+            },
+            {
+              "reason": "NOT_CONSUMPTION",
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-basic-spending",
+                "transaction_id": "refund"
+              }
+            }
+          ],
+          "metadata": {
+            "calculated_at": "2026-10-16T12:00:00+08:00",
+            "report_id": "billing_report_operation_task_45024ecf-fcfe-4377-9801-b84425c5a3a8_report"
+          },
+          "production_registered": false,
+          "read": {
+            "duplicates_ignored": 0,
+            "is_complete": true,
+            "next_cursor": null,
+            "pages_read": 1,
+            "reason": null,
+            "snapshot_id": "fictional-report-snapshot",
+            "source_id": "fictional-basic-spending",
+            "state": "COMPLETE"
+          },
+          "refunds": [
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-basic-spending",
+                "transaction_id": "refund"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "5.00",
+                "card_id": null,
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "IN",
+                "merchant_id": null,
+                "original_tx_id": "food-1",
+                "status": "COMPLETED",
+                "transaction_id": "refund",
+                "transaction_type": "REFUND"
+              }
+            }
+          ],
+          "request": {
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-16T12:00:00+08:00",
+              "end_exclusive": "2026-10-16T12:00:00+08:00",
+              "start_inclusive": "2026-10-01T00:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            }
+          },
+          "rule_version": "LOCAL_BASIC_SPENDING_2026_10_16_V1",
+          "summary": {
+            "categories": [
+              {
+                "category_code": null,
+                "count": 1,
+                "display_name": "未分类",
+                "references": [
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-basic-spending",
+                    "transaction_id": "unclassified"
+                  }
+                ],
+                "total": "10.00"
+              },
+              {
+                "category_code": "DEMO_FOOD",
+                "count": 2,
+                "display_name": "DEMO_FOOD",
+                "references": [
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-basic-spending",
+                    "transaction_id": "food-1"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-basic-spending",
+                    "transaction_id": "food-2"
+                  }
+                ],
+                "total": "50.00"
+              }
+            ],
+            "count": 3,
+            "currency": "CNY",
+            "gross_consumption": "60.00",
+            "top_five": [
+              {
+                "reference": {
+                  "account_id": "account_001",
+                  "source_id": "fictional-basic-spending",
+                  "transaction_id": "food-1"
+                },
+                "transaction": {
+                  "account_id": "account_001",
+                  "amount": "30.00",
+                  "card_id": null,
+                  "category_code": "DEMO_FOOD",
+                  "completed_at": "2026-10-10T08:00:00+08:00",
+                  "currency": "CNY",
+                  "direction": "OUT",
+                  "merchant_id": null,
+                  "status": "COMPLETED",
+                  "transaction_id": "food-1",
+                  "transaction_type": "CONSUMPTION"
+                }
+              },
+              {
+                "reference": {
+                  "account_id": "account_001",
+                  "source_id": "fictional-basic-spending",
+                  "transaction_id": "food-2"
+                },
+                "transaction": {
+                  "account_id": "account_001",
+                  "amount": "20.00",
+                  "card_id": null,
+                  "category_code": "DEMO_FOOD",
+                  "completed_at": "2026-10-10T08:00:00+08:00",
+                  "currency": "CNY",
+                  "direction": "OUT",
+                  "merchant_id": null,
+                  "status": "COMPLETED",
+                  "transaction_id": "food-2",
+                  "transaction_type": "CONSUMPTION"
+                }
+              },
+              {
+                "reference": {
+                  "account_id": "account_001",
+                  "source_id": "fictional-basic-spending",
+                  "transaction_id": "unclassified"
+                },
+                "transaction": {
+                  "account_id": "account_001",
+                  "amount": "10.00",
+                  "card_id": null,
+                  "completed_at": "2026-10-10T08:00:00+08:00",
+                  "currency": "CNY",
+                  "direction": "OUT",
+                  "merchant_id": null,
+                  "status": "COMPLETED",
+                  "transaction_id": "unclassified",
+                  "transaction_type": "CONSUMPTION"
+                }
+              }
+            ]
+          }
+        },
+        "source_mode": "LOCAL_BOUNDED_IN_PROCESS_V1",
+        "source_revision": "7007ce2:mixed"
+      },
+      "operation_id": "operation_task_45024ecf-fcfe-4377-9801-b84425c5a3a8_report",
+      "result_ref": "billing_result_operation_task_45024ecf-fcfe-4377-9801-b84425c5a3a8_report",
+      "status": "SUCCEEDED",
+      "tool_name": "analyze_local_basic_spending"
+    }
+  ],
+  "task": {
+    "contract_version": 1,
+    "facts_version": 1,
+    "mode": "PROJECT_SIMULATION",
+    "next_action": {
+      "kind": "FINISHED"
+    },
+    "operation_state": null,
+    "operations": [],
+    "plan_version": 1,
+    "recovery": {
+      "kind": "FINISHED",
+      "task_state": "COMPLETED"
+    },
+    "replayed": false,
+    "revision": 2,
+    "security_outcome": null,
+    "security_scope": "CURRENT_DECISION_NOT_PROVIDED",
+    "task_id": "task_45024ecf-fcfe-4377-9801-b84425c5a3a8",
+    "task_state": "COMPLETED"
+  }
+}

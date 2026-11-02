@@ -1,0 +1,40 @@
+# 第5步：隔离虚构源卡安全接点 v1（本地候选）
+
+采用固定7c03三用户/三账户/三张新虚构卡及0d2809f政策、68e09f2 D20-A；仅本人主动冻结的准备与安全门。既有历史NOT_MINE/反馈确认/只读ticket不能转换为卡权。当前不具备最终卡写、卡领域成功事件或COMMIT完成证明；更正撤销延期的来源路径关闭。
+
+## 原号与输入
+
+原服务从同一Runtime的版本化SessionResolver取本人，验证完整当前目录、目录adoption与原成员ReadOnlyCardList/PreparedFreeze。客户只提供账户/卡选择和canonical UUID nonce；不接受owner、Allowed、事实版本、认证事实、许可、状态或反馈ID。服务端一次分配task、公O、成员O、canonical key及完整command/IDs，原JSON与规范化Value摘要同事务持久。UNIQUE(owner,nonce)原号重放；换参数/会话不换O。准备不是执行尝试，也没有已冻结结果。
+
+查询按当前本人账户读权限返回不可变原参数及当时准备/确认/取消事实；不要求旧会话、旧认证、原目录版本仍有效。确认状态CONFIRMED是历史确认事实，查询不评估当前许可。执行授权检查必须单独走CHECK_PERMIT；换会话/重启不会恢复授权。当前无业务writer，所有business_executed均为false。第7有真实完成核回后才可扩展此语义。
+
+## 两阶段Kernel与封闭签发
+
+1. 原确定性Kernel对受信backend policy及动作完整context给出Red最低等级和EXPLICIT_CONFIRMATION、STRONG_AUTHENTICATION两个强制gate。既有final_nonfunding在Red给出的合法结论是WAITING_AUTH；本候选保留其原值与全部findings，不改Kernel、不改为READY、不删除强认证finding。
+2. 卡专属封闭issuer在同一持久fence/账户/目录/source租约事务内核齐原确认及一次核验成功的卡限定认证。它只接受Kernel的Red/WAITING_AUTH和精确双gate，以及无额外强制处置的Informational findings（包括原Kernel的风险计分阶段不适用说明）。Blocked、NeedsInput、Critical、额外RequireGate/HardDeny/RiskSignal、错facts或配置均拒绝；这不宣称完整风险服务已接。
+3. 认证事实只从本机独立控制端生成挑战、客户正确核验的原PG行读取。绑定公O→原task/本人/会话digest+version/完整input和目录adoption，单次挑战。issuer的预检查、原PermitStore保存、finish最后检查再次核同原事实；任一改变均回滚。公共SecurityDecisionRecorded保存原Kernel结论，并单独注明双gate由原持久事实满足，不伪造通用READY认证DTO。
+4. 许可沿原封闭VerifiedPermitSnapshot/PermitStore，新增隔离scope ISOLATED_CARD及存储版本3；仅card_freeze_isolated接受isolated_card_grant_。通用确认访问、普通PermitStore读/消费、正式Verified分支均拒绝该能力，不给其他工具/资金通用授权。旧v1/v2语义、TTL与前32迁移不变。
+
+## 期限与控制端
+
+卡专属确认从可信显式确认时刻起300000ms，重复确认不续期；未确认准备无认证效力。挑战随机六位，120000ms、最多5次，只存SHA256绑定hash；成功核验事实120000ms，不能再次使用挑战。许可60000ms且受确认、认证更早失效共同限制，到期相等即拒绝。生产用PG clock_timestamp，测试才允许注入可信时钟，不接受客户时间。
+
+ApiState::for_unified_card_safety在native组装时接独立32—256字节controller secret，拒与login secret相同；Inner保存同一随机host generation。挑战没有HTTP路由，loopback、自报header、客户login均不能取得控制权。examples/card_safety从私有stdin取凭据，在同一API宿主上运行HTTP及原号挑战控制命令；stdout是本机一次显示渠道，禁止采集到持久日志或转发LLM/客户。挑战delivery仅一次取secret；重取只给原challenge_id。新宿主generation令旧挑战/认证失效。
+
+## 保护根与第7接点
+
+锁序：session fence（新建后立刻锁）→account fence→owner advisory→task/原确认→transfer账户FOR UPDATE→source singleton FOR SHARE→原卡账户/目录；挑战、许可随后锁定。session/account fence一向撤销且不可删除/复活；客户登出/旋转先取得同一持久根提交撤权，再撤原resolver。独立native账号撤权使用同账户根。
+
+采用v1没有修改目录成员/归属/期初/收款关系的API。0033公共条件trigger在已采用singleton存在时禁止这些identity/source写，覆盖未初始化卡的其他账户及新增/删除phantom；booked余额不受该源trigger限制。未采用源的旧环境不改变这些规则。原source active=false由原不可变trigger和SHARE租约串行化；原成员card版本继续保护目录/锁事实。没有泛化其他provider为已受保护。
+
+私有card_safety::unit创建真实PermitTransaction(card protection)，消费走原consume/current/full fingerprint/原确认验证；最后保护检查在所有await之后取可信DB时刻、核最早期限及同步Session，再进入提交阶段。测试真实消费后回滚，重放拒绝；finish(true)当前明确拒绝无第7严格完成核验的裸消费提交。第7应在同模块/子模块内装配唯一writer、执行尝试/未知提交原号恢复、严格读回、领域link及审计Outbox同一COMMIT，再按合同补最终窗口证明，不能开放公用callback绕过此根。
+
+本候选仅本机隔离模拟，不是共享身份、银行认证、正式PG审计或业务完成。编写自测与指定独审分别记录。
+
+## 2026-10-27 repair1：时间与等待恢复
+
+挑战核验先取得原挑战行保护，再读取可信DB时间；同步比对后按此核验时刻记录verified_ms及120000ms认证期限。确认/挑战持久化及审计完成后，重新核原绑定和受保护来源，最后采可信时间并检查原确认、原挑战绝对期限，再进入提交。重复确认及挑战均不续期；相等拒绝和全部TTL保持。
+
+客户卡安全操作的提交前工作以既有repository::guarded_poll检查同一当前会话绑定，覆盖pool/transaction及嵌套成员future的每次实际等待恢复；begin、unit和供PermitTransaction调用的guard_unit亦有保护。卡限定PermitTransaction::final_guard通过同一轮询守卫检查，其他scope保持原行为。受检准备返回事务后同步检查本人再进入COMMIT，已经发出的COMMIT继续等待结果，沿原提交不确定性语义处理；不因后续会话失效取消在途提交。当前本人历史查询不新增执行fence/旧认证要求，仍允许新有效本人会话读原准备、确认及撤销事实。单向持久撤权维护不在此包装范围内，不会因此恢复任何授权。
+
+普通时间/会话回归不等于运行过SQL等待交错；S05-R1/R2最终关闭仍须指定独审核具体时序、覆盖与限制。

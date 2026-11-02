@@ -1,0 +1,1066 @@
+{
+  "audit_integrated": false,
+  "audit_page_count": 2,
+  "caller_owned_transactions": 4,
+  "capabilities": [
+    "confirm_subscription",
+    "create_cancellation_intent",
+    "get_cancellation_status",
+    "identify_subscriptions",
+    "list_subscriptions",
+    "revoke_cancellation_intent",
+    "update_reminder_settings"
+  ],
+  "capability_count": 7,
+  "database_execution": true,
+  "discovery": {
+    "initial_subscription_count": 0,
+    "review": {
+      "business_writes": false,
+      "groups": [
+        {
+          "disposition": "NOT_IN_LEDGER",
+          "group": {
+            "account_ids": [
+              "account_001"
+            ],
+            "actual_charges": [
+              {
+                "account_id": "account_001",
+                "amount_minor_units": 1990,
+                "completed_at": "2026-07-15T08:00:00+08:00",
+                "source_key": {
+                  "account_id": "account_001",
+                  "source_id": "fictional-billing-input-v1",
+                  "transaction_id": "fictional-consumption-july"
+                },
+                "transaction_id": "fictional-consumption-july"
+              },
+              {
+                "account_id": "account_001",
+                "amount_minor_units": 1990,
+                "completed_at": "2026-08-15T08:00:00+08:00",
+                "source_key": {
+                  "account_id": "account_001",
+                  "source_id": "fictional-billing-input-v1",
+                  "transaction_id": "fictional-consumption-august"
+                },
+                "transaction_id": "fictional-consumption-august"
+              }
+            ],
+            "currency": "CNY",
+            "cycles": [
+              {
+                "cycle": "DAY",
+                "missing_period_count": 0,
+                "observed_period_indices": [
+                  0,
+                  31
+                ],
+                "status": "DOES_NOT_MATCH"
+              },
+              {
+                "cycle": "WEEK",
+                "missing_period_count": 0,
+                "observed_period_indices": [],
+                "status": "DOES_NOT_MATCH"
+              },
+              {
+                "cycle": "CALENDAR_MONTH",
+                "missing_period_count": 0,
+                "observed_period_indices": [
+                  0,
+                  1
+                ],
+                "status": "MATCHES"
+              }
+            ],
+            "merchant_id": "merchant_demo_video",
+            "message": "疑似周期消费，请确认是否为订阅；未自动登记。",
+            "mock_service_ref": "service_demo_video_1",
+            "status": "SUSPECTED"
+          },
+          "matched_subscription_ids": [],
+          "reason": "NO_EXACT_LEDGER_MATCH"
+        }
+      ],
+      "matching_executed": true,
+      "mode": "OFFLINE_MOCK_LEDGER_REVIEW",
+      "production_registered": false,
+      "reason": "MOCK_LEDGER_REVIEWED",
+      "team_contract_approved": false
+    }
+  },
+  "fictional": true,
+  "foundation_integration_executed": false,
+  "incremental_record_count": 4,
+  "merchant_action_executed": false,
+  "notification_sent": false,
+  "production_registered": false,
+  "steps": [
+    {
+      "action": "register",
+      "business_records": [
+        {
+          "original_binding": {
+            "as_of": "2026-10-13T12:00:00+08:00",
+            "candidate": {
+              "account_ids": [
+                "account_001"
+              ],
+              "actual_charges": [
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-07-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-consumption-july"
+                  },
+                  "transaction_id": "fictional-consumption-july"
+                },
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-08-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-consumption-august"
+                  },
+                  "transaction_id": "fictional-consumption-august"
+                }
+              ],
+              "currency": "CNY",
+              "cycles": [
+                {
+                  "cycle": "DAY",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [
+                    0,
+                    31
+                  ],
+                  "status": "DOES_NOT_MATCH"
+                },
+                {
+                  "cycle": "WEEK",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [],
+                  "status": "DOES_NOT_MATCH"
+                },
+                {
+                  "cycle": "CALENDAR_MONTH",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [
+                    0,
+                    1
+                  ],
+                  "status": "MATCHES"
+                }
+              ],
+              "merchant_id": "merchant_demo_video",
+              "message": "疑似周期消费，请确认是否为订阅；未自动登记。",
+              "mock_service_ref": "service_demo_video_1",
+              "status": "SUSPECTED"
+            },
+            "context": {
+              "idempotency_key": "fictional-register",
+              "node_id": "register",
+              "operation_id": "register",
+              "plan_version": 1,
+              "session_ref": "fictional-session",
+              "task_id": "fictional-handoff",
+              "user_id": "fictional-handoff-19220-1792385509524914600"
+            },
+            "draft_id": "mock-sub-draft-1",
+            "expires_at": "2026-10-14T12:05:00+08:00",
+            "ledger_revision": 0,
+            "minimum_level": "YELLOW",
+            "requested_account_ids": [
+              "account_001"
+            ]
+          },
+          "original_command": {
+            "context": {
+              "idempotency_key": "fictional-register",
+              "node_id": "register",
+              "operation_id": "register",
+              "plan_version": 1,
+              "session_ref": "fictional-session",
+              "task_id": "fictional-handoff",
+              "user_id": "fictional-handoff-19220-1792385509524914600"
+            },
+            "draft": "mock-sub-draft-1",
+            "kind": "Register",
+            "now": "2026-10-14T12:00:00+08:00",
+            "receipt": {
+              "audit_integrated": false,
+              "fictional": true,
+              "merchant_action_executed": false,
+              "message": "已写入本次模拟台账；未接入正式系统，未发提醒或操作商户。",
+              "notification_sent": false,
+              "operation_id": "register",
+              "production_registered": false,
+              "state": "ACTIVE",
+              "subscription_id": "mock-sub-mock-sub-draft-1-1"
+            }
+          },
+          "source_command_position": 1
+        }
+      ],
+      "ledger": [
+        {
+          "merchant_id": "merchant_demo_video",
+          "owner_user_id": "fictional-handoff-19220-1792385509524914600",
+          "service_ref": "service_demo_video_1",
+          "source_id": "fictional-billing-input-v1",
+          "status": "ACTIVE",
+          "subscription_id": "mock-sub-mock-sub-draft-1-1"
+        }
+      ],
+      "original_matches": true,
+      "receipt": {
+        "audit_integrated": false,
+        "fictional": true,
+        "merchant_action_executed": false,
+        "message": "已写入本次模拟台账；未接入正式系统，未发提醒或操作商户。",
+        "notification_sent": false,
+        "operation_id": "register",
+        "production_registered": false,
+        "state": "ACTIVE",
+        "subscription_id": "mock-sub-mock-sub-draft-1-1"
+      },
+      "version": 3
+    },
+    {
+      "action": "settings",
+      "business_records": [
+        {
+          "original_binding": {
+            "as_of": "2026-10-13T12:00:00+08:00",
+            "candidate": {
+              "account_ids": [
+                "account_001"
+              ],
+              "actual_charges": [
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-07-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-consumption-july"
+                  },
+                  "transaction_id": "fictional-consumption-july"
+                },
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-08-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-consumption-august"
+                  },
+                  "transaction_id": "fictional-consumption-august"
+                }
+              ],
+              "currency": "CNY",
+              "cycles": [
+                {
+                  "cycle": "DAY",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [
+                    0,
+                    31
+                  ],
+                  "status": "DOES_NOT_MATCH"
+                },
+                {
+                  "cycle": "WEEK",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [],
+                  "status": "DOES_NOT_MATCH"
+                },
+                {
+                  "cycle": "CALENDAR_MONTH",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [
+                    0,
+                    1
+                  ],
+                  "status": "MATCHES"
+                }
+              ],
+              "merchant_id": "merchant_demo_video",
+              "message": "疑似周期消费，请确认是否为订阅；未自动登记。",
+              "mock_service_ref": "service_demo_video_1",
+              "status": "SUSPECTED"
+            },
+            "context": {
+              "idempotency_key": "fictional-register",
+              "node_id": "register",
+              "operation_id": "register",
+              "plan_version": 1,
+              "session_ref": "fictional-session",
+              "task_id": "fictional-handoff",
+              "user_id": "fictional-handoff-19220-1792385509524914600"
+            },
+            "draft_id": "mock-sub-draft-1",
+            "expires_at": "2026-10-14T12:05:00+08:00",
+            "ledger_revision": 0,
+            "minimum_level": "YELLOW",
+            "requested_account_ids": [
+              "account_001"
+            ]
+          },
+          "original_command": {
+            "context": {
+              "idempotency_key": "fictional-register",
+              "node_id": "register",
+              "operation_id": "register",
+              "plan_version": 1,
+              "session_ref": "fictional-session",
+              "task_id": "fictional-handoff",
+              "user_id": "fictional-handoff-19220-1792385509524914600"
+            },
+            "draft": "mock-sub-draft-1",
+            "kind": "Register",
+            "now": "2026-10-14T12:00:00+08:00",
+            "receipt": {
+              "audit_integrated": false,
+              "fictional": true,
+              "merchant_action_executed": false,
+              "message": "已写入本次模拟台账；未接入正式系统，未发提醒或操作商户。",
+              "notification_sent": false,
+              "operation_id": "register",
+              "production_registered": false,
+              "state": "ACTIVE",
+              "subscription_id": "mock-sub-mock-sub-draft-1-1"
+            }
+          },
+          "source_command_position": 1
+        },
+        {
+          "original_binding": {
+            "context": {
+              "idempotency_key": "fictional-settings",
+              "node_id": "settings",
+              "operation_id": "settings",
+              "plan_version": 1,
+              "session_ref": "fictional-session",
+              "task_id": "fictional-handoff",
+              "user_id": "fictional-handoff-19220-1792385509524914600"
+            },
+            "expires_at": "2026-10-14T12:05:00+08:00",
+            "ledger_revision": 1,
+            "minimum_level": "YELLOW",
+            "prepared_at": "2026-10-14T12:00:00+08:00",
+            "schedule": {
+              "anchor_date": "2026-09-17",
+              "cycle": "CALENDAR_MONTH",
+              "days_before": 3,
+              "enabled": true,
+              "expected_date": "2026-10-17",
+              "period_index": 1
+            },
+            "settings_revision": 0,
+            "target": {
+              "merchant_id": "merchant_demo_video",
+              "owner_user_id": "fictional-handoff-19220-1792385509524914600",
+              "service_ref": "service_demo_video_1",
+              "source_id": "fictional-billing-input-v1",
+              "status": "ACTIVE",
+              "subscription_id": "mock-sub-mock-sub-draft-1-1"
+            }
+          },
+          "original_command": {
+            "binding": {
+              "context": {
+                "idempotency_key": "fictional-settings",
+                "node_id": "settings",
+                "operation_id": "settings",
+                "plan_version": 1,
+                "session_ref": "fictional-session",
+                "task_id": "fictional-handoff",
+                "user_id": "fictional-handoff-19220-1792385509524914600"
+              },
+              "expires_at": "2026-10-14T12:05:00+08:00",
+              "ledger_revision": 1,
+              "minimum_level": "YELLOW",
+              "prepared_at": "2026-10-14T12:00:00+08:00",
+              "schedule": {
+                "anchor_date": "2026-09-17",
+                "cycle": "CALENDAR_MONTH",
+                "days_before": 3,
+                "enabled": true,
+                "expected_date": "2026-10-17",
+                "period_index": 1
+              },
+              "settings_revision": 0,
+              "target": {
+                "merchant_id": "merchant_demo_video",
+                "owner_user_id": "fictional-handoff-19220-1792385509524914600",
+                "service_ref": "service_demo_video_1",
+                "source_id": "fictional-billing-input-v1",
+                "status": "ACTIVE",
+                "subscription_id": "mock-sub-mock-sub-draft-1-1"
+              }
+            },
+            "kind": "Settings",
+            "now": "2026-10-14T12:00:00+08:00",
+            "operation": "settings",
+            "receipt": {
+              "days_before": 3,
+              "expected_date": "2026-10-17",
+              "fictional": true,
+              "message": "已确认本次模拟提醒日期与设置；仅本地模拟，未向用户发送通知。",
+              "notification_sent": false,
+              "operation_id": "settings",
+              "production_registered": false,
+              "subscription_id": "mock-sub-mock-sub-draft-1-1"
+            }
+          },
+          "source_command_position": 3
+        }
+      ],
+      "ledger": [
+        {
+          "merchant_id": "merchant_demo_video",
+          "owner_user_id": "fictional-handoff-19220-1792385509524914600",
+          "service_ref": "service_demo_video_1",
+          "source_id": "fictional-billing-input-v1",
+          "status": "ACTIVE",
+          "subscription_id": "mock-sub-mock-sub-draft-1-1"
+        }
+      ],
+      "original_matches": true,
+      "receipt": {
+        "days_before": 3,
+        "expected_date": "2026-10-17",
+        "fictional": true,
+        "message": "已确认本次模拟提醒日期与设置；仅本地模拟，未向用户发送通知。",
+        "notification_sent": false,
+        "operation_id": "settings",
+        "production_registered": false,
+        "subscription_id": "mock-sub-mock-sub-draft-1-1"
+      },
+      "version": 5
+    },
+    {
+      "action": "cancel",
+      "business_records": [
+        {
+          "original_binding": {
+            "as_of": "2026-10-13T12:00:00+08:00",
+            "candidate": {
+              "account_ids": [
+                "account_001"
+              ],
+              "actual_charges": [
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-07-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-consumption-july"
+                  },
+                  "transaction_id": "fictional-consumption-july"
+                },
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-08-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-consumption-august"
+                  },
+                  "transaction_id": "fictional-consumption-august"
+                }
+              ],
+              "currency": "CNY",
+              "cycles": [
+                {
+                  "cycle": "DAY",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [
+                    0,
+                    31
+                  ],
+                  "status": "DOES_NOT_MATCH"
+                },
+                {
+                  "cycle": "WEEK",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [],
+                  "status": "DOES_NOT_MATCH"
+                },
+                {
+                  "cycle": "CALENDAR_MONTH",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [
+                    0,
+                    1
+                  ],
+                  "status": "MATCHES"
+                }
+              ],
+              "merchant_id": "merchant_demo_video",
+              "message": "疑似周期消费，请确认是否为订阅；未自动登记。",
+              "mock_service_ref": "service_demo_video_1",
+              "status": "SUSPECTED"
+            },
+            "context": {
+              "idempotency_key": "fictional-register",
+              "node_id": "register",
+              "operation_id": "register",
+              "plan_version": 1,
+              "session_ref": "fictional-session",
+              "task_id": "fictional-handoff",
+              "user_id": "fictional-handoff-19220-1792385509524914600"
+            },
+            "draft_id": "mock-sub-draft-1",
+            "expires_at": "2026-10-14T12:05:00+08:00",
+            "ledger_revision": 0,
+            "minimum_level": "YELLOW",
+            "requested_account_ids": [
+              "account_001"
+            ]
+          },
+          "original_command": {
+            "context": {
+              "idempotency_key": "fictional-register",
+              "node_id": "register",
+              "operation_id": "register",
+              "plan_version": 1,
+              "session_ref": "fictional-session",
+              "task_id": "fictional-handoff",
+              "user_id": "fictional-handoff-19220-1792385509524914600"
+            },
+            "draft": "mock-sub-draft-1",
+            "kind": "Register",
+            "now": "2026-10-14T12:00:00+08:00",
+            "receipt": {
+              "audit_integrated": false,
+              "fictional": true,
+              "merchant_action_executed": false,
+              "message": "已写入本次模拟台账；未接入正式系统，未发提醒或操作商户。",
+              "notification_sent": false,
+              "operation_id": "register",
+              "production_registered": false,
+              "state": "ACTIVE",
+              "subscription_id": "mock-sub-mock-sub-draft-1-1"
+            }
+          },
+          "source_command_position": 1
+        },
+        {
+          "original_binding": {
+            "context": {
+              "idempotency_key": "fictional-settings",
+              "node_id": "settings",
+              "operation_id": "settings",
+              "plan_version": 1,
+              "session_ref": "fictional-session",
+              "task_id": "fictional-handoff",
+              "user_id": "fictional-handoff-19220-1792385509524914600"
+            },
+            "expires_at": "2026-10-14T12:05:00+08:00",
+            "ledger_revision": 1,
+            "minimum_level": "YELLOW",
+            "prepared_at": "2026-10-14T12:00:00+08:00",
+            "schedule": {
+              "anchor_date": "2026-09-17",
+              "cycle": "CALENDAR_MONTH",
+              "days_before": 3,
+              "enabled": true,
+              "expected_date": "2026-10-17",
+              "period_index": 1
+            },
+            "settings_revision": 0,
+            "target": {
+              "merchant_id": "merchant_demo_video",
+              "owner_user_id": "fictional-handoff-19220-1792385509524914600",
+              "service_ref": "service_demo_video_1",
+              "source_id": "fictional-billing-input-v1",
+              "status": "ACTIVE",
+              "subscription_id": "mock-sub-mock-sub-draft-1-1"
+            }
+          },
+          "original_command": {
+            "binding": {
+              "context": {
+                "idempotency_key": "fictional-settings",
+                "node_id": "settings",
+                "operation_id": "settings",
+                "plan_version": 1,
+                "session_ref": "fictional-session",
+                "task_id": "fictional-handoff",
+                "user_id": "fictional-handoff-19220-1792385509524914600"
+              },
+              "expires_at": "2026-10-14T12:05:00+08:00",
+              "ledger_revision": 1,
+              "minimum_level": "YELLOW",
+              "prepared_at": "2026-10-14T12:00:00+08:00",
+              "schedule": {
+                "anchor_date": "2026-09-17",
+                "cycle": "CALENDAR_MONTH",
+                "days_before": 3,
+                "enabled": true,
+                "expected_date": "2026-10-17",
+                "period_index": 1
+              },
+              "settings_revision": 0,
+              "target": {
+                "merchant_id": "merchant_demo_video",
+                "owner_user_id": "fictional-handoff-19220-1792385509524914600",
+                "service_ref": "service_demo_video_1",
+                "source_id": "fictional-billing-input-v1",
+                "status": "ACTIVE",
+                "subscription_id": "mock-sub-mock-sub-draft-1-1"
+              }
+            },
+            "kind": "Settings",
+            "now": "2026-10-14T12:00:00+08:00",
+            "operation": "settings",
+            "receipt": {
+              "days_before": 3,
+              "expected_date": "2026-10-17",
+              "fictional": true,
+              "message": "已确认本次模拟提醒日期与设置；仅本地模拟，未向用户发送通知。",
+              "notification_sent": false,
+              "operation_id": "settings",
+              "production_registered": false,
+              "subscription_id": "mock-sub-mock-sub-draft-1-1"
+            }
+          },
+          "source_command_position": 3
+        },
+        {
+          "original_binding": {
+            "context": {
+              "idempotency_key": "fictional-cancel",
+              "node_id": "cancel",
+              "operation_id": "cancel",
+              "plan_version": 1,
+              "session_ref": "fictional-session",
+              "task_id": "fictional-handoff",
+              "user_id": "fictional-handoff-19220-1792385509524914600"
+            },
+            "draft_id": "mock-intent-draft-2",
+            "expires_at": "2026-10-14T12:05:00+08:00",
+            "kind": "RECORD",
+            "ledger_revision": 1,
+            "minimum_level": "YELLOW",
+            "prepared_at": "2026-10-14T12:00:00+08:00",
+            "target": {
+              "merchant_id": "merchant_demo_video",
+              "owner_user_id": "fictional-handoff-19220-1792385509524914600",
+              "service_ref": "service_demo_video_1",
+              "source_id": "fictional-billing-input-v1",
+              "status": "ACTIVE",
+              "subscription_id": "mock-sub-mock-sub-draft-1-1"
+            }
+          },
+          "original_command": {
+            "context": {
+              "idempotency_key": "fictional-cancel",
+              "node_id": "cancel",
+              "operation_id": "cancel",
+              "plan_version": 1,
+              "session_ref": "fictional-session",
+              "task_id": "fictional-handoff",
+              "user_id": "fictional-handoff-19220-1792385509524914600"
+            },
+            "draft": "mock-intent-draft-2",
+            "kind": "Intent",
+            "now": "2026-10-14T12:00:00+08:00",
+            "receipt": {
+              "audit_integrated": false,
+              "fictional": true,
+              "kind": "RECORD",
+              "ledger_state_at_operation": "CANCELLING",
+              "local_intent_state": "RECORDED",
+              "merchant_action_executed": false,
+              "merchant_cancellation_confirmed": false,
+              "merchant_service_restored": false,
+              "message": "已记录本次模拟取消意图，请到商户官方渠道完成；未替您取消商户订阅。",
+              "notification_sent": false,
+              "operation_id": "cancel",
+              "production_registered": false,
+              "subscription_id": "mock-sub-mock-sub-draft-1-1"
+            }
+          },
+          "source_command_position": 5
+        }
+      ],
+      "ledger": [
+        {
+          "merchant_id": "merchant_demo_video",
+          "owner_user_id": "fictional-handoff-19220-1792385509524914600",
+          "service_ref": "service_demo_video_1",
+          "source_id": "fictional-billing-input-v1",
+          "status": "CANCELLING",
+          "subscription_id": "mock-sub-mock-sub-draft-1-1"
+        }
+      ],
+      "original_matches": true,
+      "receipt": {
+        "audit_integrated": false,
+        "fictional": true,
+        "kind": "RECORD",
+        "ledger_state_at_operation": "CANCELLING",
+        "local_intent_state": "RECORDED",
+        "merchant_action_executed": false,
+        "merchant_cancellation_confirmed": false,
+        "merchant_service_restored": false,
+        "message": "已记录本次模拟取消意图，请到商户官方渠道完成；未替您取消商户订阅。",
+        "notification_sent": false,
+        "operation_id": "cancel",
+        "production_registered": false,
+        "subscription_id": "mock-sub-mock-sub-draft-1-1"
+      },
+      "version": 7
+    },
+    {
+      "action": "revoke",
+      "business_records": [
+        {
+          "original_binding": {
+            "as_of": "2026-10-13T12:00:00+08:00",
+            "candidate": {
+              "account_ids": [
+                "account_001"
+              ],
+              "actual_charges": [
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-07-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-consumption-july"
+                  },
+                  "transaction_id": "fictional-consumption-july"
+                },
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-08-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-consumption-august"
+                  },
+                  "transaction_id": "fictional-consumption-august"
+                }
+              ],
+              "currency": "CNY",
+              "cycles": [
+                {
+                  "cycle": "DAY",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [
+                    0,
+                    31
+                  ],
+                  "status": "DOES_NOT_MATCH"
+                },
+                {
+                  "cycle": "WEEK",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [],
+                  "status": "DOES_NOT_MATCH"
+                },
+                {
+                  "cycle": "CALENDAR_MONTH",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [
+                    0,
+                    1
+                  ],
+                  "status": "MATCHES"
+                }
+              ],
+              "merchant_id": "merchant_demo_video",
+              "message": "疑似周期消费，请确认是否为订阅；未自动登记。",
+              "mock_service_ref": "service_demo_video_1",
+              "status": "SUSPECTED"
+            },
+            "context": {
+              "idempotency_key": "fictional-register",
+              "node_id": "register",
+              "operation_id": "register",
+              "plan_version": 1,
+              "session_ref": "fictional-session",
+              "task_id": "fictional-handoff",
+              "user_id": "fictional-handoff-19220-1792385509524914600"
+            },
+            "draft_id": "mock-sub-draft-1",
+            "expires_at": "2026-10-14T12:05:00+08:00",
+            "ledger_revision": 0,
+            "minimum_level": "YELLOW",
+            "requested_account_ids": [
+              "account_001"
+            ]
+          },
+          "original_command": {
+            "context": {
+              "idempotency_key": "fictional-register",
+              "node_id": "register",
+              "operation_id": "register",
+              "plan_version": 1,
+              "session_ref": "fictional-session",
+              "task_id": "fictional-handoff",
+              "user_id": "fictional-handoff-19220-1792385509524914600"
+            },
+            "draft": "mock-sub-draft-1",
+            "kind": "Register",
+            "now": "2026-10-14T12:00:00+08:00",
+            "receipt": {
+              "audit_integrated": false,
+              "fictional": true,
+              "merchant_action_executed": false,
+              "message": "已写入本次模拟台账；未接入正式系统，未发提醒或操作商户。",
+              "notification_sent": false,
+              "operation_id": "register",
+              "production_registered": false,
+              "state": "ACTIVE",
+              "subscription_id": "mock-sub-mock-sub-draft-1-1"
+            }
+          },
+          "source_command_position": 1
+        },
+        {
+          "original_binding": {
+            "context": {
+              "idempotency_key": "fictional-settings",
+              "node_id": "settings",
+              "operation_id": "settings",
+              "plan_version": 1,
+              "session_ref": "fictional-session",
+              "task_id": "fictional-handoff",
+              "user_id": "fictional-handoff-19220-1792385509524914600"
+            },
+            "expires_at": "2026-10-14T12:05:00+08:00",
+            "ledger_revision": 1,
+            "minimum_level": "YELLOW",
+            "prepared_at": "2026-10-14T12:00:00+08:00",
+            "schedule": {
+              "anchor_date": "2026-09-17",
+              "cycle": "CALENDAR_MONTH",
+              "days_before": 3,
+              "enabled": true,
+              "expected_date": "2026-10-17",
+              "period_index": 1
+            },
+            "settings_revision": 0,
+            "target": {
+              "merchant_id": "merchant_demo_video",
+              "owner_user_id": "fictional-handoff-19220-1792385509524914600",
+              "service_ref": "service_demo_video_1",
+              "source_id": "fictional-billing-input-v1",
+              "status": "ACTIVE",
+              "subscription_id": "mock-sub-mock-sub-draft-1-1"
+            }
+          },
+          "original_command": {
+            "binding": {
+              "context": {
+                "idempotency_key": "fictional-settings",
+                "node_id": "settings",
+                "operation_id": "settings",
+                "plan_version": 1,
+                "session_ref": "fictional-session",
+                "task_id": "fictional-handoff",
+                "user_id": "fictional-handoff-19220-1792385509524914600"
+              },
+              "expires_at": "2026-10-14T12:05:00+08:00",
+              "ledger_revision": 1,
+              "minimum_level": "YELLOW",
+              "prepared_at": "2026-10-14T12:00:00+08:00",
+              "schedule": {
+                "anchor_date": "2026-09-17",
+                "cycle": "CALENDAR_MONTH",
+                "days_before": 3,
+                "enabled": true,
+                "expected_date": "2026-10-17",
+                "period_index": 1
+              },
+              "settings_revision": 0,
+              "target": {
+                "merchant_id": "merchant_demo_video",
+                "owner_user_id": "fictional-handoff-19220-1792385509524914600",
+                "service_ref": "service_demo_video_1",
+                "source_id": "fictional-billing-input-v1",
+                "status": "ACTIVE",
+                "subscription_id": "mock-sub-mock-sub-draft-1-1"
+              }
+            },
+            "kind": "Settings",
+            "now": "2026-10-14T12:00:00+08:00",
+            "operation": "settings",
+            "receipt": {
+              "days_before": 3,
+              "expected_date": "2026-10-17",
+              "fictional": true,
+              "message": "已确认本次模拟提醒日期与设置；仅本地模拟，未向用户发送通知。",
+              "notification_sent": false,
+              "operation_id": "settings",
+              "production_registered": false,
+              "subscription_id": "mock-sub-mock-sub-draft-1-1"
+            }
+          },
+          "source_command_position": 3
+        },
+        {
+          "original_binding": {
+            "context": {
+              "idempotency_key": "fictional-cancel",
+              "node_id": "cancel",
+              "operation_id": "cancel",
+              "plan_version": 1,
+              "session_ref": "fictional-session",
+              "task_id": "fictional-handoff",
+              "user_id": "fictional-handoff-19220-1792385509524914600"
+            },
+            "draft_id": "mock-intent-draft-2",
+            "expires_at": "2026-10-14T12:05:00+08:00",
+            "kind": "RECORD",
+            "ledger_revision": 1,
+            "minimum_level": "YELLOW",
+            "prepared_at": "2026-10-14T12:00:00+08:00",
+            "target": {
+              "merchant_id": "merchant_demo_video",
+              "owner_user_id": "fictional-handoff-19220-1792385509524914600",
+              "service_ref": "service_demo_video_1",
+              "source_id": "fictional-billing-input-v1",
+              "status": "ACTIVE",
+              "subscription_id": "mock-sub-mock-sub-draft-1-1"
+            }
+          },
+          "original_command": {
+            "context": {
+              "idempotency_key": "fictional-cancel",
+              "node_id": "cancel",
+              "operation_id": "cancel",
+              "plan_version": 1,
+              "session_ref": "fictional-session",
+              "task_id": "fictional-handoff",
+              "user_id": "fictional-handoff-19220-1792385509524914600"
+            },
+            "draft": "mock-intent-draft-2",
+            "kind": "Intent",
+            "now": "2026-10-14T12:00:00+08:00",
+            "receipt": {
+              "audit_integrated": false,
+              "fictional": true,
+              "kind": "RECORD",
+              "ledger_state_at_operation": "CANCELLING",
+              "local_intent_state": "RECORDED",
+              "merchant_action_executed": false,
+              "merchant_cancellation_confirmed": false,
+              "merchant_service_restored": false,
+              "message": "已记录本次模拟取消意图，请到商户官方渠道完成；未替您取消商户订阅。",
+              "notification_sent": false,
+              "operation_id": "cancel",
+              "production_registered": false,
+              "subscription_id": "mock-sub-mock-sub-draft-1-1"
+            }
+          },
+          "source_command_position": 5
+        },
+        {
+          "original_binding": {
+            "context": {
+              "idempotency_key": "fictional-revoke",
+              "node_id": "revoke",
+              "operation_id": "revoke",
+              "plan_version": 1,
+              "session_ref": "fictional-session",
+              "task_id": "fictional-handoff",
+              "user_id": "fictional-handoff-19220-1792385509524914600"
+            },
+            "draft_id": "mock-intent-draft-3",
+            "expires_at": "2026-10-14T12:05:00+08:00",
+            "kind": "REVOKE",
+            "ledger_revision": 2,
+            "minimum_level": "YELLOW",
+            "prepared_at": "2026-10-14T12:00:00+08:00",
+            "target": {
+              "merchant_id": "merchant_demo_video",
+              "owner_user_id": "fictional-handoff-19220-1792385509524914600",
+              "service_ref": "service_demo_video_1",
+              "source_id": "fictional-billing-input-v1",
+              "status": "CANCELLING",
+              "subscription_id": "mock-sub-mock-sub-draft-1-1"
+            }
+          },
+          "original_command": {
+            "context": {
+              "idempotency_key": "fictional-revoke",
+              "node_id": "revoke",
+              "operation_id": "revoke",
+              "plan_version": 1,
+              "session_ref": "fictional-session",
+              "task_id": "fictional-handoff",
+              "user_id": "fictional-handoff-19220-1792385509524914600"
+            },
+            "draft": "mock-intent-draft-3",
+            "kind": "Intent",
+            "now": "2026-10-14T12:00:00+08:00",
+            "receipt": {
+              "audit_integrated": false,
+              "fictional": true,
+              "kind": "REVOKE",
+              "ledger_state_at_operation": "ACTIVE",
+              "local_intent_state": "REVOKED",
+              "merchant_action_executed": false,
+              "merchant_cancellation_confirmed": false,
+              "merchant_service_restored": false,
+              "message": "已撤回本次模拟台账的取消意图；仅影响SafeFlow登记，无法替您恢复商户服务。",
+              "notification_sent": false,
+              "operation_id": "revoke",
+              "production_registered": false,
+              "subscription_id": "mock-sub-mock-sub-draft-1-1"
+            }
+          },
+          "source_command_position": 7
+        }
+      ],
+      "ledger": [
+        {
+          "merchant_id": "merchant_demo_video",
+          "owner_user_id": "fictional-handoff-19220-1792385509524914600",
+          "service_ref": "service_demo_video_1",
+          "source_id": "fictional-billing-input-v1",
+          "status": "ACTIVE",
+          "subscription_id": "mock-sub-mock-sub-draft-1-1"
+        }
+      ],
+      "original_matches": true,
+      "receipt": {
+        "audit_integrated": false,
+        "fictional": true,
+        "kind": "REVOKE",
+        "ledger_state_at_operation": "ACTIVE",
+        "local_intent_state": "REVOKED",
+        "merchant_action_executed": false,
+        "merchant_cancellation_confirmed": false,
+        "merchant_service_restored": false,
+        "message": "已撤回本次模拟台账的取消意图；仅影响SafeFlow登记，无法替您恢复商户服务。",
+        "notification_sent": false,
+        "operation_id": "revoke",
+        "production_registered": false,
+        "subscription_id": "mock-sub-mock-sub-draft-1-1"
+      },
+      "version": 9
+    }
+  ]
+}

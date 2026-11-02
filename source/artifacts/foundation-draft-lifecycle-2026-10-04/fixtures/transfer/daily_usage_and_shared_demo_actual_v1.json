@@ -1,0 +1,166 @@
+{
+  "daily_scenarios": [
+    {
+      "calculated_usage": {
+        "carried_pending_cents": 20000,
+        "pending_today_cents": 0,
+        "rule_version": "transfer-daily-usage-2026-10-17-v1",
+        "statistical_day": "2026-10-17",
+        "successful_cents": 5000,
+        "used_cents": 25000
+      },
+      "older_order_latest_status": "PROCESSING",
+      "trusted_fixture_input": [
+        {
+          "amount": "200.00",
+          "operation_id": "fixture-old-operation",
+          "owner_id": "user_001",
+          "payer_account_id": "account_001",
+          "status": "PROCESSING",
+          "submitted_at": "2026-10-16T23:58:00+08:00"
+        },
+        {
+          "amount": "50.00",
+          "operation_id": "fixture-current-operation",
+          "owner_id": "user_001",
+          "payer_account_id": "fixture-second-payment-account",
+          "status": "SUCCEEDED",
+          "submitted_at": "2026-10-17T10:00:00+08:00"
+        },
+        {
+          "amount": "50.00",
+          "operation_id": "fixture-current-operation",
+          "owner_id": "user_001",
+          "payer_account_id": "fixture-second-payment-account",
+          "status": "SUCCEEDED",
+          "submitted_at": "2026-10-17T10:00:00+08:00"
+        }
+      ]
+    },
+    {
+      "calculated_usage": {
+        "carried_pending_cents": 0,
+        "pending_today_cents": 0,
+        "rule_version": "transfer-daily-usage-2026-10-17-v1",
+        "statistical_day": "2026-10-17",
+        "successful_cents": 5000,
+        "used_cents": 5000
+      },
+      "older_order_latest_status": "SUCCEEDED",
+      "trusted_fixture_input": [
+        {
+          "amount": "200.00",
+          "operation_id": "fixture-old-operation",
+          "owner_id": "user_001",
+          "payer_account_id": "account_001",
+          "status": "SUCCEEDED",
+          "submitted_at": "2026-10-16T23:58:00+08:00"
+        },
+        {
+          "amount": "50.00",
+          "operation_id": "fixture-current-operation",
+          "owner_id": "user_001",
+          "payer_account_id": "fixture-second-payment-account",
+          "status": "SUCCEEDED",
+          "submitted_at": "2026-10-17T10:00:00+08:00"
+        },
+        {
+          "amount": "50.00",
+          "operation_id": "fixture-current-operation",
+          "owner_id": "user_001",
+          "payer_account_id": "fixture-second-payment-account",
+          "status": "SUCCEEDED",
+          "submitted_at": "2026-10-17T10:00:00+08:00"
+        }
+      ]
+    },
+    {
+      "calculated_usage": {
+        "carried_pending_cents": 0,
+        "pending_today_cents": 0,
+        "rule_version": "transfer-daily-usage-2026-10-17-v1",
+        "statistical_day": "2026-10-17",
+        "successful_cents": 5000,
+        "used_cents": 5000
+      },
+      "older_order_latest_status": "FAILED",
+      "trusted_fixture_input": [
+        {
+          "amount": "200.00",
+          "operation_id": "fixture-old-operation",
+          "owner_id": "user_001",
+          "payer_account_id": "account_001",
+          "status": "FAILED",
+          "submitted_at": "2026-10-16T23:58:00+08:00"
+        },
+        {
+          "amount": "50.00",
+          "operation_id": "fixture-current-operation",
+          "owner_id": "user_001",
+          "payer_account_id": "fixture-second-payment-account",
+          "status": "SUCCEEDED",
+          "submitted_at": "2026-10-17T10:00:00+08:00"
+        },
+        {
+          "amount": "50.00",
+          "operation_id": "fixture-current-operation",
+          "owner_id": "user_001",
+          "payer_account_id": "fixture-second-payment-account",
+          "status": "SUCCEEDED",
+          "submitted_at": "2026-10-17T10:00:00+08:00"
+        }
+      ]
+    }
+  ],
+  "demo_provisioning_plan": {
+    "accounts": [
+      {
+        "account": {
+          "account_id": "account_001",
+          "currency": "CNY",
+          "display_name": "工资卡",
+          "masked_account_no": "**** 6628"
+        },
+        "opening_balance": "1288.00",
+        "owner_id": "user_001"
+      },
+      {
+        "account": {
+          "account_id": "account_002",
+          "currency": "CNY",
+          "display_name": "备用卡",
+          "masked_account_no": "**** 7788"
+        },
+        "opening_balance": "50.00",
+        "owner_id": "user_002"
+      },
+      {
+        "account": {
+          "account_id": "fixture-li-account",
+          "currency": "CNY",
+          "display_name": "小李模拟收款账户",
+          "masked_account_no": "**** 1024"
+        },
+        "opening_balance": "0.00",
+        "owner_id": "fixture-li-owner"
+      }
+    ],
+    "payee": {
+      "bank_name": "示例银行",
+      "display_name": "小李",
+      "masked_account_no": "**** 1024",
+      "payee_id": "payee_008"
+    },
+    "route": {
+      "owner_id": "user_001",
+      "payee_id": "payee_008",
+      "recipient_account_id": "fixture-li-account"
+    },
+    "rule_version": "transfer-shared-demo-2026-10-17-v1"
+  },
+  "funds_executed": false,
+  "money_unit": "CNY_CENTS_FOR_CALCULATED_USAGE; CNY_DECIMAL_FOR_AMOUNTS_AND_OPENING",
+  "recipient_ids": "LOCAL_FIXTURE_ONLY_NOT_ADOPTED_BY_FOUNDATION",
+  "scope": "OFFLINE_BACKEND_BUSINESS_FACTS_ONLY",
+  "shared_identity_or_sql_initialized": false
+}

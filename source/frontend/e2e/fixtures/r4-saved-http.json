@@ -1,0 +1,103 @@
+{
+  "intent": {
+    "input_version": 1,
+    "root_operation_id": "operation_5b71a7b5-155d-4168-922d-5c2b9bd3abff",
+    "expected_revision": 2,
+    "action": "CORRECT",
+    "nonce": "2ba9c10d-ce7a-43b7-8a69-5968c5ecac28",
+    "choice": "MINE"
+  },
+  "original": {
+    "automatic_retry": false,
+    "confirmation_restored": false,
+    "history_contract": "BILLING_FEEDBACK_HISTORY_V1",
+    "operation_id": "feedback_revision_f1f6ce9b0b1388b1be3c9b5494b1bf5d8ff430115248f539ab94df870965200e",
+    "parameters": {
+      "choice": "MINE",
+      "input_version": 2,
+      "original_digest": "bf58843d44a032e096095b5b71c3473665870f0f71b69285f9aa4aa4d83f26c9",
+      "report_id": "billing_report_operation_task_ad8f563c-305a-40a8-89c5-6ffd9cdd7091_read_team_billing:current",
+      "revision": {
+        "action": "CORRECT",
+        "expected_revision": 2,
+        "nonce": "2ba9c10d-ce7a-43b7-8a69-5968c5ecac28",
+        "root_operation_id": "operation_5b71a7b5-155d-4168-922d-5c2b9bd3abff"
+      },
+      "transaction": {
+        "account_id": "account_001",
+        "source_id": "safeflow-team-simulation",
+        "transaction_id": "demo_video_202610"
+      }
+    },
+    "saved": {
+      "action": "CORRECT",
+      "active": true,
+      "card_head_adopted": false,
+      "choice": "MINE",
+      "history_contract": "BILLING_FEEDBACK_HISTORY_V1",
+      "member_receipt_changed": false,
+      "parameters": {
+        "choice": "MINE",
+        "input_version": 2,
+        "original_digest": "bf58843d44a032e096095b5b71c3473665870f0f71b69285f9aa4aa4d83f26c9",
+        "report_id": "billing_report_operation_task_ad8f563c-305a-40a8-89c5-6ffd9cdd7091_read_team_billing:current",
+        "revision": {
+          "action": "CORRECT",
+          "expected_revision": 2,
+          "nonce": "2ba9c10d-ce7a-43b7-8a69-5968c5ecac28",
+          "root_operation_id": "operation_5b71a7b5-155d-4168-922d-5c2b9bd3abff"
+        },
+        "transaction": {
+          "account_id": "account_001",
+          "source_id": "safeflow-team-simulation",
+          "transaction_id": "demo_video_202610"
+        }
+      },
+      "previous_revision": 2,
+      "revision": 3,
+      "root_operation_id": "operation_5b71a7b5-155d-4168-922d-5c2b9bd3abff"
+    },
+    "task_id": "feedback_revision_f1f6ce9b0b1388b1be3c9b5494b1bf5d8ff430115248f539ab94df870965200e",
+    "task_state": "COMPLETED"
+  },
+  "head": {
+    "active": true,
+    "card_head_adopted": false,
+    "choice": "MINE",
+    "history": [
+      {
+        "action": "INITIAL",
+        "active": true,
+        "choice": "NOT_MINE",
+        "operation_id": "operation_5b71a7b5-155d-4168-922d-5c2b9bd3abff",
+        "revision": 0
+      },
+      {
+        "action": "CORRECT",
+        "active": true,
+        "choice": "MINE",
+        "operation_id": "feedback_revision_a30337eb00e4c4bde0f3430457a0fd1762cd111608f1b2e5ff424e60eae5a055",
+        "revision": 1
+      },
+      {
+        "action": "CORRECT",
+        "active": true,
+        "choice": "NOT_MINE",
+        "operation_id": "feedback_revision_4eb1784b790d76bf26d59b6abc4b09de97e3567f18250a8a0735cf4f538dec87",
+        "revision": 2
+      },
+      {
+        "action": "CORRECT",
+        "active": true,
+        "choice": "MINE",
+        "operation_id": "feedback_revision_f1f6ce9b0b1388b1be3c9b5494b1bf5d8ff430115248f539ab94df870965200e",
+        "revision": 3
+      }
+    ],
+    "history_contract": "BILLING_FEEDBACK_HISTORY_V1",
+    "lock_authorized": false,
+    "member_receipt_changed": false,
+    "revision": 3,
+    "root_operation_id": "operation_5b71a7b5-155d-4168-922d-5c2b9bd3abff"
+  }
+}

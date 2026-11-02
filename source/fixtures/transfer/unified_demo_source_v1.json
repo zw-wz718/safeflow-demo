@@ -1,0 +1,117 @@
+{
+  "artifact_kind": "SOURCE_DOCUMENT_BUNDLE_NOT_API_OR_AUTHORIZATION",
+  "card_catalogs": [
+    {
+      "account": "account_001",
+      "cards": [
+        {
+          "card_id": "demo_card_salary_v1",
+          "last_four": "6628"
+        }
+      ],
+      "owner": "user_001",
+      "source_revision": "safeflow-team-simulation-20261026-v1"
+    },
+    {
+      "account": "account_002",
+      "cards": [
+        {
+          "card_id": "demo_card_backup_v1",
+          "last_four": "7788"
+        }
+      ],
+      "owner": "user_002",
+      "source_revision": "safeflow-team-simulation-20261026-v1"
+    },
+    {
+      "account": "demo_account_li_v1",
+      "cards": [
+        {
+          "card_id": "demo_card_li_v1",
+          "last_four": "1024"
+        }
+      ],
+      "owner": "demo_user_li_v1",
+      "source_revision": "safeflow-team-simulation-20261026-v1"
+    }
+  ],
+  "complete_users_and_accounts_in_this_snapshot": [
+    {
+      "accounts": [
+        "account_001"
+      ],
+      "owner": "user_001"
+    },
+    {
+      "accounts": [
+        "account_002"
+      ],
+      "owner": "user_002"
+    },
+    {
+      "accounts": [
+        "demo_account_li_v1"
+      ],
+      "owner": "demo_user_li_v1"
+    }
+  ],
+  "completeness_basis": "This newly authored fictional universe contains exactly the listed users, accounts and cards; no legacy or external records are included.",
+  "consumption_source": null,
+  "fictional": true,
+  "initial_state": "New empty isolated database only: opening balances from transfer_plan; no preexisting operations, holds or locks. Existing databases must be read and reconciled, never reset.",
+  "initial_subscription_ledger": null,
+  "legacy_card_mapping": null,
+  "maintainer": "逐风",
+  "permission_or_policy_grant": false,
+  "project_route_adopted": true,
+  "runtime_adopted": false,
+  "scope": "New isolated demo only; never overwrite an existing database",
+  "source_id": "safeflow-team-simulation",
+  "source_revision": "safeflow-team-simulation-20261026-v1",
+  "transfer_plan": {
+    "accounts": [
+      {
+        "account": {
+          "account_id": "account_001",
+          "currency": "CNY",
+          "display_name": "工资卡",
+          "masked_account_no": "**** 6628"
+        },
+        "opening_balance": "1288.00",
+        "owner_id": "user_001"
+      },
+      {
+        "account": {
+          "account_id": "account_002",
+          "currency": "CNY",
+          "display_name": "备用卡",
+          "masked_account_no": "**** 7788"
+        },
+        "opening_balance": "50.00",
+        "owner_id": "user_002"
+      },
+      {
+        "account": {
+          "account_id": "demo_account_li_v1",
+          "currency": "CNY",
+          "display_name": "小李模拟收款账户",
+          "masked_account_no": "**** 1024"
+        },
+        "opening_balance": "0.00",
+        "owner_id": "demo_user_li_v1"
+      }
+    ],
+    "payee": {
+      "bank_name": "示例银行",
+      "display_name": "小李",
+      "masked_account_no": "**** 1024",
+      "payee_id": "payee_008"
+    },
+    "route": {
+      "owner_id": "user_001",
+      "payee_id": "payee_008",
+      "recipient_account_id": "demo_account_li_v1"
+    },
+    "rule_version": "transfer-shared-demo-2026-10-17-v1"
+  }
+}

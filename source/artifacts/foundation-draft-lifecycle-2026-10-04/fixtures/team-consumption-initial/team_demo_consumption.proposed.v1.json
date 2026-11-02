@@ -1,0 +1,673 @@
+{
+  "artifact_kind": "PROPOSED_CONSUMPTION_SOURCE_MATERIAL_NOT_API_OR_AUTHORIZATION",
+  "schema_version": 1,
+  "fictional": true,
+  "production_registered": false,
+  "adoption_state": "PROPOSED_PENDING_TEAM_ADOPTION",
+  "runtime_adopted": false,
+  "permission_or_policy_grant": false,
+  "prepared_by": "Jonathan",
+  "source_id": "safeflow-team-simulation",
+  "revision": "billing-team-consumption-proposed-20261027-v1",
+  "reference_user_account_commit": "7c03f03b832aa17c174b1bbdd4a6ad3282e01422",
+  "reference_source_revision": "safeflow-team-simulation-20261026-v1",
+  "proposed_consumption_maintainer": "Jonathan; coordinate version adoption with 逐风",
+  "as_of": "2026-10-27T00:00:00+08:00",
+  "scope": "Read-only historical fictional data for the new isolated demo. Do not execute rows as transfers/payments, subtract them from opening balances, overwrite existing history, or grant access.",
+  "balance_effect": "NONE_READ_ONLY_HISTORY",
+  "initial_subscription_ledger_reference": {
+    "commit": "deba42db1835e6cc906e3f064167c66185beead3",
+    "path": "backend/src/features/subscription/fixtures/team_demo_initial_ledgers.v1.json",
+    "applied_here": false
+  },
+  "pending_rule_decisions": [
+    "D08",
+    "D19",
+    "D10",
+    "D20"
+  ],
+  "users": [
+    {
+      "owner_user_id": "user_001",
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-27T00:00:00+08:00",
+          "start_inclusive": "2026-06-27T00:00:00+08:00",
+          "end_exclusive": "2026-10-27T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "snapshot_id": "billing-team-consumption-proposed-20261027-v1-user_001",
+      "completeness_basis": "PROPOSED_FINITE_FICTIONAL_HISTORY: all rows for this owner/account in the stated interval are listed; unlisted dates intentionally have no completed records. Requires team adoption; not real bank coverage.",
+      "pages": [
+        {
+          "cursor": null,
+          "page": {
+            "snapshot_id": "billing-team-consumption-proposed-20261027-v1-user_001",
+            "owner_user_id": "user_001",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-27T00:00:00+08:00",
+              "start_inclusive": "2026-06-27T00:00:00+08:00",
+              "end_exclusive": "2026-10-27T00:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "demo_video_202607",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-05T10:00:00+08:00",
+                "merchant_id": "demo_merchant_media_v1",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "demo_service_video_v1"
+              },
+              {
+                "transaction_id": "demo_music_202607",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "9.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-15T10:00:00+08:00",
+                "merchant_id": "demo_merchant_media_v1",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "demo_service_music_v1"
+              },
+              {
+                "transaction_id": "demo_food_202607",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "35.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-20T12:00:00+08:00",
+                "merchant_id": "demo_merchant_food_v1",
+                "category_code": "DEMO_FOOD",
+                "original_tx_id": null,
+                "service_ref": null
+              },
+              {
+                "transaction_id": "demo_video_202608",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-08-05T10:00:00+08:00",
+                "merchant_id": "demo_merchant_media_v1",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "demo_service_video_v1"
+              },
+              {
+                "transaction_id": "demo_historical_transfer_01",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "25.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "TRANSFER",
+                "status": "COMPLETED",
+                "completed_at": "2026-08-07T11:00:00+08:00",
+                "merchant_id": null,
+                "category_code": "DEMO_OTHER",
+                "original_tx_id": null,
+                "service_ref": null
+              }
+            ],
+            "has_more": true,
+            "next_cursor": "user_001-page-2",
+            "range_complete": false,
+            "total_unique_rows": null
+          }
+        },
+        {
+          "cursor": "user_001-page-2",
+          "page": {
+            "snapshot_id": "billing-team-consumption-proposed-20261027-v1-user_001",
+            "owner_user_id": "user_001",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-27T00:00:00+08:00",
+              "start_inclusive": "2026-06-27T00:00:00+08:00",
+              "end_exclusive": "2026-10-27T00:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "demo_music_202608",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "9.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-08-15T10:00:00+08:00",
+                "merchant_id": "demo_merchant_media_v1",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "demo_service_music_v1"
+              },
+              {
+                "transaction_id": "demo_food_202608",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "42.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-08-20T12:00:00+08:00",
+                "merchant_id": "demo_merchant_food_v1",
+                "category_code": "DEMO_FOOD",
+                "original_tx_id": null,
+                "service_ref": null
+              },
+              {
+                "transaction_id": "demo_video_202609",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-09-05T10:00:00+08:00",
+                "merchant_id": "demo_merchant_media_v1",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "demo_service_video_v1"
+              },
+              {
+                "transaction_id": "demo_cloud_202609",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "12.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-09-08T10:00:00+08:00",
+                "merchant_id": "demo_merchant_cloud_v1",
+                "category_code": "DEMO_SOFTWARE",
+                "original_tx_id": null,
+                "service_ref": null
+              },
+              {
+                "transaction_id": "demo_music_202609",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "9.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-09-15T10:00:00+08:00",
+                "merchant_id": "demo_merchant_media_v1",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "demo_service_music_v1"
+              }
+            ],
+            "has_more": true,
+            "next_cursor": "user_001-page-3",
+            "range_complete": false,
+            "total_unique_rows": null
+          }
+        },
+        {
+          "cursor": "user_001-page-3",
+          "page": {
+            "snapshot_id": "billing-team-consumption-proposed-20261027-v1-user_001",
+            "owner_user_id": "user_001",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-27T00:00:00+08:00",
+              "start_inclusive": "2026-06-27T00:00:00+08:00",
+              "end_exclusive": "2026-10-27T00:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "demo_food_202609",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "38.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-09-20T12:00:00+08:00",
+                "merchant_id": "demo_merchant_food_v1",
+                "category_code": "DEMO_FOOD",
+                "original_tx_id": null,
+                "service_ref": null
+              },
+              {
+                "transaction_id": "demo_retail_20260925",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "300.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-09-25T13:00:00+08:00",
+                "merchant_id": "demo_merchant_retail_v1",
+                "category_code": "DEMO_SHOPPING",
+                "original_tx_id": null,
+                "service_ref": null
+              },
+              {
+                "transaction_id": "demo_refund_20261004",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "300.00",
+                "currency": "CNY",
+                "direction": "IN",
+                "transaction_type": "REFUND",
+                "status": "COMPLETED",
+                "completed_at": "2026-10-04T13:00:00+08:00",
+                "merchant_id": "demo_merchant_retail_v1",
+                "category_code": "DEMO_SHOPPING",
+                "original_tx_id": "demo_retail_20260925",
+                "service_ref": null
+              },
+              {
+                "transaction_id": "demo_video_202610",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-10-05T10:00:00+08:00",
+                "merchant_id": "demo_merchant_media_v1",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "demo_service_video_v1"
+              },
+              {
+                "transaction_id": "demo_cloud_202610",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "12.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-10-08T10:00:00+08:00",
+                "merchant_id": "demo_merchant_cloud_v1",
+                "category_code": "DEMO_SOFTWARE",
+                "original_tx_id": null,
+                "service_ref": null
+              }
+            ],
+            "has_more": true,
+            "next_cursor": "user_001-page-4",
+            "range_complete": false,
+            "total_unique_rows": null
+          }
+        },
+        {
+          "cursor": "user_001-page-4",
+          "page": {
+            "snapshot_id": "billing-team-consumption-proposed-20261027-v1-user_001",
+            "owner_user_id": "user_001",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-27T00:00:00+08:00",
+              "start_inclusive": "2026-06-27T00:00:00+08:00",
+              "end_exclusive": "2026-10-27T00:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "demo_retail_20261012",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "80.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-10-12T13:00:00+08:00",
+                "merchant_id": "demo_merchant_retail_v1",
+                "category_code": "DEMO_SHOPPING",
+                "original_tx_id": null,
+                "service_ref": null
+              },
+              {
+                "transaction_id": "demo_refund_20261013",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "20.00",
+                "currency": "CNY",
+                "direction": "IN",
+                "transaction_type": "REFUND",
+                "status": "COMPLETED",
+                "completed_at": "2026-10-13T13:00:00+08:00",
+                "merchant_id": "demo_merchant_retail_v1",
+                "category_code": "DEMO_SHOPPING",
+                "original_tx_id": "demo_retail_20261012",
+                "service_ref": null
+              },
+              {
+                "transaction_id": "demo_music_202610",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "9.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-10-15T10:00:00+08:00",
+                "merchant_id": "demo_merchant_media_v1",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "demo_service_music_v1"
+              },
+              {
+                "transaction_id": "demo_food_202610",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "41.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-10-20T12:00:00+08:00",
+                "merchant_id": "demo_merchant_food_v1",
+                "category_code": "DEMO_FOOD",
+                "original_tx_id": null,
+                "service_ref": null
+              },
+              {
+                "transaction_id": "demo_failed_01",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "66.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "FAILED",
+                "completed_at": null,
+                "merchant_id": null,
+                "category_code": "DEMO_OTHER",
+                "original_tx_id": null,
+                "service_ref": null
+              }
+            ],
+            "has_more": true,
+            "next_cursor": "user_001-page-5",
+            "range_complete": false,
+            "total_unique_rows": null
+          }
+        },
+        {
+          "cursor": "user_001-page-5",
+          "page": {
+            "snapshot_id": "billing-team-consumption-proposed-20261027-v1-user_001",
+            "owner_user_id": "user_001",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-27T00:00:00+08:00",
+              "start_inclusive": "2026-06-27T00:00:00+08:00",
+              "end_exclusive": "2026-10-27T00:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "demo_processing_01",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": "demo_card_salary_v1",
+                "amount": "55.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "PROCESSING",
+                "completed_at": null,
+                "merchant_id": null,
+                "category_code": "DEMO_OTHER",
+                "original_tx_id": null,
+                "service_ref": null
+              }
+            ],
+            "has_more": false,
+            "next_cursor": null,
+            "range_complete": true,
+            "total_unique_rows": 21
+          }
+        }
+      ]
+    },
+    {
+      "owner_user_id": "user_002",
+      "request": {
+        "account_ids": [
+          "account_002"
+        ],
+        "window": {
+          "as_of": "2026-10-27T00:00:00+08:00",
+          "start_inclusive": "2026-06-27T00:00:00+08:00",
+          "end_exclusive": "2026-10-27T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "snapshot_id": "billing-team-consumption-proposed-20261027-v1-user_002",
+      "completeness_basis": "PROPOSED_FINITE_FICTIONAL_HISTORY: all rows for this owner/account in the stated interval are listed; unlisted dates intentionally have no completed records. Requires team adoption; not real bank coverage.",
+      "pages": [
+        {
+          "cursor": null,
+          "page": {
+            "snapshot_id": "billing-team-consumption-proposed-20261027-v1-user_002",
+            "owner_user_id": "user_002",
+            "account_ids": [
+              "account_002"
+            ],
+            "window": {
+              "as_of": "2026-10-27T00:00:00+08:00",
+              "start_inclusive": "2026-06-27T00:00:00+08:00",
+              "end_exclusive": "2026-10-27T00:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "demo_user2_food_07",
+                "account_id": "account_002",
+                "operation_id": null,
+                "card_id": "demo_card_backup_v1",
+                "amount": "15.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-06T12:00:00+08:00",
+                "merchant_id": "demo_merchant_food_v1",
+                "category_code": "DEMO_FOOD",
+                "original_tx_id": null,
+                "service_ref": null
+              },
+              {
+                "transaction_id": "demo_user2_food_10",
+                "account_id": "account_002",
+                "operation_id": null,
+                "card_id": "demo_card_backup_v1",
+                "amount": "25.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-10-06T12:00:00+08:00",
+                "merchant_id": "demo_merchant_food_v1",
+                "category_code": "DEMO_FOOD",
+                "original_tx_id": null,
+                "service_ref": null
+              }
+            ],
+            "has_more": false,
+            "next_cursor": null,
+            "range_complete": true,
+            "total_unique_rows": 2
+          }
+        }
+      ]
+    },
+    {
+      "owner_user_id": "demo_user_li_v1",
+      "request": {
+        "account_ids": [
+          "demo_account_li_v1"
+        ],
+        "window": {
+          "as_of": "2026-10-27T00:00:00+08:00",
+          "start_inclusive": "2026-06-27T00:00:00+08:00",
+          "end_exclusive": "2026-10-27T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "snapshot_id": "billing-team-consumption-proposed-20261027-v1-demo_user_li_v1",
+      "completeness_basis": "PROPOSED_FINITE_FICTIONAL_HISTORY: all rows for this owner/account in the stated interval are listed; unlisted dates intentionally have no completed records. Requires team adoption; not real bank coverage.",
+      "pages": [
+        {
+          "cursor": null,
+          "page": {
+            "snapshot_id": "billing-team-consumption-proposed-20261027-v1-demo_user_li_v1",
+            "owner_user_id": "demo_user_li_v1",
+            "account_ids": [
+              "demo_account_li_v1"
+            ],
+            "window": {
+              "as_of": "2026-10-27T00:00:00+08:00",
+              "start_inclusive": "2026-06-27T00:00:00+08:00",
+              "end_exclusive": "2026-10-27T00:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [],
+            "has_more": false,
+            "next_cursor": null,
+            "range_complete": true,
+            "total_unique_rows": 0
+          }
+        }
+      ]
+    }
+  ],
+  "service_calendar": [
+    {
+      "owner_user_id": "user_001",
+      "account_id": "account_001",
+      "merchant_id": "demo_merchant_media_v1",
+      "service_ref": "demo_service_video_v1",
+      "display_name": "演示视频服务",
+      "transaction_ids": [
+        "demo_video_202607",
+        "demo_video_202608",
+        "demo_video_202609",
+        "demo_video_202610"
+      ],
+      "cycle": "MONTHLY",
+      "billing_day": 5,
+      "currency": "CNY",
+      "amount": "19.90",
+      "service_period_start": "2026-10-05T10:00:00+08:00",
+      "service_period_end_exclusive": "2026-11-05T10:00:00+08:00",
+      "next_charge_at": "2026-11-05T10:00:00+08:00",
+      "expires_at": null,
+      "expiry_status": "NOT_PROVIDED",
+      "date_basis": "EXPLICIT_AUTHOR_DECLARED_FICTIONAL_SERVICE_CALENDAR_PENDING_ADOPTION",
+      "not_inferred_from_transactions": true,
+      "calendar_revision": "billing-team-consumption-proposed-20261027-v1-service-calendar",
+      "reminder_scheduled": false
+    },
+    {
+      "owner_user_id": "user_001",
+      "account_id": "account_001",
+      "merchant_id": "demo_merchant_media_v1",
+      "service_ref": "demo_service_music_v1",
+      "display_name": "演示音乐服务",
+      "transaction_ids": [
+        "demo_music_202607",
+        "demo_music_202608",
+        "demo_music_202609",
+        "demo_music_202610"
+      ],
+      "cycle": "MONTHLY",
+      "billing_day": 15,
+      "currency": "CNY",
+      "amount": "9.90",
+      "service_period_start": "2026-10-15T10:00:00+08:00",
+      "service_period_end_exclusive": "2026-11-15T10:00:00+08:00",
+      "next_charge_at": "2026-11-15T10:00:00+08:00",
+      "expires_at": null,
+      "expiry_status": "NOT_PROVIDED",
+      "date_basis": "EXPLICIT_AUTHOR_DECLARED_FICTIONAL_SERVICE_CALENDAR_PENDING_ADOPTION",
+      "not_inferred_from_transactions": true,
+      "calendar_revision": "billing-team-consumption-proposed-20261027-v1-service-calendar",
+      "reminder_scheduled": false
+    }
+  ],
+  "unresolved_services": [
+    {
+      "merchant_id": "demo_merchant_cloud_v1",
+      "transaction_ids": [
+        "demo_cloud_202609",
+        "demo_cloud_202610"
+      ],
+      "service_ref": null,
+      "next_charge_at": null,
+      "expires_at": null,
+      "reason": "Two authored payments alone do not establish a specific service, contract or reliable future date."
+    }
+  ]
+}

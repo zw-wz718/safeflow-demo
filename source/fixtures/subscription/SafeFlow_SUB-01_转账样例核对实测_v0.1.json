@@ -1,0 +1,31 @@
+{
+  "mode": "OFFLINE_PEER_FIXTURE_REVIEW_ONLY",
+  "recognition_executed": false,
+  "production_registration": false,
+  "direct_subscription_input_compatible": false,
+  "amount_minor_units": 20000,
+  "receipt_states": [
+    "SUCCEEDED",
+    "PROCESSING",
+    "FAILED",
+    "PROCESSING"
+  ],
+  "completed_ledger_type": "TRANSFER",
+  "completed_ledger_direction": "DEBIT",
+  "card_reference_present": false,
+  "merchant_reference_present": false,
+  "unresolved": [
+    "DEBIT_CREDIT_TO_OUT_IN_MAPPING_REQUIRES_AGREEMENT",
+    "RECEIPT_STATUS_IS_NOT_LEDGER_STATUS",
+    "NO_QUERY_COMPLETENESS_OR_OWNERSHIP_PROOF",
+    "NO_SUBSCRIPTION_SERVICE_REFERENCE",
+    "CATEGORY_CODE_MISSING_FROM_SOURCE",
+    "ORIGINAL_TX_ID_MISSING_FROM_SOURCE"
+  ],
+  "cautions": [
+    "TRANSFER_IS_NOT_SUBSCRIPTION_CONSUMPTION",
+    "NULL_CARD_DOES_NOT_AUTHORIZE_CARD_LOOKUP_OR_FREEZE",
+    "UNKNOWN_RECEIPT_DOES_NOT_PROVE_NO_COMPLETED_LEDGER",
+    "FIXTURE_USER_ID_IS_NOT_AUTHENTICATION"
+  ]
+}

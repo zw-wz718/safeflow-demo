@@ -1,0 +1,1002 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "PROPOSED_ACCEPTANCE_EXPECTATIONS_NOT_PRODUCT_RESULTS",
+  "fictional": true,
+  "approval": "PENDING",
+  "product_run": "NOT_RUN",
+  "proposal_commit": "1044507244d83466fef7a5d50445c6fed7a10b39",
+  "proposal_path": "backend/src/features/billing/docs/billing-rule-decisions-2026-10-27.md",
+  "source_path": "fixtures/billing/team_demo_consumption.proposed.v1.json",
+  "source_canonical_lf_sha256": "086c5783ef1ab4cb8a2b8f139d1c43287cbdfe7b1fe22ea10af3f5696e4c948d",
+  "limits": [
+    "仅验证提案预期的日期/数值自洽，不调用Rust产品、数据库、公共宿主或网络",
+    "聚合数值输入假设已通过可信scope/完整性/分类/状态过滤，不能证明过滤正确",
+    "D20只核规格完整及已有测试名存在，不执行事务/更正/撤销验收"
+  ],
+  "cases": [
+    {
+      "id": "D08-A-normal",
+      "rule": "D08",
+      "option": "A",
+      "kind": "window",
+      "purpose": "上月同日同刻",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "as_of": "2026-10-27T00:00:00+08:00"
+      },
+      "expected": {
+        "status": "READY",
+        "current": [
+          "2026-10-01T00:00:00+08:00",
+          "2026-10-27T00:00:00+08:00"
+        ],
+        "previous": [
+          "2026-09-01T00:00:00+08:00",
+          "2026-09-27T00:00:00+08:00"
+        ]
+      }
+    },
+    {
+      "id": "D08-B-normal",
+      "rule": "D08",
+      "option": "B",
+      "kind": "window",
+      "purpose": "紧邻本月起点的等长26天",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "as_of": "2026-10-27T00:00:00+08:00"
+      },
+      "expected": {
+        "status": "READY",
+        "current": [
+          "2026-10-01T00:00:00+08:00",
+          "2026-10-27T00:00:00+08:00"
+        ],
+        "previous": [
+          "2026-09-05T00:00:00+08:00",
+          "2026-10-01T00:00:00+08:00"
+        ]
+      }
+    },
+    {
+      "id": "D08-A-short-month",
+      "rule": "D08",
+      "option": "A",
+      "kind": "window",
+      "purpose": "上月无31日，完整2月，不截掉末日半天",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "as_of": "2026-03-31T12:00:00+08:00"
+      },
+      "expected": {
+        "status": "READY",
+        "current": [
+          "2026-03-01T00:00:00+08:00",
+          "2026-03-31T12:00:00+08:00"
+        ],
+        "previous": [
+          "2026-02-01T00:00:00+08:00",
+          "2026-03-01T00:00:00+08:00"
+        ]
+      }
+    },
+    {
+      "id": "D08-A-leap-valid",
+      "rule": "D08",
+      "option": "A",
+      "kind": "window",
+      "purpose": "闰年29日存在，保留同刻",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "as_of": "2024-03-29T12:00:00+08:00"
+      },
+      "expected": {
+        "status": "READY",
+        "current": [
+          "2024-03-01T00:00:00+08:00",
+          "2024-03-29T12:00:00+08:00"
+        ],
+        "previous": [
+          "2024-02-01T00:00:00+08:00",
+          "2024-02-29T12:00:00+08:00"
+        ]
+      }
+    },
+    {
+      "id": "D08-A-leap-short",
+      "rule": "D08",
+      "option": "A",
+      "kind": "window",
+      "purpose": "闰年仍无31日",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "as_of": "2024-03-31T12:00:00+08:00"
+      },
+      "expected": {
+        "status": "READY",
+        "current": [
+          "2024-03-01T00:00:00+08:00",
+          "2024-03-31T12:00:00+08:00"
+        ],
+        "previous": [
+          "2024-02-01T00:00:00+08:00",
+          "2024-03-01T00:00:00+08:00"
+        ]
+      }
+    },
+    {
+      "id": "D08-A-year",
+      "rule": "D08",
+      "option": "A",
+      "kind": "window",
+      "purpose": "跨年",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "as_of": "2026-01-31T12:00:00+08:00"
+      },
+      "expected": {
+        "status": "READY",
+        "current": [
+          "2026-01-01T00:00:00+08:00",
+          "2026-01-31T12:00:00+08:00"
+        ],
+        "previous": [
+          "2025-12-01T00:00:00+08:00",
+          "2025-12-31T12:00:00+08:00"
+        ]
+      }
+    },
+    {
+      "id": "D08-B-short-month",
+      "rule": "D08",
+      "option": "B",
+      "kind": "window",
+      "purpose": "等长30.5天会跨越两个月",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "as_of": "2026-03-31T12:00:00+08:00"
+      },
+      "expected": {
+        "status": "READY",
+        "current": [
+          "2026-03-01T00:00:00+08:00",
+          "2026-03-31T12:00:00+08:00"
+        ],
+        "previous": [
+          "2026-01-29T12:00:00+08:00",
+          "2026-03-01T00:00:00+08:00"
+        ]
+      }
+    },
+    {
+      "id": "D08-A-month-start",
+      "rule": "D08",
+      "option": "A",
+      "kind": "window",
+      "purpose": "月初不构造零长度查询",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "as_of": "2026-10-01T00:00:00+08:00"
+      },
+      "expected": {
+        "status": "NO_ELAPSED_WINDOW",
+        "current": null,
+        "previous": null
+      }
+    },
+    {
+      "id": "D08-B-month-start",
+      "rule": "D08",
+      "option": "B",
+      "kind": "window",
+      "purpose": "月初不构造零长度查询",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "as_of": "2026-10-01T00:00:00+08:00"
+      },
+      "expected": {
+        "status": "NO_ELAPSED_WINDOW",
+        "current": null,
+        "previous": null
+      }
+    },
+    {
+      "id": "D19-A-adopted",
+      "rule": "D19",
+      "option": "A",
+      "kind": "fixture_refund",
+      "purpose": "固定已采用资料：跨月300元和当月20元退款",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "owner_user_id": "user_001",
+        "account_id": "account_001",
+        "as_of": "2026-10-27T00:00:00+08:00",
+        "previous": [
+          "2026-09-01T00:00:00+08:00",
+          "2026-09-27T00:00:00+08:00"
+        ],
+        "current": [
+          "2026-10-01T00:00:00+08:00",
+          "2026-10-27T00:00:00+08:00"
+        ]
+      },
+      "expected": {
+        "status": "READY",
+        "previous_net_cents": 37980,
+        "current_net_cents": -15720,
+        "difference_cents": -53700,
+        "percent": "-141.4"
+      }
+    },
+    {
+      "id": "D19-B-adopted",
+      "rule": "D19",
+      "option": "B",
+      "kind": "fixture_refund",
+      "purpose": "固定已采用资料：跨月300元和当月20元退款",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "owner_user_id": "user_001",
+        "account_id": "account_001",
+        "as_of": "2026-10-27T00:00:00+08:00",
+        "previous": [
+          "2026-09-01T00:00:00+08:00",
+          "2026-09-27T00:00:00+08:00"
+        ],
+        "current": [
+          "2026-10-01T00:00:00+08:00",
+          "2026-10-27T00:00:00+08:00"
+        ]
+      },
+      "expected": {
+        "status": "READY",
+        "previous_net_cents": 7980,
+        "current_net_cents": 14280,
+        "difference_cents": 6300,
+        "percent": "78.9"
+      }
+    },
+    {
+      "id": "D19-zero",
+      "rule": "D19",
+      "option": "BOTH",
+      "kind": "comparison",
+      "purpose": "前期0不计算百分比",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "previous_net_cents": 0,
+        "current_net_cents": 100,
+        "source_complete": true
+      },
+      "expected": {
+        "status": "READY",
+        "previous_net_cents": 0,
+        "current_net_cents": 100,
+        "difference_cents": 100,
+        "percent": null
+      }
+    },
+    {
+      "id": "D19-both-zero",
+      "rule": "D19",
+      "option": "BOTH",
+      "kind": "comparison",
+      "purpose": "两期完整空数据仍无正基数",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "previous_net_cents": 0,
+        "current_net_cents": 0,
+        "source_complete": true
+      },
+      "expected": {
+        "status": "READY",
+        "previous_net_cents": 0,
+        "current_net_cents": 0,
+        "difference_cents": 0,
+        "percent": null
+      }
+    },
+    {
+      "id": "D19-negative-base",
+      "rule": "D19",
+      "option": "BOTH",
+      "kind": "comparison",
+      "purpose": "前期负数不计算百分比",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "previous_net_cents": -100,
+        "current_net_cents": 200,
+        "source_complete": true
+      },
+      "expected": {
+        "status": "READY",
+        "previous_net_cents": -100,
+        "current_net_cents": 200,
+        "difference_cents": 300,
+        "percent": null
+      }
+    },
+    {
+      "id": "D19-negative-current",
+      "rule": "D19",
+      "option": "BOTH",
+      "kind": "comparison",
+      "purpose": "负净额不裁剪，降幅可超过100%",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "previous_net_cents": 100,
+        "current_net_cents": -50,
+        "source_complete": true
+      },
+      "expected": {
+        "status": "READY",
+        "previous_net_cents": 100,
+        "current_net_cents": -50,
+        "difference_cents": -150,
+        "percent": "-150.0"
+      }
+    },
+    {
+      "id": "D19-round-up",
+      "rule": "D19",
+      "option": "BOTH",
+      "kind": "comparison",
+      "purpose": "+0.05%展示四舍五入",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "previous_net_cents": 2000,
+        "current_net_cents": 2001,
+        "source_complete": true
+      },
+      "expected": {
+        "status": "READY",
+        "previous_net_cents": 2000,
+        "current_net_cents": 2001,
+        "difference_cents": 1,
+        "percent": "0.1"
+      }
+    },
+    {
+      "id": "D19-round-down",
+      "rule": "D19",
+      "option": "BOTH",
+      "kind": "comparison",
+      "purpose": "-0.05%展示远离零舍入",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "previous_net_cents": 2000,
+        "current_net_cents": 1999,
+        "source_complete": true
+      },
+      "expected": {
+        "status": "READY",
+        "previous_net_cents": 2000,
+        "current_net_cents": 1999,
+        "difference_cents": -1,
+        "percent": "-0.1"
+      }
+    },
+    {
+      "id": "D19-unchanged",
+      "rule": "D19",
+      "option": "BOTH",
+      "kind": "comparison",
+      "purpose": "金额不变",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "previous_net_cents": 1234,
+        "current_net_cents": 1234,
+        "source_complete": true
+      },
+      "expected": {
+        "status": "READY",
+        "previous_net_cents": 1234,
+        "current_net_cents": 1234,
+        "difference_cents": 0,
+        "percent": "0.0"
+      }
+    },
+    {
+      "id": "D19-missing",
+      "rule": "D19",
+      "option": "BOTH",
+      "kind": "comparison",
+      "purpose": "前期未知不补0；可保留本期独立已知金额",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "previous_net_cents": null,
+        "current_net_cents": 1234,
+        "source_complete": false
+      },
+      "expected": {
+        "status": "DATA_UNAVAILABLE",
+        "previous_net_cents": null,
+        "current_net_cents": 1234,
+        "difference_cents": null,
+        "percent": null
+      }
+    },
+    {
+      "id": "D10-exact",
+      "rule": "D10",
+      "option": "A",
+      "kind": "anomaly",
+      "purpose": "两阈值恰好达到",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "history_cents": [
+          10000,
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "target_cents": 30000,
+        "history_complete": true,
+        "category_known": true,
+        "current_start": "2026-10-01T00:00:00+08:00"
+      },
+      "expected": {
+        "status": "NEEDS_REVIEW",
+        "median_cents_twice": 20000,
+        "history_window": [
+          "2026-07-03T00:00:00+08:00",
+          "2026-10-01T00:00:00+08:00"
+        ]
+      }
+    },
+    {
+      "id": "D10-cent-below",
+      "rule": "D10",
+      "option": "A",
+      "kind": "anomaly",
+      "purpose": "低1分不触发",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "history_cents": [
+          10000,
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "target_cents": 29999,
+        "history_complete": true,
+        "category_known": true,
+        "current_start": "2026-10-01T00:00:00+08:00"
+      },
+      "expected": {
+        "status": "NOT_TRIGGERED",
+        "median_cents_twice": 20000,
+        "history_window": [
+          "2026-07-03T00:00:00+08:00",
+          "2026-10-01T00:00:00+08:00"
+        ]
+      }
+    },
+    {
+      "id": "D10-ratio-only",
+      "rule": "D10",
+      "option": "A",
+      "kind": "anomaly",
+      "purpose": "三倍满足，差额不足200元",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "history_cents": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "target_cents": 4000,
+        "history_complete": true,
+        "category_known": true,
+        "current_start": "2026-10-01T00:00:00+08:00"
+      },
+      "expected": {
+        "status": "NOT_TRIGGERED",
+        "median_cents_twice": 2000,
+        "history_window": [
+          "2026-07-03T00:00:00+08:00",
+          "2026-10-01T00:00:00+08:00"
+        ]
+      }
+    },
+    {
+      "id": "D10-difference-only",
+      "rule": "D10",
+      "option": "A",
+      "kind": "anomaly",
+      "purpose": "差额达到200元，但不足三倍",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "history_cents": [
+          20000,
+          20000,
+          20000,
+          20000,
+          20000
+        ],
+        "target_cents": 40000,
+        "history_complete": true,
+        "category_known": true,
+        "current_start": "2026-10-01T00:00:00+08:00"
+      },
+      "expected": {
+        "status": "NOT_TRIGGERED",
+        "median_cents_twice": 40000,
+        "history_window": [
+          "2026-07-03T00:00:00+08:00",
+          "2026-10-01T00:00:00+08:00"
+        ]
+      }
+    },
+    {
+      "id": "D10-half-cent-30001",
+      "rule": "D10",
+      "option": "A",
+      "kind": "anomaly",
+      "purpose": "偶数样本中位数100.005元，不提前舍入",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "history_cents": [
+          10000,
+          10000,
+          10000,
+          10001,
+          10001,
+          10001
+        ],
+        "target_cents": 30001,
+        "history_complete": true,
+        "category_known": true,
+        "current_start": "2026-10-01T00:00:00+08:00"
+      },
+      "expected": {
+        "status": "NOT_TRIGGERED",
+        "median_cents_twice": 20001,
+        "history_window": [
+          "2026-07-03T00:00:00+08:00",
+          "2026-10-01T00:00:00+08:00"
+        ]
+      }
+    },
+    {
+      "id": "D10-half-cent-30002",
+      "rule": "D10",
+      "option": "A",
+      "kind": "anomaly",
+      "purpose": "偶数样本中位数100.005元，不提前舍入",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "history_cents": [
+          10000,
+          10000,
+          10000,
+          10001,
+          10001,
+          10001
+        ],
+        "target_cents": 30002,
+        "history_complete": true,
+        "category_known": true,
+        "current_start": "2026-10-01T00:00:00+08:00"
+      },
+      "expected": {
+        "status": "NEEDS_REVIEW",
+        "median_cents_twice": 20001,
+        "history_window": [
+          "2026-07-03T00:00:00+08:00",
+          "2026-10-01T00:00:00+08:00"
+        ]
+      }
+    },
+    {
+      "id": "D10-four",
+      "rule": "D10",
+      "option": "A",
+      "kind": "anomaly",
+      "purpose": "少于5笔",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "history_cents": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "target_cents": 99999,
+        "history_complete": true,
+        "category_known": true,
+        "current_start": "2026-10-01T00:00:00+08:00"
+      },
+      "expected": {
+        "status": "INSUFFICIENT_EVIDENCE",
+        "median_cents_twice": null,
+        "history_window": [
+          "2026-07-03T00:00:00+08:00",
+          "2026-10-01T00:00:00+08:00"
+        ]
+      }
+    },
+    {
+      "id": "D10-zero",
+      "rule": "D10",
+      "option": "A",
+      "kind": "anomaly",
+      "purpose": "纯数学边界，不代表生产源允许零金额消费",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "history_cents": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "target_cents": 99999,
+        "history_complete": true,
+        "category_known": true,
+        "current_start": "2026-10-01T00:00:00+08:00"
+      },
+      "expected": {
+        "status": "INSUFFICIENT_EVIDENCE",
+        "median_cents_twice": null,
+        "history_window": [
+          "2026-07-03T00:00:00+08:00",
+          "2026-10-01T00:00:00+08:00"
+        ]
+      }
+    },
+    {
+      "id": "D10-category",
+      "rule": "D10",
+      "option": "A",
+      "kind": "anomaly",
+      "purpose": "分类未知",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "history_cents": [
+          10000,
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "target_cents": 99999,
+        "history_complete": true,
+        "category_known": false,
+        "current_start": "2026-10-01T00:00:00+08:00"
+      },
+      "expected": {
+        "status": "INSUFFICIENT_EVIDENCE",
+        "median_cents_twice": null,
+        "history_window": [
+          "2026-07-03T00:00:00+08:00",
+          "2026-10-01T00:00:00+08:00"
+        ]
+      }
+    },
+    {
+      "id": "D10-incomplete",
+      "rule": "D10",
+      "option": "A",
+      "kind": "anomaly",
+      "purpose": "缺页或读取失败不能报未触发",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "history_cents": [
+          10000,
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "target_cents": 99999,
+        "history_complete": false,
+        "category_known": true,
+        "current_start": "2026-10-01T00:00:00+08:00"
+      },
+      "expected": {
+        "status": "DATA_UNAVAILABLE",
+        "median_cents_twice": null,
+        "history_window": [
+          "2026-07-03T00:00:00+08:00",
+          "2026-10-01T00:00:00+08:00"
+        ]
+      }
+    },
+    {
+      "id": "D10-media-video",
+      "rule": "D10",
+      "option": "A",
+      "kind": "anomaly",
+      "purpose": "已采用媒体历史的数值切片；不证明生产分类过滤",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "history_cents": [
+          1990,
+          990,
+          1990,
+          990,
+          1990,
+          990
+        ],
+        "target_cents": 1990,
+        "history_complete": true,
+        "category_known": true,
+        "current_start": "2026-10-01T00:00:00+08:00"
+      },
+      "expected": {
+        "status": "NOT_TRIGGERED",
+        "median_cents_twice": 2980,
+        "history_window": [
+          "2026-07-03T00:00:00+08:00",
+          "2026-10-01T00:00:00+08:00"
+        ]
+      }
+    },
+    {
+      "id": "D10-media-music",
+      "rule": "D10",
+      "option": "A",
+      "kind": "anomaly",
+      "purpose": "同商户不同服务不能合并为一个订阅",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "history_cents": [
+          1990,
+          990,
+          1990,
+          990,
+          1990,
+          990
+        ],
+        "target_cents": 990,
+        "history_complete": true,
+        "category_known": true,
+        "current_start": "2026-10-01T00:00:00+08:00"
+      },
+      "expected": {
+        "status": "NOT_TRIGGERED",
+        "median_cents_twice": 2980,
+        "history_window": [
+          "2026-07-03T00:00:00+08:00",
+          "2026-10-01T00:00:00+08:00"
+        ]
+      }
+    },
+    {
+      "id": "D20-replay",
+      "rule": "D20",
+      "option": "BOTH",
+      "kind": "spec_only",
+      "purpose": "人工/后续共同运行验收，未在本工具执行",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "steps": [
+          "保存反馈O并提交",
+          "相同O及完整内容重试"
+        ],
+        "existing_test": "three_choices_commit_read_and_replay_original_event"
+      },
+      "expected": {
+        "required_observations": [
+          "返回原回执与原事件",
+          "反馈/领域事件/Outbox不重复新增"
+        ]
+      }
+    },
+    {
+      "id": "D20-conflict",
+      "rule": "D20",
+      "option": "BOTH",
+      "kind": "spec_only",
+      "purpose": "人工/后续共同运行验收，未在本工具执行",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "steps": [
+          "保存O",
+          "相同O换choice或报告证据"
+        ],
+        "existing_test": "conflicts_scope_and_report_identity_never_overwrite"
+      },
+      "expected": {
+        "required_observations": [
+          "冲突拒绝",
+          "原事实不覆盖"
+        ]
+      }
+    },
+    {
+      "id": "D20-new-operation-A",
+      "rule": "D20",
+      "option": "A",
+      "kind": "spec_only",
+      "purpose": "人工/后续共同运行验收，未在本工具执行",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "steps": [
+          "保存交易T的反馈O",
+          "新操作号P再次反馈同复合交易T"
+        ],
+        "existing_test": "conflicts_scope_and_report_identity_never_overwrite"
+      },
+      "expected": {
+        "required_observations": [
+          "RepeatedFeedbackRuleUnconfirmed",
+          "不是成功更正"
+        ]
+      }
+    },
+    {
+      "id": "D20-commit-unknown",
+      "rule": "D20",
+      "option": "BOTH",
+      "kind": "spec_only",
+      "purpose": "人工/后续共同运行验收，未在本工具执行",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "steps": [
+          "公共COMMIT结果未知",
+          "按原O恢复查询"
+        ],
+        "existing_test": "discarded_reply_can_be_recovered_by_original_id_after_pool_recreation"
+      },
+      "expected": {
+        "required_observations": [
+          "不使用新O重复执行业务",
+          "查不到不证明回滚；由公共恢复状态继续裁决"
+        ]
+      }
+    },
+    {
+      "id": "D20-cancel-before",
+      "rule": "D20",
+      "option": "BOTH",
+      "kind": "spec_only",
+      "purpose": "人工/后续共同运行验收，未在本工具执行",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "steps": [
+          "提交前取消任务",
+          "外层事务回滚后查原O"
+        ],
+        "existing_test": "task_abort_before_public_commit_leaves_no_feedback_and_allows_original_retry"
+      },
+      "expected": {
+        "required_observations": [
+          "无已提交反馈",
+          "原O可安全重试，须按公共恢复裁决"
+        ]
+      }
+    },
+    {
+      "id": "D20-cancel-after",
+      "rule": "D20",
+      "option": "BOTH",
+      "kind": "spec_only",
+      "purpose": "人工/后续共同运行验收，未在本工具执行",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "steps": [
+          "COMMIT后取消任务",
+          "新连接按原O恢复"
+        ],
+        "existing_test": "task_abort_after_public_commit_preserves_original_feedback_and_event"
+      },
+      "expected": {
+        "required_observations": [
+          "原反馈及原事件仍可读"
+        ]
+      }
+    },
+    {
+      "id": "D20-correction-B",
+      "rule": "D20",
+      "option": "B",
+      "kind": "spec_only",
+      "purpose": "人工/后续共同运行验收，未在本工具执行",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "steps": [
+          "已有revision1",
+          "重新确认，以新O和expected_revision=1更正",
+          "再查旧O与head"
+        ],
+        "existing_test": null
+      },
+      "expected": {
+        "required_observations": [
+          "追加revision2，原条目不改",
+          "旧O仍返回旧事实，head返回新版本",
+          "共同事务含结果/事件/Outbox；该接口尚未实现"
+        ]
+      }
+    },
+    {
+      "id": "D20-race-B",
+      "rule": "D20",
+      "option": "B",
+      "kind": "spec_only",
+      "purpose": "人工/后续共同运行验收，未在本工具执行",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "steps": [
+          "两个新O都以expected_revision=1更正"
+        ],
+        "existing_test": null
+      },
+      "expected": {
+        "required_observations": [
+          "只有一个推进revision2",
+          "另一个版本冲突；不能覆盖",
+          "胜者原O重试不再推进版本"
+        ]
+      }
+    },
+    {
+      "id": "D20-revoke-B",
+      "rule": "D20",
+      "option": "B",
+      "kind": "spec_only",
+      "purpose": "人工/后续共同运行验收，未在本工具执行",
+      "approval": "PENDING",
+      "product_run": "NOT_RUN",
+      "input": {
+        "steps": [
+          "重新确认并以新O撤销当前revision",
+          "旧O和当前head分别读取"
+        ],
+        "existing_test": null
+      },
+      "expected": {
+        "required_observations": [
+          "追加墓碑，保留原历史",
+          "撤销不自动解锁卡或退订商户",
+          "卡动作重新核本人权限/当前状态并独立确认"
+        ]
+      }
+    }
+  ]
+}

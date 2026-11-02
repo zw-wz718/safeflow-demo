@@ -1,0 +1,1047 @@
+{
+  "cases": [
+    {
+      "name": "complete",
+      "read": {
+        "contract": "LOCAL_BILLING_QUERY_V1",
+        "duplicates_ignored": 0,
+        "eligible_consumption": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-july",
+            "transaction_type": "CONSUMPTION"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-08-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-august",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "excluded": [
+          {
+            "reason": "NOT_CONSUMPTION",
+            "transaction_id": "fictional-transfer"
+          },
+          {
+            "reason": "NOT_CONSUMPTION",
+            "transaction_id": "fictional-refund"
+          },
+          {
+            "reason": "NOT_COMPLETED",
+            "transaction_id": "fictional-pending"
+          },
+          {
+            "reason": "NOT_COMPLETED",
+            "transaction_id": "fictional-failed"
+          }
+        ],
+        "is_complete": true,
+        "missing_merchant_ids": [],
+        "missing_service_ids": [],
+        "next_cursor": null,
+        "observed_transactions": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-july",
+            "transaction_type": "CONSUMPTION"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": null,
+            "status": "COMPLETED",
+            "transaction_id": "fictional-transfer",
+            "transaction_type": "TRANSFER"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-08-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-august",
+            "transaction_type": "CONSUMPTION"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "IN",
+            "merchant_id": "merchant_demo_video",
+            "original_tx_id": "fictional-consumption-july",
+            "service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-refund",
+            "transaction_type": "REFUND"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": null,
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "PROCESSING",
+            "transaction_id": "fictional-pending",
+            "transaction_type": "CONSUMPTION"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": null,
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "FAILED",
+            "transaction_id": "fictional-failed",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "pages_read": 2,
+        "production_registered": false,
+        "reason": null,
+        "snapshot_id": "fictional-snapshot-1",
+        "source_id": "fictional-billing-input-v1",
+        "state": "COMPLETE"
+      },
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "subscription_block_reason": null,
+      "subscription_snapshot": {
+        "accounts": [
+          {
+            "account_id": "account_001",
+            "user_id": "user_demo"
+          }
+        ],
+        "managed_subscriptions_read": {
+          "is_complete": false,
+          "next_cursor": null,
+          "reason": "MANAGED_LEDGER_NOT_PROVIDED",
+          "state": "UNAVAILABLE"
+        },
+        "transactions": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "mock_service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-july",
+            "transaction_type": "CONSUMPTION"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-08-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "mock_service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-august",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "transactions_read": {
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null,
+          "state": "COMPLETE"
+        },
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      }
+    },
+    {
+      "name": "second-page-failed",
+      "read": {
+        "contract": "LOCAL_BILLING_QUERY_V1",
+        "duplicates_ignored": 0,
+        "eligible_consumption": [],
+        "excluded": [],
+        "is_complete": false,
+        "missing_merchant_ids": [],
+        "missing_service_ids": [],
+        "next_cursor": "page2",
+        "observed_transactions": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-july",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "pages_read": 1,
+        "production_registered": false,
+        "reason": "SOURCE_UNAVAILABLE",
+        "snapshot_id": "fictional-snapshot-1",
+        "source_id": "fictional-billing-input-v1",
+        "state": "DATA_INCOMPLETE"
+      },
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "subscription_block_reason": "READ_NOT_COMPLETE",
+      "subscription_snapshot": null
+    },
+    {
+      "name": "cursor-loop",
+      "read": {
+        "contract": "LOCAL_BILLING_QUERY_V1",
+        "duplicates_ignored": 0,
+        "eligible_consumption": [],
+        "excluded": [],
+        "is_complete": false,
+        "missing_merchant_ids": [],
+        "missing_service_ids": [],
+        "next_cursor": "page2",
+        "observed_transactions": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-july",
+            "transaction_type": "CONSUMPTION"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-08-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-august",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "pages_read": 2,
+        "production_registered": false,
+        "reason": "CURSOR_LOOP",
+        "snapshot_id": "fictional-snapshot-1",
+        "source_id": "fictional-billing-input-v1",
+        "state": "DATA_INCOMPLETE"
+      },
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "subscription_block_reason": "READ_NOT_COMPLETE",
+      "subscription_snapshot": null
+    },
+    {
+      "name": "snapshot-changed",
+      "read": {
+        "contract": "LOCAL_BILLING_QUERY_V1",
+        "duplicates_ignored": 0,
+        "eligible_consumption": [],
+        "excluded": [],
+        "is_complete": false,
+        "missing_merchant_ids": [],
+        "missing_service_ids": [],
+        "next_cursor": "page2",
+        "observed_transactions": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-july",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "pages_read": 1,
+        "production_registered": false,
+        "reason": "SNAPSHOT_CHANGED",
+        "snapshot_id": "fictional-snapshot-1",
+        "source_id": "fictional-billing-input-v1",
+        "state": "DATA_INCOMPLETE"
+      },
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "subscription_block_reason": "READ_NOT_COMPLETE",
+      "subscription_snapshot": null
+    },
+    {
+      "name": "no-completion-proof",
+      "read": {
+        "contract": "LOCAL_BILLING_QUERY_V1",
+        "duplicates_ignored": 0,
+        "eligible_consumption": [],
+        "excluded": [],
+        "is_complete": false,
+        "missing_merchant_ids": [],
+        "missing_service_ids": [],
+        "next_cursor": null,
+        "observed_transactions": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-july",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "pages_read": 1,
+        "production_registered": false,
+        "reason": "MISSING_COMPLETION_PROOF",
+        "snapshot_id": "fictional-snapshot-1",
+        "source_id": "fictional-billing-input-v1",
+        "state": "DATA_INCOMPLETE"
+      },
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "subscription_block_reason": "READ_NOT_COMPLETE",
+      "subscription_snapshot": null
+    },
+    {
+      "name": "source-unavailable",
+      "read": {
+        "contract": "LOCAL_BILLING_QUERY_V1",
+        "duplicates_ignored": 0,
+        "eligible_consumption": [],
+        "excluded": [],
+        "is_complete": false,
+        "missing_merchant_ids": [],
+        "missing_service_ids": [],
+        "next_cursor": null,
+        "observed_transactions": [],
+        "pages_read": 0,
+        "production_registered": false,
+        "reason": "SOURCE_UNAVAILABLE",
+        "snapshot_id": null,
+        "source_id": "fictional-billing-input-v1",
+        "state": "LOOKUP_UNAVAILABLE"
+      },
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "subscription_block_reason": "READ_NOT_COMPLETE",
+      "subscription_snapshot": null
+    },
+    {
+      "name": "snapshot-expired",
+      "read": {
+        "contract": "LOCAL_BILLING_QUERY_V1",
+        "duplicates_ignored": 0,
+        "eligible_consumption": [],
+        "excluded": [],
+        "is_complete": false,
+        "missing_merchant_ids": [],
+        "missing_service_ids": [],
+        "next_cursor": "page2",
+        "observed_transactions": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-july",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "pages_read": 1,
+        "production_registered": false,
+        "reason": "SNAPSHOT_EXPIRED",
+        "snapshot_id": "fictional-snapshot-1",
+        "source_id": "fictional-billing-input-v1",
+        "state": "DATA_INCOMPLETE"
+      },
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "subscription_block_reason": "READ_NOT_COMPLETE",
+      "subscription_snapshot": null
+    },
+    {
+      "name": "duplicate-page-rows",
+      "read": {
+        "contract": "LOCAL_BILLING_QUERY_V1",
+        "duplicates_ignored": 1,
+        "eligible_consumption": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-july",
+            "transaction_type": "CONSUMPTION"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-08-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-august",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "excluded": [],
+        "is_complete": true,
+        "missing_merchant_ids": [],
+        "missing_service_ids": [],
+        "next_cursor": null,
+        "observed_transactions": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-july",
+            "transaction_type": "CONSUMPTION"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-08-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-august",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "pages_read": 2,
+        "production_registered": false,
+        "reason": null,
+        "snapshot_id": "fictional-snapshot-1",
+        "source_id": "fictional-billing-input-v1",
+        "state": "COMPLETE"
+      },
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "subscription_block_reason": null,
+      "subscription_snapshot": {
+        "accounts": [
+          {
+            "account_id": "account_001",
+            "user_id": "user_demo"
+          }
+        ],
+        "managed_subscriptions_read": {
+          "is_complete": false,
+          "next_cursor": null,
+          "reason": "MANAGED_LEDGER_NOT_PROVIDED",
+          "state": "UNAVAILABLE"
+        },
+        "transactions": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "mock_service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-july",
+            "transaction_type": "CONSUMPTION"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-08-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "mock_service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-august",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "transactions_read": {
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null,
+          "state": "COMPLETE"
+        },
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      }
+    },
+    {
+      "name": "missing-merchant-and-service",
+      "read": {
+        "contract": "LOCAL_BILLING_QUERY_V1",
+        "duplicates_ignored": 0,
+        "eligible_consumption": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": null,
+            "status": "COMPLETED",
+            "transaction_id": "fictional-missing-references",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "excluded": [],
+        "is_complete": true,
+        "missing_merchant_ids": [
+          "fictional-missing-references"
+        ],
+        "missing_service_ids": [
+          "fictional-missing-references"
+        ],
+        "next_cursor": null,
+        "observed_transactions": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": null,
+            "status": "COMPLETED",
+            "transaction_id": "fictional-missing-references",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "pages_read": 1,
+        "production_registered": false,
+        "reason": null,
+        "snapshot_id": "fictional-snapshot-1",
+        "source_id": "fictional-billing-input-v1",
+        "state": "COMPLETE"
+      },
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "subscription_block_reason": "SOURCE_CATEGORY_NOT_PROVIDED",
+      "subscription_snapshot": null
+    },
+    {
+      "name": "same-merchant-different-services",
+      "read": {
+        "contract": "LOCAL_BILLING_QUERY_V1",
+        "duplicates_ignored": 0,
+        "eligible_consumption": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-july",
+            "transaction_type": "CONSUMPTION"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_2",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-service-two",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "excluded": [],
+        "is_complete": true,
+        "missing_merchant_ids": [],
+        "missing_service_ids": [],
+        "next_cursor": null,
+        "observed_transactions": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-july",
+            "transaction_type": "CONSUMPTION"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_2",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-service-two",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "pages_read": 1,
+        "production_registered": false,
+        "reason": null,
+        "snapshot_id": "fictional-snapshot-1",
+        "source_id": "fictional-billing-input-v1",
+        "state": "COMPLETE"
+      },
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "subscription_block_reason": null,
+      "subscription_snapshot": {
+        "accounts": [
+          {
+            "account_id": "account_001",
+            "user_id": "user_demo"
+          }
+        ],
+        "managed_subscriptions_read": {
+          "is_complete": false,
+          "next_cursor": null,
+          "reason": "MANAGED_LEDGER_NOT_PROVIDED",
+          "state": "UNAVAILABLE"
+        },
+        "transactions": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "mock_service_ref": "service_demo_video_1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-july",
+            "transaction_type": "CONSUMPTION"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "mock_service_ref": "service_demo_video_2",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-service-two",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "transactions_read": {
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null,
+          "state": "COMPLETE"
+        },
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      }
+    },
+    {
+      "name": "same-merchant-unknown-service",
+      "read": {
+        "contract": "LOCAL_BILLING_QUERY_V1",
+        "duplicates_ignored": 0,
+        "eligible_consumption": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-service-unknown-a",
+            "transaction_type": "CONSUMPTION"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-service-unknown-b",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "excluded": [],
+        "is_complete": true,
+        "missing_merchant_ids": [],
+        "missing_service_ids": [
+          "fictional-service-unknown-a",
+          "fictional-service-unknown-b"
+        ],
+        "next_cursor": null,
+        "observed_transactions": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-service-unknown-a",
+            "transaction_type": "CONSUMPTION"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-service-unknown-b",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "pages_read": 1,
+        "production_registered": false,
+        "reason": null,
+        "snapshot_id": "fictional-snapshot-1",
+        "source_id": "fictional-billing-input-v1",
+        "state": "COMPLETE"
+      },
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "subscription_block_reason": null,
+      "subscription_snapshot": {
+        "accounts": [
+          {
+            "account_id": "account_001",
+            "user_id": "user_demo"
+          }
+        ],
+        "managed_subscriptions_read": {
+          "is_complete": false,
+          "next_cursor": null,
+          "reason": "MANAGED_LEDGER_NOT_PROVIDED",
+          "state": "UNAVAILABLE"
+        },
+        "transactions": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "mock_service_ref": null,
+            "status": "COMPLETED",
+            "transaction_id": "fictional-service-unknown-a",
+            "transaction_type": "CONSUMPTION"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "mock_service_ref": null,
+            "status": "COMPLETED",
+            "transaction_id": "fictional-service-unknown-b",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "transactions_read": {
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null,
+          "state": "COMPLETE"
+        },
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      }
+    },
+    {
+      "name": "foreign-account-row",
+      "read": {
+        "contract": "LOCAL_BILLING_QUERY_V1",
+        "duplicates_ignored": 0,
+        "eligible_consumption": [],
+        "excluded": [],
+        "is_complete": false,
+        "missing_merchant_ids": [],
+        "missing_service_ids": [],
+        "next_cursor": null,
+        "observed_transactions": [],
+        "pages_read": 0,
+        "production_registered": false,
+        "reason": "SOURCE_SCOPE_MISMATCH",
+        "snapshot_id": null,
+        "source_id": "fictional-billing-input-v1",
+        "state": "RESOURCE_UNAVAILABLE"
+      },
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "subscription_block_reason": "READ_NOT_COMPLETE",
+      "subscription_snapshot": null
+    }
+  ],
+  "fictional": true,
+  "formal_c_txn": false,
+  "mode": "OFFLINE_FICTIONAL_BILLING_QUERY",
+  "production_registered": false,
+  "real_consumption_source_connected": false
+}

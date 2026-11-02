@@ -1,0 +1,949 @@
+{
+  "complete": {
+    "all_windows_complete": true,
+    "anomaly_rule_applied": false,
+    "comparable": {
+      "calculation_reason": null,
+      "calculation_status": "READY",
+      "capabilities": {
+        "anomalies": {
+          "executed": false,
+          "reason": "ANOMALY_DETECTION_NOT_IMPLEMENTED"
+        },
+        "comparison": {
+          "executed": false,
+          "reason": "COMPARISON_NOT_IMPLEMENTED_RULES_UNCONFIRMED"
+        },
+        "net_consumption": {
+          "executed": false,
+          "reason": "REFUND_FORMULA_NOT_CONFIRMED"
+        }
+      },
+      "contract": "LOCAL_BILLING_SPENDING_V1",
+      "evidence": [
+        {
+          "reference": {
+            "account_id": "account_demo",
+            "source_id": "fictional-window-demo",
+            "transaction_id": "fictional_0_2026-09-01T00:00:00+08:00"
+          },
+          "transaction": {
+            "account_id": "account_demo",
+            "amount": "2.00",
+            "card_id": null,
+            "category_code": "food",
+            "completed_at": "2026-09-01T00:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": null,
+            "status": "COMPLETED",
+            "transaction_id": "fictional_0_2026-09-01T00:00:00+08:00",
+            "transaction_type": "CONSUMPTION"
+          }
+        }
+      ],
+      "exclusions": [],
+      "metadata": {
+        "calculated_at": "2026-10-19T12:00:00+08:00",
+        "report_id": "fictional_complete:comparable"
+      },
+      "production_registered": false,
+      "read": {
+        "duplicates_ignored": 0,
+        "is_complete": true,
+        "next_cursor": null,
+        "pages_read": 1,
+        "reason": null,
+        "snapshot_id": "fictional_2026-09-01T00:00:00+08:00",
+        "source_id": "fictional-window-demo",
+        "state": "COMPLETE"
+      },
+      "refunds": [],
+      "request": {
+        "account_ids": [
+          "account_demo"
+        ],
+        "window": {
+          "as_of": "2026-10-19T12:00:00+08:00",
+          "end_exclusive": "2026-09-19T12:00:00+08:00",
+          "start_inclusive": "2026-09-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "rule_version": "LOCAL_BASIC_SPENDING_2026_10_16_V1",
+      "summary": {
+        "categories": [
+          {
+            "category_code": "food",
+            "count": 1,
+            "display_name": "food",
+            "references": [
+              {
+                "account_id": "account_demo",
+                "source_id": "fictional-window-demo",
+                "transaction_id": "fictional_0_2026-09-01T00:00:00+08:00"
+              }
+            ],
+            "total": "2.00"
+          }
+        ],
+        "count": 1,
+        "currency": "CNY",
+        "gross_consumption": "2.00",
+        "top_five": [
+          {
+            "reference": {
+              "account_id": "account_demo",
+              "source_id": "fictional-window-demo",
+              "transaction_id": "fictional_0_2026-09-01T00:00:00+08:00"
+            },
+            "transaction": {
+              "account_id": "account_demo",
+              "amount": "2.00",
+              "card_id": null,
+              "category_code": "food",
+              "completed_at": "2026-09-01T00:00:00+08:00",
+              "currency": "CNY",
+              "direction": "OUT",
+              "merchant_id": null,
+              "status": "COMPLETED",
+              "transaction_id": "fictional_0_2026-09-01T00:00:00+08:00",
+              "transaction_type": "CONSUMPTION"
+            }
+          }
+        ]
+      }
+    },
+    "comparison_rule_applied": false,
+    "contract": "billing-window-evidence-v1-local",
+    "current": {
+      "calculation_reason": null,
+      "calculation_status": "READY",
+      "capabilities": {
+        "anomalies": {
+          "executed": false,
+          "reason": "ANOMALY_DETECTION_NOT_IMPLEMENTED"
+        },
+        "comparison": {
+          "executed": false,
+          "reason": "COMPARISON_NOT_IMPLEMENTED_RULES_UNCONFIRMED"
+        },
+        "net_consumption": {
+          "executed": false,
+          "reason": "REFUND_FORMULA_NOT_CONFIRMED"
+        }
+      },
+      "contract": "LOCAL_BILLING_SPENDING_V1",
+      "evidence": [
+        {
+          "reference": {
+            "account_id": "account_demo",
+            "source_id": "fictional-window-demo",
+            "transaction_id": "fictional_0_2026-10-01T00:00:00+08:00"
+          },
+          "transaction": {
+            "account_id": "account_demo",
+            "amount": "2.00",
+            "card_id": null,
+            "category_code": "food",
+            "completed_at": "2026-10-01T00:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": null,
+            "status": "COMPLETED",
+            "transaction_id": "fictional_0_2026-10-01T00:00:00+08:00",
+            "transaction_type": "CONSUMPTION"
+          }
+        }
+      ],
+      "exclusions": [],
+      "metadata": {
+        "calculated_at": "2026-10-19T12:00:00+08:00",
+        "report_id": "fictional_complete:current"
+      },
+      "production_registered": false,
+      "read": {
+        "duplicates_ignored": 0,
+        "is_complete": true,
+        "next_cursor": null,
+        "pages_read": 1,
+        "reason": null,
+        "snapshot_id": "fictional_2026-10-01T00:00:00+08:00",
+        "source_id": "fictional-window-demo",
+        "state": "COMPLETE"
+      },
+      "refunds": [],
+      "request": {
+        "account_ids": [
+          "account_demo"
+        ],
+        "window": {
+          "as_of": "2026-10-19T12:00:00+08:00",
+          "end_exclusive": "2026-10-19T12:00:00+08:00",
+          "start_inclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "rule_version": "LOCAL_BASIC_SPENDING_2026_10_16_V1",
+      "summary": {
+        "categories": [
+          {
+            "category_code": "food",
+            "count": 1,
+            "display_name": "food",
+            "references": [
+              {
+                "account_id": "account_demo",
+                "source_id": "fictional-window-demo",
+                "transaction_id": "fictional_0_2026-10-01T00:00:00+08:00"
+              }
+            ],
+            "total": "2.00"
+          }
+        ],
+        "count": 1,
+        "currency": "CNY",
+        "gross_consumption": "2.00",
+        "top_five": [
+          {
+            "reference": {
+              "account_id": "account_demo",
+              "source_id": "fictional-window-demo",
+              "transaction_id": "fictional_0_2026-10-01T00:00:00+08:00"
+            },
+            "transaction": {
+              "account_id": "account_demo",
+              "amount": "2.00",
+              "card_id": null,
+              "category_code": "food",
+              "completed_at": "2026-10-01T00:00:00+08:00",
+              "currency": "CNY",
+              "direction": "OUT",
+              "merchant_id": null,
+              "status": "COMPLETED",
+              "transaction_id": "fictional_0_2026-10-01T00:00:00+08:00",
+              "transaction_type": "CONSUMPTION"
+            }
+          }
+        ]
+      }
+    },
+    "historical": {
+      "calculation_reason": null,
+      "calculation_status": "READY",
+      "capabilities": {
+        "anomalies": {
+          "executed": false,
+          "reason": "ANOMALY_DETECTION_NOT_IMPLEMENTED"
+        },
+        "comparison": {
+          "executed": false,
+          "reason": "COMPARISON_NOT_IMPLEMENTED_RULES_UNCONFIRMED"
+        },
+        "net_consumption": {
+          "executed": false,
+          "reason": "REFUND_FORMULA_NOT_CONFIRMED"
+        }
+      },
+      "contract": "LOCAL_BILLING_SPENDING_V1",
+      "evidence": [
+        {
+          "reference": {
+            "account_id": "account_demo",
+            "source_id": "fictional-window-demo",
+            "transaction_id": "fictional_0_2026-07-01T00:00:00+08:00"
+          },
+          "transaction": {
+            "account_id": "account_demo",
+            "amount": "1.00",
+            "card_id": null,
+            "category_code": "food",
+            "completed_at": "2026-07-01T00:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": null,
+            "status": "COMPLETED",
+            "transaction_id": "fictional_0_2026-07-01T00:00:00+08:00",
+            "transaction_type": "CONSUMPTION"
+          }
+        },
+        {
+          "reference": {
+            "account_id": "account_demo",
+            "source_id": "fictional-window-demo",
+            "transaction_id": "fictional_1_2026-07-01T00:00:00+08:00"
+          },
+          "transaction": {
+            "account_id": "account_demo",
+            "amount": "1.01",
+            "card_id": null,
+            "category_code": "food",
+            "completed_at": "2026-07-01T00:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": null,
+            "status": "COMPLETED",
+            "transaction_id": "fictional_1_2026-07-01T00:00:00+08:00",
+            "transaction_type": "CONSUMPTION"
+          }
+        }
+      ],
+      "exclusions": [],
+      "metadata": {
+        "calculated_at": "2026-10-19T12:00:00+08:00",
+        "report_id": "fictional_complete:historical"
+      },
+      "production_registered": false,
+      "read": {
+        "duplicates_ignored": 0,
+        "is_complete": true,
+        "next_cursor": null,
+        "pages_read": 1,
+        "reason": null,
+        "snapshot_id": "fictional_2026-07-01T00:00:00+08:00",
+        "source_id": "fictional-window-demo",
+        "state": "COMPLETE"
+      },
+      "refunds": [],
+      "request": {
+        "account_ids": [
+          "account_demo"
+        ],
+        "window": {
+          "as_of": "2026-10-19T12:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-07-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "rule_version": "LOCAL_BASIC_SPENDING_2026_10_16_V1",
+      "summary": {
+        "categories": [
+          {
+            "category_code": "food",
+            "count": 2,
+            "display_name": "food",
+            "references": [
+              {
+                "account_id": "account_demo",
+                "source_id": "fictional-window-demo",
+                "transaction_id": "fictional_0_2026-07-01T00:00:00+08:00"
+              },
+              {
+                "account_id": "account_demo",
+                "source_id": "fictional-window-demo",
+                "transaction_id": "fictional_1_2026-07-01T00:00:00+08:00"
+              }
+            ],
+            "total": "2.01"
+          }
+        ],
+        "count": 2,
+        "currency": "CNY",
+        "gross_consumption": "2.01",
+        "top_five": [
+          {
+            "reference": {
+              "account_id": "account_demo",
+              "source_id": "fictional-window-demo",
+              "transaction_id": "fictional_1_2026-07-01T00:00:00+08:00"
+            },
+            "transaction": {
+              "account_id": "account_demo",
+              "amount": "1.01",
+              "card_id": null,
+              "category_code": "food",
+              "completed_at": "2026-07-01T00:00:00+08:00",
+              "currency": "CNY",
+              "direction": "OUT",
+              "merchant_id": null,
+              "status": "COMPLETED",
+              "transaction_id": "fictional_1_2026-07-01T00:00:00+08:00",
+              "transaction_type": "CONSUMPTION"
+            }
+          },
+          {
+            "reference": {
+              "account_id": "account_demo",
+              "source_id": "fictional-window-demo",
+              "transaction_id": "fictional_0_2026-07-01T00:00:00+08:00"
+            },
+            "transaction": {
+              "account_id": "account_demo",
+              "amount": "1.00",
+              "card_id": null,
+              "category_code": "food",
+              "completed_at": "2026-07-01T00:00:00+08:00",
+              "currency": "CNY",
+              "direction": "OUT",
+              "merchant_id": null,
+              "status": "COMPLETED",
+              "transaction_id": "fictional_0_2026-07-01T00:00:00+08:00",
+              "transaction_type": "CONSUMPTION"
+            }
+          }
+        ]
+      }
+    },
+    "historical_categories": [
+      {
+        "category_code": "food",
+        "median_cents_twice": "201",
+        "sample_count": 2,
+        "samples": [
+          {
+            "reference": {
+              "account_id": "account_demo",
+              "source_id": "fictional-window-demo",
+              "transaction_id": "fictional_0_2026-07-01T00:00:00+08:00"
+            },
+            "transaction": {
+              "account_id": "account_demo",
+              "amount": "1.00",
+              "card_id": null,
+              "category_code": "food",
+              "completed_at": "2026-07-01T00:00:00+08:00",
+              "currency": "CNY",
+              "direction": "OUT",
+              "merchant_id": null,
+              "status": "COMPLETED",
+              "transaction_id": "fictional_0_2026-07-01T00:00:00+08:00",
+              "transaction_type": "CONSUMPTION"
+            }
+          },
+          {
+            "reference": {
+              "account_id": "account_demo",
+              "source_id": "fictional-window-demo",
+              "transaction_id": "fictional_1_2026-07-01T00:00:00+08:00"
+            },
+            "transaction": {
+              "account_id": "account_demo",
+              "amount": "1.01",
+              "card_id": null,
+              "category_code": "food",
+              "completed_at": "2026-07-01T00:00:00+08:00",
+              "currency": "CNY",
+              "direction": "OUT",
+              "merchant_id": null,
+              "status": "COMPLETED",
+              "transaction_id": "fictional_1_2026-07-01T00:00:00+08:00",
+              "transaction_type": "CONSUMPTION"
+            }
+          }
+        ]
+      }
+    ],
+    "net_refund_rule_applied": false,
+    "refund_boundary": {
+      "calculation_reason": null,
+      "calculation_status": "READY",
+      "capabilities": {
+        "anomalies": {
+          "executed": false,
+          "reason": "ANOMALY_DETECTION_NOT_IMPLEMENTED"
+        },
+        "comparison": {
+          "executed": false,
+          "reason": "COMPARISON_NOT_IMPLEMENTED_RULES_UNCONFIRMED"
+        },
+        "net_consumption": {
+          "executed": false,
+          "reason": "REFUND_FORMULA_NOT_CONFIRMED"
+        }
+      },
+      "contract": "LOCAL_BILLING_SPENDING_V1",
+      "evidence": [
+        {
+          "reference": {
+            "account_id": "account_demo",
+            "source_id": "fictional-window-demo",
+            "transaction_id": "fictional_0_2026-06-01T00:00:00+08:00"
+          },
+          "transaction": {
+            "account_id": "account_demo",
+            "amount": "2.00",
+            "card_id": null,
+            "category_code": "food",
+            "completed_at": "2026-06-01T00:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": null,
+            "status": "COMPLETED",
+            "transaction_id": "fictional_0_2026-06-01T00:00:00+08:00",
+            "transaction_type": "CONSUMPTION"
+          }
+        }
+      ],
+      "exclusions": [],
+      "metadata": {
+        "calculated_at": "2026-10-19T12:00:00+08:00",
+        "report_id": "fictional_complete:refund_boundary"
+      },
+      "production_registered": false,
+      "read": {
+        "duplicates_ignored": 0,
+        "is_complete": true,
+        "next_cursor": null,
+        "pages_read": 1,
+        "reason": null,
+        "snapshot_id": "fictional_2026-06-01T00:00:00+08:00",
+        "source_id": "fictional-window-demo",
+        "state": "COMPLETE"
+      },
+      "refunds": [],
+      "request": {
+        "account_ids": [
+          "account_demo"
+        ],
+        "window": {
+          "as_of": "2026-10-19T12:00:00+08:00",
+          "end_exclusive": "2026-10-19T12:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "rule_version": "LOCAL_BASIC_SPENDING_2026_10_16_V1",
+      "summary": {
+        "categories": [
+          {
+            "category_code": "food",
+            "count": 1,
+            "display_name": "food",
+            "references": [
+              {
+                "account_id": "account_demo",
+                "source_id": "fictional-window-demo",
+                "transaction_id": "fictional_0_2026-06-01T00:00:00+08:00"
+              }
+            ],
+            "total": "2.00"
+          }
+        ],
+        "count": 1,
+        "currency": "CNY",
+        "gross_consumption": "2.00",
+        "top_five": [
+          {
+            "reference": {
+              "account_id": "account_demo",
+              "source_id": "fictional-window-demo",
+              "transaction_id": "fictional_0_2026-06-01T00:00:00+08:00"
+            },
+            "transaction": {
+              "account_id": "account_demo",
+              "amount": "2.00",
+              "card_id": null,
+              "category_code": "food",
+              "completed_at": "2026-06-01T00:00:00+08:00",
+              "currency": "CNY",
+              "direction": "OUT",
+              "merchant_id": null,
+              "status": "COMPLETED",
+              "transaction_id": "fictional_0_2026-06-01T00:00:00+08:00",
+              "transaction_type": "CONSUMPTION"
+            }
+          }
+        ]
+      }
+    },
+    "rule_status": "D08_D19_D10_PENDING_NOT_APPLIED",
+    "unclassified_history_count": 0
+  },
+  "history_unavailable": {
+    "all_windows_complete": false,
+    "anomaly_rule_applied": false,
+    "comparable": {
+      "calculation_reason": null,
+      "calculation_status": "READY",
+      "capabilities": {
+        "anomalies": {
+          "executed": false,
+          "reason": "ANOMALY_DETECTION_NOT_IMPLEMENTED"
+        },
+        "comparison": {
+          "executed": false,
+          "reason": "COMPARISON_NOT_IMPLEMENTED_RULES_UNCONFIRMED"
+        },
+        "net_consumption": {
+          "executed": false,
+          "reason": "REFUND_FORMULA_NOT_CONFIRMED"
+        }
+      },
+      "contract": "LOCAL_BILLING_SPENDING_V1",
+      "evidence": [
+        {
+          "reference": {
+            "account_id": "account_demo",
+            "source_id": "fictional-window-demo",
+            "transaction_id": "fictional_0_2026-09-01T00:00:00+08:00"
+          },
+          "transaction": {
+            "account_id": "account_demo",
+            "amount": "2.00",
+            "card_id": null,
+            "category_code": "food",
+            "completed_at": "2026-09-01T00:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": null,
+            "status": "COMPLETED",
+            "transaction_id": "fictional_0_2026-09-01T00:00:00+08:00",
+            "transaction_type": "CONSUMPTION"
+          }
+        }
+      ],
+      "exclusions": [],
+      "metadata": {
+        "calculated_at": "2026-10-19T12:00:00+08:00",
+        "report_id": "fictional_partial:comparable"
+      },
+      "production_registered": false,
+      "read": {
+        "duplicates_ignored": 0,
+        "is_complete": true,
+        "next_cursor": null,
+        "pages_read": 1,
+        "reason": null,
+        "snapshot_id": "fictional_2026-09-01T00:00:00+08:00",
+        "source_id": "fictional-window-demo",
+        "state": "COMPLETE"
+      },
+      "refunds": [],
+      "request": {
+        "account_ids": [
+          "account_demo"
+        ],
+        "window": {
+          "as_of": "2026-10-19T12:00:00+08:00",
+          "end_exclusive": "2026-09-19T12:00:00+08:00",
+          "start_inclusive": "2026-09-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "rule_version": "LOCAL_BASIC_SPENDING_2026_10_16_V1",
+      "summary": {
+        "categories": [
+          {
+            "category_code": "food",
+            "count": 1,
+            "display_name": "food",
+            "references": [
+              {
+                "account_id": "account_demo",
+                "source_id": "fictional-window-demo",
+                "transaction_id": "fictional_0_2026-09-01T00:00:00+08:00"
+              }
+            ],
+            "total": "2.00"
+          }
+        ],
+        "count": 1,
+        "currency": "CNY",
+        "gross_consumption": "2.00",
+        "top_five": [
+          {
+            "reference": {
+              "account_id": "account_demo",
+              "source_id": "fictional-window-demo",
+              "transaction_id": "fictional_0_2026-09-01T00:00:00+08:00"
+            },
+            "transaction": {
+              "account_id": "account_demo",
+              "amount": "2.00",
+              "card_id": null,
+              "category_code": "food",
+              "completed_at": "2026-09-01T00:00:00+08:00",
+              "currency": "CNY",
+              "direction": "OUT",
+              "merchant_id": null,
+              "status": "COMPLETED",
+              "transaction_id": "fictional_0_2026-09-01T00:00:00+08:00",
+              "transaction_type": "CONSUMPTION"
+            }
+          }
+        ]
+      }
+    },
+    "comparison_rule_applied": false,
+    "contract": "billing-window-evidence-v1-local",
+    "current": {
+      "calculation_reason": null,
+      "calculation_status": "READY",
+      "capabilities": {
+        "anomalies": {
+          "executed": false,
+          "reason": "ANOMALY_DETECTION_NOT_IMPLEMENTED"
+        },
+        "comparison": {
+          "executed": false,
+          "reason": "COMPARISON_NOT_IMPLEMENTED_RULES_UNCONFIRMED"
+        },
+        "net_consumption": {
+          "executed": false,
+          "reason": "REFUND_FORMULA_NOT_CONFIRMED"
+        }
+      },
+      "contract": "LOCAL_BILLING_SPENDING_V1",
+      "evidence": [
+        {
+          "reference": {
+            "account_id": "account_demo",
+            "source_id": "fictional-window-demo",
+            "transaction_id": "fictional_0_2026-10-01T00:00:00+08:00"
+          },
+          "transaction": {
+            "account_id": "account_demo",
+            "amount": "2.00",
+            "card_id": null,
+            "category_code": "food",
+            "completed_at": "2026-10-01T00:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": null,
+            "status": "COMPLETED",
+            "transaction_id": "fictional_0_2026-10-01T00:00:00+08:00",
+            "transaction_type": "CONSUMPTION"
+          }
+        }
+      ],
+      "exclusions": [],
+      "metadata": {
+        "calculated_at": "2026-10-19T12:00:00+08:00",
+        "report_id": "fictional_partial:current"
+      },
+      "production_registered": false,
+      "read": {
+        "duplicates_ignored": 0,
+        "is_complete": true,
+        "next_cursor": null,
+        "pages_read": 1,
+        "reason": null,
+        "snapshot_id": "fictional_2026-10-01T00:00:00+08:00",
+        "source_id": "fictional-window-demo",
+        "state": "COMPLETE"
+      },
+      "refunds": [],
+      "request": {
+        "account_ids": [
+          "account_demo"
+        ],
+        "window": {
+          "as_of": "2026-10-19T12:00:00+08:00",
+          "end_exclusive": "2026-10-19T12:00:00+08:00",
+          "start_inclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "rule_version": "LOCAL_BASIC_SPENDING_2026_10_16_V1",
+      "summary": {
+        "categories": [
+          {
+            "category_code": "food",
+            "count": 1,
+            "display_name": "food",
+            "references": [
+              {
+                "account_id": "account_demo",
+                "source_id": "fictional-window-demo",
+                "transaction_id": "fictional_0_2026-10-01T00:00:00+08:00"
+              }
+            ],
+            "total": "2.00"
+          }
+        ],
+        "count": 1,
+        "currency": "CNY",
+        "gross_consumption": "2.00",
+        "top_five": [
+          {
+            "reference": {
+              "account_id": "account_demo",
+              "source_id": "fictional-window-demo",
+              "transaction_id": "fictional_0_2026-10-01T00:00:00+08:00"
+            },
+            "transaction": {
+              "account_id": "account_demo",
+              "amount": "2.00",
+              "card_id": null,
+              "category_code": "food",
+              "completed_at": "2026-10-01T00:00:00+08:00",
+              "currency": "CNY",
+              "direction": "OUT",
+              "merchant_id": null,
+              "status": "COMPLETED",
+              "transaction_id": "fictional_0_2026-10-01T00:00:00+08:00",
+              "transaction_type": "CONSUMPTION"
+            }
+          }
+        ]
+      }
+    },
+    "historical": {
+      "calculation_reason": "READ_NOT_COMPLETE",
+      "calculation_status": "READ_BLOCKED",
+      "capabilities": {
+        "anomalies": {
+          "executed": false,
+          "reason": "ANOMALY_DETECTION_NOT_IMPLEMENTED"
+        },
+        "comparison": {
+          "executed": false,
+          "reason": "COMPARISON_NOT_IMPLEMENTED_RULES_UNCONFIRMED"
+        },
+        "net_consumption": {
+          "executed": false,
+          "reason": "REFUND_FORMULA_NOT_CONFIRMED"
+        }
+      },
+      "contract": "LOCAL_BILLING_SPENDING_V1",
+      "evidence": null,
+      "exclusions": null,
+      "metadata": {
+        "calculated_at": "2026-10-19T12:00:00+08:00",
+        "report_id": "fictional_partial:historical"
+      },
+      "production_registered": false,
+      "read": {
+        "duplicates_ignored": 0,
+        "is_complete": false,
+        "next_cursor": null,
+        "pages_read": 0,
+        "reason": "SOURCE_UNAVAILABLE",
+        "snapshot_id": null,
+        "source_id": "fictional-window-demo",
+        "state": "LOOKUP_UNAVAILABLE"
+      },
+      "refunds": null,
+      "request": {
+        "account_ids": [
+          "account_demo"
+        ],
+        "window": {
+          "as_of": "2026-10-19T12:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-07-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "rule_version": "LOCAL_BASIC_SPENDING_2026_10_16_V1",
+      "summary": null
+    },
+    "historical_categories": null,
+    "net_refund_rule_applied": false,
+    "refund_boundary": {
+      "calculation_reason": null,
+      "calculation_status": "READY",
+      "capabilities": {
+        "anomalies": {
+          "executed": false,
+          "reason": "ANOMALY_DETECTION_NOT_IMPLEMENTED"
+        },
+        "comparison": {
+          "executed": false,
+          "reason": "COMPARISON_NOT_IMPLEMENTED_RULES_UNCONFIRMED"
+        },
+        "net_consumption": {
+          "executed": false,
+          "reason": "REFUND_FORMULA_NOT_CONFIRMED"
+        }
+      },
+      "contract": "LOCAL_BILLING_SPENDING_V1",
+      "evidence": [
+        {
+          "reference": {
+            "account_id": "account_demo",
+            "source_id": "fictional-window-demo",
+            "transaction_id": "fictional_0_2026-06-01T00:00:00+08:00"
+          },
+          "transaction": {
+            "account_id": "account_demo",
+            "amount": "2.00",
+            "card_id": null,
+            "category_code": "food",
+            "completed_at": "2026-06-01T00:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": null,
+            "status": "COMPLETED",
+            "transaction_id": "fictional_0_2026-06-01T00:00:00+08:00",
+            "transaction_type": "CONSUMPTION"
+          }
+        }
+      ],
+      "exclusions": [],
+      "metadata": {
+        "calculated_at": "2026-10-19T12:00:00+08:00",
+        "report_id": "fictional_partial:refund_boundary"
+      },
+      "production_registered": false,
+      "read": {
+        "duplicates_ignored": 0,
+        "is_complete": true,
+        "next_cursor": null,
+        "pages_read": 1,
+        "reason": null,
+        "snapshot_id": "fictional_2026-06-01T00:00:00+08:00",
+        "source_id": "fictional-window-demo",
+        "state": "COMPLETE"
+      },
+      "refunds": [],
+      "request": {
+        "account_ids": [
+          "account_demo"
+        ],
+        "window": {
+          "as_of": "2026-10-19T12:00:00+08:00",
+          "end_exclusive": "2026-10-19T12:00:00+08:00",
+          "start_inclusive": "2026-06-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "rule_version": "LOCAL_BASIC_SPENDING_2026_10_16_V1",
+      "summary": {
+        "categories": [
+          {
+            "category_code": "food",
+            "count": 1,
+            "display_name": "food",
+            "references": [
+              {
+                "account_id": "account_demo",
+                "source_id": "fictional-window-demo",
+                "transaction_id": "fictional_0_2026-06-01T00:00:00+08:00"
+              }
+            ],
+            "total": "2.00"
+          }
+        ],
+        "count": 1,
+        "currency": "CNY",
+        "gross_consumption": "2.00",
+        "top_five": [
+          {
+            "reference": {
+              "account_id": "account_demo",
+              "source_id": "fictional-window-demo",
+              "transaction_id": "fictional_0_2026-06-01T00:00:00+08:00"
+            },
+            "transaction": {
+              "account_id": "account_demo",
+              "amount": "2.00",
+              "card_id": null,
+              "category_code": "food",
+              "completed_at": "2026-06-01T00:00:00+08:00",
+              "currency": "CNY",
+              "direction": "OUT",
+              "merchant_id": null,
+              "status": "COMPLETED",
+              "transaction_id": "fictional_0_2026-06-01T00:00:00+08:00",
+              "transaction_type": "CONSUMPTION"
+            }
+          }
+        ]
+      }
+    },
+    "rule_status": "D08_D19_D10_PENDING_NOT_APPLIED",
+    "unclassified_history_count": null
+  }
+}

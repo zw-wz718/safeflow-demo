@@ -1,0 +1,18 @@
+[package]
+name = "safeflow-card-runtime-adapter"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Proposed read-only card facts adapter for the existing SafeFlow runtime"
+
+# Compiled in the foundation workspace; public naming/profile approval is separate.
+
+[dependencies]
+safeflow-card-facts = { path = ".." }
+safeflow-contracts = { path = "../../../crates/contracts" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[dev-dependencies]
+safeflow-runtime = { path = "../../../crates/runtime" }
+safeflow-transfer-integration = { path = "../../../crates/transfer" }

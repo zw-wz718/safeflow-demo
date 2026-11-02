@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "fictional": true,
+  "production_registered": false,
+  "source_id": "fictional-basic-spending",
+  "samples": [
+    {
+      "name": "mixed",
+      "metadata": {
+        "report_id": "fictional-report-mixed",
+        "calculated_at": "2026-10-16T12:00:00+08:00"
+      },
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-16T12:00:00+08:00",
+          "start_inclusive": "2026-10-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-16T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "steps": [
+        {
+          "cursor": null,
+          "page": {
+            "snapshot_id": "fictional-report-snapshot",
+            "owner_user_id": "user_demo",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-16T12:00:00+08:00",
+              "start_inclusive": "2026-10-01T00:00:00+08:00",
+              "end_exclusive": "2026-10-16T12:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "food-1",
+                "account_id": "account_001",
+                "amount": "30.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "card_id": null,
+                "merchant_id": null,
+                "category_code": "DEMO_FOOD"
+              },
+              {
+                "transaction_id": "food-2",
+                "account_id": "account_001",
+                "amount": "20.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "card_id": null,
+                "merchant_id": null,
+                "category_code": "DEMO_FOOD"
+              },
+              {
+                "transaction_id": "unclassified",
+                "account_id": "account_001",
+                "amount": "10.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "card_id": null,
+                "merchant_id": null,
+                "category_code": null
+              },
+              {
+                "transaction_id": "transfer",
+                "account_id": "account_001",
+                "amount": "200.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "TRANSFER",
+                "status": "COMPLETED",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "card_id": null,
+                "merchant_id": null,
+                "category_code": null
+              },
+              {
+                "transaction_id": "pending",
+                "account_id": "account_001",
+                "amount": "50.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "PROCESSING",
+                "completed_at": null,
+                "card_id": null,
+                "merchant_id": null,
+                "category_code": null
+              },
+              {
+                "transaction_id": "failed",
+                "account_id": "account_001",
+                "amount": "40.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "FAILED",
+                "completed_at": null,
+                "card_id": null,
+                "merchant_id": null,
+                "category_code": null
+              },
+              {
+                "transaction_id": "refund",
+                "account_id": "account_001",
+                "amount": "5.00",
+                "currency": "CNY",
+                "direction": "IN",
+                "transaction_type": "REFUND",
+                "status": "COMPLETED",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "card_id": null,
+                "merchant_id": null,
+                "category_code": null,
+                "original_tx_id": "food-1"
+              }
+            ],
+            "has_more": false,
+            "next_cursor": null,
+            "range_complete": true,
+            "total_unique_rows": 7
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "metadata": {
+        "report_id": "fictional-report-empty",
+        "calculated_at": "2026-10-16T12:00:00+08:00"
+      },
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-16T12:00:00+08:00",
+          "start_inclusive": "2026-10-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-16T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "steps": [
+        {
+          "cursor": null,
+          "page": {
+            "snapshot_id": "fictional-report-snapshot",
+            "owner_user_id": "user_demo",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-16T12:00:00+08:00",
+              "start_inclusive": "2026-10-01T00:00:00+08:00",
+              "end_exclusive": "2026-10-16T12:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [],
+            "has_more": false,
+            "next_cursor": null,
+            "range_complete": true,
+            "total_unique_rows": 0
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "page-failed",
+      "metadata": {
+        "report_id": "fictional-report-page-failed",
+        "calculated_at": "2026-10-16T12:00:00+08:00"
+      },
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-16T12:00:00+08:00",
+          "start_inclusive": "2026-10-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-16T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "steps": [
+        {
+          "cursor": null,
+          "page": {
+            "snapshot_id": "fictional-report-snapshot",
+            "owner_user_id": "user_demo",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-16T12:00:00+08:00",
+              "start_inclusive": "2026-10-01T00:00:00+08:00",
+              "end_exclusive": "2026-10-16T12:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "food-1",
+                "account_id": "account_001",
+                "amount": "30.00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "card_id": null,
+                "merchant_id": null,
+                "category_code": "DEMO_FOOD"
+              }
+            ],
+            "has_more": true,
+            "next_cursor": "page2",
+            "range_complete": false,
+            "total_unique_rows": null
+          },
+          "error": null
+        },
+        {
+          "cursor": "page2",
+          "page": null,
+          "error": "UNAVAILABLE"
+        }
+      ]
+    },
+    {
+      "name": "unknown-refund",
+      "metadata": {
+        "report_id": "fictional-report-unknown-refund",
+        "calculated_at": "2026-10-16T12:00:00+08:00"
+      },
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-16T12:00:00+08:00",
+          "start_inclusive": "2026-10-01T00:00:00+08:00",
+          "end_exclusive": "2026-10-16T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "steps": [
+        {
+          "cursor": null,
+          "page": {
+            "snapshot_id": "fictional-report-snapshot",
+            "owner_user_id": "user_demo",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-16T12:00:00+08:00",
+              "start_inclusive": "2026-10-01T00:00:00+08:00",
+              "end_exclusive": "2026-10-16T12:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "unlinked-refund",
+                "account_id": "account_001",
+                "amount": "5.00",
+                "currency": "CNY",
+                "direction": "IN",
+                "transaction_type": "REFUND",
+                "status": "COMPLETED",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "card_id": null,
+                "merchant_id": null,
+                "category_code": null
+              }
+            ],
+            "has_more": false,
+            "next_cursor": null,
+            "range_complete": true,
+            "total_unique_rows": 1
+          },
+          "error": null
+        }
+      ]
+    }
+  ]
+}

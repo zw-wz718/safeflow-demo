@@ -1,0 +1,297 @@
+{
+  "actual_store_methods_executed": true,
+  "cases": [
+    {
+      "actual_postgresql": true,
+      "case": "first_freeze_saves_complete_records",
+      "detail": {
+        "d02_and_offline_facts_checked": true,
+        "locks": 1,
+        "operations": 1,
+        "reasons": 1,
+        "receipts": 1,
+        "version_advanced": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "same_operation_replays_without_writes",
+      "detail": {
+        "original_ids_retained": true,
+        "version_unchanged": true,
+        "writes": 0
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "same_event_new_operation_reuses_lock",
+      "detail": {
+        "locks": 1,
+        "operations": 2,
+        "reasons": 2,
+        "receipts": 2,
+        "reused_original_lock": true,
+        "version_advanced": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "distinct_events_and_scopes_keep_multiple_locks",
+      "detail": {
+        "active_locks": 3,
+        "independent_events_and_scopes": true,
+        "old_locks_preserved": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "self_new_reason_keeps_one_active_lock",
+      "detail": {
+        "active_self_locks": 1,
+        "distinct_operations_and_reasons": 2,
+        "original_reason_retained": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "three_sources_preserve_private_evidence",
+      "detail": {
+        "anomaly_evidence_persisted": true,
+        "public_projection_hides_private_evidence": true,
+        "source_authority_is_fictional": true,
+        "source_count": 3
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "parameter_and_key_conflicts_write_nothing",
+      "detail": {
+        "different_operation_same_key_conflict": true,
+        "parameter_conflict": true,
+        "unknown_key_needs_coordination": true,
+        "writes": 0
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "foreign_or_missing_card_writes_nothing",
+      "detail": {
+        "foreign_missing_and_tail_card_rejected": true,
+        "foreign_owner_rejected": true,
+        "incomplete_evidence_rejected": true,
+        "writes": 0
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "discarded_result_new_connection_recovers_original",
+      "detail": {
+        "network_response_loss_tested": false,
+        "new_physical_connection": true,
+        "new_store_instance": true,
+        "original_ids_recovered": true,
+        "process_or_database_restart_tested": false,
+        "recovery_writes": 0,
+        "returned_value_discarded": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "released_original_is_history_not_current_state",
+      "detail": {
+        "new_reopening_needs_coordination": true,
+        "old_lock_not_active": true,
+        "original_created_effect_retained": true,
+        "other_card_lock_still_blocks_account": true,
+        "production_release_entry_used": false,
+        "writes": 0
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "history_is_owner_and_account_scoped",
+      "detail": {
+        "foreign_owner_history_hidden": true,
+        "same_owner_other_account_history_hidden": true,
+        "writes": 0
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "missing_original_lookup_is_read_only",
+      "detail": {
+        "complete_missing_lookup": true,
+        "missing_does_not_prove_uncertain_operation_failed": true,
+        "no_new_operation_or_retry": true,
+        "writes": 0
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "database_error_is_not_missing_history",
+      "detail": {
+        "database_error_propagated": true,
+        "fixture_fault_rolled_back": true,
+        "not_returned_as_none": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "broken_join_is_not_missing_history",
+      "detail": {
+        "broken_association_rejected": true,
+        "fixture_corruption_rolled_back": true,
+        "left_join_does_not_hide_operation": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "original_operation_reason_and_receipt_are_immutable",
+      "detail": {
+        "operation_immutable": true,
+        "reason_immutable": true,
+        "receipt_immutable": true,
+        "writes": 0
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "failure_after_lock_insert_rolls_back_all",
+      "detail": {
+        "all_rows_and_version_restored": true,
+        "caller_rollback": true,
+        "fault_after_actual_lock_insert": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "failure_after_reason_insert_rolls_back_all",
+      "detail": {
+        "all_rows_and_version_restored": true,
+        "fault_after_actual_reason_insert": true,
+        "test_only_savepoint_recovery_and_commit": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "caller_rollback_removes_successful_save",
+      "detail": {
+        "caller_rollback_removed_rows_and_versions": true,
+        "other_connection_cannot_see_uncommitted_rows": true,
+        "save_returned_before_commit": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "incomplete_operation_cannot_commit",
+      "detail": {
+        "failed_commit_restored_all_rows_and_version": true,
+        "missing_reason_and_receipt_rejected_at_commit": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "freeze_first_account_reader_waits",
+      "detail": {
+        "database_lock_wait_verified": true,
+        "freeze_committed_before_reader_continued": true,
+        "reader_observed_outgoing_restricted": true,
+        "real_payment_or_funds_store_executed": false
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "account_reader_first_freeze_waits",
+      "detail": {
+        "account_guard_retained_until_commit": true,
+        "database_lock_wait_verified": true,
+        "freeze_saved_after_reader_commit": true,
+        "later_reader_observed_restriction": true,
+        "real_payment_or_funds_store_executed": false
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "concurrent_same_operation_keeps_one_result",
+      "detail": {
+        "database_lock_wait_verified": true,
+        "fresh_read_after_wait": true,
+        "locks": 1,
+        "operations": 1,
+        "original_replayed": true,
+        "public_owner_or_permit_integration_tested": false
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "concurrent_same_event_keeps_one_lock",
+      "detail": {
+        "database_lock_wait_verified": true,
+        "fresh_read_after_wait": true,
+        "locks": 1,
+        "operations": 2,
+        "original_replayed": false,
+        "public_owner_or_permit_integration_tested": false
+      },
+      "fictional_source_data": true,
+      "verified": true
+    }
+  ],
+  "fictional_source_data": true,
+  "funds_store_or_real_payment_executed": false,
+  "groups": {
+    "persistence": 8,
+    "recovery": 7,
+    "transactions": 8
+  },
+  "network_response_loss_tested": false,
+  "offline_release_entry_enabled": false,
+  "process_or_database_restart_tested": false,
+  "public_migrations_installed": false,
+  "public_permission_or_runtime_connected": false,
+  "scope": "ACTUAL_CARD_FREEZE_STORE_ISOLATED_POSTGRESQL"
+}

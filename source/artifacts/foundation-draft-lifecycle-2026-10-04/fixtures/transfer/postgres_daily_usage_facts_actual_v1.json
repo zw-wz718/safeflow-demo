@@ -1,0 +1,68 @@
+{
+  "facts_by_owner": {
+    "sql-owner-failure": [
+      {
+        "amount": "200.00",
+        "operation_id": "sql-operation-failure",
+        "owner_id": "sql-owner-failure",
+        "payer_account_id": "sql-payer-failure",
+        "status": "FAILED",
+        "submitted_at": null
+      }
+    ],
+    "sql-owner-lost_reply": [
+      {
+        "amount": "200.00",
+        "operation_id": "sql-operation-lost_reply",
+        "owner_id": "sql-owner-lost_reply",
+        "payer_account_id": "sql-payer-lost_reply",
+        "status": "SUCCEEDED",
+        "submitted_at": null
+      }
+    ],
+    "sql-owner-pending": [
+      {
+        "amount": "200.00",
+        "operation_id": "sql-operation-pending",
+        "owner_id": "sql-owner-pending",
+        "payer_account_id": "sql-payer-pending",
+        "status": "PROCESSING",
+        "submitted_at": null
+      }
+    ],
+    "sql-owner-released": [
+      {
+        "amount": "200.00",
+        "operation_id": "sql-operation-released",
+        "owner_id": "sql-owner-released",
+        "payer_account_id": "sql-payer-released",
+        "status": "FAILED",
+        "submitted_at": null
+      }
+    ],
+    "sql-owner-rollback": [],
+    "sql-owner-settled": [
+      {
+        "amount": "200.00",
+        "operation_id": "sql-operation-settled",
+        "owner_id": "sql-owner-settled",
+        "payer_account_id": "sql-payer-settled",
+        "status": "SUCCEEDED",
+        "submitted_at": null
+      }
+    ],
+    "sql-owner-success": [
+      {
+        "amount": "200.00",
+        "operation_id": "sql-operation-success",
+        "owner_id": "sql-owner-success",
+        "payer_account_id": "sql-payer-success",
+        "status": "SUCCEEDED",
+        "submitted_at": null
+      }
+    ],
+    "sql-recipient-success": []
+  },
+  "public_submission_time_bound": false,
+  "scope": "ISOLATED_TRANSFER_SQL_FACTS_NOT_PUBLIC_DAILY_USAGE_OR_PERMIT"
+}

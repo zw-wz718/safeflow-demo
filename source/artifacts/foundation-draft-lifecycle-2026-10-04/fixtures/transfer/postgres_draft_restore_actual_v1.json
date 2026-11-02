@@ -1,0 +1,204 @@
+{
+  "steps": [
+    {
+      "after": {
+        "business_operation_id": "operation-38468-2",
+        "business_version": 1,
+        "details": {
+          "account": {
+            "account_id": "account_001",
+            "currency": "CNY",
+            "display_name": "工资卡",
+            "masked_account_no": "**** 6628"
+          },
+          "amount": "200.00",
+          "available_balance": "1288.00",
+          "balance_as_of": "2026-10-01T14:30:00+08:00",
+          "currency": "CNY",
+          "payee": {
+            "bank_name": "示例银行",
+            "display_name": "小李",
+            "masked_account_no": "**** 1024",
+            "payee_id": "payee_008"
+          },
+          "remark": "isolated SQL recovery only"
+        },
+        "draft_id": "draft-38468-1",
+        "expires_at": 1792233381,
+        "status": "ReadyToConfirm",
+        "task_id": "sql_draft_restore_test",
+        "user_id": "user_001"
+      },
+      "before": null,
+      "funds_executed": false,
+      "mode": "seed",
+      "old_authorization_restored": false,
+      "process_id": 38468,
+      "scope": "ISOLATED_SQL_BUSINESS_RECOVERY_NOT_PUBLIC_RUNTIME"
+    },
+    {
+      "after": {
+        "business_operation_id": "operation-38468-2",
+        "business_version": 2,
+        "details": {
+          "account": {
+            "account_id": "account_001",
+            "currency": "CNY",
+            "display_name": "工资卡",
+            "masked_account_no": "**** 6628"
+          },
+          "amount": "300.00",
+          "available_balance": "1288.00",
+          "balance_as_of": "2026-10-01T14:30:00+08:00",
+          "currency": "CNY",
+          "payee": {
+            "bank_name": "示例银行",
+            "display_name": "小李",
+            "masked_account_no": "**** 1024",
+            "payee_id": "payee_008"
+          },
+          "remark": "isolated SQL recovery only"
+        },
+        "draft_id": "draft-38468-1",
+        "expires_at": 1792233381,
+        "status": "ReadyToConfirm",
+        "task_id": "sql_draft_restore_test",
+        "user_id": "user_001"
+      },
+      "before": {
+        "business_operation_id": "operation-38468-2",
+        "business_version": 1,
+        "details": {
+          "account": {
+            "account_id": "account_001",
+            "currency": "CNY",
+            "display_name": "工资卡",
+            "masked_account_no": "**** 6628"
+          },
+          "amount": "200.00",
+          "available_balance": "1288.00",
+          "balance_as_of": "2026-10-01T14:30:00+08:00",
+          "currency": "CNY",
+          "payee": {
+            "bank_name": "示例银行",
+            "display_name": "小李",
+            "masked_account_no": "**** 1024",
+            "payee_id": "payee_008"
+          },
+          "remark": "isolated SQL recovery only"
+        },
+        "draft_id": "draft-38468-1",
+        "expires_at": 1792233381,
+        "status": "ReadyToConfirm",
+        "task_id": "sql_draft_restore_test",
+        "user_id": "user_001"
+      },
+      "funds_executed": false,
+      "mode": "modify",
+      "old_authorization_restored": false,
+      "process_id": 35592,
+      "scope": "ISOLATED_SQL_BUSINESS_RECOVERY_NOT_PUBLIC_RUNTIME"
+    },
+    {
+      "after": {
+        "business_operation_id": "operation-38468-2",
+        "business_version": 2,
+        "details": {
+          "account": {
+            "account_id": "account_001",
+            "currency": "CNY",
+            "display_name": "工资卡",
+            "masked_account_no": "**** 6628"
+          },
+          "amount": "300.00",
+          "available_balance": "1288.00",
+          "balance_as_of": "2026-10-01T14:30:00+08:00",
+          "currency": "CNY",
+          "payee": {
+            "bank_name": "示例银行",
+            "display_name": "小李",
+            "masked_account_no": "**** 1024",
+            "payee_id": "payee_008"
+          },
+          "remark": "isolated SQL recovery only"
+        },
+        "draft_id": "draft-38468-1",
+        "expires_at": 1792233381,
+        "status": "Cancelled",
+        "task_id": "sql_draft_restore_test",
+        "user_id": "user_001"
+      },
+      "before": {
+        "business_operation_id": "operation-38468-2",
+        "business_version": 2,
+        "details": {
+          "account": {
+            "account_id": "account_001",
+            "currency": "CNY",
+            "display_name": "工资卡",
+            "masked_account_no": "**** 6628"
+          },
+          "amount": "300.00",
+          "available_balance": "1288.00",
+          "balance_as_of": "2026-10-01T14:30:00+08:00",
+          "currency": "CNY",
+          "payee": {
+            "bank_name": "示例银行",
+            "display_name": "小李",
+            "masked_account_no": "**** 1024",
+            "payee_id": "payee_008"
+          },
+          "remark": "isolated SQL recovery only"
+        },
+        "draft_id": "draft-38468-1",
+        "expires_at": 1792233381,
+        "status": "ReadyToConfirm",
+        "task_id": "sql_draft_restore_test",
+        "user_id": "user_001"
+      },
+      "funds_executed": false,
+      "mode": "cancel",
+      "old_authorization_restored": false,
+      "process_id": 6256,
+      "scope": "ISOLATED_SQL_BUSINESS_RECOVERY_NOT_PUBLIC_RUNTIME"
+    },
+    {
+      "after": {
+        "business_operation_id": "operation-38468-2",
+        "business_version": 2,
+        "details": {
+          "account": {
+            "account_id": "account_001",
+            "currency": "CNY",
+            "display_name": "工资卡",
+            "masked_account_no": "**** 6628"
+          },
+          "amount": "300.00",
+          "available_balance": "1288.00",
+          "balance_as_of": "2026-10-01T14:30:00+08:00",
+          "currency": "CNY",
+          "payee": {
+            "bank_name": "示例银行",
+            "display_name": "小李",
+            "masked_account_no": "**** 1024",
+            "payee_id": "payee_008"
+          },
+          "remark": "isolated SQL recovery only"
+        },
+        "draft_id": "draft-38468-1",
+        "expires_at": 1792233381,
+        "status": "Cancelled",
+        "task_id": "sql_draft_restore_test",
+        "user_id": "user_001"
+      },
+      "before": null,
+      "funds_executed": false,
+      "mode": "read",
+      "old_authorization_restored": false,
+      "process_id": 42804,
+      "scope": "ISOLATED_SQL_BUSINESS_RECOVERY_NOT_PUBLIC_RUNTIME"
+    }
+  ],
+  "actual_database_restart": true,
+  "scope": "ISOLATED_SQL_BUSINESS_RECOVERY_NOT_PUBLIC_RUNTIME"
+}

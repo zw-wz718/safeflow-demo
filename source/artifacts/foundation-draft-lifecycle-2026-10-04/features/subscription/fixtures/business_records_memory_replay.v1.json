@@ -1,0 +1,312 @@
+{
+  "audit_integrated": false,
+  "database_executed": false,
+  "fictional": true,
+  "notification_sent": false,
+  "records": [
+    {
+      "original_binding": {
+        "as_of": "2026-10-13T12:00:00+08:00",
+        "candidate": {
+          "account_ids": [
+            "account_001"
+          ],
+          "actual_charges": [
+            {
+              "account_id": "account_001",
+              "amount_minor_units": 1990,
+              "completed_at": "2026-07-15T08:00:00+08:00",
+              "source_key": {
+                "account_id": "account_001",
+                "source_id": "fictional-billing-input-v1",
+                "transaction_id": "fictional-consumption-july"
+              },
+              "transaction_id": "fictional-consumption-july"
+            },
+            {
+              "account_id": "account_001",
+              "amount_minor_units": 1990,
+              "completed_at": "2026-08-15T08:00:00+08:00",
+              "source_key": {
+                "account_id": "account_001",
+                "source_id": "fictional-billing-input-v1",
+                "transaction_id": "fictional-consumption-august"
+              },
+              "transaction_id": "fictional-consumption-august"
+            }
+          ],
+          "currency": "CNY",
+          "cycles": [
+            {
+              "cycle": "DAY",
+              "missing_period_count": 0,
+              "observed_period_indices": [
+                0,
+                31
+              ],
+              "status": "DOES_NOT_MATCH"
+            },
+            {
+              "cycle": "WEEK",
+              "missing_period_count": 0,
+              "observed_period_indices": [],
+              "status": "DOES_NOT_MATCH"
+            },
+            {
+              "cycle": "CALENDAR_MONTH",
+              "missing_period_count": 0,
+              "observed_period_indices": [
+                0,
+                1
+              ],
+              "status": "MATCHES"
+            }
+          ],
+          "merchant_id": "merchant_demo_video",
+          "message": "疑似周期消费，请确认是否为订阅；未自动登记。",
+          "mock_service_ref": "service_demo_video_1",
+          "status": "SUSPECTED"
+        },
+        "context": {
+          "idempotency_key": "fictional-key-register",
+          "node_id": "register",
+          "operation_id": "register",
+          "plan_version": 1,
+          "session_ref": "fictional-session",
+          "task_id": "fictional-task",
+          "user_id": "user_demo"
+        },
+        "draft_id": "mock-sub-draft-1",
+        "expires_at": "2026-10-14T12:05:00+08:00",
+        "ledger_revision": 0,
+        "minimum_level": "YELLOW",
+        "requested_account_ids": [
+          "account_001"
+        ]
+      },
+      "original_command": {
+        "context": {
+          "idempotency_key": "fictional-key-register",
+          "node_id": "register",
+          "operation_id": "register",
+          "plan_version": 1,
+          "session_ref": "fictional-session",
+          "task_id": "fictional-task",
+          "user_id": "user_demo"
+        },
+        "draft": "mock-sub-draft-1",
+        "kind": "Register",
+        "now": "2026-10-14T12:00:00+08:00",
+        "receipt": {
+          "audit_integrated": false,
+          "fictional": true,
+          "merchant_action_executed": false,
+          "message": "已写入本次模拟台账；未接入正式系统，未发提醒或操作商户。",
+          "notification_sent": false,
+          "operation_id": "register",
+          "production_registered": false,
+          "state": "ACTIVE",
+          "subscription_id": "mock-sub-mock-sub-draft-1-1"
+        }
+      },
+      "source_command_position": 1
+    },
+    {
+      "original_binding": {
+        "context": {
+          "idempotency_key": "fictional-key-settings",
+          "node_id": "settings",
+          "operation_id": "settings",
+          "plan_version": 1,
+          "session_ref": "fictional-session",
+          "task_id": "fictional-task",
+          "user_id": "user_demo"
+        },
+        "expires_at": "2026-10-14T12:05:00+08:00",
+        "ledger_revision": 1,
+        "minimum_level": "YELLOW",
+        "prepared_at": "2026-10-14T12:00:00+08:00",
+        "schedule": {
+          "anchor_date": "2026-09-17",
+          "cycle": "CALENDAR_MONTH",
+          "days_before": 3,
+          "enabled": true,
+          "expected_date": "2026-10-17",
+          "period_index": 1
+        },
+        "settings_revision": 0,
+        "target": {
+          "merchant_id": "merchant_demo_video",
+          "owner_user_id": "user_demo",
+          "service_ref": "service_demo_video_1",
+          "source_id": "fictional-billing-input-v1",
+          "status": "ACTIVE",
+          "subscription_id": "mock-sub-mock-sub-draft-1-1"
+        }
+      },
+      "original_command": {
+        "binding": {
+          "context": {
+            "idempotency_key": "fictional-key-settings",
+            "node_id": "settings",
+            "operation_id": "settings",
+            "plan_version": 1,
+            "session_ref": "fictional-session",
+            "task_id": "fictional-task",
+            "user_id": "user_demo"
+          },
+          "expires_at": "2026-10-14T12:05:00+08:00",
+          "ledger_revision": 1,
+          "minimum_level": "YELLOW",
+          "prepared_at": "2026-10-14T12:00:00+08:00",
+          "schedule": {
+            "anchor_date": "2026-09-17",
+            "cycle": "CALENDAR_MONTH",
+            "days_before": 3,
+            "enabled": true,
+            "expected_date": "2026-10-17",
+            "period_index": 1
+          },
+          "settings_revision": 0,
+          "target": {
+            "merchant_id": "merchant_demo_video",
+            "owner_user_id": "user_demo",
+            "service_ref": "service_demo_video_1",
+            "source_id": "fictional-billing-input-v1",
+            "status": "ACTIVE",
+            "subscription_id": "mock-sub-mock-sub-draft-1-1"
+          }
+        },
+        "kind": "Settings",
+        "now": "2026-10-14T12:00:00+08:00",
+        "operation": "settings",
+        "receipt": {
+          "days_before": 3,
+          "expected_date": "2026-10-17",
+          "fictional": true,
+          "message": "已确认本次模拟提醒日期与设置；仅本地模拟，未向用户发送通知。",
+          "notification_sent": false,
+          "operation_id": "settings",
+          "production_registered": false,
+          "subscription_id": "mock-sub-mock-sub-draft-1-1"
+        }
+      },
+      "source_command_position": 3
+    },
+    {
+      "original_binding": {
+        "context": {
+          "idempotency_key": "fictional-key-cancel",
+          "node_id": "cancel",
+          "operation_id": "cancel",
+          "plan_version": 1,
+          "session_ref": "fictional-session",
+          "task_id": "fictional-task",
+          "user_id": "user_demo"
+        },
+        "draft_id": "mock-intent-draft-2",
+        "expires_at": "2026-10-14T12:05:00+08:00",
+        "kind": "RECORD",
+        "ledger_revision": 1,
+        "minimum_level": "YELLOW",
+        "prepared_at": "2026-10-14T12:00:00+08:00",
+        "target": {
+          "merchant_id": "merchant_demo_video",
+          "owner_user_id": "user_demo",
+          "service_ref": "service_demo_video_1",
+          "source_id": "fictional-billing-input-v1",
+          "status": "ACTIVE",
+          "subscription_id": "mock-sub-mock-sub-draft-1-1"
+        }
+      },
+      "original_command": {
+        "context": {
+          "idempotency_key": "fictional-key-cancel",
+          "node_id": "cancel",
+          "operation_id": "cancel",
+          "plan_version": 1,
+          "session_ref": "fictional-session",
+          "task_id": "fictional-task",
+          "user_id": "user_demo"
+        },
+        "draft": "mock-intent-draft-2",
+        "kind": "Intent",
+        "now": "2026-10-14T12:00:00+08:00",
+        "receipt": {
+          "audit_integrated": false,
+          "fictional": true,
+          "kind": "RECORD",
+          "ledger_state_at_operation": "CANCELLING",
+          "local_intent_state": "RECORDED",
+          "merchant_action_executed": false,
+          "merchant_cancellation_confirmed": false,
+          "merchant_service_restored": false,
+          "message": "已记录本次模拟取消意图，请到商户官方渠道完成；未替您取消商户订阅。",
+          "notification_sent": false,
+          "operation_id": "cancel",
+          "production_registered": false,
+          "subscription_id": "mock-sub-mock-sub-draft-1-1"
+        }
+      },
+      "source_command_position": 5
+    },
+    {
+      "original_binding": {
+        "context": {
+          "idempotency_key": "fictional-key-revoke",
+          "node_id": "revoke",
+          "operation_id": "revoke",
+          "plan_version": 1,
+          "session_ref": "fictional-session",
+          "task_id": "fictional-task",
+          "user_id": "user_demo"
+        },
+        "draft_id": "mock-intent-draft-3",
+        "expires_at": "2026-10-14T12:05:00+08:00",
+        "kind": "REVOKE",
+        "ledger_revision": 2,
+        "minimum_level": "YELLOW",
+        "prepared_at": "2026-10-14T12:00:00+08:00",
+        "target": {
+          "merchant_id": "merchant_demo_video",
+          "owner_user_id": "user_demo",
+          "service_ref": "service_demo_video_1",
+          "source_id": "fictional-billing-input-v1",
+          "status": "CANCELLING",
+          "subscription_id": "mock-sub-mock-sub-draft-1-1"
+        }
+      },
+      "original_command": {
+        "context": {
+          "idempotency_key": "fictional-key-revoke",
+          "node_id": "revoke",
+          "operation_id": "revoke",
+          "plan_version": 1,
+          "session_ref": "fictional-session",
+          "task_id": "fictional-task",
+          "user_id": "user_demo"
+        },
+        "draft": "mock-intent-draft-3",
+        "kind": "Intent",
+        "now": "2026-10-14T12:00:00+08:00",
+        "receipt": {
+          "audit_integrated": false,
+          "fictional": true,
+          "kind": "REVOKE",
+          "ledger_state_at_operation": "ACTIVE",
+          "local_intent_state": "REVOKED",
+          "merchant_action_executed": false,
+          "merchant_cancellation_confirmed": false,
+          "merchant_service_restored": false,
+          "message": "已撤回本次模拟台账的取消意图；仅影响SafeFlow登记，无法替您恢复商户服务。",
+          "notification_sent": false,
+          "operation_id": "revoke",
+          "production_registered": false,
+          "subscription_id": "mock-sub-mock-sub-draft-1-1"
+        }
+      },
+      "source_command_position": 7
+    }
+  ],
+  "source": "actual_in_memory_fixture_replay"
+}

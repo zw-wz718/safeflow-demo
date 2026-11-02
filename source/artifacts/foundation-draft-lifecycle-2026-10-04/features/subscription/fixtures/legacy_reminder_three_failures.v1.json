@@ -1,0 +1,543 @@
+{
+  "commands": [
+    {
+      "binding": {
+        "as_of": "2026-10-13T12:00:00+08:00",
+        "candidate": {
+          "account_ids": [
+            "account_001"
+          ],
+          "actual_charges": [
+            {
+              "account_id": "account_001",
+              "amount_minor_units": 1990,
+              "completed_at": "2026-07-15T08:00:00+08:00",
+              "source_key": {
+                "account_id": "account_001",
+                "source_id": "fictional-billing-input-v1",
+                "transaction_id": "fictional-consumption-july"
+              },
+              "transaction_id": "fictional-consumption-july"
+            },
+            {
+              "account_id": "account_001",
+              "amount_minor_units": 1990,
+              "completed_at": "2026-08-15T08:00:00+08:00",
+              "source_key": {
+                "account_id": "account_001",
+                "source_id": "fictional-billing-input-v1",
+                "transaction_id": "fictional-consumption-august"
+              },
+              "transaction_id": "fictional-consumption-august"
+            }
+          ],
+          "currency": "CNY",
+          "cycles": [
+            {
+              "cycle": "DAY",
+              "missing_period_count": 0,
+              "observed_period_indices": [
+                0,
+                31
+              ],
+              "status": "DOES_NOT_MATCH"
+            },
+            {
+              "cycle": "WEEK",
+              "missing_period_count": 0,
+              "observed_period_indices": [],
+              "status": "DOES_NOT_MATCH"
+            },
+            {
+              "cycle": "CALENDAR_MONTH",
+              "missing_period_count": 0,
+              "observed_period_indices": [
+                0,
+                1
+              ],
+              "status": "MATCHES"
+            }
+          ],
+          "merchant_id": "merchant_demo_video",
+          "message": "疑似周期消费，请确认是否为订阅；未自动登记。",
+          "mock_service_ref": "service_demo_video_1",
+          "status": "SUSPECTED"
+        },
+        "context": {
+          "idempotency_key": "fictional-key-register",
+          "node_id": "register",
+          "operation_id": "register",
+          "plan_version": 1,
+          "session_ref": "fictional-session",
+          "task_id": "fictional-task",
+          "user_id": "user_demo"
+        },
+        "draft_id": "mock-sub-draft-1",
+        "expires_at": "2026-10-14T12:05:00+08:00",
+        "ledger_revision": 0,
+        "minimum_level": "YELLOW",
+        "requested_account_ids": [
+          "account_001"
+        ]
+      },
+      "context": {
+        "requested_account_ids": [
+          "account_001"
+        ],
+        "user_id": "user_demo"
+      },
+      "expires": "2026-10-14T12:05:00+08:00",
+      "index": 0,
+      "kind": "PrepareRegistration",
+      "operation": {
+        "idempotency_key": "fictional-key-register",
+        "node_id": "register",
+        "operation_id": "register",
+        "plan_version": 1,
+        "session_ref": "fictional-session",
+        "task_id": "fictional-task",
+        "user_id": "user_demo"
+      },
+      "snapshot": {
+        "accounts": [
+          {
+            "account_id": "account_001",
+            "user_id": "user_demo"
+          }
+        ],
+        "managed_subscriptions_read": {
+          "is_complete": false,
+          "next_cursor": null,
+          "reason": "MANAGED_LEDGER_NOT_PROVIDED",
+          "state": "UNAVAILABLE"
+        },
+        "transactions": [
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "mock_service_ref": "service_demo_video_1",
+            "source_id": "fictional-billing-input-v1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-july",
+            "transaction_type": "CONSUMPTION"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": null,
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": null,
+            "mock_service_ref": null,
+            "source_id": "fictional-billing-input-v1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-transfer",
+            "transaction_type": "TRANSFER"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-08-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "mock_service_ref": "service_demo_video_1",
+            "source_id": "fictional-billing-input-v1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-consumption-august",
+            "transaction_type": "CONSUMPTION"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "IN",
+            "merchant_id": "merchant_demo_video",
+            "mock_service_ref": "service_demo_video_1",
+            "source_id": "fictional-billing-input-v1",
+            "status": "COMPLETED",
+            "transaction_id": "fictional-refund",
+            "transaction_type": "REFUND"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": null,
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "mock_service_ref": "service_demo_video_1",
+            "source_id": "fictional-billing-input-v1",
+            "status": "PROCESSING",
+            "transaction_id": "fictional-pending",
+            "transaction_type": "CONSUMPTION"
+          },
+          {
+            "account_id": "account_001",
+            "amount": "19.90",
+            "card_id": null,
+            "category_code": "DEMO_MEDIA",
+            "completed_at": null,
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "merchant_demo_video",
+            "mock_service_ref": "service_demo_video_1",
+            "source_id": "fictional-billing-input-v1",
+            "status": "FAILED",
+            "transaction_id": "fictional-failed",
+            "transaction_type": "CONSUMPTION"
+          }
+        ],
+        "transactions_read": {
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null,
+          "state": "COMPLETE"
+        },
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      }
+    },
+    {
+      "context": {
+        "idempotency_key": "fictional-key-register",
+        "node_id": "register",
+        "operation_id": "register",
+        "plan_version": 1,
+        "session_ref": "fictional-session",
+        "task_id": "fictional-task",
+        "user_id": "user_demo"
+      },
+      "draft": "mock-sub-draft-1",
+      "kind": "Register",
+      "now": "2026-10-14T12:00:00+08:00",
+      "receipt": {
+        "audit_integrated": false,
+        "fictional": true,
+        "merchant_action_executed": false,
+        "message": "已写入本次模拟台账；未接入正式系统，未发提醒或操作商户。",
+        "notification_sent": false,
+        "operation_id": "register",
+        "production_registered": false,
+        "state": "ACTIVE",
+        "subscription_id": "mock-sub-mock-sub-draft-1-1"
+      }
+    },
+    {
+      "binding": {
+        "context": {
+          "idempotency_key": "fictional-key-settings",
+          "node_id": "settings",
+          "operation_id": "settings",
+          "plan_version": 1,
+          "session_ref": "fictional-session",
+          "task_id": "fictional-task",
+          "user_id": "user_demo"
+        },
+        "expires_at": "2026-10-14T12:05:00+08:00",
+        "ledger_revision": 1,
+        "minimum_level": "YELLOW",
+        "prepared_at": "2026-10-14T12:00:00+08:00",
+        "schedule": {
+          "anchor_date": "2026-09-17",
+          "cycle": "CALENDAR_MONTH",
+          "days_before": 3,
+          "enabled": true,
+          "expected_date": "2026-10-17",
+          "period_index": 1
+        },
+        "settings_revision": 0,
+        "target": {
+          "merchant_id": "merchant_demo_video",
+          "owner_user_id": "user_demo",
+          "service_ref": "service_demo_video_1",
+          "source_id": "fictional-billing-input-v1",
+          "status": "ACTIVE",
+          "subscription_id": "mock-sub-mock-sub-draft-1-1"
+        }
+      },
+      "context": {
+        "idempotency_key": "fictional-key-settings",
+        "node_id": "settings",
+        "operation_id": "settings",
+        "plan_version": 1,
+        "session_ref": "fictional-session",
+        "task_id": "fictional-task",
+        "user_id": "user_demo"
+      },
+      "expires": "2026-10-14T12:05:00+08:00",
+      "id": "mock-sub-mock-sub-draft-1-1",
+      "kind": "PrepareSettings",
+      "now": "2026-10-14T12:00:00+08:00",
+      "schedule": {
+        "anchor": "2026-09-17",
+        "cycle": "CALENDAR_MONTH",
+        "days_before": 3,
+        "enabled": true,
+        "expected": "2026-10-17",
+        "index": 1
+      }
+    },
+    {
+      "binding": {
+        "context": {
+          "idempotency_key": "fictional-key-settings",
+          "node_id": "settings",
+          "operation_id": "settings",
+          "plan_version": 1,
+          "session_ref": "fictional-session",
+          "task_id": "fictional-task",
+          "user_id": "user_demo"
+        },
+        "expires_at": "2026-10-14T12:05:00+08:00",
+        "ledger_revision": 1,
+        "minimum_level": "YELLOW",
+        "prepared_at": "2026-10-14T12:00:00+08:00",
+        "schedule": {
+          "anchor_date": "2026-09-17",
+          "cycle": "CALENDAR_MONTH",
+          "days_before": 3,
+          "enabled": true,
+          "expected_date": "2026-10-17",
+          "period_index": 1
+        },
+        "settings_revision": 0,
+        "target": {
+          "merchant_id": "merchant_demo_video",
+          "owner_user_id": "user_demo",
+          "service_ref": "service_demo_video_1",
+          "source_id": "fictional-billing-input-v1",
+          "status": "ACTIVE",
+          "subscription_id": "mock-sub-mock-sub-draft-1-1"
+        }
+      },
+      "kind": "Settings",
+      "now": "2026-10-14T12:00:00+08:00",
+      "operation": "settings",
+      "receipt": {
+        "days_before": 3,
+        "expected_date": "2026-10-17",
+        "fictional": true,
+        "message": "已确认本次模拟提醒日期与设置；仅本地模拟，未向用户发送通知。",
+        "notification_sent": false,
+        "operation_id": "settings",
+        "production_registered": false,
+        "subscription_id": "mock-sub-mock-sub-draft-1-1"
+      }
+    },
+    {
+      "kind": "ReserveScan",
+      "messages": [
+        {
+          "channel": "IN_APP_MOCK_ONLY",
+          "content": "预计将扣款，请核对订阅和商户安排；预计日期不是商户承诺，此处仅模拟应用内提醒。",
+          "cycle_ref": "MONTH:2026-09-17:1",
+          "expected_date": "2026-10-17",
+          "fictional": true,
+          "kind": "CHARGE_ADVANCE",
+          "subscription_id": "mock-sub-mock-sub-draft-1-1",
+          "user_id": "user_demo"
+        }
+      ],
+      "now": "2026-10-14T12:00:00+08:00",
+      "report": {
+        "audit_integrated": false,
+        "business_date": "2026-10-14",
+        "channel": "IN_APP_MOCK_ONLY",
+        "database_connected": false,
+        "fictional": true,
+        "items": [
+          {
+            "expected_date": "2026-10-17",
+            "kind": "CHARGE_ADVANCE",
+            "late": false,
+            "state": "UNKNOWN_NEEDS_REVIEW",
+            "subscription_id": "mock-sub-mock-sub-draft-1-1"
+          }
+        ],
+        "notification_sent": false,
+        "production_registered": false
+      }
+    },
+    {
+      "kind": "ResolveScan",
+      "now": "2026-10-14T12:00:00+08:00",
+      "outcomes": [
+        "DEFINITE_FAILURE"
+      ],
+      "report": {
+        "audit_integrated": false,
+        "business_date": "2026-10-14",
+        "channel": "IN_APP_MOCK_ONLY",
+        "database_connected": false,
+        "fictional": true,
+        "items": [
+          {
+            "expected_date": "2026-10-17",
+            "kind": "CHARGE_ADVANCE",
+            "late": false,
+            "state": "RETRY_NEXT_DAY",
+            "subscription_id": "mock-sub-mock-sub-draft-1-1"
+          }
+        ],
+        "notification_sent": false,
+        "production_registered": false
+      }
+    },
+    {
+      "kind": "ReserveScan",
+      "messages": [
+        {
+          "channel": "IN_APP_MOCK_ONLY",
+          "content": "预计将扣款，请核对订阅和商户安排；预计日期不是商户承诺，此处仅模拟应用内提醒。",
+          "cycle_ref": "MONTH:2026-09-17:1",
+          "expected_date": "2026-10-17",
+          "fictional": true,
+          "kind": "CHARGE_ADVANCE",
+          "subscription_id": "mock-sub-mock-sub-draft-1-1",
+          "user_id": "user_demo"
+        }
+      ],
+      "now": "2026-10-15T12:00:00+08:00",
+      "report": {
+        "audit_integrated": false,
+        "business_date": "2026-10-15",
+        "channel": "IN_APP_MOCK_ONLY",
+        "database_connected": false,
+        "fictional": true,
+        "items": [
+          {
+            "expected_date": "2026-10-17",
+            "kind": "CHARGE_ADVANCE",
+            "late": false,
+            "state": "UNKNOWN_NEEDS_REVIEW",
+            "subscription_id": "mock-sub-mock-sub-draft-1-1"
+          }
+        ],
+        "notification_sent": false,
+        "production_registered": false
+      }
+    },
+    {
+      "kind": "ResolveScan",
+      "now": "2026-10-15T12:00:00+08:00",
+      "outcomes": [
+        "DEFINITE_FAILURE"
+      ],
+      "report": {
+        "audit_integrated": false,
+        "business_date": "2026-10-15",
+        "channel": "IN_APP_MOCK_ONLY",
+        "database_connected": false,
+        "fictional": true,
+        "items": [
+          {
+            "expected_date": "2026-10-17",
+            "kind": "CHARGE_ADVANCE",
+            "late": false,
+            "state": "RETRY_NEXT_DAY",
+            "subscription_id": "mock-sub-mock-sub-draft-1-1"
+          }
+        ],
+        "notification_sent": false,
+        "production_registered": false
+      }
+    },
+    {
+      "kind": "ReserveScan",
+      "messages": [
+        {
+          "channel": "IN_APP_MOCK_ONLY",
+          "content": "预计将扣款，请核对订阅和商户安排；预计日期不是商户承诺，此处仅模拟应用内提醒。",
+          "cycle_ref": "MONTH:2026-09-17:1",
+          "expected_date": "2026-10-17",
+          "fictional": true,
+          "kind": "CHARGE_ADVANCE",
+          "subscription_id": "mock-sub-mock-sub-draft-1-1",
+          "user_id": "user_demo"
+        }
+      ],
+      "now": "2026-10-16T12:00:00+08:00",
+      "report": {
+        "audit_integrated": false,
+        "business_date": "2026-10-16",
+        "channel": "IN_APP_MOCK_ONLY",
+        "database_connected": false,
+        "fictional": true,
+        "items": [
+          {
+            "expected_date": "2026-10-17",
+            "kind": "CHARGE_ADVANCE",
+            "late": false,
+            "state": "UNKNOWN_NEEDS_REVIEW",
+            "subscription_id": "mock-sub-mock-sub-draft-1-1"
+          }
+        ],
+        "notification_sent": false,
+        "production_registered": false
+      }
+    },
+    {
+      "kind": "ResolveScan",
+      "now": "2026-10-16T12:00:00+08:00",
+      "outcomes": [
+        "DEFINITE_FAILURE"
+      ],
+      "report": {
+        "audit_integrated": false,
+        "business_date": "2026-10-16",
+        "channel": "IN_APP_MOCK_ONLY",
+        "database_connected": false,
+        "fictional": true,
+        "items": [
+          {
+            "expected_date": "2026-10-17",
+            "kind": "CHARGE_ADVANCE",
+            "late": false,
+            "state": "RETRY_NEXT_DAY",
+            "subscription_id": "mock-sub-mock-sub-draft-1-1"
+          }
+        ],
+        "notification_sent": false,
+        "production_registered": false
+      }
+    }
+  ],
+  "fictional": true,
+  "initial": {
+    "entries": [],
+    "fictional": true,
+    "owner_user_id": "user_demo",
+    "production_registered": false,
+    "read": {
+      "is_complete": true,
+      "next_cursor": null,
+      "reason": null,
+      "state": "COMPLETE"
+    },
+    "schema_version": 1,
+    "snapshot_id": "fictional-raw-records"
+  },
+  "production_registered": false,
+  "rule_version": "LOCAL_D22_HANNAH_2026_10_12_V1",
+  "schema_version": 1
+}

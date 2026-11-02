@@ -1,0 +1,62 @@
+{
+  "users": ["user_001", "user_002"],
+  "accounts": [
+    {
+      "owner": "user_001",
+      "balance": {
+        "account": {
+          "account_id": "account_001",
+          "display_name": "工资卡",
+          "masked_account_no": "**** 6628",
+          "currency": "CNY"
+        },
+        "available_balance": "1288.00",
+        "as_of": "2026-10-01T14:30:00+08:00"
+      }
+    },
+    {
+      "owner": "user_002",
+      "balance": {
+        "account": {
+          "account_id": "account_002",
+          "display_name": "备用卡",
+          "masked_account_no": "**** 7788",
+          "currency": "CNY"
+        },
+        "available_balance": "50.00",
+        "as_of": "2026-10-01T14:30:00+08:00"
+      }
+    }
+  ],
+  "payees": [
+    {
+      "owner": "user_001",
+      "payee": {
+        "payee_id": "payee_008",
+        "display_name": "小李",
+        "bank_name": "示例银行",
+        "masked_account_no": "**** 1024"
+      }
+    },
+    {
+      "owner": "user_002",
+      "payee": {
+        "payee_id": "payee_020",
+        "display_name": "小李",
+        "bank_name": "其他示例银行",
+        "masked_account_no": "**** 9090"
+      }
+    }
+  ],
+  "same_name_payees": [
+    {
+      "owner": "user_001",
+      "payee": {
+        "payee_id": "payee_009",
+        "display_name": "小李",
+        "bank_name": "第二示例银行",
+        "masked_account_no": "**** 2024"
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[package]
+name = "safeflow-card-billing-feedback-adapter"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Read-only original feedback and current card association; never a freeze permit"
+
+
+[dependencies]
+safeflow-billing-source-reader = { path = "../../../members/jonathan/backend/src/features/billing", features = ["postgres"] }
+safeflow-card-postgres-store = { path = "../postgres-store" }
+sqlx = { version = "=0.8.6", default-features = false, features = ["runtime-tokio-rustls", "postgres"] }
+
+[dev-dependencies]
+safeflow-card-facts = { path = ".." }
+tokio = { version = "1.36", features = ["macros", "rt-multi-thread", "time"] }
+serde_json = "1.0"

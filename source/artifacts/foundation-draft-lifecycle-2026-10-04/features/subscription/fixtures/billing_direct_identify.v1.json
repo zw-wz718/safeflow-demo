@@ -1,0 +1,39 @@
+{
+  "read": {
+    "duplicates_ignored": 0,
+    "fictional": true,
+    "observed_rows": 6,
+    "pages_read": 2,
+    "production_registered": false,
+    "real_consumption_source_connected": false
+  },
+  "recognition": {
+    "fictional": true,
+    "groups": [
+      {
+        "charges": [
+          {
+            "amount_minor_units": 1990,
+            "completed_at": "2026-07-15T08:00:00+08:00",
+            "currency": "CNY"
+          },
+          {
+            "amount_minor_units": 1990,
+            "completed_at": "2026-08-15T08:00:00+08:00",
+            "currency": "CNY"
+          }
+        ],
+        "disposition": "NOT_IN_LEDGER",
+        "matching_cycles": [
+          "CALENDAR_MONTH"
+        ],
+        "message": "发现疑似订阅，需要另行核对并确认登记。",
+        "reason": "NO_EXACT_LEDGER_MATCH",
+        "selection_index": 0,
+        "service_display_name": null
+      }
+    ],
+    "matching_executed": true,
+    "reason": "MOCK_LEDGER_REVIEWED"
+  }
+}

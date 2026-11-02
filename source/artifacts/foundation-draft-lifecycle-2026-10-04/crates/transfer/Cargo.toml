@@ -1,0 +1,25 @@
+[package]
+name = "safeflow-transfer-integration"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[features]
+postgres-store = ["dep:sqlx", "dep:home"]
+
+[dependencies]
+safeflow-contracts = { path = "../contracts" }
+safeflow-bank-gateway = { path = "../bank-gateway" }
+safeflow-transfer = { path = "../../features/transfer" }
+safeflow-runtime = { path = "../runtime" }
+serde.workspace = true
+serde_json.workspace = true
+futures = "=0.3.31"
+chrono = { version = "=0.4.38", default-features = false, features = ["std"] }
+sqlx = { version = "=0.8.6", optional = true, default-features = false, features = ["runtime-tokio-rustls", "postgres", "json"] }
+home = { version = "=0.5.5", optional = true }
+
+[dev-dependencies]
+safeflow-mock-bank = { path = "../mock-bank" }
+tokio = { version = "1.36", features = ["macros", "rt-multi-thread"] }
+

@@ -1,0 +1,37 @@
+{
+  "repository": "zw-wz718/-SafeFlow",
+  "commit": "1044e918d7d58301e0ab49aa03016f035642245f",
+  "capture": "fixtures/subscription/billing-consumption-1044e918.v1.json",
+  "capture_sha256_lf": "70ce8c1d7528a8ff22a3274cfda5861cc55055cb28c812f1f12d0cadf6d49ac7",
+  "source_comparison": "bytes after CRLF-to-LF normalization",
+  "actual_cli_output_compared": true,
+  "fictional": true,
+  "production_integration": false,
+  "upstream_cases": 12,
+  "files": [
+    {
+      "path": "backend/src/features/billing/Cargo.toml",
+      "blob_sha1": "56ee77b83c452ed66b86161415715202da3bead4"
+    },
+    {
+      "path": "backend/src/features/billing/Cargo.lock",
+      "blob_sha1": "98e3d8185ae316d8bf0a002f5c8364321ca42e24"
+    },
+    {
+      "path": "backend/src/features/billing/src/lib.rs",
+      "blob_sha1": "6c382d96efd18cd2d4ad7fea70c750790f8eb5a2"
+    },
+    {
+      "path": "backend/src/features/billing/src/query.rs",
+      "blob_sha1": "7287c9efa03bebcd67f929e0fe1a93a111b8db52"
+    },
+    {
+      "path": "backend/src/features/billing/src/bin/consumption.rs",
+      "blob_sha1": "d0865c27b2c640986b96ac19d035494ce25f25a2"
+    },
+    {
+      "path": "fixtures/billing/consumption_pages.v1.json",
+      "blob_sha1": "10075b1f4ade673d40c508375612c95990233e94"
+    }
+  ]
+}

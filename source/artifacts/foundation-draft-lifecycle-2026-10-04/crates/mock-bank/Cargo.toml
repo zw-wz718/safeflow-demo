@@ -1,0 +1,17 @@
+[package]
+name = "safeflow-mock-bank"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "Immutable mock bank fixtures for SafeFlow read-only integration"
+
+[dependencies]
+safeflow-bank-gateway = { path = "../bank-gateway" }
+safeflow-contracts = { path = "../contracts" }
+serde.workspace = true
+serde_json.workspace = true
+
+[dev-dependencies]
+safeflow-runtime = { path = "../runtime" }

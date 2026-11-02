@@ -1,0 +1,655 @@
+{
+  "original": {
+    "binding": {
+      "business_draft_version": 1,
+      "business_operation_id": "operation-43524-2",
+      "execution_operation_id": null,
+      "execution_plan_version": null,
+      "execution_tool_name": null,
+      "idempotency_key": null,
+      "normalized_arguments": {
+        "amount": "200.00",
+        "currency": "CNY",
+        "draft_id": "draft-43524-1",
+        "draft_version": 1,
+        "operation_id": "operation-43524-2",
+        "payee_id": "payee_008",
+        "payer_account_id": "account_001",
+        "remark": "",
+        "task_id": "task_d5f2dce4-0cea-4bcb-8687-40f8db19f013"
+      },
+      "operation_fingerprint": null,
+      "preparation_arguments_hash": "977b9f528a9bd12b181b15da606c8d23c56f95f21af8b3b1cd5ea21aa7116267",
+      "preparation_operation_id": "payment_6f932ba4-0158-4fc5-ab11-f9c18b24636b",
+      "preparation_plan_version": 1,
+      "transfer_arguments_hash": "6993eeade30949f2ebb00cfe460a53f1f827bd8f9033afa616c38406023a6cd2"
+    },
+    "contract_version": 1,
+    "execution_link": null,
+    "first_public_submission": null,
+    "funds_execution_enabled": false,
+    "public_submitted_at": null,
+    "public_sync_enabled": false,
+    "reason": "NO_SUBMISSION_IN_CURRENT_SNAPSHOT",
+    "scope": "PAYMENT_ORIGINAL_RESULT_ONLY",
+    "state": "UNSUBMITTED",
+    "task_id": "task_d5f2dce4-0cea-4bcb-8687-40f8db19f013",
+    "verified_business_result": null
+  },
+  "prepared": {
+    "can_start": false,
+    "clarification": null,
+    "contract_version": 1,
+    "draft": {
+      "action": "CREATE_MOCK_DRAFT",
+      "confirmation": null,
+      "contract_version": 2,
+      "current_draft_verified": false,
+      "display_ticket": null,
+      "execution_status": "SUCCEEDED",
+      "facts_version": 1,
+      "is_current_action": true,
+      "mode": "PROJECT_SIMULATION",
+      "next_action": {
+        "kind": "SELECT_ACTION"
+      },
+      "observed_draft": null,
+      "operation_id": "operation_0d9c7649-a500-49e5-8471-c7d4358492fc",
+      "operation_plan_version": 1,
+      "operation_revision": 4,
+      "operation_state": "SUCCEEDED",
+      "parameters": {
+        "amount": "200.00",
+        "currency": "CNY",
+        "payee_id": "payee_008",
+        "payer_account_id": "account_001",
+        "remark": "",
+        "replaces": null
+      },
+      "plan_version": 1,
+      "receipt": {
+        "action": "CREATE_MOCK_DRAFT",
+        "business_operation_id": "operation-43524-2",
+        "draft_id": "draft-43524-1",
+        "draft_version": 1,
+        "executed_at": "2026-10-19T02:49:41.517342Z",
+        "expected_draft_version": null,
+        "operation_id": "operation_0d9c7649-a500-49e5-8471-c7d4358492fc",
+        "plan_version": 1,
+        "tool_result_ref": "mock_draft_result_lifecycle_claim_821d898e-3bef-4ee1-9a19-bc2ef7c882cb"
+      },
+      "receipt_scope": "HISTORICAL_EXECUTION_RECEIPT",
+      "replayed": true,
+      "scope": "MOCK_DRAFT_LIFECYCLE_ONLY",
+      "selection_ticket": "lifecycle_b21c64c6998e4086aac081177e721012",
+      "target_parameters": null,
+      "task_id": "task_d5f2dce4-0cea-4bcb-8687-40f8db19f013",
+      "task_revision": 2,
+      "task_state": "WAITING_USER",
+      "unknown_operation_id": null
+    },
+    "kind": "PAYMENT",
+    "mode": "PROJECT_SIMULATION",
+    "payment": {
+      "agent_binding": {
+        "confirmation_ref": "confirmation_d0d4cf6d-d5f6-40e4-a753-d1a77321ee69",
+        "lifecycle_plan_digest": "035e5ac92876d8cc5ca3bf57a7b1e1673bcbc8acb80215694cec6d1f815ae2c4",
+        "locator": {
+          "draft_id": "draft-43524-1",
+          "draft_version": 1
+        },
+        "planning_source": "MOCK_LLM",
+        "preparation_operation_id": "payment_6f932ba4-0158-4fc5-ab11-f9c18b24636b",
+        "projection_revision": "payment-draft-locator-v1",
+        "registration_digest": "7730b8e4d76fa56882d79e1a210d00e314c35c0e2a0797c20dbd8ea439f63aa8",
+        "reviewed_plan": {
+          "contract_version": 1,
+          "nodes": [
+            {
+              "arguments": {
+                "draft_id": "draft-43524-1",
+                "draft_version": 1
+              },
+              "depends_on": [],
+              "id": "payment",
+              "tool": "execute_transfer",
+              "type": "TOOL"
+            }
+          ],
+          "plan_version": 2,
+          "task_id": "task_d5f2dce4-0cea-4bcb-8687-40f8db19f013"
+        },
+        "reviewed_plan_digest": "2381da3bbe77864b9b8fece982c95e291a19549c485e2b7d9f82a2c23cac1314",
+        "scope": "PAYMENT_AGENT_INTENT_ONLY",
+        "snapshot_digest": "977b9f528a9bd12b181b15da606c8d23c56f95f21af8b3b1cd5ea21aa7116267"
+      },
+      "business_preflight": {
+        "formal_execution_binding_adopted": false,
+        "freshness": "NOT_EVALUATED",
+        "missing_sources": [
+          "CARD_TRANSACTION_REPOSITORY_NOT_CONNECTED"
+        ],
+        "not_evaluated_checks": [
+          "BALANCE_SUFFICIENCY",
+          "DAILY_USAGE_BUSINESS_POLICY"
+        ],
+        "observations": [],
+        "scope": "PAYMENT_BUSINESS_OBSERVATION_ONLY"
+      },
+      "business_recovery_required": false,
+      "confirmation_ref": "confirmation_d0d4cf6d-d5f6-40e4-a753-d1a77321ee69",
+      "confirmation_status": "PREPARED",
+      "confirmed_at": null,
+      "contract_version": 1,
+      "decision_freshness": "NOT_EVALUATED",
+      "display_ticket": "payment_display_a7ef38b4-0142-4031-8eb2-fe09ab24d5e3",
+      "execution_conditions": [
+        "FINAL_FUNDS_AUTHORITY_NOT_ASSEMBLED",
+        "FINAL_RULES_AND_AUTH_NOT_ASSEMBLED",
+        "CARD_COMMIT_PROTOCOL_NOT_CONNECTED"
+      ],
+      "execution_link": null,
+      "execution_link_path": "/api/sim/payment-preparations/task_d5f2dce4-0cea-4bcb-8687-40f8db19f013/payment_6f932ba4-0158-4fc5-ab11-f9c18b24636b/execution-link",
+      "expires_at": "2026-10-19T02:54:41.854595Z",
+      "funds_execution_enabled": false,
+      "invalid_reason": null,
+      "operation": {
+        "arguments_hash": "977b9f528a9bd12b181b15da606c8d23c56f95f21af8b3b1cd5ea21aa7116267",
+        "business_operation_ref": null,
+        "facts_version": 1,
+        "node_id": "payment_a5601eb3-06c1-46d3-b96e-916fa70c6d6e",
+        "operation_id": "payment_6f932ba4-0158-4fc5-ab11-f9c18b24636b",
+        "plan_version": 1,
+        "revision": 1,
+        "state": "DRAFT",
+        "task_id": "task_d5f2dce4-0cea-4bcb-8687-40f8db19f013"
+      },
+      "original_result_path": "/api/sim/payment-preparations/task_d5f2dce4-0cea-4bcb-8687-40f8db19f013/payment_6f932ba4-0158-4fc5-ab11-f9c18b24636b/original-result",
+      "prepared_at": "2026-10-19T02:49:41.854595Z",
+      "replayed": false,
+      "scope": "PAYMENT_INTENT_ONLY",
+      "security_decisions": [],
+      "snapshot": {
+        "display_details": {
+          "account": {
+            "account_id": "account_001",
+            "currency": "CNY",
+            "display_name": "工资卡",
+            "masked_account_no": "**** 6628"
+          },
+          "amount": "200.00",
+          "available_balance": "1288.00",
+          "balance_as_of": "2026-10-01T14:30:00+08:00",
+          "currency": "CNY",
+          "payee": {
+            "bank_name": "示例银行",
+            "display_name": "小李",
+            "masked_account_no": "**** 1024",
+            "payee_id": "payee_008"
+          },
+          "remark": ""
+        },
+        "draft_expires_at": 1792378781,
+        "transfer": {
+          "amount": "200.00",
+          "currency": "CNY",
+          "draft_id": "draft-43524-1",
+          "draft_version": 1,
+          "operation_id": "operation-43524-2",
+          "payee_id": "payee_008",
+          "payer_account_id": "account_001",
+          "remark": "",
+          "task_id": "task_d5f2dce4-0cea-4bcb-8687-40f8db19f013"
+        }
+      },
+      "snapshot_digest": "977b9f528a9bd12b181b15da606c8d23c56f95f21af8b3b1cd5ea21aa7116267",
+      "state": "AWAITING_PAYMENT_CONFIRMATION",
+      "task_id": "task_d5f2dce4-0cea-4bcb-8687-40f8db19f013"
+    },
+    "payment_flow": {
+      "automatic_retry": false,
+      "funds_execution_enabled": false,
+      "next_action": "CONFIRM_OR_REJECT",
+      "next_path": "/api/sim/payment-preparations/task_d5f2dce4-0cea-4bcb-8687-40f8db19f013/payment_6f932ba4-0158-4fc5-ab11-f9c18b24636b/confirm",
+      "original": null,
+      "planning_enabled": true,
+      "status": "WAITING_PAYMENT_CONFIRMATION",
+      "waiting_node_id": "payment"
+    },
+    "planning_source": "MOCK_LLM",
+    "results": null,
+    "task": null
+  },
+  "waiting": {
+    "can_start": false,
+    "clarification": null,
+    "contract_version": 1,
+    "draft": {
+      "action": "CREATE_MOCK_DRAFT",
+      "confirmation": null,
+      "contract_version": 2,
+      "current_draft_verified": false,
+      "display_ticket": null,
+      "execution_status": "SUCCEEDED",
+      "facts_version": 1,
+      "is_current_action": true,
+      "mode": "PROJECT_SIMULATION",
+      "next_action": {
+        "kind": "SELECT_ACTION"
+      },
+      "observed_draft": null,
+      "operation_id": "operation_0d9c7649-a500-49e5-8471-c7d4358492fc",
+      "operation_plan_version": 1,
+      "operation_revision": 4,
+      "operation_state": "SUCCEEDED",
+      "parameters": {
+        "amount": "200.00",
+        "currency": "CNY",
+        "payee_id": "payee_008",
+        "payer_account_id": "account_001",
+        "remark": "",
+        "replaces": null
+      },
+      "plan_version": 1,
+      "receipt": {
+        "action": "CREATE_MOCK_DRAFT",
+        "business_operation_id": "operation-43524-2",
+        "draft_id": "draft-43524-1",
+        "draft_version": 1,
+        "executed_at": "2026-10-19T02:49:41.517342Z",
+        "expected_draft_version": null,
+        "operation_id": "operation_0d9c7649-a500-49e5-8471-c7d4358492fc",
+        "plan_version": 1,
+        "tool_result_ref": "mock_draft_result_lifecycle_claim_821d898e-3bef-4ee1-9a19-bc2ef7c882cb"
+      },
+      "receipt_scope": "HISTORICAL_EXECUTION_RECEIPT",
+      "replayed": true,
+      "scope": "MOCK_DRAFT_LIFECYCLE_ONLY",
+      "selection_ticket": "lifecycle_b21c64c6998e4086aac081177e721012",
+      "target_parameters": null,
+      "task_id": "task_d5f2dce4-0cea-4bcb-8687-40f8db19f013",
+      "task_revision": 2,
+      "task_state": "WAITING_USER",
+      "unknown_operation_id": null
+    },
+    "kind": "PAYMENT",
+    "mode": "PROJECT_SIMULATION",
+    "payment": {
+      "agent_binding": {
+        "confirmation_ref": "confirmation_d0d4cf6d-d5f6-40e4-a753-d1a77321ee69",
+        "lifecycle_plan_digest": "035e5ac92876d8cc5ca3bf57a7b1e1673bcbc8acb80215694cec6d1f815ae2c4",
+        "locator": {
+          "draft_id": "draft-43524-1",
+          "draft_version": 1
+        },
+        "planning_source": "MOCK_LLM",
+        "preparation_operation_id": "payment_6f932ba4-0158-4fc5-ab11-f9c18b24636b",
+        "projection_revision": "payment-draft-locator-v1",
+        "registration_digest": "7730b8e4d76fa56882d79e1a210d00e314c35c0e2a0797c20dbd8ea439f63aa8",
+        "reviewed_plan": {
+          "contract_version": 1,
+          "nodes": [
+            {
+              "arguments": {
+                "draft_id": "draft-43524-1",
+                "draft_version": 1
+              },
+              "depends_on": [],
+              "id": "payment",
+              "tool": "execute_transfer",
+              "type": "TOOL"
+            }
+          ],
+          "plan_version": 2,
+          "task_id": "task_d5f2dce4-0cea-4bcb-8687-40f8db19f013"
+        },
+        "reviewed_plan_digest": "2381da3bbe77864b9b8fece982c95e291a19549c485e2b7d9f82a2c23cac1314",
+        "scope": "PAYMENT_AGENT_INTENT_ONLY",
+        "snapshot_digest": "977b9f528a9bd12b181b15da606c8d23c56f95f21af8b3b1cd5ea21aa7116267"
+      },
+      "business_preflight": {
+        "formal_execution_binding_adopted": false,
+        "freshness": "CURRENT_OBSERVATION_ONLY",
+        "missing_sources": [
+          "CARD_TRANSACTION_REPOSITORY_NOT_CONNECTED"
+        ],
+        "not_evaluated_checks": [
+          "BALANCE_SUFFICIENCY",
+          "DAILY_USAGE_BUSINESS_POLICY"
+        ],
+        "observations": [
+          {
+            "assembly_digest": "f37648cb13b71d70621613a03b3bd52c33f8d5c7979e4254855513793d8e4c34",
+            "context": {
+              "arguments_hash": "6993eeade30949f2ebb00cfe460a53f1f827bd8f9033afa616c38406023a6cd2",
+              "auth_grant_ref": null,
+              "authenticated_user_id": "user_001",
+              "confirmation_ref": "confirmation_d0d4cf6d-d5f6-40e4-a753-d1a77321ee69",
+              "contract_version": 1,
+              "facts_version": 1,
+              "idempotency_key": "payment_preflight_payment_6f932ba4-0158-4fc5-ab11-f9c18b24636b",
+              "node_id": "payment_a5601eb3-06c1-46d3-b96e-916fa70c6d6e",
+              "normalized_arguments": {
+                "amount": "200.00",
+                "currency": "CNY",
+                "draft_id": "draft-43524-1",
+                "draft_version": 1,
+                "operation_id": "operation-43524-2",
+                "payee_id": "payee_008",
+                "payer_account_id": "account_001",
+                "remark": "",
+                "task_id": "task_d5f2dce4-0cea-4bcb-8687-40f8db19f013"
+              },
+              "operation_id": "payment_6f932ba4-0158-4fc5-ab11-f9c18b24636b",
+              "phase": "PRE_AUTH",
+              "plan_version": 1,
+              "task_id": "task_d5f2dce4-0cea-4bcb-8687-40f8db19f013",
+              "tool_name": "foundation_payment_business_preflight"
+            },
+            "expires_at": "2026-10-19T02:54:41.854595Z",
+            "facts": {
+              "comparison_key": "payment_preflight_payment_6f932ba4-0158-4fc5-ab11-f9c18b24636b",
+              "daily": {
+                "complete": true,
+                "owner_id": "user_001",
+                "payer_accounts": [
+                  "account_001"
+                ],
+                "scope": "OWNER_ALL_ACCOUNTS_PUBLIC_FIRST_SUBMISSION",
+                "submitted": [],
+                "usage": {
+                  "carried_pending_cents": 0,
+                  "pending_today_cents": 0,
+                  "rule_version": "transfer-daily-usage-2026-10-17-v1",
+                  "statistical_day": "2026-10-19",
+                  "successful_cents": 0,
+                  "used_cents": 0
+                }
+              },
+              "draft": {
+                "details": {
+                  "account": {
+                    "account_id": "account_001",
+                    "currency": "CNY",
+                    "display_name": "工资卡",
+                    "masked_account_no": "**** 6628"
+                  },
+                  "amount": "200.00",
+                  "available_balance": "1288.00",
+                  "balance_as_of": "2026-10-01T14:30:00+08:00",
+                  "currency": "CNY",
+                  "payee": {
+                    "bank_name": "示例银行",
+                    "display_name": "小李",
+                    "masked_account_no": "**** 1024",
+                    "payee_id": "payee_008"
+                  },
+                  "remark": ""
+                },
+                "draft_id": "draft-43524-1",
+                "expired": false,
+                "expires_at": 1792378781,
+                "operation_id": "operation-43524-2",
+                "owner_id": "user_001",
+                "status": "ReadyToConfirm",
+                "task_id": "task_d5f2dce4-0cea-4bcb-8687-40f8db19f013",
+                "version": 1
+              },
+              "formal_execution_binding_adopted": false,
+              "funds": {
+                "available": "1288.00",
+                "booked": "1288.00",
+                "reserved": "0.00"
+              },
+              "isolation": "REPEATABLE_READ",
+              "key_operation_id": null,
+              "key_scope": "INTERNAL_COMPARISON_ONLY",
+              "member_source": "cacc62c09ac07555844c3422b62709a577ed5375",
+              "original_key": null,
+              "original_request": null,
+              "outgoing": {
+                "missing_reason": "CARD_TRANSACTION_REPOSITORY_NOT_CONNECTED",
+                "state": "UNKNOWN"
+              },
+              "owner_id": "user_001",
+              "payer_owner_id": "user_001",
+              "policy_source": "b45473f",
+              "recipient_account_id": null,
+              "request": {
+                "amount": "200.00",
+                "currency": "CNY",
+                "draft_id": "draft-43524-1",
+                "draft_version": 1,
+                "operation_id": "operation-43524-2",
+                "payee_id": "payee_008",
+                "payer_account_id": "account_001",
+                "remark": "",
+                "task_id": "task_d5f2dce4-0cea-4bcb-8687-40f8db19f013"
+              },
+              "submitted": false
+            },
+            "findings": [
+              {
+                "check_id": "transfer-funds-business",
+                "dedup_key": null,
+                "event_ids": [],
+                "evidence_refs": [],
+                "kind": "NEEDS_INPUT",
+                "observed_value": null,
+                "policy_version": "transfer-funds-business-2026-10-18-v1",
+                "reason_code": "PAYEE_ROUTE_UNAVAILABLE",
+                "source": "transfer-business",
+                "window_end_ms": null,
+                "window_start_ms": null
+              }
+            ],
+            "funds_execution_enabled": false,
+            "observation_id": "payment_observation_4784565d-580d-452e-9b64-c479d4d3c49d",
+            "observed_at": "2026-10-19T02:49:42.080867Z",
+            "ordinal": 1,
+            "preparation_binding": {
+              "arguments_hash": "977b9f528a9bd12b181b15da606c8d23c56f95f21af8b3b1cd5ea21aa7116267",
+              "facts_version": 1,
+              "lifecycle_anchor": "8e9778c4c6233bc42767fd4732be02d3f889b038e9d6197b10e7ca7d85565805",
+              "node_id": "payment_a5601eb3-06c1-46d3-b96e-916fa70c6d6e",
+              "operation_id": "payment_6f932ba4-0158-4fc5-ab11-f9c18b24636b",
+              "operation_revision": 1,
+              "plan_version": 1,
+              "task_id": "task_d5f2dce4-0cea-4bcb-8687-40f8db19f013",
+              "task_revision": 2,
+              "tool_name": "foundation_payment_intent",
+              "user_id": "user_001"
+            },
+            "scope": "PAYMENT_BUSINESS_OBSERVATION_ONLY",
+            "session_digest": "c574aa508aa89b3b1ec7bc6dfa890f8d4fde01433a1e91f4b9866ac99ed6f556",
+            "session_version": 1,
+            "snapshot_digest": "977b9f528a9bd12b181b15da606c8d23c56f95f21af8b3b1cd5ea21aa7116267",
+            "source_digest": "8b41e3e628a355d2c6d994fb076d4dbe4f878a764b5ab08211528781b5beaf93"
+          }
+        ],
+        "scope": "PAYMENT_BUSINESS_OBSERVATION_ONLY"
+      },
+      "business_recovery_required": false,
+      "confirmation_ref": "confirmation_d0d4cf6d-d5f6-40e4-a753-d1a77321ee69",
+      "confirmation_status": "CONFIRMED",
+      "confirmed_at": "2026-10-19T02:49:42.057767Z",
+      "contract_version": 1,
+      "decision_freshness": "CURRENT_MINIMUM_ONLY",
+      "display_ticket": "payment_display_a7ef38b4-0142-4031-8eb2-fe09ab24d5e3",
+      "execution_conditions": [
+        "FINAL_FUNDS_AUTHORITY_NOT_ASSEMBLED",
+        "FINAL_RULES_AND_AUTH_NOT_ASSEMBLED",
+        "CARD_COMMIT_PROTOCOL_NOT_CONNECTED"
+      ],
+      "execution_link": null,
+      "execution_link_path": "/api/sim/payment-preparations/task_d5f2dce4-0cea-4bcb-8687-40f8db19f013/payment_6f932ba4-0158-4fc5-ab11-f9c18b24636b/execution-link",
+      "expires_at": "2026-10-19T02:54:41.854595Z",
+      "funds_execution_enabled": false,
+      "invalid_reason": null,
+      "operation": {
+        "arguments_hash": "977b9f528a9bd12b181b15da606c8d23c56f95f21af8b3b1cd5ea21aa7116267",
+        "business_operation_ref": null,
+        "facts_version": 1,
+        "node_id": "payment_a5601eb3-06c1-46d3-b96e-916fa70c6d6e",
+        "operation_id": "payment_6f932ba4-0158-4fc5-ab11-f9c18b24636b",
+        "plan_version": 1,
+        "revision": 1,
+        "state": "DRAFT",
+        "task_id": "task_d5f2dce4-0cea-4bcb-8687-40f8db19f013"
+      },
+      "original_result_path": "/api/sim/payment-preparations/task_d5f2dce4-0cea-4bcb-8687-40f8db19f013/payment_6f932ba4-0158-4fc5-ab11-f9c18b24636b/original-result",
+      "prepared_at": "2026-10-19T02:49:41.854595Z",
+      "replayed": false,
+      "scope": "PAYMENT_INTENT_ONLY",
+      "security_decisions": [
+        {
+          "assembly_digest": "672abc801a8230cc20742ebe00c0cf82632ec9b318878d6eb25215d7164ae277",
+          "assembly_metadata": {
+            "confirmation_binding_digest": "7c740c7ab7dbd60e0b520efcc3042524ecc3f3325b512c75e33709b676c0f3c6",
+            "confirmation_ref": "confirmation_d0d4cf6d-d5f6-40e4-a753-d1a77321ee69",
+            "facts": {
+              "business_operation_id": "operation-43524-2",
+              "combined_cents": 20000,
+              "current_cents": 20000,
+              "payment_digest": "977b9f528a9bd12b181b15da606c8d23c56f95f21af8b3b1cd5ea21aa7116267",
+              "statistical_day": "2026-10-19",
+              "tool_parameters": {
+                "draft_id": "draft-43524-1",
+                "draft_version": 1
+              },
+              "usage_digest": "56631d84501ea997f66c8cce03487ff3efca0437656c7326747d82dfb5575bf4",
+              "usage_rule_version": "transfer-daily-usage-2026-10-17-v1",
+              "used_cents": 0
+            },
+            "kernel": {
+              "domain_policy_evaluated": false,
+              "funds_execution_enabled": false,
+              "kernel_source_digest": "9d46eaffdcc78c9ae9e4786f20c838037e9267a1f0c74f6f1cb894d57b4307e6",
+              "minimum_source_digest": "0ff237f5036a577e5baa32ac68020e49355085c84e3d5c751b3f79ded2992c76",
+              "risk_mode": "NOT_EVALUATED",
+              "scope": "PUBLIC_PAYMENT_MINIMUM_ONLY",
+              "threshold_cents": 100000,
+              "version": "payment-used-plus-current-v1"
+            },
+            "settings": {
+              "deployment_revision_digest": "bc355e2f17f6359e41433911695351fdf30ac8a01beaf1f1eca666db34d33cb2",
+              "ttl_ms": 300000
+            },
+            "storage_source_digest": "24d6c461a965be34f137b54e41a725f28a2cefe8afc54c2a587b46968d10b4d0"
+          },
+          "binding": {
+            "arguments_hash": "977b9f528a9bd12b181b15da606c8d23c56f95f21af8b3b1cd5ea21aa7116267",
+            "facts_version": 1,
+            "lifecycle_anchor": "8e9778c4c6233bc42767fd4732be02d3f889b038e9d6197b10e7ca7d85565805",
+            "node_id": "payment_a5601eb3-06c1-46d3-b96e-916fa70c6d6e",
+            "operation_id": "payment_6f932ba4-0158-4fc5-ab11-f9c18b24636b",
+            "operation_revision": 1,
+            "plan_version": 1,
+            "task_id": "task_d5f2dce4-0cea-4bcb-8687-40f8db19f013",
+            "task_revision": 2,
+            "tool_name": "foundation_payment_intent",
+            "user_id": "user_001"
+          },
+          "contract_version": 1,
+          "decision": {
+            "contract_version": 1,
+            "decision_id": "payment_minimum_0",
+            "expires_at_ms": 9223372036854775807,
+            "facts_version": 1,
+            "findings": [
+              {
+                "applied_weight": null,
+                "finding": {
+                  "check_id": "COMMON-17",
+                  "dedup_key": null,
+                  "event_ids": [],
+                  "evidence_refs": [],
+                  "kind": "INFORMATIONAL",
+                  "observed_value": null,
+                  "policy_version": "payment-used-plus-current-v1",
+                  "reason_code": "PAYMENT_MINIMUM_ONLY_DOMAIN_POLICY_NOT_EVALUATED",
+                  "source": "security_kernel",
+                  "window_end_ms": null,
+                  "window_start_ms": null
+                },
+                "score_delta": 0
+              }
+            ],
+            "minimum_level": "YELLOW",
+            "operation_id": "payment_6f932ba4-0158-4fc5-ab11-f9c18b24636b",
+            "outcome": "READY_TO_CONFIRM",
+            "policy_version": "payment-used-plus-current-v1",
+            "required_gates": [
+              "EXPLICIT_CONFIRMATION"
+            ],
+            "risk_score": 0,
+            "risk_tier": "LOW"
+          },
+          "decision_digest": "fae8bfb40f7105dc84c154d97aea06ac5dce153935fccd641f4eb09638e18298",
+          "ended_at_ms": null,
+          "evaluated_at_ms": 1792378182063,
+          "evidence_kind": "PREFLIGHT_ONLY",
+          "expires_at_ms": 1792378481854,
+          "invalidation_reason": null,
+          "phase": "PRE_AUTH",
+          "plan_review_digest": "0dd25916604702d56ad588b9a5bf1ad4897eaaa965364ba5d18d40fcb99440a3",
+          "request_id": "decision_request_b776aced-2d40-41f8-9f3d-7fb5f6b6e009",
+          "snapshot_digest": "5be93a017fe0d9800efca7c9587639990ccd33a5429f39b60b7b5f494f3a90b9",
+          "source_instance_id": "b41b7193-3ae9-4693-af36-53927601c72d",
+          "source_mode": "TRUSTED_PAYMENT_MINIMUM_V1",
+          "status": "ACTIVE",
+          "stored_decision_id": "stored_decision_26f86f1a-5b13-4c83-9c99-6ad7274400a5"
+        }
+      ],
+      "snapshot": {
+        "display_details": {
+          "account": {
+            "account_id": "account_001",
+            "currency": "CNY",
+            "display_name": "工资卡",
+            "masked_account_no": "**** 6628"
+          },
+          "amount": "200.00",
+          "available_balance": "1288.00",
+          "balance_as_of": "2026-10-01T14:30:00+08:00",
+          "currency": "CNY",
+          "payee": {
+            "bank_name": "示例银行",
+            "display_name": "小李",
+            "masked_account_no": "**** 1024",
+            "payee_id": "payee_008"
+          },
+          "remark": ""
+        },
+        "draft_expires_at": 1792378781,
+        "transfer": {
+          "amount": "200.00",
+          "currency": "CNY",
+          "draft_id": "draft-43524-1",
+          "draft_version": 1,
+          "operation_id": "operation-43524-2",
+          "payee_id": "payee_008",
+          "payer_account_id": "account_001",
+          "remark": "",
+          "task_id": "task_d5f2dce4-0cea-4bcb-8687-40f8db19f013"
+        }
+      },
+      "snapshot_digest": "977b9f528a9bd12b181b15da606c8d23c56f95f21af8b3b1cd5ea21aa7116267",
+      "state": "CONFIRMED_AWAITING_EXECUTION_CONDITIONS",
+      "task_id": "task_d5f2dce4-0cea-4bcb-8687-40f8db19f013"
+    },
+    "payment_flow": {
+      "automatic_retry": false,
+      "funds_execution_enabled": false,
+      "next_action": "QUERY_OR_EVALUATE",
+      "next_path": "/api/sim/payment-preparations/task_d5f2dce4-0cea-4bcb-8687-40f8db19f013/payment_6f932ba4-0158-4fc5-ab11-f9c18b24636b/evaluate",
+      "original": null,
+      "planning_enabled": true,
+      "status": "WAITING_EXECUTION_CONDITIONS",
+      "waiting_node_id": "payment"
+    },
+    "planning_source": "MOCK_LLM",
+    "results": null,
+    "task": null
+  }
+}

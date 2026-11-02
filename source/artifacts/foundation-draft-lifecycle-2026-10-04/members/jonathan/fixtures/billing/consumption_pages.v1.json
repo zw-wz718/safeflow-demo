@@ -1,0 +1,912 @@
+{
+  "schema_version": 1,
+  "fictional": true,
+  "production_registered": false,
+  "source_id": "fictional-billing-input-v1",
+  "samples": [
+    {
+      "name": "complete",
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "steps": [
+        {
+          "cursor": null,
+          "page": {
+            "snapshot_id": "fictional-snapshot-1",
+            "owner_user_id": "user_demo",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-13T12:00:00+08:00",
+              "start_inclusive": "2026-06-13T12:00:00+08:00",
+              "end_exclusive": "2026-10-13T12:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "fictional-consumption-july",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-15T08:00:00+08:00",
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "service_demo_video_1"
+              },
+              {
+                "transaction_id": "fictional-transfer",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "TRANSFER",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-15T08:00:00+08:00",
+                "merchant_id": null,
+                "category_code": null,
+                "original_tx_id": null,
+                "service_ref": null
+              }
+            ],
+            "has_more": true,
+            "next_cursor": "page2",
+            "range_complete": false,
+            "total_unique_rows": null
+          },
+          "error": null
+        },
+        {
+          "cursor": "page2",
+          "page": {
+            "snapshot_id": "fictional-snapshot-1",
+            "owner_user_id": "user_demo",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-13T12:00:00+08:00",
+              "start_inclusive": "2026-06-13T12:00:00+08:00",
+              "end_exclusive": "2026-10-13T12:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "fictional-consumption-august",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-08-15T08:00:00+08:00",
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "service_demo_video_1"
+              },
+              {
+                "transaction_id": "fictional-refund",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "IN",
+                "transaction_type": "REFUND",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-15T08:00:00+08:00",
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": "fictional-consumption-july",
+                "service_ref": "service_demo_video_1"
+              },
+              {
+                "transaction_id": "fictional-pending",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "PROCESSING",
+                "completed_at": null,
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "service_demo_video_1"
+              },
+              {
+                "transaction_id": "fictional-failed",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "FAILED",
+                "completed_at": null,
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "service_demo_video_1"
+              }
+            ],
+            "has_more": false,
+            "next_cursor": null,
+            "range_complete": true,
+            "total_unique_rows": 6
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "second-page-failed",
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "steps": [
+        {
+          "cursor": null,
+          "page": {
+            "snapshot_id": "fictional-snapshot-1",
+            "owner_user_id": "user_demo",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-13T12:00:00+08:00",
+              "start_inclusive": "2026-06-13T12:00:00+08:00",
+              "end_exclusive": "2026-10-13T12:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "fictional-consumption-july",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-15T08:00:00+08:00",
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "service_demo_video_1"
+              }
+            ],
+            "has_more": true,
+            "next_cursor": "page2",
+            "range_complete": false,
+            "total_unique_rows": null
+          },
+          "error": null
+        },
+        {
+          "cursor": "page2",
+          "page": null,
+          "error": "UNAVAILABLE"
+        }
+      ]
+    },
+    {
+      "name": "cursor-loop",
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "steps": [
+        {
+          "cursor": null,
+          "page": {
+            "snapshot_id": "fictional-snapshot-1",
+            "owner_user_id": "user_demo",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-13T12:00:00+08:00",
+              "start_inclusive": "2026-06-13T12:00:00+08:00",
+              "end_exclusive": "2026-10-13T12:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "fictional-consumption-july",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-15T08:00:00+08:00",
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "service_demo_video_1"
+              }
+            ],
+            "has_more": true,
+            "next_cursor": "page2",
+            "range_complete": false,
+            "total_unique_rows": null
+          },
+          "error": null
+        },
+        {
+          "cursor": "page2",
+          "page": {
+            "snapshot_id": "fictional-snapshot-1",
+            "owner_user_id": "user_demo",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-13T12:00:00+08:00",
+              "start_inclusive": "2026-06-13T12:00:00+08:00",
+              "end_exclusive": "2026-10-13T12:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "fictional-consumption-august",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-08-15T08:00:00+08:00",
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "service_demo_video_1"
+              }
+            ],
+            "has_more": true,
+            "next_cursor": "page2",
+            "range_complete": false,
+            "total_unique_rows": null
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "snapshot-changed",
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "steps": [
+        {
+          "cursor": null,
+          "page": {
+            "snapshot_id": "fictional-snapshot-1",
+            "owner_user_id": "user_demo",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-13T12:00:00+08:00",
+              "start_inclusive": "2026-06-13T12:00:00+08:00",
+              "end_exclusive": "2026-10-13T12:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "fictional-consumption-july",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-15T08:00:00+08:00",
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "service_demo_video_1"
+              }
+            ],
+            "has_more": true,
+            "next_cursor": "page2",
+            "range_complete": false,
+            "total_unique_rows": null
+          },
+          "error": null
+        },
+        {
+          "cursor": "page2",
+          "page": {
+            "snapshot_id": "fictional-new-snapshot",
+            "owner_user_id": "user_demo",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-13T12:00:00+08:00",
+              "start_inclusive": "2026-06-13T12:00:00+08:00",
+              "end_exclusive": "2026-10-13T12:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "fictional-consumption-august",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-08-15T08:00:00+08:00",
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "service_demo_video_1"
+              }
+            ],
+            "has_more": false,
+            "next_cursor": null,
+            "range_complete": true,
+            "total_unique_rows": 2
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "no-completion-proof",
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "steps": [
+        {
+          "cursor": null,
+          "page": {
+            "snapshot_id": "fictional-snapshot-1",
+            "owner_user_id": "user_demo",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-13T12:00:00+08:00",
+              "start_inclusive": "2026-06-13T12:00:00+08:00",
+              "end_exclusive": "2026-10-13T12:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "fictional-consumption-july",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-15T08:00:00+08:00",
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "service_demo_video_1"
+              }
+            ],
+            "has_more": false,
+            "next_cursor": null,
+            "range_complete": false,
+            "total_unique_rows": null
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "source-unavailable",
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "steps": [
+        {
+          "cursor": null,
+          "page": null,
+          "error": "UNAVAILABLE"
+        }
+      ]
+    },
+    {
+      "name": "snapshot-expired",
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "steps": [
+        {
+          "cursor": null,
+          "page": {
+            "snapshot_id": "fictional-snapshot-1",
+            "owner_user_id": "user_demo",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-13T12:00:00+08:00",
+              "start_inclusive": "2026-06-13T12:00:00+08:00",
+              "end_exclusive": "2026-10-13T12:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "fictional-consumption-july",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-15T08:00:00+08:00",
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "service_demo_video_1"
+              }
+            ],
+            "has_more": true,
+            "next_cursor": "page2",
+            "range_complete": false,
+            "total_unique_rows": null
+          },
+          "error": null
+        },
+        {
+          "cursor": "page2",
+          "page": null,
+          "error": "SNAPSHOT_EXPIRED"
+        }
+      ]
+    },
+    {
+      "name": "duplicate-page-rows",
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "steps": [
+        {
+          "cursor": null,
+          "page": {
+            "snapshot_id": "fictional-snapshot-1",
+            "owner_user_id": "user_demo",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-13T12:00:00+08:00",
+              "start_inclusive": "2026-06-13T12:00:00+08:00",
+              "end_exclusive": "2026-10-13T12:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "fictional-consumption-july",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-15T08:00:00+08:00",
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "service_demo_video_1"
+              }
+            ],
+            "has_more": true,
+            "next_cursor": "page2",
+            "range_complete": false,
+            "total_unique_rows": null
+          },
+          "error": null
+        },
+        {
+          "cursor": "page2",
+          "page": {
+            "snapshot_id": "fictional-snapshot-1",
+            "owner_user_id": "user_demo",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-13T12:00:00+08:00",
+              "start_inclusive": "2026-06-13T12:00:00+08:00",
+              "end_exclusive": "2026-10-13T12:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "fictional-consumption-july",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-15T08:00:00+08:00",
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "service_demo_video_1"
+              },
+              {
+                "transaction_id": "fictional-consumption-august",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-08-15T08:00:00+08:00",
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "service_demo_video_1"
+              }
+            ],
+            "has_more": false,
+            "next_cursor": null,
+            "range_complete": true,
+            "total_unique_rows": 2
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "missing-merchant-and-service",
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "steps": [
+        {
+          "cursor": null,
+          "page": {
+            "snapshot_id": "fictional-snapshot-1",
+            "owner_user_id": "user_demo",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-13T12:00:00+08:00",
+              "start_inclusive": "2026-06-13T12:00:00+08:00",
+              "end_exclusive": "2026-10-13T12:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "fictional-missing-references",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-15T08:00:00+08:00",
+                "merchant_id": null,
+                "category_code": null,
+                "original_tx_id": null,
+                "service_ref": null
+              }
+            ],
+            "has_more": false,
+            "next_cursor": null,
+            "range_complete": true,
+            "total_unique_rows": 1
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "same-merchant-different-services",
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "steps": [
+        {
+          "cursor": null,
+          "page": {
+            "snapshot_id": "fictional-snapshot-1",
+            "owner_user_id": "user_demo",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-13T12:00:00+08:00",
+              "start_inclusive": "2026-06-13T12:00:00+08:00",
+              "end_exclusive": "2026-10-13T12:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "fictional-consumption-july",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-15T08:00:00+08:00",
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "service_demo_video_1"
+              },
+              {
+                "transaction_id": "fictional-service-two",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-15T08:00:00+08:00",
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "service_demo_video_2"
+              }
+            ],
+            "has_more": false,
+            "next_cursor": null,
+            "range_complete": true,
+            "total_unique_rows": 2
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "same-merchant-unknown-service",
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "steps": [
+        {
+          "cursor": null,
+          "page": {
+            "snapshot_id": "fictional-snapshot-1",
+            "owner_user_id": "user_demo",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-13T12:00:00+08:00",
+              "start_inclusive": "2026-06-13T12:00:00+08:00",
+              "end_exclusive": "2026-10-13T12:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "fictional-service-unknown-a",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-15T08:00:00+08:00",
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": null
+              },
+              {
+                "transaction_id": "fictional-service-unknown-b",
+                "account_id": "account_001",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-15T08:00:00+08:00",
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": null
+              }
+            ],
+            "has_more": false,
+            "next_cursor": null,
+            "range_complete": true,
+            "total_unique_rows": 2
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "foreign-account-row",
+      "request": {
+        "account_ids": [
+          "account_001"
+        ],
+        "window": {
+          "as_of": "2026-10-13T12:00:00+08:00",
+          "start_inclusive": "2026-06-13T12:00:00+08:00",
+          "end_exclusive": "2026-10-13T12:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "steps": [
+        {
+          "cursor": null,
+          "page": {
+            "snapshot_id": "fictional-snapshot-1",
+            "owner_user_id": "user_demo",
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-13T12:00:00+08:00",
+              "start_inclusive": "2026-06-13T12:00:00+08:00",
+              "end_exclusive": "2026-10-13T12:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            },
+            "items": [
+              {
+                "transaction_id": "fictional-foreign-id",
+                "account_id": "account_other",
+                "operation_id": null,
+                "card_id": null,
+                "amount": "19.90",
+                "currency": "CNY",
+                "direction": "OUT",
+                "transaction_type": "CONSUMPTION",
+                "status": "COMPLETED",
+                "completed_at": "2026-07-15T08:00:00+08:00",
+                "merchant_id": "merchant_demo_video",
+                "category_code": "DEMO_MEDIA",
+                "original_tx_id": null,
+                "service_ref": "service_demo_video_1"
+              }
+            ],
+            "has_more": false,
+            "next_cursor": null,
+            "range_complete": true,
+            "total_unique_rows": 1
+          },
+          "error": null
+        }
+      ]
+    }
+  ]
+}

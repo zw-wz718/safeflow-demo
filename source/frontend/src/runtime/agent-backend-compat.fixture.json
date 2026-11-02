@@ -1,0 +1,217 @@
+{
+  "responses": [
+    {
+      "can_start": false,
+      "clarification": {
+        "question": "请明确选择付款账户和已查询到的收款人。"
+      },
+      "contract_version": 1,
+      "draft": null,
+      "kind": "CLARIFY",
+      "mode": "PROJECT_SIMULATION",
+      "planning_source": "MOCK_LLM",
+      "results": null,
+      "task": null
+    },
+    {
+      "can_start": true,
+      "clarification": null,
+      "contract_version": 1,
+      "draft": null,
+      "kind": "READ",
+      "mode": "PROJECT_SIMULATION",
+      "planning_source": "MOCK_LLM",
+      "results": null,
+      "task": {
+        "contract_version": 1,
+        "facts_version": 1,
+        "mode": "PROJECT_SIMULATION",
+        "next_action": {
+          "kind": "REVIEW_ORIGINAL_TASK"
+        },
+        "operation_state": null,
+        "operations": [],
+        "plan_version": 1,
+        "recovery": {
+          "kind": "REVIEW_NODE",
+          "node_id": "balance"
+        },
+        "replayed": false,
+        "revision": 1,
+        "security_outcome": null,
+        "security_scope": "CURRENT_DECISION_NOT_PROVIDED",
+        "task_id": "task_c9ae2225-c684-4ecd-afe6-38fa7a87cbca",
+        "task_state": "RUNNING"
+      }
+    },
+    {
+      "can_start": false,
+      "clarification": null,
+      "contract_version": 1,
+      "draft": null,
+      "kind": "READ",
+      "mode": "PROJECT_SIMULATION",
+      "planning_source": "MOCK_LLM",
+      "results": [
+        {
+          "contract_version": 1,
+          "data": {
+            "account": {
+              "account_id": "account_001",
+              "currency": "CNY",
+              "display_name": "工资卡",
+              "masked_account_no": "**** 6628"
+            },
+            "as_of": "2026-10-01T14:30:00+08:00",
+            "available_balance": "1288.00"
+          },
+          "operation_id": "operation_task_c9ae2225-c684-4ecd-afe6-38fa7a87cbca_balance",
+          "result_ref": "read_result_operation_task_c9ae2225-c684-4ecd-afe6-38fa7a87cbca_balance",
+          "status": "SUCCEEDED",
+          "tool_name": "get_account_balance"
+        }
+      ],
+      "task": {
+        "contract_version": 1,
+        "facts_version": 1,
+        "mode": "PROJECT_SIMULATION",
+        "next_action": {
+          "kind": "CONTINUE",
+          "node_id": "choice"
+        },
+        "operation_state": null,
+        "operations": [],
+        "plan_version": 1,
+        "recovery": {
+          "kind": "AWAIT_USER",
+          "node_id": "choice"
+        },
+        "replayed": false,
+        "revision": 2,
+        "security_outcome": null,
+        "security_scope": "CURRENT_DECISION_NOT_PROVIDED",
+        "task_id": "task_c9ae2225-c684-4ecd-afe6-38fa7a87cbca",
+        "task_state": "WAITING_USER"
+      }
+    },
+    {
+      "can_start": false,
+      "clarification": null,
+      "contract_version": 1,
+      "draft": {
+        "action": "CREATE_MOCK_DRAFT",
+        "confirmation": null,
+        "contract_version": 2,
+        "current_draft_verified": false,
+        "display_ticket": null,
+        "execution_status": "NOT_CLAIMED",
+        "facts_version": 1,
+        "is_current_action": true,
+        "mode": "PROJECT_SIMULATION",
+        "next_action": {
+          "kind": "PREPARE_OR_REPLACE_ACTION"
+        },
+        "observed_draft": null,
+        "operation_id": "operation_1eedc97a-2700-4ae9-ad4a-074007b3c96a",
+        "operation_plan_version": 1,
+        "operation_revision": 1,
+        "operation_state": "DRAFT",
+        "parameters": {
+          "amount": "200.00",
+          "currency": "CNY",
+          "payee_id": "payee_008",
+          "payer_account_id": "account_001",
+          "remark": "",
+          "replaces": null
+        },
+        "plan_version": 1,
+        "receipt": null,
+        "receipt_scope": null,
+        "replayed": false,
+        "scope": "MOCK_DRAFT_LIFECYCLE_ONLY",
+        "selection_ticket": "lifecycle_9186417204e94172aa19e411a013e547",
+        "target_parameters": null,
+        "task_id": "task_83130873-6657-437c-8d4e-3ae67dd8585e",
+        "task_revision": 1,
+        "task_state": "RUNNING",
+        "unknown_operation_id": null
+      },
+      "kind": "DRAFT",
+      "mode": "PROJECT_SIMULATION",
+      "planning_source": "MOCK_LLM",
+      "results": null,
+      "task": null
+    },
+    {
+      "can_start": false,
+      "clarification": null,
+      "contract_version": 1,
+      "draft": {
+        "action": "CREATE_MOCK_DRAFT",
+        "confirmation": {
+          "confirmation_ref": "confirmation_3cdf4ec4-9454-449d-b342-6bfc33e372d0",
+          "expires_at": "2026-10-19T01:47:30.107200Z",
+          "prepared_at": "2026-10-19T01:42:30.107200Z",
+          "status": "PREPARED"
+        },
+        "contract_version": 2,
+        "current_draft_verified": false,
+        "display_ticket": "lifecycle_f939a70cb385445a82e079e2e8aa9c93",
+        "execution_status": "NOT_CLAIMED",
+        "facts_version": 1,
+        "is_current_action": true,
+        "mode": "PROJECT_SIMULATION",
+        "next_action": {
+          "kind": "CONFIRM"
+        },
+        "observed_draft": null,
+        "operation_id": "operation_1eedc97a-2700-4ae9-ad4a-074007b3c96a",
+        "operation_plan_version": 1,
+        "operation_revision": 1,
+        "operation_state": "DRAFT",
+        "parameters": {
+          "amount": "200.00",
+          "currency": "CNY",
+          "payee_id": "payee_008",
+          "payer_account_id": "account_001",
+          "remark": "",
+          "replaces": null
+        },
+        "plan_version": 1,
+        "receipt": null,
+        "receipt_scope": null,
+        "replayed": false,
+        "scope": "MOCK_DRAFT_LIFECYCLE_ONLY",
+        "selection_ticket": "lifecycle_9186417204e94172aa19e411a013e547",
+        "target_parameters": null,
+        "task_id": "task_83130873-6657-437c-8d4e-3ae67dd8585e",
+        "task_revision": 1,
+        "task_state": "RUNNING",
+        "unknown_operation_id": null
+      },
+      "kind": "DRAFT",
+      "mode": "PROJECT_SIMULATION",
+      "planning_source": "MOCK_LLM",
+      "results": null,
+      "task": null
+    }
+  ],
+  "status": {
+    "configured": false,
+    "connectivity": "NOT_VERIFIED",
+    "contract_version": 1,
+    "draft_enabled": true,
+    "funds_execution_enabled": false,
+    "mode": "PROJECT_SIMULATION",
+    "payment_planning_enabled": true,
+    "planning_mode": "FIXED_PLAN",
+    "tools": [
+      "cancel_mock_transfer_draft",
+      "create_mock_transfer_draft",
+      "execute_transfer",
+      "find_payees",
+      "get_account_balance",
+      "modify_mock_transfer_draft"
+    ]
+  }
+}

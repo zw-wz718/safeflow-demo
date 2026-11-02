@@ -1,0 +1,1016 @@
+{
+  "actual_foundation_migrator_and_demo": true,
+  "cases": [
+    {
+      "actual_postgresql": true,
+      "case": "missing_owner_not_initialized",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "draft_rollback_and_uncommitted_visibility",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "registration_rollback_has_no_saved_success",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "registration_committed_original_fact_readback",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "identical_fixture_in_wrong_database_cannot_save_or_verify",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "registration_exact_replay_no_duplicate_version_or_gate",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "changed_original_parameters_poison_work",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "foreign_owner_rejected_without_saving",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "work_cannot_be_saved_into_other_namespace",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "cancellation_local_intent_and_history_committed",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "concurrent_stale_version_cannot_overwrite",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "cancellation_replay_preserves_single_history",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "revoke_rollback_keeps_cancelling_and_old_history",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "revoke_commit_preserves_both_history_entries",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "revoke_exact_replay_no_extra_event",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_settings_committed_with_original_binding",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "settings_replay_no_duplicate_version_or_gate",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "denied_confirmation_cannot_save_partial_settings",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "later_transaction_failure_rolls_back_settings",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "read_only_transaction_does_not_commit_settings",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "settings_edit_keeps_registration_and_original_receipts",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "restart_invalidation_preserves_saved_business_and_prefix_readback",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "same_version_journal_tamper_rejected_by_cas_and_readback",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "select_only_role_cannot_save",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "unknown_encoding_rejected_before_work",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "settings_and_startup_preserve_prior_unknown_attempt",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "restart_seed_committed_settings_intent_unknown_and_pending",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_abandon_rollback_keeps_original_draft",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_abandon_committed_without_registration",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_abandon_replay_and_old_confirmation_rejection",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_reselection_rollback_preserves_A_confirmation",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_reselection_before_commit_invalidates_old_A",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_reselection_saves_only_new_B",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_reselection_after_commit_keeps_saved_A",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_new_B_requires_independent_confirmation",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_unsaved_A_not_described_as_committed_reselection",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_unsaved_registration_cannot_prepare_followup_reminder",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_missing_date_keeps_registration_without_draft",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_past_suggestion_not_advanced_or_saved",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_followup_reminder_saved_as_draft_only",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_followup_reminder_denial_keeps_registration",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_followup_reminder_requires_separate_gate",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_followup_cannot_overwrite_existing_preferences",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_abandon_settings_preserves_saved_preference",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_abandon_cancellation_changes_no_business_state",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_abandon_revoke_preserves_prior_cancellation",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "workflow_restart_seed_preserves_abandonment_selection_and_reminder_draft",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_preview_before_window",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_preview_due_window",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_preview_inside_window",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_preview_charge_date",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_preview_no_expired_backlog",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_disabled_not_due",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_missing_date_not_invented",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_cancellation_check_on_expected_day_only",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_cancellation_late_check_preserves_original_date",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_daily_today_only_and_next_cycle_independent",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_uncommitted_reservation_has_no_token",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_rollback_has_no_token_or_attempt",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_same_backend_cannot_mint_token",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_noop_resave_cannot_mint_second_token",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_two_workers_only_one_reservation_and_mock_call",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_saved_simulated_success",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_saved_definite_failure",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_window_retry_success_stops_duplicates",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_saved_unknown_no_automatic_retry",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_restart_invalidates_old_token_before_mock_call",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_result_rollback_preserves_unknown",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_late_result_rejected_after_restart",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_committed_result_reply_lost_read_original_no_resend",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_restart_seeds_success_failure_and_unresolved_reservation",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_query_cli_due_is_planned_and_readonly",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_query_pending_original_and_review_without_write",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_query_exact_saved_success_and_safe_history",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_query_other_owner_original_rejected",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_query_changed_prefix_rejected",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_query_missing_ledger_not_empty_success",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_query_permission_failure_not_empty_or_success",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_query_recorded_unknown_stays_review_not_delivered",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_query_later_empty_batch_cannot_rewrite_old_unknown",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_query_original_request_saved_for_new_process_readback",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "initialization_preview_and_missing_lookup_do_not_create_empty_row",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "initialization_unavailable_input_not_empty_even_when_deserialized",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "initialization_uncommitted_and_rollback_have_no_published_success",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "initialization_complete_known_empty_is_committed_and_read_back",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "initialization_same_backend_cannot_publish_success",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "initialization_same_request_keeps_version_and_original_data",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "initialization_different_original_data_cannot_replace_existing_row",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "initialization_wrong_owner_or_namespace_rejected_before_insert",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "initialization_known_nonempty_missing_service_stays_reviewable",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "initialization_two_transactions_same_input_create_exactly_one_owner_row",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "initialization_two_transactions_conflicting_input_keep_winner",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "initialization_committed_reply_lost_uses_readonly_original_lookup",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "initialization_unknown_existing_codec_is_never_overwritten",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "initialization_damaged_existing_journal_is_not_reset",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "initialization_select_only_role_can_lookup_but_cannot_insert",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "initialization_missing_table_is_unavailable_never_automatic_ddl",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "initialization_retry_preserves_business_pending_and_unknown_without_minting_sender",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "initialization_restart_seed_retains_original_request_and_all_later_facts",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "shared_read_registration_confirmation_preview_no_write",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "shared_read_settings_confirmation_preview_no_write",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "shared_read_cancellation_intent_preview_no_merchant_claim_or_write",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "shared_read_owned_subscription_list_without_internal_references",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "shared_read_current_cancellation_separate_from_both_historical_intents",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "shared_read_saved_reminder_settings_are_not_delivery_result",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "shared_read_four_original_business_receipts_without_reexecution",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "shared_read_initialization_recorded_or_needs_review_never_creates",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "shared_read_pending_ready_expired_and_invalidated_are_accurate",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "shared_read_conflicting_binding_missing_owner_and_write_command_rejected",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "shared_read_select_only_cli_revoked_permission_not_healthy_empty",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "shared_read_restart_seed_keeps_original_queries_and_invalidated_draft",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "recent_full_shared_workflow_separate_process",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "recent_shared_recognition_date_no_write",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "recent_selected_registration_rollback_no_effect",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "recent_selected_candidate_rejects_changed_saved_facts",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "recent_selected_registration_commit_independent_readback",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "recent_unified_settings_rollback_confirm",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "recent_cancel_uncertain_commit_read_only",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "recent_unified_revoke_commit_result",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "recent_handoff_rejects_same_uncommitted_writer",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "recent_shared_cursor_roundtrip_and_store_isolation",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "recent_startup_rollback_preserves_pending",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "recent_startup_commit_invalidates_only_pending",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "limits_daily_one_day_lead_rejected",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "limits_daily_same_day_saved",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "limits_first_failure_waits_for_next_day",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "limits_second_failure_exhausts_retry",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "limits_third_scan_no_new_attempt",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "limits_toggle_and_user_query_keep_exhausted_budget",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "limits_new_cycle_has_independent_budget",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "limits_cancel_late_recovery_also_stops_after_two",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "limits_unknown_retry_keeps_review_not_success",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "limits_legacy_three_attempts_read_without_refill",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "limits_rolled_back_reservation_does_not_consume_retry",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "limits_unknown_policy_version_rejected",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "billing_direct_actual_reader_to_saved_empty_ledger",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "billing_direct_repeat_read_has_no_registration_or_write",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "billing_direct_source_failure_or_missing_ledger_stops",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "billing_direct_current_registered_service_not_recommended_again",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "billing_direct_missing_service_remains_review_without_guessing",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    }
+  ],
+  "formal_codec_adopted": false,
+  "formal_subscription_integrated": false,
+  "merchant_cancellation_confirmed": false,
+  "migration_versions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "notification_sent": false,
+  "old_mock_schema_installed": false,
+  "public_permit_transaction_executed": false,
+  "scope": "ACTUAL_FOUNDATION_PROPOSED_FICTIONAL_SUBSCRIPTION_WRITE",
+  "verified": true
+}

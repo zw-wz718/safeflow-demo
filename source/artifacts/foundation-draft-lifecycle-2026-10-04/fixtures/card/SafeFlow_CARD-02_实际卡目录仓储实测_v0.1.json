@@ -1,0 +1,163 @@
+{
+  "actual_store_methods_executed": true,
+  "cases": [
+    {
+      "actual_postgresql": true,
+      "case": "catalog_persists_and_is_idempotent",
+      "detail": {
+        "cards": 1,
+        "new_connection_read": true,
+        "original_version": "card-pg-v1:2",
+        "same_catalog_no_new_rows_or_version": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "missing_catalog_differs_from_complete_empty",
+      "detail": {
+        "complete_empty_cards": 0,
+        "missing": "CatalogUninitialized",
+        "payment_permission_granted": false
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "ownership_and_missing_account_rejected",
+      "detail": {
+        "foreign_missing_and_tail_rejected": true,
+        "new_accounts_created": 0
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "invalid_catalog_has_no_partial_initialization",
+      "detail": {
+        "invalid_inputs_rejected_before_writes": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "register_card_advances_version_and_rejects_conflicts",
+      "detail": {
+        "duplicate_noop": true,
+        "new_mapping_version_increments": 1,
+        "tail_and_account_rebind_rejected": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "multiple_sources_and_released_history",
+      "detail": {
+        "active_locks": 3,
+        "outgoing_restricted": true,
+        "query_and_receive_restricted": false,
+        "stored_locks": 4,
+        "unlock_route": "OfflineBank"
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "lock_change_then_restore_advances_version",
+      "detail": {
+        "production_release_entry_used": false,
+        "reset_rejected": true,
+        "same_final_lock_state_does_not_restore_old_version": true,
+        "version_advances": 3
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "failed_save_rolls_back_catalog_and_version",
+      "detail": {
+        "caller_rollback_removed_cards_and_revision": true,
+        "injected_failure": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "account_guard_blocks_a_later_lock_insert",
+      "detail": {
+        "database_lock_wait_verified": true,
+        "later_read_outgoing_restricted": true,
+        "zero_locks_then_new_lock_protected": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "database_failure_is_not_empty",
+      "detail": {
+        "database_error_propagated": true,
+        "empty_facts_returned": false
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "mapping_and_owner_rewrite_are_disabled",
+      "detail": {
+        "cross_account_and_cross_owner_changes_disabled": true,
+        "revision_history_deletion_disabled": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "caller_transaction_and_isolation_required",
+      "detail": {
+        "autocommit_and_repeatable_read_rejected": true,
+        "transaction_check_is_not_authentication": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "all_cards_and_locks_without_truncation",
+      "detail": {
+        "active_locks": 40,
+        "cards": 40,
+        "later_cards_and_locks_preserved": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "active_lock_unique_constraints",
+      "detail": {
+        "active_self_unique": true,
+        "persisted_locks": 2,
+        "same_scoped_event_unique": true
+      },
+      "fictional_source_data": true,
+      "verified": true
+    }
+  ],
+  "fictional_source_data": true,
+  "freeze_operation_store_exercised": false,
+  "freeze_operation_store_implemented": true,
+  "offline_release_entry_enabled": false,
+  "public_migrations_installed": false,
+  "public_permission_or_runtime_connected": false,
+  "scope": "ACTUAL_CARD_CATALOG_STORE_ISOLATED_POSTGRESQL"
+}

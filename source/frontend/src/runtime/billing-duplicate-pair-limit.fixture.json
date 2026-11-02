@@ -1,0 +1,1377 @@
+{
+  "can_start": false,
+  "clarification": null,
+  "contract_version": 1,
+  "draft": null,
+  "kind": "READ",
+  "mode": "PROJECT_SIMULATION",
+  "planning_source": "OPENAI_COMPATIBLE",
+  "results": [
+    {
+      "contract_version": 1,
+      "data": {
+        "adapter_contract": "LOCAL_BILLING_REPORT_ADAPTER_V2",
+        "duplicate_candidates": {
+          "Ok": {
+            "contract": "LOCAL_DUPLICATE_CANDIDATES_V1",
+            "missing_merchant": [],
+            "pairs": null,
+            "production_registered": false,
+            "report_id": "billing_report_operation_task_026b1fe0-a531-4ee6-b950-35350ea0504e_report",
+            "risk_action_authorized": false,
+            "rule_version": "LOCAL_SAME_MERCHANT_CNY_AMOUNT_0_600S_V1",
+            "snapshot_id": "fictional-report-snapshot",
+            "source_id": "fictional-report-actions",
+            "state": "PAIR_LIMIT_EXCEEDED"
+          }
+        },
+        "member_revision": "d822709a69dcc73c522adc711e23329758315c0c",
+        "production_source_connected": false,
+        "report": {
+          "calculation_reason": null,
+          "calculation_status": "READY",
+          "capabilities": {
+            "anomalies": {
+              "executed": false,
+              "reason": "ANOMALY_DETECTION_NOT_IMPLEMENTED"
+            },
+            "comparison": {
+              "executed": false,
+              "reason": "COMPARISON_NOT_IMPLEMENTED_RULES_UNCONFIRMED"
+            },
+            "net_consumption": {
+              "executed": false,
+              "reason": "REFUND_FORMULA_NOT_CONFIRMED"
+            }
+          },
+          "contract": "LOCAL_BILLING_SPENDING_V1",
+          "evidence": [
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx0"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx0",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx1"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx1",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx2"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx2",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx3"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx3",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx4"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx4",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx5"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx5",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx6"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx6",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx7"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx7",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx8"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx8",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx9"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx9",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx10"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx10",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx11"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx11",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx12"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx12",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx13"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx13",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx14"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx14",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx15"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx15",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx16"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx16",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx17"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx17",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx18"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx18",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx19"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx19",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx20"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx20",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx21"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx21",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx22"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx22",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx23"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx23",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx24"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx24",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx25"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx25",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx26"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx26",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx27"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx27",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx28"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx28",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx29"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx29",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx30"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx30",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx31"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx31",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx32"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx32",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx33"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx33",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx34"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx34",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx35"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx35",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx36"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx36",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx37"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx37",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx38"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx38",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx39"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx39",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx40"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx40",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx41"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx41",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx42"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx42",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx43"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx43",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx44"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx44",
+                "transaction_type": "CONSUMPTION"
+              }
+            },
+            {
+              "reference": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "tx45"
+              },
+              "transaction": {
+                "account_id": "account_001",
+                "amount": "30.00",
+                "card_id": null,
+                "category_code": "DEMO_FOOD",
+                "completed_at": "2026-10-10T08:00:00+08:00",
+                "currency": "CNY",
+                "direction": "OUT",
+                "merchant_id": "fictional-merchant",
+                "status": "COMPLETED",
+                "transaction_id": "tx45",
+                "transaction_type": "CONSUMPTION"
+              }
+            }
+          ],
+          "exclusions": [],
+          "metadata": {
+            "calculated_at": "2026-10-16T12:00:00+08:00",
+            "report_id": "billing_report_operation_task_026b1fe0-a531-4ee6-b950-35350ea0504e_report"
+          },
+          "production_registered": false,
+          "read": {
+            "duplicates_ignored": 0,
+            "is_complete": true,
+            "next_cursor": null,
+            "pages_read": 1,
+            "reason": null,
+            "snapshot_id": "fictional-report-snapshot",
+            "source_id": "fictional-report-actions",
+            "state": "COMPLETE"
+          },
+          "refunds": [],
+          "request": {
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-16T12:00:00+08:00",
+              "end_exclusive": "2026-10-16T12:00:00+08:00",
+              "start_inclusive": "2026-10-01T00:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            }
+          },
+          "rule_version": "LOCAL_BASIC_SPENDING_2026_10_16_V1",
+          "summary": {
+            "categories": [
+              {
+                "category_code": "DEMO_FOOD",
+                "count": 46,
+                "display_name": "DEMO_FOOD",
+                "references": [
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx0"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx1"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx10"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx11"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx12"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx13"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx14"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx15"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx16"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx17"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx18"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx19"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx2"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx20"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx21"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx22"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx23"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx24"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx25"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx26"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx27"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx28"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx29"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx3"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx30"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx31"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx32"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx33"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx34"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx35"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx36"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx37"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx38"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx39"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx4"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx40"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx41"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx42"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx43"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx44"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx45"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx5"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx6"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx7"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx8"
+                  },
+                  {
+                    "account_id": "account_001",
+                    "source_id": "fictional-report-actions",
+                    "transaction_id": "tx9"
+                  }
+                ],
+                "total": "1380.00"
+              }
+            ],
+            "count": 46,
+            "currency": "CNY",
+            "gross_consumption": "1380.00",
+            "top_five": [
+              {
+                "reference": {
+                  "account_id": "account_001",
+                  "source_id": "fictional-report-actions",
+                  "transaction_id": "tx0"
+                },
+                "transaction": {
+                  "account_id": "account_001",
+                  "amount": "30.00",
+                  "card_id": null,
+                  "category_code": "DEMO_FOOD",
+                  "completed_at": "2026-10-10T08:00:00+08:00",
+                  "currency": "CNY",
+                  "direction": "OUT",
+                  "merchant_id": "fictional-merchant",
+                  "status": "COMPLETED",
+                  "transaction_id": "tx0",
+                  "transaction_type": "CONSUMPTION"
+                }
+              },
+              {
+                "reference": {
+                  "account_id": "account_001",
+                  "source_id": "fictional-report-actions",
+                  "transaction_id": "tx1"
+                },
+                "transaction": {
+                  "account_id": "account_001",
+                  "amount": "30.00",
+                  "card_id": null,
+                  "category_code": "DEMO_FOOD",
+                  "completed_at": "2026-10-10T08:00:00+08:00",
+                  "currency": "CNY",
+                  "direction": "OUT",
+                  "merchant_id": "fictional-merchant",
+                  "status": "COMPLETED",
+                  "transaction_id": "tx1",
+                  "transaction_type": "CONSUMPTION"
+                }
+              },
+              {
+                "reference": {
+                  "account_id": "account_001",
+                  "source_id": "fictional-report-actions",
+                  "transaction_id": "tx10"
+                },
+                "transaction": {
+                  "account_id": "account_001",
+                  "amount": "30.00",
+                  "card_id": null,
+                  "category_code": "DEMO_FOOD",
+                  "completed_at": "2026-10-10T08:00:00+08:00",
+                  "currency": "CNY",
+                  "direction": "OUT",
+                  "merchant_id": "fictional-merchant",
+                  "status": "COMPLETED",
+                  "transaction_id": "tx10",
+                  "transaction_type": "CONSUMPTION"
+                }
+              },
+              {
+                "reference": {
+                  "account_id": "account_001",
+                  "source_id": "fictional-report-actions",
+                  "transaction_id": "tx11"
+                },
+                "transaction": {
+                  "account_id": "account_001",
+                  "amount": "30.00",
+                  "card_id": null,
+                  "category_code": "DEMO_FOOD",
+                  "completed_at": "2026-10-10T08:00:00+08:00",
+                  "currency": "CNY",
+                  "direction": "OUT",
+                  "merchant_id": "fictional-merchant",
+                  "status": "COMPLETED",
+                  "transaction_id": "tx11",
+                  "transaction_type": "CONSUMPTION"
+                }
+              },
+              {
+                "reference": {
+                  "account_id": "account_001",
+                  "source_id": "fictional-report-actions",
+                  "transaction_id": "tx12"
+                },
+                "transaction": {
+                  "account_id": "account_001",
+                  "amount": "30.00",
+                  "card_id": null,
+                  "category_code": "DEMO_FOOD",
+                  "completed_at": "2026-10-10T08:00:00+08:00",
+                  "currency": "CNY",
+                  "direction": "OUT",
+                  "merchant_id": "fictional-merchant",
+                  "status": "COMPLETED",
+                  "transaction_id": "tx12",
+                  "transaction_type": "CONSUMPTION"
+                }
+              }
+            ]
+          }
+        },
+        "source_mode": "LOCAL_BOUNDED_IN_PROCESS_V1",
+        "source_revision": "d822709:actions"
+      },
+      "operation_id": "operation_task_026b1fe0-a531-4ee6-b950-35350ea0504e_report",
+      "result_ref": "billing_result_operation_task_026b1fe0-a531-4ee6-b950-35350ea0504e_report",
+      "status": "SUCCEEDED",
+      "tool_name": "analyze_local_basic_spending"
+    }
+  ],
+  "task": {
+    "contract_version": 1,
+    "facts_version": 1,
+    "mode": "PROJECT_SIMULATION",
+    "next_action": {
+      "kind": "FINISHED"
+    },
+    "operation_state": null,
+    "operations": [],
+    "plan_version": 1,
+    "recovery": {
+      "kind": "FINISHED",
+      "task_state": "COMPLETED"
+    },
+    "replayed": false,
+    "revision": 2,
+    "security_outcome": null,
+    "security_scope": "CURRENT_DECISION_NOT_PROVIDED",
+    "task_id": "task_026b1fe0-a531-4ee6-b950-35350ea0504e",
+    "task_state": "COMPLETED"
+  }
+}

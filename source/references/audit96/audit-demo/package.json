@@ -1,0 +1,9 @@
+{
+  "name": "safeflow-audit-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local SafeFlow audit and Hash Chain demonstration, not connected to banking",
+  "scripts": { "start": "node src/server.js", "demo": "node src/demo.js", "evidence": "node src/aud-01-evidence.js", "evidence:aud03": "node src/aud-03-evidence.js", "test": "node --test" },
+  "engines": { "node": ">=22.5" }
+}

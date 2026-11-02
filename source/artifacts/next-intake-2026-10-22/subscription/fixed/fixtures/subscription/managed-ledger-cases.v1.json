@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "fictional": true,
+  "production_registered": false,
+  "cases": [
+    {
+      "case_id": "complete-empty",
+      "consumption_case": "complete",
+      "ledger": {
+        "schema_version": 1,
+        "fictional": true,
+        "production_registered": false,
+        "owner_user_id": "user_demo",
+        "snapshot_id": "fictional-managed-ledger-1",
+        "read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "entries": []
+      }
+    },
+    {
+      "case_id": "already-active",
+      "consumption_case": "complete",
+      "ledger": {
+        "schema_version": 1,
+        "fictional": true,
+        "production_registered": false,
+        "owner_user_id": "user_demo",
+        "snapshot_id": "fictional-managed-ledger-1",
+        "read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "entries": [
+          {
+            "subscription_id": "fictional-subscription-1",
+            "owner_user_id": "user_demo",
+            "source_id": "fictional-billing-input-v1",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "ACTIVE"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "cancel-intent-still-managed",
+      "consumption_case": "complete",
+      "ledger": {
+        "schema_version": 1,
+        "fictional": true,
+        "production_registered": false,
+        "owner_user_id": "user_demo",
+        "snapshot_id": "fictional-managed-ledger-1",
+        "read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "entries": [
+          {
+            "subscription_id": "fictional-subscription-1",
+            "owner_user_id": "user_demo",
+            "source_id": "fictional-billing-input-v1",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "CANCELLING"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "cross-source-review",
+      "consumption_case": "complete",
+      "ledger": {
+        "schema_version": 1,
+        "fictional": true,
+        "production_registered": false,
+        "owner_user_id": "user_demo",
+        "snapshot_id": "fictional-managed-ledger-1",
+        "read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "entries": [
+          {
+            "subscription_id": "fictional-subscription-1",
+            "owner_user_id": "user_demo",
+            "source_id": "fictional-other",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "ACTIVE"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "scoped-error-other-service-continues",
+      "consumption_case": "same-merchant-different-services",
+      "ledger": {
+        "schema_version": 1,
+        "fictional": true,
+        "production_registered": false,
+        "owner_user_id": "user_demo",
+        "snapshot_id": "fictional-managed-ledger-1",
+        "read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "entries": [
+          {
+            "subscription_id": "fictional-subscription-1",
+            "owner_user_id": "user_demo",
+            "source_id": "fictional-billing-input-v1",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "service_demo_video_1",
+            "status": "ERROR"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "unknown-error-scope-pauses-all",
+      "consumption_case": "complete",
+      "ledger": {
+        "schema_version": 1,
+        "fictional": true,
+        "production_registered": false,
+        "owner_user_id": "user_demo",
+        "snapshot_id": "fictional-managed-ledger-1",
+        "read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "entries": [
+          {
+            "subscription_id": "fictional-subscription-1",
+            "owner_user_id": "user_demo",
+            "source_id": "fictional-billing-input-v1",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": null,
+            "status": "ERROR"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "ledger-unavailable",
+      "consumption_case": "complete",
+      "ledger": {
+        "schema_version": 1,
+        "fictional": true,
+        "production_registered": false,
+        "owner_user_id": "user_demo",
+        "snapshot_id": "fictional-managed-ledger-1",
+        "read": {
+          "state": "UNAVAILABLE",
+          "is_complete": false,
+          "next_cursor": null,
+          "reason": "MOCK_UNAVAILABLE"
+        },
+        "entries": []
+      }
+    },
+    {
+      "case_id": "ledger-partial",
+      "consumption_case": "complete",
+      "ledger": {
+        "schema_version": 1,
+        "fictional": true,
+        "production_registered": false,
+        "owner_user_id": "user_demo",
+        "snapshot_id": "fictional-managed-ledger-1",
+        "read": {
+          "state": "INCOMPLETE",
+          "is_complete": false,
+          "next_cursor": "page-2",
+          "reason": "MOCK_PARTIAL"
+        },
+        "entries": []
+      }
+    },
+    {
+      "case_id": "same-merchant-other-service",
+      "consumption_case": "complete",
+      "ledger": {
+        "schema_version": 1,
+        "fictional": true,
+        "production_registered": false,
+        "owner_user_id": "user_demo",
+        "snapshot_id": "fictional-managed-ledger-1",
+        "read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "entries": [
+          {
+            "subscription_id": "fictional-subscription-1",
+            "owner_user_id": "user_demo",
+            "source_id": "fictional-billing-input-v1",
+            "merchant_id": "merchant_demo_video",
+            "service_ref": "other-service",
+            "status": "ACTIVE"
+          }
+        ]
+      }
+    }
+  ]
+}

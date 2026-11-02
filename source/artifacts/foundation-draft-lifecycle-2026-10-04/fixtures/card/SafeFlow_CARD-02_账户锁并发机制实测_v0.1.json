@@ -1,0 +1,134 @@
+{
+  "actual_postgresql": true,
+  "cases": [
+    {
+      "active_locks": 0,
+      "actual_postgresql": true,
+      "balance_cents": 108800,
+      "card_revision": 1,
+      "case": "complete_no_lock",
+      "detail": {
+        "outcome": "fixture_payment_recorded"
+      },
+      "fictional_business_data": true,
+      "ledger_rows": 1,
+      "verified": true
+    },
+    {
+      "active_locks": 0,
+      "actual_postgresql": true,
+      "balance_cents": 128800,
+      "card_revision": null,
+      "case": "missing_card_data",
+      "detail": {
+        "outcome": "unknown_card_data"
+      },
+      "fictional_business_data": true,
+      "ledger_rows": 0,
+      "verified": true
+    },
+    {
+      "active_locks": 1,
+      "actual_postgresql": true,
+      "balance_cents": 128800,
+      "card_revision": 2,
+      "case": "freeze_commits_before_payment",
+      "detail": {
+        "database_lock_wait_verified": true,
+        "freeze_rolled_back": false,
+        "outcome": "blocked_by_card_lock"
+      },
+      "fictional_business_data": true,
+      "ledger_rows": 0,
+      "verified": true
+    },
+    {
+      "active_locks": 1,
+      "actual_postgresql": true,
+      "balance_cents": 108800,
+      "card_revision": 2,
+      "case": "payment_commits_before_freeze",
+      "detail": {
+        "database_lock_wait_verified": true,
+        "outcome": "fixture_payment_recorded_before_freeze_effective",
+        "uncommitted_changes_hidden": true
+      },
+      "fictional_business_data": true,
+      "ledger_rows": 1,
+      "verified": true
+    },
+    {
+      "active_locks": 1,
+      "actual_postgresql": true,
+      "balance_cents": 128800,
+      "card_revision": 2,
+      "case": "release_one_lock_another_remains",
+      "detail": {
+        "database_lock_wait_verified": true,
+        "freeze_rolled_back": false,
+        "outcome": "blocked_by_card_lock"
+      },
+      "fictional_business_data": true,
+      "ledger_rows": 0,
+      "verified": true
+    },
+    {
+      "active_locks": 0,
+      "actual_postgresql": true,
+      "balance_cents": 108800,
+      "card_revision": 1,
+      "case": "freeze_rollback",
+      "detail": {
+        "database_lock_wait_verified": true,
+        "freeze_rolled_back": true,
+        "outcome": "fixture_payment_recorded"
+      },
+      "fictional_business_data": true,
+      "ledger_rows": 1,
+      "verified": true
+    },
+    {
+      "active_locks": 1,
+      "actual_postgresql": true,
+      "balance_cents": 108800,
+      "card_revision": 2,
+      "case": "unprotected_writer_negative_control",
+      "detail": {
+        "common_lock_bypassed": true,
+        "outcome": "UNSAFE_NEGATIVE_CONTROL_EXPECTED",
+        "safe_protocol_pass": false,
+        "two_equal_versions_before_change": true,
+        "unsafe_payment_detected": true
+      },
+      "fictional_business_data": true,
+      "ledger_rows": 1,
+      "verified": true
+    },
+    {
+      "active_locks": 1,
+      "actual_postgresql": true,
+      "balance_cents": 128800,
+      "card_revision": 2,
+      "case": "repeatable_read_stale_snapshot_negative_control",
+      "detail": {
+        "database_lock_wait_verified": true,
+        "outcome": "STALE_SNAPSHOT_NEGATIVE_CONTROL_EXPECTED",
+        "payment_executed": false,
+        "safe_protocol_pass": false,
+        "snapshot_active_locks": 0,
+        "snapshot_revision": 1,
+        "stale_view_detected": true
+      },
+      "fictional_business_data": true,
+      "ledger_rows": 0,
+      "verified": true
+    }
+  ],
+  "expected_unsafe_negative_controls": 2,
+  "fictional_business_data": true,
+  "permission_or_offline_release_adapter_implemented": false,
+  "public_schema_or_runtime_adopted": false,
+  "real_card_store_implemented": false,
+  "safe_cases": 6,
+  "scope": "ISOLATED_POSTGRESQL_MECHANISM_EVIDENCE_ONLY"
+}

@@ -1,0 +1,210 @@
+{
+  "cases": {
+    "mine": {
+      "card_handoff": "BLOCKED_NO_CARD",
+      "event": {
+        "event_id": 3,
+        "event_kind": "BILLING_FEEDBACK_RECORDED_LOCAL_V1",
+        "recorded_at": "2026-10-21T04:18:18.412004Z"
+      },
+      "evidence": {
+        "calculated_at": "2026-10-19T12:00:00+08:00",
+        "choice": "MINE",
+        "owner_user_id": "user_demo",
+        "public_operation_id": "card_handoff_mine_v1",
+        "reference": {
+          "account_id": "account_001",
+          "source_id": "fictional-pg",
+          "transaction_id": "mine_tx"
+        },
+        "report_id": "card_handoff_report_v1",
+        "request": {
+          "account_ids": [
+            "account_001",
+            "account_002"
+          ],
+          "window": {
+            "as_of": "2026-10-19T12:00:00+08:00",
+            "end_exclusive": "2026-10-19T12:00:00+08:00",
+            "start_inclusive": "2026-10-01T00:00:00+08:00",
+            "timezone": "Asia/Shanghai"
+          }
+        },
+        "rule_version": "LOCAL_BASIC_SPENDING_2026_10_16_V1",
+        "snapshot_id": "fictional_card_handoff_snapshot_v1",
+        "transaction": {
+          "account_id": "account_001",
+          "amount": "30.00",
+          "card_id": null,
+          "completed_at": "2026-10-10T00:00:00Z",
+          "currency": "CNY",
+          "direction": "OUT",
+          "merchant_id": "fictional_merchant",
+          "status": "COMPLETED",
+          "transaction_id": "mine_tx",
+          "transaction_type": "CONSUMPTION"
+        }
+      },
+      "lock_authorized": false,
+      "persisted": true,
+      "state": "SAVED"
+    },
+    "not_mine_no_card": {
+      "card_handoff": "BLOCKED_NO_CARD",
+      "event": {
+        "event_id": 2,
+        "event_kind": "BILLING_FEEDBACK_RECORDED_LOCAL_V1",
+        "recorded_at": "2026-10-21T04:18:18.409133Z"
+      },
+      "evidence": {
+        "calculated_at": "2026-10-19T12:00:00+08:00",
+        "choice": "NOT_MINE",
+        "owner_user_id": "user_demo",
+        "public_operation_id": "card_handoff_not_mine_no_card_v1",
+        "reference": {
+          "account_id": "account_001",
+          "source_id": "fictional-pg",
+          "transaction_id": "no_card_tx"
+        },
+        "report_id": "card_handoff_report_v1",
+        "request": {
+          "account_ids": [
+            "account_001",
+            "account_002"
+          ],
+          "window": {
+            "as_of": "2026-10-19T12:00:00+08:00",
+            "end_exclusive": "2026-10-19T12:00:00+08:00",
+            "start_inclusive": "2026-10-01T00:00:00+08:00",
+            "timezone": "Asia/Shanghai"
+          }
+        },
+        "rule_version": "LOCAL_BASIC_SPENDING_2026_10_16_V1",
+        "snapshot_id": "fictional_card_handoff_snapshot_v1",
+        "transaction": {
+          "account_id": "account_001",
+          "amount": "30.00",
+          "card_id": null,
+          "completed_at": "2026-10-10T00:00:00Z",
+          "currency": "CNY",
+          "direction": "OUT",
+          "merchant_id": "fictional_merchant",
+          "status": "COMPLETED",
+          "transaction_id": "no_card_tx",
+          "transaction_type": "CONSUMPTION"
+        }
+      },
+      "lock_authorized": false,
+      "persisted": true,
+      "state": "SAVED"
+    },
+    "not_mine_with_card": {
+      "card_handoff": "BLOCKED_CARD_ASSOCIATION_UNVERIFIED",
+      "event": {
+        "event_id": 1,
+        "event_kind": "BILLING_FEEDBACK_RECORDED_LOCAL_V1",
+        "recorded_at": "2026-10-21T04:18:18.400821Z"
+      },
+      "evidence": {
+        "calculated_at": "2026-10-19T12:00:00+08:00",
+        "choice": "NOT_MINE",
+        "owner_user_id": "user_demo",
+        "public_operation_id": "card_handoff_not_mine_with_card_v1",
+        "reference": {
+          "account_id": "account_001",
+          "source_id": "fictional-pg",
+          "transaction_id": "card_tx"
+        },
+        "report_id": "card_handoff_report_v1",
+        "request": {
+          "account_ids": [
+            "account_001",
+            "account_002"
+          ],
+          "window": {
+            "as_of": "2026-10-19T12:00:00+08:00",
+            "end_exclusive": "2026-10-19T12:00:00+08:00",
+            "start_inclusive": "2026-10-01T00:00:00+08:00",
+            "timezone": "Asia/Shanghai"
+          }
+        },
+        "rule_version": "LOCAL_BASIC_SPENDING_2026_10_16_V1",
+        "snapshot_id": "fictional_card_handoff_snapshot_v1",
+        "transaction": {
+          "account_id": "account_001",
+          "amount": "30.00",
+          "card_id": "fictional_card",
+          "completed_at": "2026-10-10T00:00:00Z",
+          "currency": "CNY",
+          "direction": "OUT",
+          "merchant_id": "fictional_merchant",
+          "status": "COMPLETED",
+          "transaction_id": "card_tx",
+          "transaction_type": "CONSUMPTION"
+        }
+      },
+      "lock_authorized": false,
+      "persisted": true,
+      "state": "SAVED"
+    },
+    "unsure": {
+      "card_handoff": "BLOCKED_NO_CARD",
+      "event": {
+        "event_id": 4,
+        "event_kind": "BILLING_FEEDBACK_RECORDED_LOCAL_V1",
+        "recorded_at": "2026-10-21T04:18:18.414150Z"
+      },
+      "evidence": {
+        "calculated_at": "2026-10-19T12:00:00+08:00",
+        "choice": "UNSURE",
+        "owner_user_id": "user_demo",
+        "public_operation_id": "card_handoff_unsure_v1",
+        "reference": {
+          "account_id": "account_001",
+          "source_id": "fictional-pg",
+          "transaction_id": "unsure_tx"
+        },
+        "report_id": "card_handoff_report_v1",
+        "request": {
+          "account_ids": [
+            "account_001",
+            "account_002"
+          ],
+          "window": {
+            "as_of": "2026-10-19T12:00:00+08:00",
+            "end_exclusive": "2026-10-19T12:00:00+08:00",
+            "start_inclusive": "2026-10-01T00:00:00+08:00",
+            "timezone": "Asia/Shanghai"
+          }
+        },
+        "rule_version": "LOCAL_BASIC_SPENDING_2026_10_16_V1",
+        "snapshot_id": "fictional_card_handoff_snapshot_v1",
+        "transaction": {
+          "account_id": "account_001",
+          "amount": "30.00",
+          "card_id": null,
+          "completed_at": "2026-10-10T00:00:00Z",
+          "currency": "CNY",
+          "direction": "OUT",
+          "merchant_id": "fictional_merchant",
+          "status": "COMPLETED",
+          "transaction_id": "unsure_tx",
+          "transaction_type": "CONSUMPTION"
+        }
+      },
+      "lock_authorized": false,
+      "persisted": true,
+      "state": "SAVED"
+    }
+  },
+  "contract": "LOCAL_BILLING_SAVED_FEEDBACK_DEMO_V1",
+  "fictional": true,
+  "public_integration_verified": false,
+  "visibility": {
+    "database_error": "Database",
+    "not_found": null,
+    "other_owner": null,
+    "revoked_account": null,
+    "uncommitted_visible": false
+  }
+}

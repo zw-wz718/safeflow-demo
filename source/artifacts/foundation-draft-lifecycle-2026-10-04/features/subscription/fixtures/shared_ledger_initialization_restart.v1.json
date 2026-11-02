@@ -1,0 +1,14 @@
+{
+  "cancellation_restored": true,
+  "cleanup_completed": true,
+  "initialization_restored": true,
+  "notification_sent": false,
+  "pending_invalidated_explicitly": true,
+  "phase": "after-restart",
+  "reminder_queries_restored": true,
+  "reminders_restored": true,
+  "settings_restored": true,
+  "unknown_retained": true,
+  "verified": true,
+  "workflow_restored": true
+}

@@ -1,0 +1,225 @@
+{
+  "actual_foundation_migrator_and_demo": true,
+  "cases": [
+    {
+      "actual_postgresql": true,
+      "case": "missing_owner_not_initialized",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "draft_rollback_and_uncommitted_visibility",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "registration_rollback_has_no_saved_success",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "registration_committed_original_fact_readback",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "identical_fixture_in_wrong_database_cannot_save_or_verify",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "registration_exact_replay_no_duplicate_version_or_gate",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "changed_original_parameters_poison_work",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "foreign_owner_rejected_without_saving",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "work_cannot_be_saved_into_other_namespace",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "cancellation_local_intent_and_history_committed",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "concurrent_stale_version_cannot_overwrite",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "cancellation_replay_preserves_single_history",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "revoke_rollback_keeps_cancelling_and_old_history",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "revoke_commit_preserves_both_history_entries",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "revoke_exact_replay_no_extra_event",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "reminder_settings_committed_with_original_binding",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "settings_replay_no_duplicate_version_or_gate",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "denied_confirmation_cannot_save_partial_settings",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "later_transaction_failure_rolls_back_settings",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "read_only_transaction_does_not_commit_settings",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "settings_edit_keeps_registration_and_original_receipts",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "restart_invalidation_preserves_saved_business_and_prefix_readback",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "same_version_journal_tamper_rejected_by_cas_and_readback",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "select_only_role_cannot_save",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "unknown_encoding_rejected_before_work",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "settings_and_startup_preserve_prior_unknown_attempt",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    },
+    {
+      "actual_postgresql": true,
+      "case": "restart_seed_committed_settings_intent_unknown_and_pending",
+      "fictional": true,
+      "foundation_rows_unchanged": true,
+      "verified": true
+    }
+  ],
+  "formal_codec_adopted": false,
+  "formal_subscription_integrated": false,
+  "merchant_cancellation_confirmed": false,
+  "migration_versions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "notification_sent": false,
+  "old_mock_schema_installed": false,
+  "public_permit_transaction_executed": false,
+  "scope": "ACTUAL_FOUNDATION_PROPOSED_FICTIONAL_SUBSCRIPTION_WRITE",
+  "verified": true
+}

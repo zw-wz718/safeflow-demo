@@ -1,0 +1,303 @@
+{
+  "cases": {
+    "failure": {
+      "operation_reserved": "0.00",
+      "payer_funds": {
+        "available": "1288.00",
+        "booked": "1288.00",
+        "reserved": "0.00"
+      },
+      "record": {
+        "first_receipt": {
+          "amount": "200.00",
+          "completed_at": null,
+          "currency": "CNY",
+          "draft_id": "sql-draft-failure",
+          "draft_version": 1,
+          "operation_id": "sql-operation-failure",
+          "payee_id": "sql-payee-failure",
+          "payer_account_id": "sql-payer-failure",
+          "proposal_version": 1,
+          "reason_code": "MOCK_BANK_DECLINED",
+          "status": "FAILED",
+          "task_id": "sql-task-failure"
+        },
+        "latest_receipt": {
+          "amount": "200.00",
+          "completed_at": null,
+          "currency": "CNY",
+          "draft_id": "sql-draft-failure",
+          "draft_version": 1,
+          "operation_id": "sql-operation-failure",
+          "payee_id": "sql-payee-failure",
+          "payer_account_id": "sql-payer-failure",
+          "proposal_version": 1,
+          "reason_code": "MOCK_BANK_DECLINED",
+          "status": "FAILED",
+          "task_id": "sql-task-failure"
+        },
+        "request": {
+          "amount": "200.00",
+          "currency": "CNY",
+          "draft_id": "sql-draft-failure",
+          "draft_version": 1,
+          "operation_id": "sql-operation-failure",
+          "payee_id": "sql-payee-failure",
+          "payer_account_id": "sql-payer-failure",
+          "remark": "200元数据库模拟，非真实资金",
+          "task_id": "sql-task-failure"
+        }
+      }
+    },
+    "lost_reply": {
+      "operation_reserved": "0.00",
+      "payer_funds": {
+        "available": "1088.00",
+        "booked": "1088.00",
+        "reserved": "0.00"
+      },
+      "record": {
+        "first_receipt": {
+          "amount": "200.00",
+          "completed_at": null,
+          "currency": "CNY",
+          "draft_id": "sql-draft-lost_reply",
+          "draft_version": 1,
+          "operation_id": "sql-operation-lost_reply",
+          "payee_id": "sql-payee-lost_reply",
+          "payer_account_id": "sql-payer-lost_reply",
+          "proposal_version": 1,
+          "reason_code": "OUTCOME_UNKNOWN",
+          "status": "PROCESSING",
+          "task_id": "sql-task-lost_reply"
+        },
+        "latest_receipt": {
+          "amount": "200.00",
+          "completed_at": "2026-10-18T12:39:16.792842Z",
+          "currency": "CNY",
+          "draft_id": "sql-draft-lost_reply",
+          "draft_version": 1,
+          "operation_id": "sql-operation-lost_reply",
+          "payee_id": "sql-payee-lost_reply",
+          "payer_account_id": "sql-payer-lost_reply",
+          "proposal_version": 1,
+          "reason_code": null,
+          "status": "SUCCEEDED",
+          "task_id": "sql-task-lost_reply"
+        },
+        "request": {
+          "amount": "200.00",
+          "currency": "CNY",
+          "draft_id": "sql-draft-lost_reply",
+          "draft_version": 1,
+          "operation_id": "sql-operation-lost_reply",
+          "payee_id": "sql-payee-lost_reply",
+          "payer_account_id": "sql-payer-lost_reply",
+          "remark": "200元数据库模拟，非真实资金",
+          "task_id": "sql-task-lost_reply"
+        }
+      }
+    },
+    "pending": {
+      "operation_reserved": "200.00",
+      "payer_funds": {
+        "available": "1088.00",
+        "booked": "1288.00",
+        "reserved": "200.00"
+      },
+      "record": {
+        "first_receipt": {
+          "amount": "200.00",
+          "completed_at": null,
+          "currency": "CNY",
+          "draft_id": "sql-draft-pending",
+          "draft_version": 1,
+          "operation_id": "sql-operation-pending",
+          "payee_id": "sql-payee-pending",
+          "payer_account_id": "sql-payer-pending",
+          "proposal_version": 1,
+          "reason_code": "AWAITING_BANK_RESULT",
+          "status": "PROCESSING",
+          "task_id": "sql-task-pending"
+        },
+        "latest_receipt": {
+          "amount": "200.00",
+          "completed_at": null,
+          "currency": "CNY",
+          "draft_id": "sql-draft-pending",
+          "draft_version": 1,
+          "operation_id": "sql-operation-pending",
+          "payee_id": "sql-payee-pending",
+          "payer_account_id": "sql-payer-pending",
+          "proposal_version": 1,
+          "reason_code": "AWAITING_BANK_RESULT",
+          "status": "PROCESSING",
+          "task_id": "sql-task-pending"
+        },
+        "request": {
+          "amount": "200.00",
+          "currency": "CNY",
+          "draft_id": "sql-draft-pending",
+          "draft_version": 1,
+          "operation_id": "sql-operation-pending",
+          "payee_id": "sql-payee-pending",
+          "payer_account_id": "sql-payer-pending",
+          "remark": "200元数据库模拟，非真实资金",
+          "task_id": "sql-task-pending"
+        }
+      }
+    },
+    "released": {
+      "operation_reserved": "0.00",
+      "payer_funds": {
+        "available": "1288.00",
+        "booked": "1288.00",
+        "reserved": "0.00"
+      },
+      "record": {
+        "first_receipt": {
+          "amount": "200.00",
+          "completed_at": null,
+          "currency": "CNY",
+          "draft_id": "sql-draft-released",
+          "draft_version": 1,
+          "operation_id": "sql-operation-released",
+          "payee_id": "sql-payee-released",
+          "payer_account_id": "sql-payer-released",
+          "proposal_version": 1,
+          "reason_code": "AWAITING_BANK_RESULT",
+          "status": "PROCESSING",
+          "task_id": "sql-task-released"
+        },
+        "latest_receipt": {
+          "amount": "200.00",
+          "completed_at": null,
+          "currency": "CNY",
+          "draft_id": "sql-draft-released",
+          "draft_version": 1,
+          "operation_id": "sql-operation-released",
+          "payee_id": "sql-payee-released",
+          "payer_account_id": "sql-payer-released",
+          "proposal_version": 1,
+          "reason_code": "MOCK_BANK_DECLINED",
+          "status": "FAILED",
+          "task_id": "sql-task-released"
+        },
+        "request": {
+          "amount": "200.00",
+          "currency": "CNY",
+          "draft_id": "sql-draft-released",
+          "draft_version": 1,
+          "operation_id": "sql-operation-released",
+          "payee_id": "sql-payee-released",
+          "payer_account_id": "sql-payer-released",
+          "remark": "200元数据库模拟，非真实资金",
+          "task_id": "sql-task-released"
+        }
+      }
+    },
+    "rollback": null,
+    "settled": {
+      "operation_reserved": "0.00",
+      "payer_funds": {
+        "available": "1088.00",
+        "booked": "1088.00",
+        "reserved": "0.00"
+      },
+      "record": {
+        "first_receipt": {
+          "amount": "200.00",
+          "completed_at": null,
+          "currency": "CNY",
+          "draft_id": "sql-draft-settled",
+          "draft_version": 1,
+          "operation_id": "sql-operation-settled",
+          "payee_id": "sql-payee-settled",
+          "payer_account_id": "sql-payer-settled",
+          "proposal_version": 1,
+          "reason_code": "AWAITING_BANK_RESULT",
+          "status": "PROCESSING",
+          "task_id": "sql-task-settled"
+        },
+        "latest_receipt": {
+          "amount": "200.00",
+          "completed_at": "2026-10-18T12:39:16.811935Z",
+          "currency": "CNY",
+          "draft_id": "sql-draft-settled",
+          "draft_version": 1,
+          "operation_id": "sql-operation-settled",
+          "payee_id": "sql-payee-settled",
+          "payer_account_id": "sql-payer-settled",
+          "proposal_version": 1,
+          "reason_code": null,
+          "status": "SUCCEEDED",
+          "task_id": "sql-task-settled"
+        },
+        "request": {
+          "amount": "200.00",
+          "currency": "CNY",
+          "draft_id": "sql-draft-settled",
+          "draft_version": 1,
+          "operation_id": "sql-operation-settled",
+          "payee_id": "sql-payee-settled",
+          "payer_account_id": "sql-payer-settled",
+          "remark": "200元数据库模拟，非真实资金",
+          "task_id": "sql-task-settled"
+        }
+      }
+    },
+    "success": {
+      "operation_reserved": "0.00",
+      "payer_funds": {
+        "available": "1088.00",
+        "booked": "1088.00",
+        "reserved": "0.00"
+      },
+      "record": {
+        "first_receipt": {
+          "amount": "200.00",
+          "completed_at": "2026-10-18T12:39:16.752513Z",
+          "currency": "CNY",
+          "draft_id": "sql-draft-success",
+          "draft_version": 1,
+          "operation_id": "sql-operation-success",
+          "payee_id": "sql-payee-success",
+          "payer_account_id": "sql-payer-success",
+          "proposal_version": 1,
+          "reason_code": null,
+          "status": "SUCCEEDED",
+          "task_id": "sql-task-success"
+        },
+        "latest_receipt": {
+          "amount": "200.00",
+          "completed_at": "2026-10-18T12:39:16.752513Z",
+          "currency": "CNY",
+          "draft_id": "sql-draft-success",
+          "draft_version": 1,
+          "operation_id": "sql-operation-success",
+          "payee_id": "sql-payee-success",
+          "payer_account_id": "sql-payer-success",
+          "proposal_version": 1,
+          "reason_code": null,
+          "status": "SUCCEEDED",
+          "task_id": "sql-task-success"
+        },
+        "request": {
+          "amount": "200.00",
+          "currency": "CNY",
+          "draft_id": "sql-draft-success",
+          "draft_version": 1,
+          "operation_id": "sql-operation-success",
+          "payee_id": "sql-payee-success",
+          "payer_account_id": "sql-payer-success",
+          "remark": "200元数据库模拟，非真实资金",
+          "task_id": "sql-task-success"
+        }
+      }
+    }
+  },
+  "funds_executed_by_this_reader": false,
+  "missing_original_is_proven_unsubmitted": false,
+  "public_result_verification_connected": false,
+  "scope": "SUPPLEMENTAL_BUSINESS_ACCOUNTING_NOT_PUBLIC_POST_EXECUTE"
+}

@@ -1,0 +1,240 @@
+{
+  "audit_received": false,
+  "business_results": [
+    {
+      "business_reexecuted": false,
+      "continue_writes": false,
+      "fictional": true,
+      "original_results": [
+        {
+          "fictional": true,
+          "message": "查询到这次订阅登记已完成。",
+          "status": "REGISTRATION_RECORDED"
+        }
+      ],
+      "reason": "COMMITTED_PREFIX_OBSERVED",
+      "saved_prefix_verified": true,
+      "state": "COMMITTED_VERIFIED"
+    },
+    {
+      "business_reexecuted": false,
+      "continue_writes": false,
+      "fictional": true,
+      "original_results": [
+        {
+          "fictional": true,
+          "message": "查询到这次提醒设置已保存；不代表提醒已发送。",
+          "status": "SETTINGS_RECORDED"
+        }
+      ],
+      "reason": "COMMITTED_PREFIX_OBSERVED",
+      "saved_prefix_verified": true,
+      "state": "COMMITTED_VERIFIED"
+    },
+    {
+      "business_reexecuted": false,
+      "continue_writes": false,
+      "fictional": true,
+      "original_results": [
+        {
+          "fictional": true,
+          "message": "查询到这次取消意图已记录；尚未确认商户已取消。",
+          "status": "CANCELLATION_INTENT_RECORDED"
+        }
+      ],
+      "reason": "COMMITTED_PREFIX_OBSERVED",
+      "saved_prefix_verified": true,
+      "state": "COMMITTED_VERIFIED"
+    },
+    {
+      "business_reexecuted": false,
+      "continue_writes": false,
+      "fictional": true,
+      "original_results": [
+        {
+          "fictional": true,
+          "message": "查询到这次取消意图已撤回；不代表商户服务已恢复。",
+          "status": "CANCELLATION_INTENT_REVOKED"
+        }
+      ],
+      "reason": "COMMITTED_PREFIX_OBSERVED",
+      "saved_prefix_verified": true,
+      "state": "COMMITTED_VERIFIED"
+    }
+  ],
+  "current_subscription": {
+    "cancellation": {
+      "current_state": "ACTIVE",
+      "fictional": true,
+      "history": [
+        {
+          "kind": "RECORD",
+          "occurred_at": "2026-10-14T12:00:00+08:00",
+          "state_after_operation": "CANCELLING"
+        },
+        {
+          "kind": "REVOKE",
+          "occurred_at": "2026-10-14T12:00:00+08:00",
+          "state_after_operation": "ACTIVE"
+        }
+      ],
+      "merchant_cancellation_confirmed": false,
+      "message": "当前未处于本地取消中；历史操作单独保留，不推断商户服务已恢复。"
+    },
+    "current_state": "ACTIVE",
+    "fictional": true,
+    "message": "当前为本地登记状态，不代表商户合同状态。",
+    "pending_confirmations": [
+      {
+        "action": "CANCEL_INTENT",
+        "expires_at": "2026-10-14T12:05:00+08:00",
+        "state": "INVALIDATED"
+      }
+    ],
+    "reminder": {
+      "active_kind": "CHARGE_ADVANCE",
+      "current_attempt": "NOT_ATTEMPTED",
+      "data_state": "CONFIGURED",
+      "fictional": true,
+      "message": "仅查询已保存计划和各周期最近一次模拟结果；未设置日期时不推测，不触发发送。",
+      "notification_sent": false,
+      "saved_cycle_outcomes": [],
+      "schedule": {
+        "cycle": "CALENDAR_MONTH",
+        "days_before": 3,
+        "enabled": true,
+        "expected_date": "2026-10-17"
+      }
+    },
+    "service_data_state": "AVAILABLE",
+    "service_display_name": null
+  },
+  "database_executed": true,
+  "discovery": {
+    "fictional": true,
+    "groups": [
+      {
+        "charges": [
+          {
+            "amount_minor_units": 1990,
+            "completed_at": "2026-08-17T08:00:00+08:00",
+            "currency": "CNY"
+          },
+          {
+            "amount_minor_units": 1990,
+            "completed_at": "2026-09-17T08:00:00+08:00",
+            "currency": "CNY"
+          }
+        ],
+        "disposition": "NOT_IN_LEDGER",
+        "matching_cycles": [
+          "CALENDAR_MONTH"
+        ],
+        "message": "发现疑似订阅，需要另行核对并确认登记。",
+        "reason": "NO_EXACT_LEDGER_MATCH",
+        "selection_index": 0,
+        "service_display_name": null
+      }
+    ],
+    "matching_executed": true,
+    "reason": "MOCK_LEDGER_REVIEWED"
+  },
+  "explicit_startup": {
+    "business_record_count": 4,
+    "fictional": true,
+    "full_banking_system_recovered": false,
+    "merchant_cancellation_confirmed": false,
+    "notification_sent": false,
+    "pending": [
+      {
+        "action": "CANCEL_INTENT",
+        "expires_at": "2026-10-14T12:05:00+08:00",
+        "state": "INVALIDATED"
+      }
+    ],
+    "startup_record_observed": true,
+    "subscription_count": 1,
+    "subscription_storage_readable": true
+  },
+  "exported_business_record_count": 4,
+  "fictional": true,
+  "full_banking_system_recovered": false,
+  "merchant_cancellation_confirmed": false,
+  "notification_sent": false,
+  "previews": [
+    {
+      "action": "REGISTER_SUBSCRIPTION",
+      "charges": [
+        {
+          "amount_minor_units": 1990,
+          "completed_at": "2026-08-17T08:00:00+08:00",
+          "currency": "CNY"
+        },
+        {
+          "amount_minor_units": 1990,
+          "completed_at": "2026-09-17T08:00:00+08:00",
+          "currency": "CNY"
+        }
+      ],
+      "expires_at": "2026-10-14T12:05:00+08:00",
+      "fictional": true,
+      "matching_cycles": [
+        "CALENDAR_MONTH"
+      ],
+      "message": "请核对本次所选项目及真实扣款依据；服务展示名称暂无可靠来源。确认后仅登记本地订阅，不扣款、不操作商户、不发送提醒；本预览尚未确认或登记。",
+      "owned_account_count": 1,
+      "service_display_name": null
+    },
+    {
+      "business_changed": false,
+      "fictional": true,
+      "preview": {
+        "after": {
+          "cycle": "CALENDAR_MONTH",
+          "days_before": 3,
+          "enabled": true,
+          "expected_date": "2026-10-17"
+        },
+        "before": null,
+        "changed_fields": [
+          "initial_plan"
+        ],
+        "expires_at": "2026-10-14T12:05:00+08:00",
+        "fictional": true,
+        "message": "请核对提醒设置修改前后的差异；尚未保存，修改内容需重新确认。关闭普通续费提醒不撤回取消意图，也不清除未知尝试；保存设置不代表已发送通知。"
+      },
+      "saved": true,
+      "state": "AWAITING_CONFIRMATION"
+    },
+    {
+      "business_changed": false,
+      "fictional": true,
+      "preview": {
+        "after": "CANCELLING",
+        "before": "ACTIVE",
+        "expires_at": "2026-10-14T12:05:00+08:00",
+        "fictional": true,
+        "kind": "RECORD",
+        "message": "本次仅记录取消意图，不替你取消商户订阅、不停止扣款或退款；尚未执行，请核对后另行确认。"
+      },
+      "saved": true,
+      "state": "AWAITING_CONFIRMATION"
+    },
+    {
+      "business_changed": false,
+      "fictional": true,
+      "preview": {
+        "after": "ACTIVE",
+        "before": "CANCELLING",
+        "expires_at": "2026-10-14T12:05:00+08:00",
+        "fictional": true,
+        "kind": "REVOKE",
+        "message": "本次仅撤回本地取消意图，原历史保留；不表示恢复商户服务或重新签约。尚未执行，请核对后另行确认。"
+      },
+      "saved": true,
+      "state": "AWAITING_CONFIRMATION"
+    }
+  ],
+  "production_registered": false,
+  "source": "HANNAH_OWN_FICTIONAL_INPUT_NOT_A_JONATHAN_CAPTURE"
+}

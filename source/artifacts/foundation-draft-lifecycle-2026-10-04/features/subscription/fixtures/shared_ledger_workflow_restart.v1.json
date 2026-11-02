@@ -1,0 +1,11 @@
+{
+  "cancellation_restored": true,
+  "cleanup_completed": true,
+  "notification_sent": false,
+  "pending_invalidated_explicitly": true,
+  "phase": "after-restart",
+  "settings_restored": true,
+  "unknown_retained": true,
+  "verified": true,
+  "workflow_restored": true
+}

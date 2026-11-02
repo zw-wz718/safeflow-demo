@@ -1,0 +1,169 @@
+{
+  "cases": [
+    {
+      "duplicates": {
+        "Ok": {
+          "contract": "LOCAL_DUPLICATE_CANDIDATES_V1",
+          "missing_merchant": [],
+          "pairs": [
+            {
+              "first": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "food-1"
+              },
+              "second": {
+                "account_id": "account_001",
+                "source_id": "fictional-report-actions",
+                "transaction_id": "food-2"
+              }
+            }
+          ],
+          "production_registered": false,
+          "report_id": "fictional-actions-candidate",
+          "risk_action_authorized": false,
+          "rule_version": "LOCAL_SAME_MERCHANT_CNY_AMOUNT_0_600S_V1",
+          "snapshot_id": "fictional-report-snapshot",
+          "source_id": "fictional-report-actions",
+          "state": "COMPLETE"
+        }
+      },
+      "feedback": {
+        "Ok": {
+          "calculated_at": "2026-10-16T12:00:00+08:00",
+          "card_association_verified": false,
+          "choice": "NOT_MINE",
+          "lock_authorized": false,
+          "owner_user_id": "user_demo",
+          "persisted": false,
+          "public_operation_id": "fictional-public-operation",
+          "reference": {
+            "account_id": "account_001",
+            "source_id": "fictional-report-actions",
+            "transaction_id": "food-1"
+          },
+          "report_id": "fictional-actions-candidate",
+          "request": {
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-16T12:00:00+08:00",
+              "end_exclusive": "2026-10-16T12:00:00+08:00",
+              "start_inclusive": "2026-10-01T00:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            }
+          },
+          "rule_version": "LOCAL_BASIC_SPENDING_2026_10_16_V1",
+          "snapshot_id": "fictional-report-snapshot",
+          "state": "PREPARED_NOT_SAVED",
+          "transaction": {
+            "account_id": "account_001",
+            "amount": "30.00",
+            "card_id": null,
+            "category_code": "DEMO_FOOD",
+            "completed_at": "2026-10-10T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": "fictional-merchant",
+            "status": "COMPLETED",
+            "transaction_id": "food-1",
+            "transaction_type": "CONSUMPTION"
+          }
+        }
+      },
+      "name": "candidate",
+      "same_operation_changed_choice": "CONFLICT",
+      "same_operation_retry": "IDENTICAL_RETRY"
+    },
+    {
+      "duplicates": {
+        "Ok": {
+          "contract": "LOCAL_DUPLICATE_CANDIDATES_V1",
+          "missing_merchant": [
+            {
+              "account_id": "account_001",
+              "source_id": "fictional-report-actions",
+              "transaction_id": "food-1"
+            },
+            {
+              "account_id": "account_001",
+              "source_id": "fictional-report-actions",
+              "transaction_id": "food-2"
+            }
+          ],
+          "pairs": [],
+          "production_registered": false,
+          "report_id": "fictional-actions-missing-merchant",
+          "risk_action_authorized": false,
+          "rule_version": "LOCAL_SAME_MERCHANT_CNY_AMOUNT_0_600S_V1",
+          "snapshot_id": "fictional-report-snapshot",
+          "source_id": "fictional-report-actions",
+          "state": "MERCHANT_EVIDENCE_INCOMPLETE"
+        }
+      },
+      "feedback": {
+        "Ok": {
+          "calculated_at": "2026-10-16T12:00:00+08:00",
+          "card_association_verified": false,
+          "choice": "NOT_MINE",
+          "lock_authorized": false,
+          "owner_user_id": "user_demo",
+          "persisted": false,
+          "public_operation_id": "fictional-public-operation",
+          "reference": {
+            "account_id": "account_001",
+            "source_id": "fictional-report-actions",
+            "transaction_id": "food-1"
+          },
+          "report_id": "fictional-actions-missing-merchant",
+          "request": {
+            "account_ids": [
+              "account_001"
+            ],
+            "window": {
+              "as_of": "2026-10-16T12:00:00+08:00",
+              "end_exclusive": "2026-10-16T12:00:00+08:00",
+              "start_inclusive": "2026-10-01T00:00:00+08:00",
+              "timezone": "Asia/Shanghai"
+            }
+          },
+          "rule_version": "LOCAL_BASIC_SPENDING_2026_10_16_V1",
+          "snapshot_id": "fictional-report-snapshot",
+          "state": "PREPARED_NOT_SAVED",
+          "transaction": {
+            "account_id": "account_001",
+            "amount": "30.00",
+            "card_id": null,
+            "category_code": "DEMO_FOOD",
+            "completed_at": "2026-10-10T08:00:00+08:00",
+            "currency": "CNY",
+            "direction": "OUT",
+            "merchant_id": null,
+            "status": "COMPLETED",
+            "transaction_id": "food-1",
+            "transaction_type": "CONSUMPTION"
+          }
+        }
+      },
+      "name": "missing-merchant",
+      "same_operation_changed_choice": "CONFLICT",
+      "same_operation_retry": "IDENTICAL_RETRY"
+    },
+    {
+      "duplicates": {
+        "Err": "REPORT_NOT_COMPLETE"
+      },
+      "feedback": {
+        "Err": "REPORT_NOT_COMPLETE"
+      },
+      "name": "source-unavailable",
+      "same_operation_changed_choice": null,
+      "same_operation_retry": null
+    }
+  ],
+  "fictional": true,
+  "mode": "OFFLINE_CANDIDATE_AND_FEEDBACK_PREPARATION",
+  "persistence_tested": false,
+  "production_registered": false
+}

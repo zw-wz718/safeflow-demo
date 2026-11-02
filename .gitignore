@@ -1,0 +1,16 @@
+**/node_modules/
+**/target/
+**/dist/
+**/__pycache__/
+**/*.tsbuildinfo
+**/test-results/
+**/playwright-report/
+**/.env
+**/.env.*
+**/*.pem
+**/*.key
+**/*.sqlite
+**/*.sqlite3
+**/*.db
+**/pgdata/
+**/*VERIFICATION*.json

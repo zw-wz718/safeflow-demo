@@ -1,0 +1,79 @@
+{
+  "verified": true,
+  "scope": "OFFLINE_ACTUAL_SQL_OUTPUT_TO_EXISTING_BILLING_READER",
+  "billing_commit": "7007ce2be971b4e4ad2c257e21ec8a830d651397",
+  "node": "v24.14.1",
+  "started_at": "2026-10-18T14:06:19.999Z",
+  "sql_input": "D:\\深圳大学生金融科技挑战赛\\safeflow-github\\target\\transfer-pg-isolated-a924ea9da2034ec6b09a5a4ced9e3ebb\\funds-after-restart.json",
+  "sql_input_sha256": "ee806fc8d3f56bc148226a46134459a11c4d97218e20991e9503bc8f6204edd8",
+  "steps": [
+    {
+      "name": "transfer-commit",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "name": "archive",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "name": "extract",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "name": "rustc",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "name": "lock",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "name": "format",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "name": "tests",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "name": "clippy",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "name": "negative-transfer-exclusion",
+      "exit_code": 101,
+      "error": null
+    },
+    {
+      "name": "restored-tests",
+      "exit_code": 0,
+      "error": null
+    }
+  ],
+  "test_identity_source": "Explicit seven isolated seed cases in current postgres_transfer.rs, NOT login or JSON identity metadata",
+  "formal_c_txn_mapping_adopted": false,
+  "public_identity_or_registration_connected": false,
+  "four_month_consumption_completeness_verified": false,
+  "public_200_cny_execution_verified": false,
+  "transfer_commit": "ff4ccb661eda7e4a146572a6408dfbbfaf11e747",
+  "runner_sha256": "80f57e874c4cba63c8b1b0db32a42632ade85dd0703c74563caa1fad4bd4e399",
+  "billing_source_sha256": "1c2e2360be2b43b610a8b99d53afb4b5d9e9ee7a9ab40403a9896078185e3b43",
+  "test_sha256": "5892cfad29648c54c04f073a16dae3d8b807d178d7cd5b0b91cf45c81afa26d1",
+  "rustc": "rustc 1.99.0 (b940084d7 2026-09-28)",
+  "registry_dependencies_preserved": true,
+  "negative_control": "Incorrect TRANSFER consumption classification in disposable copy caused the behavior test to fail",
+  "tests_passed": 8,
+  "billing_read_output_sha256": "84013261cd60e8689c16318950dd8b39438843ee8783ed7699544572f14fc885",
+  "sql_scenarios": 7,
+  "payer_and_recipient_read_cases": 14,
+  "sources_unchanged": true,
+  "finished_at": "2026-10-18T14:06:47.673Z"
+}

@@ -1,0 +1,513 @@
+{
+  "fictional": true,
+  "production_registered": false,
+  "upstream_billing_commit": "1044e918d7d58301e0ab49aa03016f035642245f",
+  "subscription_base_commit": "5bfa49efed87fda2e573766da88b4c915f76cfd4",
+  "cargo_tests_passed": 115,
+  "new_ledger_tests": 15,
+  "positive_and_blocked_cli_cases": 9,
+  "invalid_input_cli_checks": 3,
+  "reports": [
+    {
+      "case_id": "complete-empty",
+      "report": {
+        "business_writes": false,
+        "groups": [
+          {
+            "disposition": "NOT_IN_LEDGER",
+            "group": {
+              "account_ids": [
+                "account_001"
+              ],
+              "actual_charges": [
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-07-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-consumption-july"
+                  },
+                  "transaction_id": "fictional-consumption-july"
+                },
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-08-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-consumption-august"
+                  },
+                  "transaction_id": "fictional-consumption-august"
+                }
+              ],
+              "currency": "CNY",
+              "cycles": [
+                {
+                  "cycle": "DAY",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [
+                    0,
+                    31
+                  ],
+                  "status": "DOES_NOT_MATCH"
+                },
+                {
+                  "cycle": "WEEK",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [],
+                  "status": "DOES_NOT_MATCH"
+                },
+                {
+                  "cycle": "CALENDAR_MONTH",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [
+                    0,
+                    1
+                  ],
+                  "status": "MATCHES"
+                }
+              ],
+              "merchant_id": "merchant_demo_video",
+              "message": "疑似周期消费，请确认是否为订阅；未自动登记。",
+              "mock_service_ref": "service_demo_video_1",
+              "status": "SUSPECTED"
+            },
+            "matched_subscription_ids": [],
+            "reason": "NO_EXACT_LEDGER_MATCH"
+          }
+        ],
+        "matching_executed": true,
+        "mode": "OFFLINE_MOCK_LEDGER_REVIEW",
+        "production_registered": false,
+        "reason": "MOCK_LEDGER_REVIEWED",
+        "team_contract_approved": false
+      }
+    },
+    {
+      "case_id": "already-active",
+      "report": {
+        "business_writes": false,
+        "groups": [
+          {
+            "disposition": "ALREADY_MANAGED",
+            "group": {
+              "account_ids": [
+                "account_001"
+              ],
+              "actual_charges": [
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-07-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-consumption-july"
+                  },
+                  "transaction_id": "fictional-consumption-july"
+                },
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-08-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-consumption-august"
+                  },
+                  "transaction_id": "fictional-consumption-august"
+                }
+              ],
+              "currency": "CNY",
+              "cycles": [
+                {
+                  "cycle": "DAY",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [
+                    0,
+                    31
+                  ],
+                  "status": "DOES_NOT_MATCH"
+                },
+                {
+                  "cycle": "WEEK",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [],
+                  "status": "DOES_NOT_MATCH"
+                },
+                {
+                  "cycle": "CALENDAR_MONTH",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [
+                    0,
+                    1
+                  ],
+                  "status": "MATCHES"
+                }
+              ],
+              "merchant_id": "merchant_demo_video",
+              "message": "疑似周期消费，请确认是否为订阅；未自动登记。",
+              "mock_service_ref": "service_demo_video_1",
+              "status": "SUSPECTED"
+            },
+            "matched_subscription_ids": [
+              "fictional-subscription-1"
+            ],
+            "reason": "EXACT_SOURCE_MERCHANT_SERVICE_MATCH"
+          }
+        ],
+        "matching_executed": true,
+        "mode": "OFFLINE_MOCK_LEDGER_REVIEW",
+        "production_registered": false,
+        "reason": "MOCK_LEDGER_REVIEWED",
+        "team_contract_approved": false
+      }
+    },
+    {
+      "case_id": "cancel-intent-still-managed",
+      "report": {
+        "business_writes": false,
+        "groups": [
+          {
+            "disposition": "ALREADY_MANAGED",
+            "group": {
+              "account_ids": [
+                "account_001"
+              ],
+              "actual_charges": [
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-07-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-consumption-july"
+                  },
+                  "transaction_id": "fictional-consumption-july"
+                },
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-08-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-consumption-august"
+                  },
+                  "transaction_id": "fictional-consumption-august"
+                }
+              ],
+              "currency": "CNY",
+              "cycles": [
+                {
+                  "cycle": "DAY",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [
+                    0,
+                    31
+                  ],
+                  "status": "DOES_NOT_MATCH"
+                },
+                {
+                  "cycle": "WEEK",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [],
+                  "status": "DOES_NOT_MATCH"
+                },
+                {
+                  "cycle": "CALENDAR_MONTH",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [
+                    0,
+                    1
+                  ],
+                  "status": "MATCHES"
+                }
+              ],
+              "merchant_id": "merchant_demo_video",
+              "message": "疑似周期消费，请确认是否为订阅；未自动登记。",
+              "mock_service_ref": "service_demo_video_1",
+              "status": "SUSPECTED"
+            },
+            "matched_subscription_ids": [
+              "fictional-subscription-1"
+            ],
+            "reason": "EXACT_SOURCE_MERCHANT_SERVICE_MATCH"
+          }
+        ],
+        "matching_executed": true,
+        "mode": "OFFLINE_MOCK_LEDGER_REVIEW",
+        "production_registered": false,
+        "reason": "MOCK_LEDGER_REVIEWED",
+        "team_contract_approved": false
+      }
+    },
+    {
+      "case_id": "cross-source-review",
+      "report": {
+        "business_writes": false,
+        "groups": [
+          {
+            "disposition": "NEEDS_REVIEW",
+            "group": {
+              "account_ids": [
+                "account_001"
+              ],
+              "actual_charges": [
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-07-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-consumption-july"
+                  },
+                  "transaction_id": "fictional-consumption-july"
+                },
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-08-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-consumption-august"
+                  },
+                  "transaction_id": "fictional-consumption-august"
+                }
+              ],
+              "currency": "CNY",
+              "cycles": [
+                {
+                  "cycle": "DAY",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [
+                    0,
+                    31
+                  ],
+                  "status": "DOES_NOT_MATCH"
+                },
+                {
+                  "cycle": "WEEK",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [],
+                  "status": "DOES_NOT_MATCH"
+                },
+                {
+                  "cycle": "CALENDAR_MONTH",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [
+                    0,
+                    1
+                  ],
+                  "status": "MATCHES"
+                }
+              ],
+              "merchant_id": "merchant_demo_video",
+              "message": "疑似周期消费，请确认是否为订阅；未自动登记。",
+              "mock_service_ref": "service_demo_video_1",
+              "status": "SUSPECTED"
+            },
+            "matched_subscription_ids": [],
+            "reason": "IDENTITY_UNCERTAIN_OR_PARTIAL_MATCH"
+          }
+        ],
+        "matching_executed": true,
+        "mode": "OFFLINE_MOCK_LEDGER_REVIEW",
+        "production_registered": false,
+        "reason": "MOCK_LEDGER_REVIEWED",
+        "team_contract_approved": false
+      }
+    },
+    {
+      "case_id": "scoped-error-other-service-continues",
+      "report": {
+        "business_writes": false,
+        "groups": [
+          {
+            "disposition": "SERVICE_BLOCKED",
+            "group": {
+              "account_ids": [
+                "account_001"
+              ],
+              "actual_charges": [
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-07-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-consumption-july"
+                  },
+                  "transaction_id": "fictional-consumption-july"
+                }
+              ],
+              "currency": "CNY",
+              "cycles": [],
+              "merchant_id": "merchant_demo_video",
+              "message": "不足两次实际消费，不能据此认定没有订阅。",
+              "mock_service_ref": "service_demo_video_1",
+              "status": "INSUFFICIENT_EVIDENCE"
+            },
+            "matched_subscription_ids": [],
+            "reason": "RELATED_LEDGER_ERROR"
+          },
+          {
+            "disposition": "NOT_IN_LEDGER",
+            "group": {
+              "account_ids": [
+                "account_001"
+              ],
+              "actual_charges": [
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-07-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-service-two"
+                  },
+                  "transaction_id": "fictional-service-two"
+                }
+              ],
+              "currency": "CNY",
+              "cycles": [],
+              "merchant_id": "merchant_demo_video",
+              "message": "不足两次实际消费，不能据此认定没有订阅。",
+              "mock_service_ref": "service_demo_video_2",
+              "status": "INSUFFICIENT_EVIDENCE"
+            },
+            "matched_subscription_ids": [],
+            "reason": "NO_EXACT_LEDGER_MATCH"
+          }
+        ],
+        "matching_executed": true,
+        "mode": "OFFLINE_MOCK_LEDGER_REVIEW",
+        "production_registered": false,
+        "reason": "MOCK_LEDGER_REVIEWED",
+        "team_contract_approved": false
+      }
+    },
+    {
+      "case_id": "unknown-error-scope-pauses-all",
+      "report": {
+        "business_writes": false,
+        "groups": [],
+        "matching_executed": false,
+        "mode": "OFFLINE_MOCK_LEDGER_REVIEW",
+        "production_registered": false,
+        "reason": "LEDGER_ERROR_SCOPE_UNKNOWN",
+        "team_contract_approved": false
+      }
+    },
+    {
+      "case_id": "ledger-unavailable",
+      "report": {
+        "business_writes": false,
+        "groups": [],
+        "matching_executed": false,
+        "mode": "OFFLINE_MOCK_LEDGER_REVIEW",
+        "production_registered": false,
+        "reason": "LEDGER_UNAVAILABLE_OR_INCOMPLETE",
+        "team_contract_approved": false
+      }
+    },
+    {
+      "case_id": "ledger-partial",
+      "report": {
+        "business_writes": false,
+        "groups": [],
+        "matching_executed": false,
+        "mode": "OFFLINE_MOCK_LEDGER_REVIEW",
+        "production_registered": false,
+        "reason": "LEDGER_UNAVAILABLE_OR_INCOMPLETE",
+        "team_contract_approved": false
+      }
+    },
+    {
+      "case_id": "same-merchant-other-service",
+      "report": {
+        "business_writes": false,
+        "groups": [
+          {
+            "disposition": "NOT_IN_LEDGER",
+            "group": {
+              "account_ids": [
+                "account_001"
+              ],
+              "actual_charges": [
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-07-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-consumption-july"
+                  },
+                  "transaction_id": "fictional-consumption-july"
+                },
+                {
+                  "account_id": "account_001",
+                  "amount_minor_units": 1990,
+                  "completed_at": "2026-08-15T08:00:00+08:00",
+                  "source_key": {
+                    "account_id": "account_001",
+                    "source_id": "fictional-billing-input-v1",
+                    "transaction_id": "fictional-consumption-august"
+                  },
+                  "transaction_id": "fictional-consumption-august"
+                }
+              ],
+              "currency": "CNY",
+              "cycles": [
+                {
+                  "cycle": "DAY",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [
+                    0,
+                    31
+                  ],
+                  "status": "DOES_NOT_MATCH"
+                },
+                {
+                  "cycle": "WEEK",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [],
+                  "status": "DOES_NOT_MATCH"
+                },
+                {
+                  "cycle": "CALENDAR_MONTH",
+                  "missing_period_count": 0,
+                  "observed_period_indices": [
+                    0,
+                    1
+                  ],
+                  "status": "MATCHES"
+                }
+              ],
+              "merchant_id": "merchant_demo_video",
+              "message": "疑似周期消费，请确认是否为订阅；未自动登记。",
+              "mock_service_ref": "service_demo_video_1",
+              "status": "SUSPECTED"
+            },
+            "matched_subscription_ids": [],
+            "reason": "NO_EXACT_LEDGER_MATCH"
+          }
+        ],
+        "matching_executed": true,
+        "mode": "OFFLINE_MOCK_LEDGER_REVIEW",
+        "production_registered": false,
+        "reason": "MOCK_LEDGER_REVIEWED",
+        "team_contract_approved": false
+      }
+    }
+  ]
+}

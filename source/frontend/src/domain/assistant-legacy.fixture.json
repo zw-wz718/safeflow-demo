@@ -1,0 +1,38 @@
+{
+  "source": "LocalDemoAdapter.sendMessage v1 outputs before the 2026-10-19 assistant copy revision; local UI history only",
+  "replies": [
+    {
+      "input": "账户余额",
+      "message": {
+        "role": "assistant",
+        "text": "工资卡（尾号 6628）的模拟可用余额为 ¥1,288.00 CNY。数据来自底座固定样例，未查询真实银行。",
+        "action": "overview"
+      }
+    },
+    {
+      "input": "本月账单",
+      "message": {
+        "role": "assistant",
+        "text": "本月前端样例消费 ¥756.50，共 7 笔消费。转账不计入消费。",
+        "action": "bills"
+      }
+    },
+    {
+      "input": "给小李转 200 元",
+      "message": {
+        "role": "assistant",
+        "text": "拟给小李生成 ¥200.00 的本地草案。有 2 位同名收款人，请选择银行与尾号。保存后不会转账。",
+        "action": "transfers",
+        "amount": "200.00",
+        "payeeQuery": "小李"
+      }
+    },
+    {
+      "input": "你好",
+      "message": {
+        "role": "assistant",
+        "text": "这条指令未匹配本地演示意图。可以查询“账户余额”“本月账单”，或填写“给小李转 200 元”；涉及资金执行的请求暂不可用。"
+      }
+    }
+  ]
+}

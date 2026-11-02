@@ -1,0 +1,277 @@
+{
+  "execution": "OFFLINE_FIXED_SIMULATION_NOT_JOINT_ACCEPTANCE",
+  "reports": [
+    {
+      "account_id": "account_001",
+      "adoption_commit": "68e09f29ec31680f3544b1f3242f38bcec3fab15",
+      "anomalies": [
+        {
+          "amount": "19.90",
+          "category_code": "DEMO_MEDIA",
+          "median_cents_twice": "2980",
+          "message": "未触发该金额规则，不代表交易安全",
+          "reason": "AMOUNT_THRESHOLDS_NOT_BOTH_MET",
+          "reference": {
+            "account_id": "account_001",
+            "source_id": "safeflow-team-simulation",
+            "transaction_id": "demo_video_202610"
+          },
+          "sample_count": 6,
+          "status": "NOT_TRIGGERED"
+        },
+        {
+          "amount": "12.00",
+          "category_code": "DEMO_SOFTWARE",
+          "median_cents_twice": null,
+          "message": "历史证据不足，无法判断金额是否偏高",
+          "reason": "FEWER_THAN_FIVE_SAMPLES",
+          "reference": {
+            "account_id": "account_001",
+            "source_id": "safeflow-team-simulation",
+            "transaction_id": "demo_cloud_202610"
+          },
+          "sample_count": 1,
+          "status": "INSUFFICIENT_EVIDENCE"
+        },
+        {
+          "amount": "80.00",
+          "category_code": "DEMO_SHOPPING",
+          "median_cents_twice": null,
+          "message": "历史证据不足，无法判断金额是否偏高",
+          "reason": "FEWER_THAN_FIVE_SAMPLES",
+          "reference": {
+            "account_id": "account_001",
+            "source_id": "safeflow-team-simulation",
+            "transaction_id": "demo_retail_20261012"
+          },
+          "sample_count": 1,
+          "status": "INSUFFICIENT_EVIDENCE"
+        },
+        {
+          "amount": "9.90",
+          "category_code": "DEMO_MEDIA",
+          "median_cents_twice": "2980",
+          "message": "未触发该金额规则，不代表交易安全",
+          "reason": "AMOUNT_THRESHOLDS_NOT_BOTH_MET",
+          "reference": {
+            "account_id": "account_001",
+            "source_id": "safeflow-team-simulation",
+            "transaction_id": "demo_music_202610"
+          },
+          "sample_count": 6,
+          "status": "NOT_TRIGGERED"
+        },
+        {
+          "amount": "41.00",
+          "category_code": "DEMO_FOOD",
+          "median_cents_twice": null,
+          "message": "历史证据不足，无法判断金额是否偏高",
+          "reason": "FEWER_THAN_FIVE_SAMPLES",
+          "reference": {
+            "account_id": "account_001",
+            "source_id": "safeflow-team-simulation",
+            "transaction_id": "demo_food_202610"
+          },
+          "sample_count": 3,
+          "status": "INSUFFICIENT_EVIDENCE"
+        }
+      ],
+      "comparison": {
+        "current": {
+          "gross": "162.80",
+          "net": "-157.20",
+          "net_cents": "-15720",
+          "refund_excess": "157.20",
+          "refund_origin_status": "ORIGINAL_NOT_VERIFIED",
+          "refunds": "320.00"
+        },
+        "current_reason": null,
+        "difference": "-537.00",
+        "percent": "-141.4",
+        "percent_reason": null,
+        "previous": {
+          "gross": "379.80",
+          "net": "379.80",
+          "net_cents": "37980",
+          "refund_excess": null,
+          "refund_origin_status": "NO_REFUNDS",
+          "refunds": "0.00"
+        },
+        "previous_reason": null,
+        "status": "READY"
+      },
+      "feedback_policy": {
+        "correction_supported": false,
+        "current_feedback_head_supported": false,
+        "historical_feedback_is_action_authorization": false,
+        "message": "当前版本暂不支持反馈更正或撤销；历史反馈不能充当当前有效状态或锁卡许可",
+        "revocation_supported": false
+      },
+      "owner_user_id": "user_001",
+      "plan": {
+        "current": {
+          "as_of": "2026-10-27T00:00:00+08:00",
+          "end_exclusive": "2026-10-27T00:00:00+08:00",
+          "start_inclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        },
+        "current_duration": "PT2246400S",
+        "historical": {
+          "as_of": "2026-10-27T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-07-03T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        },
+        "previous": {
+          "as_of": "2026-10-27T00:00:00+08:00",
+          "end_exclusive": "2026-09-27T00:00:00+08:00",
+          "start_inclusive": "2026-09-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        },
+        "previous_duration": "PT2246400S"
+      },
+      "production_registered": false,
+      "rule_version": "billing-rules-adopted-20261027-v1",
+      "status": "READY"
+    },
+    {
+      "account_id": "account_002",
+      "adoption_commit": "68e09f29ec31680f3544b1f3242f38bcec3fab15",
+      "anomalies": [
+        {
+          "amount": "25.00",
+          "category_code": "DEMO_FOOD",
+          "median_cents_twice": null,
+          "message": "历史证据不足，无法判断金额是否偏高",
+          "reason": "FEWER_THAN_FIVE_SAMPLES",
+          "reference": {
+            "account_id": "account_002",
+            "source_id": "safeflow-team-simulation",
+            "transaction_id": "demo_user2_food_10"
+          },
+          "sample_count": 1,
+          "status": "INSUFFICIENT_EVIDENCE"
+        }
+      ],
+      "comparison": {
+        "current": {
+          "gross": "25.00",
+          "net": "25.00",
+          "net_cents": "2500",
+          "refund_excess": null,
+          "refund_origin_status": "NO_REFUNDS",
+          "refunds": "0.00"
+        },
+        "current_reason": null,
+        "difference": "25.00",
+        "percent": null,
+        "percent_reason": "NO_POSITIVE_BASE",
+        "previous": {
+          "gross": "0.00",
+          "net": "0.00",
+          "net_cents": "0",
+          "refund_excess": null,
+          "refund_origin_status": "NO_REFUNDS",
+          "refunds": "0.00"
+        },
+        "previous_reason": null,
+        "status": "READY"
+      },
+      "feedback_policy": {
+        "correction_supported": false,
+        "current_feedback_head_supported": false,
+        "historical_feedback_is_action_authorization": false,
+        "message": "当前版本暂不支持反馈更正或撤销；历史反馈不能充当当前有效状态或锁卡许可",
+        "revocation_supported": false
+      },
+      "owner_user_id": "user_002",
+      "plan": {
+        "current": {
+          "as_of": "2026-10-27T00:00:00+08:00",
+          "end_exclusive": "2026-10-27T00:00:00+08:00",
+          "start_inclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        },
+        "current_duration": "PT2246400S",
+        "historical": {
+          "as_of": "2026-10-27T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-07-03T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        },
+        "previous": {
+          "as_of": "2026-10-27T00:00:00+08:00",
+          "end_exclusive": "2026-09-27T00:00:00+08:00",
+          "start_inclusive": "2026-09-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        },
+        "previous_duration": "PT2246400S"
+      },
+      "production_registered": false,
+      "rule_version": "billing-rules-adopted-20261027-v1",
+      "status": "READY"
+    },
+    {
+      "account_id": "demo_account_li_v1",
+      "adoption_commit": "68e09f29ec31680f3544b1f3242f38bcec3fab15",
+      "anomalies": [],
+      "comparison": {
+        "current": {
+          "gross": "0.00",
+          "net": "0.00",
+          "net_cents": "0",
+          "refund_excess": null,
+          "refund_origin_status": "NO_REFUNDS",
+          "refunds": "0.00"
+        },
+        "current_reason": null,
+        "difference": "0.00",
+        "percent": null,
+        "percent_reason": "NO_POSITIVE_BASE",
+        "previous": {
+          "gross": "0.00",
+          "net": "0.00",
+          "net_cents": "0",
+          "refund_excess": null,
+          "refund_origin_status": "NO_REFUNDS",
+          "refunds": "0.00"
+        },
+        "previous_reason": null,
+        "status": "READY"
+      },
+      "feedback_policy": {
+        "correction_supported": false,
+        "current_feedback_head_supported": false,
+        "historical_feedback_is_action_authorization": false,
+        "message": "当前版本暂不支持反馈更正或撤销；历史反馈不能充当当前有效状态或锁卡许可",
+        "revocation_supported": false
+      },
+      "owner_user_id": "demo_user_li_v1",
+      "plan": {
+        "current": {
+          "as_of": "2026-10-27T00:00:00+08:00",
+          "end_exclusive": "2026-10-27T00:00:00+08:00",
+          "start_inclusive": "2026-10-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        },
+        "current_duration": "PT2246400S",
+        "historical": {
+          "as_of": "2026-10-27T00:00:00+08:00",
+          "end_exclusive": "2026-10-01T00:00:00+08:00",
+          "start_inclusive": "2026-07-03T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        },
+        "previous": {
+          "as_of": "2026-10-27T00:00:00+08:00",
+          "end_exclusive": "2026-09-27T00:00:00+08:00",
+          "start_inclusive": "2026-09-01T00:00:00+08:00",
+          "timezone": "Asia/Shanghai"
+        },
+        "previous_duration": "PT2246400S"
+      },
+      "production_registered": false,
+      "rule_version": "billing-rules-adopted-20261027-v1",
+      "status": "READY"
+    }
+  ]
+}

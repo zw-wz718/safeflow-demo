@@ -1,0 +1,66 @@
+{
+  "schema": "SAFEFLOW_APPROVED_FICTIONAL_CALENDAR_NEXT_V1",
+  "revision": "safeflow-demo-service-calendar-20261101-next-v1",
+  "approval": "DEMO_SUBSCRIPTION_CALENDAR_NOV28_PROPOSAL_2026-11-01:USER_ADOPTED_NEXT_PERIOD_PRESERVE_HISTORY",
+  "parent_calendar_revision": "billing-team-consumption-proposed-20261027-v1-service-calendar",
+  "parent_consumption_sha256": "086c5783ef1ab4cb8a2b8f139d1c43287cbdfe7b1fe22ea10af3f5696e4c948d",
+  "fictional": true,
+  "notification_sent": false,
+  "entries": [
+    {
+      "owner_user_id": "user_001",
+      "account_id": "account_001",
+      "merchant_id": "demo_merchant_media_v1",
+      "service_ref": "demo_service_video_v1",
+      "display_name": "演示视频服务",
+      "transaction_ids": [
+        "demo_video_202607",
+        "demo_video_202608",
+        "demo_video_202609",
+        "demo_video_202610"
+      ],
+      "cycle": "MONTHLY",
+      "billing_day": 5,
+      "currency": "CNY",
+      "amount": "19.90",
+      "service_period_start": "2026-11-05T10:00:00+08:00",
+      "service_period_end_exclusive": "2026-12-05T10:00:00+08:00",
+      "next_charge_at": "2026-12-05T10:00:00+08:00",
+      "expires_at": null,
+      "expiry_status": "NOT_PROVIDED",
+      "date_basis": "ORGANIZER_APPROVED_NEXT_FICTIONAL_PERIOD_20261101",
+      "not_inferred_from_transactions": true,
+      "calendar_revision": "safeflow-demo-service-calendar-20261101-next-v1",
+      "reminder_scheduled": false
+    },
+    {
+      "owner_user_id": "user_001",
+      "account_id": "account_001",
+      "merchant_id": "demo_merchant_media_v1",
+      "service_ref": "demo_service_music_v1",
+      "display_name": "演示音乐服务",
+      "transaction_ids": [
+        "demo_music_202607",
+        "demo_music_202608",
+        "demo_music_202609",
+        "demo_music_202610"
+      ],
+      "cycle": "MONTHLY",
+      "billing_day": 15,
+      "currency": "CNY",
+      "amount": "9.90",
+      "service_period_start": "2026-11-15T10:00:00+08:00",
+      "service_period_end_exclusive": "2026-12-15T10:00:00+08:00",
+      "next_charge_at": "2026-12-15T10:00:00+08:00",
+      "expires_at": null,
+      "expiry_status": "NOT_PROVIDED",
+      "date_basis": "ORGANIZER_APPROVED_NEXT_FICTIONAL_PERIOD_20261101",
+      "not_inferred_from_transactions": true,
+      "calendar_revision": "safeflow-demo-service-calendar-20261101-next-v1",
+      "reminder_scheduled": false
+    }
+  ],
+  "unprovided_services": [
+    "demo_merchant_cloud_v1"
+  ]
+}

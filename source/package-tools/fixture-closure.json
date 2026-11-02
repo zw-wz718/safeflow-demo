@@ -1,0 +1,12 @@
+{
+  "fixture_env": {
+    "SAFEFLOW_SUBSCRIPTION_LEDGER_FIXTURE": "artifacts/next-intake-2026-10-22/subscription/fixed/fixtures/subscription/managed-ledger-cases.v1.json",
+    "SAFEFLOW_SUBSCRIPTION_DISCOVERY_FIXTURE": "artifacts/foundation-draft-lifecycle-2026-10-04/features/subscription/fixtures/discovery_ready_input.v1.json",
+    "SAFEFLOW_SUBSCRIPTION_PROPOSED_SQL": "artifacts/foundation-draft-lifecycle-2026-10-04/features/subscription/sql/shared_runtime_storage_v1.proposed.sql",
+    "SAFEFLOW_SUBSCRIPTION_DIRECT_BILLING_FIXTURE": "artifacts/foundation-draft-lifecycle-2026-10-04/members/jonathan/fixtures/billing/consumption_pages.v1.json",
+    "SAFEFLOW_SUBSCRIPTION_LEGACY_RETRY_FIXTURE": "artifacts/foundation-draft-lifecycle-2026-10-04/features/subscription/fixtures/legacy_reminder_three_failures.v1.json",
+    "SF_PINNED_TRANSFER_FIXTURE_PATH": "artifacts/foundation-draft-lifecycle-2026-10-04/members/jonathan/fixtures/billing/upstream/mock_transfer_200.2a72b5d.json",
+    "SAFEFLOW_BILLING_TEAM_DEMO_FIXTURE": "fixtures/billing/team_demo_consumption.proposed.v1.json",
+    "SAFEFLOW_BILLING_RULE_ACCEPTANCE_FIXTURE": "fixtures/billing/rule_acceptance.proposed.v1.json"
+  }
+}

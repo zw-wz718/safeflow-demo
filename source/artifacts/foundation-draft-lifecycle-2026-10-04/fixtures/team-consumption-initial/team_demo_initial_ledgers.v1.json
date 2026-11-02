@@ -1,0 +1,84 @@
+{
+  "artifact_kind": "SUBSCRIPTION_INITIAL_LEDGER_ADOPTION_MATERIAL_NOT_RUNTIME_AUTHORIZATION",
+  "schema_version": 1,
+  "fictional": true,
+  "production_registered": false,
+  "revision": "subscription-initial-empty-20261026-v1",
+  "reference_user_account_commit": "7c03f03b832aa17c174b1bbdd4a6ad3282e01422",
+  "reference_source_id": "safeflow-team-simulation",
+  "reference_source_revision": "safeflow-team-simulation-20261026-v1",
+  "decision": {
+    "date": "2026-10-26",
+    "initial_state": "COMPLETE_EMPTY_FOR_THREE_LISTED_DEMO_USERS",
+    "basis": "用户在本聊天明确选择三位用户的完整空台账，不预先登记订阅。",
+    "pre_registered_subscription_count": 0,
+    "permission_or_policy_grant": false,
+    "runtime_adopted": false
+  },
+  "scope": "First initialization in a new isolated demo only. Never overwrite existing journal or infer empty from null, read failure, absent row or incomplete data.",
+  "completeness_basis": "The explicitly adopted initial subscription state of this fictional three-user scenario has zero registered entries for each listed owner. This is a scenario decision, not an observation of real merchant subscriptions or consumption coverage.",
+  "consumption_source": null,
+  "service_dates": null,
+  "users": [
+    {
+      "owner_user_id": "user_001",
+      "account_scope": [
+        "account_001"
+      ],
+      "ledger": {
+        "schema_version": 1,
+        "fictional": true,
+        "production_registered": false,
+        "owner_user_id": "user_001",
+        "snapshot_id": "fictional-team-initial-user_001-v1",
+        "read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "entries": []
+      }
+    },
+    {
+      "owner_user_id": "user_002",
+      "account_scope": [
+        "account_002"
+      ],
+      "ledger": {
+        "schema_version": 1,
+        "fictional": true,
+        "production_registered": false,
+        "owner_user_id": "user_002",
+        "snapshot_id": "fictional-team-initial-user_002-v1",
+        "read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "entries": []
+      }
+    },
+    {
+      "owner_user_id": "demo_user_li_v1",
+      "account_scope": [
+        "demo_account_li_v1"
+      ],
+      "ledger": {
+        "schema_version": 1,
+        "fictional": true,
+        "production_registered": false,
+        "owner_user_id": "demo_user_li_v1",
+        "snapshot_id": "fictional-team-initial-demo_user_li_v1-v1",
+        "read": {
+          "state": "COMPLETE",
+          "is_complete": true,
+          "next_cursor": null,
+          "reason": null
+        },
+        "entries": []
+      }
+    }
+  ]
+}

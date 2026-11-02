@@ -1,0 +1,23 @@
+{
+  "after": {
+    "original_receipt": {
+      "audit_integrated": false,
+      "fictional": true,
+      "merchant_action_executed": false,
+      "message": "已写入本次模拟台账；未接入正式系统，未发提醒或操作商户。",
+      "notification_sent": false,
+      "operation_id": "register",
+      "production_registered": false,
+      "state": "ACTIVE",
+      "subscription_id": "mock-sub-mock-sub-draft-1-1"
+    },
+    "state": "RECORDED"
+  },
+  "before": {
+    "state": "NEEDS_REVIEW"
+  },
+  "business_reexecuted": false,
+  "database_executed": false,
+  "fictional": true,
+  "notification_sent": false
+}
