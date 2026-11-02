@@ -9,7 +9,7 @@ python source/tools/build.py check --target-dir E:/SafeFlowLocalBuild/target
 # 前端正常单元测试和生产构建
 cd source/frontend
 npm ci --no-audit --no-fund
-npm test -- src/runtime/draft-intent.test.ts src/runtime/bank-recovery.test.ts
+npm test -- src/runtime/orphan-chat-recovery.test.ts src/runtime/bank-recovery.test.ts
 npm run build
 
 # 审计接收器的本机隔离测试（会启动自己的本机 HTTP / 临时 SQLite）
@@ -20,3 +20,7 @@ npm test
 Rust 单元/集成测试在各 crate 的 src 与 tests，业务算法测试在 features 和 members，前端浏览器测试在 frontend/e2e。PG 测试和部分浏览器测试需要它们自己的隔离数据库、环境变量及已构建二进制；没有配置时可能跳过或失败，不能把跳过计为通过。不要把生产数据库 URL 或线上登录口令注入测试。
 
 本次源码公开以文件完整性、依赖闭合、构建和选定单元测试核验为范围，实际结果见 [PUBLICATION-CHECKS.json](PUBLICATION-CHECKS.json)。不将作者历史成绩或限定独审成绩冒充本轮全量复测，不宣称全部攻击、真实银行、真实通知、生产付款、恢复演练或未来持续可用均已验证。
+
+## 本版修复验证
+
+本次新增前端用例位于frontend/src/runtime/orphan-chat-recovery.test.ts及frontend/e2e/orphan-chat-recovery.spec.ts；后端新增存储用例在crates/storage/src/lifecycle/chat_request_recovery_tests.rs，HTTP用例在crates/api/src/http_bank_conversation_tests.rs。已有受审固定修订的独立结果为PG存储3/3、HTTP1/1、前端23/23、浏览器17/17；这是该修订的限定验证结果，不冒充本次公开目录再次执行全部测试。

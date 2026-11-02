@@ -113,11 +113,7 @@ pub(super) async fn message(
     }
     turn.revision += 1;
     turn.uncertain = true; // Disconnection never authorizes an automatic re-POST.
-    let allocated = TaskId::parse(format!(
-        "bank_chat_{}_{}",
-        input.conversation_id, turn.revision
-    ))
-    .map_err(|_| ApiError::validation(StatusCode::BAD_REQUEST))?;
+    let allocated = state.0.repository.chat_request_id_for_backend(&input.conversation_id,turn.revision).map_err(ApiError::storage)?;
     let target = input
         .context
         .as_ref()
@@ -197,4 +193,26 @@ pub(super) async fn query(
     Ok(Json(
         json!({"conversation_id":id,"revision":turn.revision,"task_id":turn.task,"view":turn.response,"uncertain":turn.uncertain,"payee_query":turn.payee_query}),
     ))
+}
+
+/// Identity-bound original request evidence. No model or business write occurs.
+pub(super) async fn uncreated_request(State(state):State<ApiState>,Path(id):Path<String>,headers:HeaderMap,uri:Uri)->Result<Json<Value>,ApiError>{
+ let identity=state.identity(&headers)?;
+ if uri.query().is_some(){return Err(ApiError::validation(StatusCode::BAD_REQUEST))}
+ let task=parse_task(&id)?;
+ let parts:Vec<_>=id.split('_').collect();
+ // Only current-epoch v2 needs an in-memory Turn. Hold its mutex through the
+ // proof transaction, so a new revision cannot replace the checked evidence.
+ let cell=if parts.len()==6&&parts[0..3]==["bank","chat","v2"]&&parts[3]==state.0.repository.chat_request_epoch_for_backend(){
+  let map=state.0.conversations.0.lock().map_err(|_|ApiError::unavailable())?;
+  Some(map.get(parts[4]).cloned().ok_or_else(ApiError::conflict)?)
+ }else{None};
+ let turn=cell.as_ref().map(|cell|cell.try_lock().map_err(|_|ApiError::conflict())).transpose()?;
+ let completed=if let Some(t)=&turn {
+  let revision=parts[5].parse::<u64>().map_err(|_|ApiError::conflict())?;
+  t.binding.user_id==identity.binding.user_id&&!t.uncertain&&t.revision>=revision&&
+   (t.revision>revision||(t.task.is_none()&&t.response.as_ref().is_some_and(|v|matches!(v["kind"].as_str(),Some("CLARIFY"|"READ")))))
+ }else{false};
+ let proof=tokio::time::timeout(state.0.request_timeout,state.0.repository.uncreated_chat_request_for_backend(&identity.binding.user_id,&task,completed)).await.map_err(|_|ApiError::unavailable())?.map_err(ApiError::storage)?;
+ identity.check(&state)?;Ok(Json(proof))
 }

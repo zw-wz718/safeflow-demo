@@ -1,0 +1,13 @@
+import {beforeEach,expect,it,vi} from 'vitest';
+import {readUncreatedChatRequest} from './bank-recovery';
+import {request} from './client';
+vi.mock('./client',async original=>({...await original<typeof import('./client')>(),request:vi.fn()}));
+const mock=vi.mocked(request),context='a'.repeat(64),task='bank_chat_00000000-0000-4000-8000-000000000001_1';
+const proof={contract_version:1,scope:'UNCREATED_CHAT_REQUEST_FENCED',task_id:task,context_ref:context,creation_disabled:true,task_created:false,payment_cancelled:false,proof_source:'RETIRED_REQUEST_NAMESPACE'};
+beforeEach(()=>mock.mockReset());
+it('accepts only a fresh matching typed proof for an exact chat original',async()=>{mock.mockResolvedValue(proof);expect(await readUncreatedChatRequest(task,context)).toEqual(proof);expect(mock.mock.calls[0][1]).toBe('GET');});
+it.each([{task_id:task+'0'},{context_ref:'b'.repeat(64)},{contract_version:2},{scope:'CANCELLED'},{creation_disabled:false},{task_created:true},{payment_cancelled:true},{proof_source:'COMPLETED_SERVER_TURN'},{extra:'unexpected'}])('rejects mismatched or incomplete proof %j',async change=>{mock.mockResolvedValue({...proof,...change});await expect(readUncreatedChatRequest(task,context)).rejects.toThrow();});
+it('rejects truncated proof',async()=>{mock.mockResolvedValue({task_id:task});await expect(readUncreatedChatRequest(task,context)).rejects.toThrow();});
+it('rejects nonchat originals without requesting evidence',async()=>{await expect(readUncreatedChatRequest('real_money_task',context)).rejects.toThrow();expect(mock).not.toHaveBeenCalled();});
+it('keeps unavailable responses blocked',async()=>{mock.mockRejectedValueOnce(new Error('503'));await expect(readUncreatedChatRequest(task,context)).rejects.toMatchObject({message:'503'});});
+it('requires completed Turn proof for v2 and rejects static retirement proof',async()=>{const next='bank_chat_v2_00000000-0000-4000-8000-000000000002_00000000-0000-4000-8000-000000000001_1';mock.mockResolvedValue({...proof,task_id:next});await expect(readUncreatedChatRequest(next,context)).rejects.toThrow();mock.mockResolvedValue({...proof,task_id:next,proof_source:'COMPLETED_SERVER_TURN'});expect((await readUncreatedChatRequest(next,context)).task_id).toBe(next);});

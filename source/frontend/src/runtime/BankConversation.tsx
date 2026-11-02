@@ -20,7 +20,7 @@ import {
 import { ResultRows } from './AgentResults';
 import { request, RuntimeApiError } from './client';
 import ChatPayment from './ChatPayment';
-import { recoveryDirectory, recoverPaymentTasks, verifiedNonfundingClosure, replacementIntent } from './bank-recovery';
+import { recoveryDirectory, recoverPaymentTasks, verifiedNonfundingClosure, replacementIntent, readUncreatedChatRequest } from './bank-recovery';
 import { runtimeErrorText } from './runtime-feedback';
 import { type PaymentFunds } from './payment-schema';
 import { prepareChatHistory, clearChatHistory, type ChatHistory } from './chat-history';
@@ -446,6 +446,7 @@ function ConversationBody({
     }
   }
   const [closedDrafts,setClosedDrafts]=useState<string[]>([]);
+  const [failedOriginals,setFailedOriginals]=useState<string[]>([]);
   async function verifyPaymentScan(
     signal: AbortSignal,
     knownDirectory?: Awaited<ReturnType<typeof recoveryDirectory>>,
@@ -457,9 +458,11 @@ function ConversationBody({
     history.retainBlockers([...pendingPayments.current]);
     setRecoveryChecked(false);
     setClosedDrafts([]);
+    setFailedOriginals([]);
     let directory;
     try {
       directory = knownDirectory ?? (await recoveryDirectory(signal));
+      if (directory.context_ref !== history.context) throw Error('本人恢复范围不匹配');
     } catch (error) {
       if (!current()) return false;
       if (error instanceof RuntimeApiError && error.status === 401) throw error;
@@ -480,17 +483,29 @@ function ConversationBody({
       try {
         const original = await getAgent(id, signal);
         if (!current()) return false;
-        if (original.kind === 'READ') { open.delete(id); resolved.add(id); }
+        if (original.kind === 'READ' && viewId(original) === id) { open.delete(id); resolved.add(id); }
       } catch (error) {
         if (error instanceof RuntimeApiError && error.status === 401) throw error;
         // Missing/unavailable never proves an unpaid or terminal money task.
       }
+      if (open.has(id)) {
+        try {
+          await readUncreatedChatRequest(id, history.context, signal);
+          if (!current()) return false;
+          open.delete(id); resolved.add(id);
+        } catch (error) {
+          if (error instanceof RuntimeApiError && error.status === 401) throw error;
+          // Malformed/missing proof, busy Turn and unavailable server stay blocked.
+        }
+      }
     }
+    if (!current()) return false;
     pendingPayments.current = new Set(open);
     setOpenTasks([...open]);
     const verifiedClosed:string[]=[];
-    const { failures } = await recoverPaymentTasks([...open], signal, (id, value) => {
+    const { failures } = await recoverPaymentTasks([...open], signal, (id, value, error) => {
       if (!current()) return;
+      if (error) setFailedOriginals(previous => [...new Set([...previous, id])]);
       if(value&&verifiedNonfundingClosure(value,directory.closed_nonfunding_tasks,directory.ended_draft_intents)) {
         open.delete(id);resolved.add(id);verifiedClosed.push(id);
       } else if (value?.terminal) { open.delete(id); resolved.add(id); }
@@ -779,7 +794,14 @@ function ConversationBody({
       });
       return;
     }
-    if (!chosen && message && (readMode || moneyBlocked)) {
+    const paymentIntent = /转账|汇款|付款|打款|转给|transfer|send.*money|pay\b/i.test(message);
+    if (paymentIntent && moneyBlocked) {
+      append({ role: 'user', text: message });
+      setText('');
+      setNotice('原办理请求尚未核清，本次转账未发起。请在原付款核查中按具体原号重新核查；核清后可继续办理。');
+      return;
+    }
+    if (!chosen && message && !paymentIntent && (readMode || moneyBlocked)) {
       await independentQuery(message);
       return;
     }
@@ -809,9 +831,11 @@ function ConversationBody({
       }
       if (memory.current.tasks.length >= 254)
         throw Error('原号记录容量已满。请查询已有原单，不能再创建请求。');
+      if (!status?.chat_request_epoch) throw Error('聊天请求版本尚未核实，请刷新后重新办理');
+      setReadMode(false);
       const original =
         (draft && !settled ? draft.task_id : null) ??
-        `bank_chat_${memory.current.conversation}_${memory.current.revision + 1}`;
+        `bank_chat_v2_${status.chat_request_epoch}_${memory.current.conversation}_${memory.current.revision + 1}`;
       remember(original);
       save({
         pending: true,
@@ -866,7 +890,12 @@ function ConversationBody({
       setUncertain(false);
       setNotice('');
       if (response.payee_query) setCandidateQuery(response.payee_query);
-      if (response.view.kind === 'CLARIFY' && !response.task_id) save({ active: '' });
+      if (!context && !response.task_id && ['CLARIFY', 'READ'].includes(response.view.kind)) {
+        history.releaseBlockers([original]);
+        pendingPayments.current.delete(original);
+        setOpenTasks([...pendingPayments.current]);
+        save({ active: '' });
+      }
       await accept(response.view, signal, true, response.task_id);
     });
   }
@@ -1095,6 +1124,14 @@ function ConversationBody({
         )}
         {(!recoveryChecked || openTasks.length > 0) && (
           <p role="status">有待核对或未结束的原付款，核清前不能新建付款任务。</p>
+        )}
+        {openTasks.length > 0 && (
+          <ul aria-label="待核实原号">
+            {openTasks.map(id => <li key={id}>
+              <code>{id}</code> · {failedOriginals.includes(id) ? '读取失败，尚未核实' : '待核实或未结束'}
+              <button disabled={block || scanBusy} onClick={() => backgroundScan()}>重新核查原号 {id}</button>
+            </li>)}
+          </ul>
         )}
         {checkedAt && (
           <p className="chat-recovery-summary">

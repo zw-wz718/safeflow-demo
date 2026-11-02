@@ -329,6 +329,7 @@ export const agentSchema = z
 export const agentStatusSchema = z
   .object({
     ...shared,
+    chat_request_epoch: z.string().uuid().optional(),
     configured: z.boolean(),
     connectivity: z.literal('NOT_VERIFIED'),
     tools: z.array(id),

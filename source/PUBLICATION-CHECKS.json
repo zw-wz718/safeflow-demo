@@ -1,52 +1,79 @@
 {
-  "date": "2026-11-02",
-  "rust_all_targets": {
-    "status": "PASS",
-    "command": "python source/tools/build.py check --offline --target-dir <external-directory>",
-    "meaning": "cargo check --workspace --all-targets --locked --offline; no database tests or production calls"
-  },
-  "frontend": {
-    "locked_install": "PASS",
-    "selected_tests_passed": 15,
-    "selected_tests_failed": 0,
-    "typescript_and_vite_build": "PASS",
-    "built_assets_equal_original_candidate": [
-      {
-        "name": "workbench-BOkhGy96.js",
-        "sha256": "ff00f1f15a803c76f5aa2c48ecb1e4dc732d39ebfc7d918ff447131b8b7bfeca"
-      },
-      {
-        "name": "workbench-DSK4CLDN.css",
-        "sha256": "db506c00c8679aa6002fc90ecbd4e0f60f30d5d18052ce92c757a6c4615ea77c"
-      }
-    ]
-  },
-  "audit_receiver_unit_tests": {
-    "passed": 50,
-    "failed": 0,
-    "skipped": 0,
-    "scope": "isolated local Node test suite"
-  },
+  "version": "2026-11-02-v2",
+  "scope": "Exact byte synchronization of the reviewed and deployed revision; no application logic edited during publication.",
+  "source_manifest_sha256": "cc0a12a23eb4c8d9b50c6426efc7f00f7f981e3be794c041a98da01aecf76458",
+  "changes_sha256": "a0b6a8a926e1a4b19b9fa1a44fd37847476d4a21cf70f55b11af278caf8c0b38",
   "source_completeness": {
     "all_backend_rust_and_sql_present_unchanged": true,
-    "latest_eight_changed_files_hashes_match": true
+    "latest_16_changes_match": true,
+    "original_files": 942
   },
-  "secret_scan": {
-    "high_confidence_token_and_private_key_hits": 0,
-    "credential_literal_locations_reviewed": 22,
-    "credential_literals": "test-only fixtures, variables or generated private input; production credentials not included"
+  "fixed_revision_independent_review": {
+    "result": "LIMITED_PASS",
+    "storage_pg": 3,
+    "http_pg47": 1,
+    "frontend_unit": 23,
+    "browser": 17,
+    "scope": "legacy retired orphan and current-epoch completed no-task only"
   },
-  "private_validation_log_hashes": {
-    "cargo-check.log": "25f5c690569867e89d47cde716f9064ed2bc7d2ab8bb71c1986c01e2debb489f",
-    "frontend-tests.log": "53ac5b3695e50057819ea8ddfe310f741e26ed9c48303f090399dad28125f745",
-    "frontend-build.log": "c5efa35f336dbebf11503a1eca4327069344722fc85fe055cf332fa6426bbbe5",
-    "audit-tests.log": "7d15172c282e3a7fa431b53b428a41f4e391a5cd17da581481d95191c1b1a7f3"
+  "actual_deployment": {
+    "api_elf_sha256": "68d0cba471a8dfd50b2591701fd3fd6bf504572043ad2c0d0f0d0fbf3f1be07f",
+    "netlify": "6ae7ec85b46c64d7a0fc4df9",
+    "maintenance": 47,
+    "migration": false,
+    "public_assets_exact": 4
   },
-  "not_performed": [
-    "production deployment or database changes",
-    "production transfers/card changes/LLM calls",
-    "full security review or all browser/PG test suites",
-    "new-machine end-to-end deployment"
-  ],
-  "pages_workflow_and_pages_content_unchanged": true
+  "publication_checks": "File and archive integrity; exact product/test bytes match the reviewed revision. Full suites not rerun in this export.",
+  "previous_publication_checks_historical": {
+    "date": "2026-11-02",
+    "rust_all_targets": {
+      "status": "PASS",
+      "command": "python source/tools/build.py check --offline --target-dir <external-directory>",
+      "meaning": "cargo check --workspace --all-targets --locked --offline; no database tests or production calls"
+    },
+    "frontend": {
+      "locked_install": "PASS",
+      "selected_tests_passed": 15,
+      "selected_tests_failed": 0,
+      "typescript_and_vite_build": "PASS",
+      "built_assets_equal_original_candidate": [
+        {
+          "name": "workbench-BOkhGy96.js",
+          "sha256": "ff00f1f15a803c76f5aa2c48ecb1e4dc732d39ebfc7d918ff447131b8b7bfeca"
+        },
+        {
+          "name": "workbench-DSK4CLDN.css",
+          "sha256": "db506c00c8679aa6002fc90ecbd4e0f60f30d5d18052ce92c757a6c4615ea77c"
+        }
+      ]
+    },
+    "audit_receiver_unit_tests": {
+      "passed": 50,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "isolated local Node test suite"
+    },
+    "source_completeness": {
+      "all_backend_rust_and_sql_present_unchanged": true,
+      "latest_eight_changed_files_hashes_match": true
+    },
+    "secret_scan": {
+      "high_confidence_token_and_private_key_hits": 0,
+      "credential_literal_locations_reviewed": 22,
+      "credential_literals": "test-only fixtures, variables or generated private input; production credentials not included"
+    },
+    "private_validation_log_hashes": {
+      "cargo-check.log": "25f5c690569867e89d47cde716f9064ed2bc7d2ab8bb71c1986c01e2debb489f",
+      "frontend-tests.log": "53ac5b3695e50057819ea8ddfe310f741e26ed9c48303f090399dad28125f745",
+      "frontend-build.log": "c5efa35f336dbebf11503a1eca4327069344722fc85fe055cf332fa6426bbbe5",
+      "audit-tests.log": "7d15172c282e3a7fa431b53b428a41f4e391a5cd17da581481d95191c1b1a7f3"
+    },
+    "not_performed": [
+      "production deployment or database changes",
+      "production transfers/card changes/LLM calls",
+      "full security review or all browser/PG test suites",
+      "new-machine end-to-end deployment"
+    ],
+    "pages_workflow_and_pages_content_unchanged": true
+  }
 }

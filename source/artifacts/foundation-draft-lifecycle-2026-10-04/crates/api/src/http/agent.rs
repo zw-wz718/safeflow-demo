@@ -89,6 +89,7 @@ pub(super) struct AgentStatus {
     contract_version: u16,
     mode: &'static str,
     configured: bool,
+    chat_request_epoch: String,
     connectivity: &'static str,
     tools: Vec<String>,
     draft_enabled: bool,
@@ -110,6 +111,7 @@ pub(super) async fn status(
         funds_execution_enabled: !state.0.bank_planning_read_only && payment_execution::enabled(&state),
         mode: MODE,
         configured: state.0.llm_gateway.is_some(),
+        chat_request_epoch: state.0.repository.chat_request_epoch_for_backend().to_owned(),
         connectivity: "NOT_VERIFIED",
         planning_mode: if state.0.agent_fixed_plan_enabled {
             "FIXED_PLAN"

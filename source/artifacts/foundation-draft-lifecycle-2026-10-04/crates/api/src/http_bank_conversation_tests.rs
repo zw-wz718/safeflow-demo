@@ -53,6 +53,7 @@ async fn provider(State(calls): State<Arc<AtomicUsize>>, Json(r): Json<Value>) -
         .collect::<Vec<_>>()
         .join(" ");
     assert!(!all.contains("fixture-otp-secret"));
+    if latest.contains("迟到") { tokio::time::sleep(Duration::from_millis(250)).await; }
     if latest.contains("模型失败") {
         return Json(json!({"fixture_error":"unavailable"}));
     }
@@ -473,7 +474,7 @@ async fn bank_conversation_chinese_clarification_payment_original_and_services()
         .is_success());
         let journal = query(&s, &cookie, &format!("/api/bank/conversation/{failed}")).await;
         assert_eq!(journal["uncertain"], true);
-        assert_eq!(journal["task_id"], format!("bank_chat_{failed}_1"));
+        assert_eq!(journal["task_id"], s.state.0.repository.chat_request_id_for_backend(&failed,1).unwrap().as_str());
     }
     let fresh_id = uuid::Uuid::new_v4().to_string();
     assert_eq!(
@@ -1034,4 +1035,35 @@ async fn site_qa_p0_recovery_directory_and_subscription_retry() {
     for key in ["balance","ledger","orders","locks","feedback"] { assert_eq!(before[key],after[key],"{key} changed"); }
     assert_eq!(after["subscriptions"].as_i64().unwrap(),before["subscriptions"].as_i64().unwrap()+1);
     pool.close().await;s.handle.abort();
+}
+
+#[tokio::test]
+#[ignore="new owned bank PG, local provider fixture only; no money execution"]
+async fn orphan_chat_http_completed_turn_relogin_missing_journal_and_read() {
+ let listener=tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+ let endpoint=format!("http://{}/v1/chat/completions",listener.local_addr().unwrap());
+ let calls=Arc::new(AtomicUsize::new(0));let pc=calls.clone();
+ let ph=tokio::spawn(async move{axum::serve(listener,Router::new().route("/v1/chat/completions",post(provider)).with_state(pc)).await.unwrap();});
+ let gateway=||safeflow_runtime::OpenAiGatewayConfig::new(&endpoint,"deepseek/deepseek-v4.1-flash",Zeroizing::new("fixture-key-not-real".into()),Duration::from_secs(2)).unwrap();
+ let s=super::bank_commandcode_tests::bank_server_mode(Some(gateway()),true).await;let cookie=s.login().await;
+ let legacy=format!("bank_chat_{}_1",uuid::Uuid::new_v4());let path=format!("/api/bank/uncreated-chat-requests/{legacy}");
+ assert_eq!(s.call(Method::GET,&path,None,None,None,None,false).await.status,StatusCode::UNAUTHORIZED);
+ assert_eq!(s.call(Method::GET,&(path.clone()+"?owner=user_002"),None,Some(&cookie),None,None,false).await.status,StatusCode::BAD_REQUEST);
+ let proof=query(&s,&cookie,&path).await;assert_eq!(proof["task_id"],legacy);assert_eq!(proof["context_ref"],query(&s,&cookie,"/api/bank/recovery").await["context_ref"]);
+ let conv=uuid::Uuid::new_v4().to_string();let id=s.state.0.repository.chat_request_id_for_backend(&conv,1).unwrap();let path=format!("/api/bank/uncreated-chat-requests/{id}");
+ assert!(!s.call(Method::GET,&path,None,Some(&cookie),None,None,false).await.status.is_success());
+ let message=command(&s,&cookie,"/api/bank/conversation",input(&conv,0,"迟到查看银行卡",false,Value::Null));
+ let in_flight=async {while calls.load(Ordering::SeqCst)==0 {tokio::task::yield_now().await;}
+  assert!(!s.call(Method::GET,&path,None,Some(&cookie),None,None,false).await.status.is_success());};
+ let (response,_)=tokio::join!(message,in_flight);let response=ok(response);assert_eq!(response["view"]["kind"],"CLARIFY");assert!(response["task_id"].is_null());
+ let fresh=s.login().await;let completed=query(&s,&fresh,&path).await;assert_eq!(completed["proof_source"],"COMPLETED_SERVER_TURN");assert_eq!(completed["task_id"],id.as_str());
+ // Both public creation routes delegate to the same Arc-sharing repository.
+ let rejected=command(&s,&fresh,"/api/sim/draft-lifecycles",json!({"contract_version":2,"scope":"MOCK_DRAFT_LIFECYCLE_ONLY","task_id":id,"facts_version":1,"parameters":{"payer_account_id":"account_001","payee_id":"payee_008","amount":"200.00","currency":"CNY","remark":"","replaces":null}})).await;
+ assert!(!rejected.status.is_success());
+ let read_conv=uuid::Uuid::new_v4().to_string();let read=ok(command(&s,&cookie,"/api/bank/conversation",input(&read_conv,0,"查询余额",false,Value::Null)).await);
+ assert_eq!(read["view"]["kind"],"READ");let read_id=read["view"]["task"]["task_id"].as_str().unwrap();assert_eq!(query(&s,&cookie,&format!("/api/agent/tasks/{read_id}")).await["kind"],"READ");
+ assert!(!s.call(Method::GET,&format!("/api/bank/uncreated-chat-requests/{read_id}"),None,Some(&cookie),None,None,false).await.status.is_success());
+ s.handle.abort();let restarted=super::bank_commandcode_tests::bank_server_mode(Some(gateway()),true).await;let fresh=restarted.login().await;
+ assert!(!restarted.call(Method::GET,&path,None,Some(&fresh),None,None,false).await.status.is_success());
+ restarted.handle.abort();ph.abort();
 }

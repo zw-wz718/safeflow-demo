@@ -92,6 +92,7 @@ fn task(outcome: PlanningTaskCreationOutcome) -> TaskRecord {
 }
 fn lazy_repo() -> PgRepository {
     PgRepository {
+        chat_requests: Default::default(),
         revision_gate_pool: PgPoolOptions::new().max_connections(1)
             .connect_lazy("postgres://localhost/unused_planning_test")
             .unwrap(),

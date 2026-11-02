@@ -21,6 +21,7 @@ mod permit;
 mod planning_confirmation;
 mod planning_task;
 mod repository;
+mod chat_request_recovery;
 mod runtime_continuation;
 mod runtime_execution;
 mod runtime_recovery;

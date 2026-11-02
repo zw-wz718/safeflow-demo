@@ -16,6 +16,8 @@ mod audit_source_tests;
 mod sql_bridge_tests;
 #[path = "nonfunding_close_tests.rs"]
 mod nonfunding_close_tests;
+#[path = "chat_request_recovery_tests.rs"]
+mod chat_request_recovery_tests;
 #[path = "intent_termination_tests.rs"]
 mod intent_termination_tests;
 

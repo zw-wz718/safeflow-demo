@@ -123,6 +123,7 @@ impl LifecycleService<'_> {
             }
         }
         self.guard(session, &binding)?;
+        self.repository.check_chat_creation(tx,&binding.user_id,id).await?;
         let inserted = sqlx::query("INSERT INTO tasks(task_id,owner_id,contract_version,state,revision,plan_version,facts_version,plan,creation_digest,checkpoint,completed_nodes) VALUES($1,$2,1,'RUNNING',1,1,$3,$4,$5,$6,'[]') ON CONFLICT(task_id) DO NOTHING")
             .bind(id.as_str()).bind(binding.user_id.as_str()).bind(db_version(facts_version)?).bind(Json(&task.plan))
             .bind(hash(&(task.plan.clone(), facts_version))?.as_str()).bind(Json(&task.checkpoint)).execute(&mut **tx).await?;

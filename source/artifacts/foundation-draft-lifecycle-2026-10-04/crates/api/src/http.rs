@@ -708,6 +708,10 @@ pub fn router(state: ApiState) -> Router {
             post(agent::payees).fallback(method_rejected),
         )
         .route(
+            "/api/bank/uncreated-chat-requests/:task_id",
+            get(bank_conversation::uncreated_request).fallback(method_rejected),
+        )
+        .route(
             "/api/agent/tasks/:task_id",
             get(agent::query).fallback(method_rejected),
         )

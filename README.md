@@ -11,9 +11,9 @@ SafeFlow 将自然语言需求组织为可确认、可核查、可恢复的模�
 - [测试说明](source/TESTING.md)
 - [本次发布检查结果](source/PUBLICATION-CHECKS.json)
 - [下载整个仓库 ZIP](https://github.com/zw-wz718/safeflow-demo/archive/refs/heads/main.zip)
-- [源码与部署材料正式下载](https://github.com/zw-wz718/safeflow-demo/releases/tag/source-2026-11-02)
+- [源码与部署材料正式下载](https://github.com/zw-wz718/safeflow-demo/releases/tag/source-2026-11-02-v2)
 
-`source/` 为 2026 年 11 月 2 日从当前实际采用版本整理的完整代码快照，保留原有相对路径和代码字节。代码目录内的历史日期、candidate/proposed 名称不代表本次发布仍是该日期版本。源码发布不等于全量安全审查；最新三份固定过期准备处理按用户要求未新增独审，具体核验范围见检查结果。
+`source/` 为 2026 年 11 月 2 日从当前实际采用版本整理的完整代码快照，保留原有相对路径和代码字节。代码目录内的历史日期、candidate/proposed 名称不代表本次发布仍是该日期版本。本版已同步线上聊天请求恢复修复，限定独立审查通过；具体变化与部署边界见[SOURCE-UPDATE-20261102.md](SOURCE-UPDATE-20261102.md)。源码发布及限定审查不代表完整安全验收；此前三份固定过期准备处理仍保留原核验范围。
 
 ## 在线体验
 

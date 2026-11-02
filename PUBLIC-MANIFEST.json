@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "version": "2026-11-02-complete-source-demo-access",
+  "version": "2026-11-02-v2-recovery-update",
   "scope": "Complete public repository inventory including full application source and explicitly authorized shared website demo login. Provider, database and administration credentials remain private.",
   "excluded": [
     "PUBLIC-MANIFEST.json"
@@ -28,8 +28,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 4136,
-      "sha256": "f180587eb1e1f4a841aa6d6480f92180693fa6d1bafbca5bc46ce29edb1e2d87"
+      "bytes": 4274,
+      "sha256": "629f2f359581b660f1ac72a025c7de4967fa77789bf615b0a26ececa3888455f"
+    },
+    {
+      "path": "SOURCE-UPDATE-20261102.md",
+      "bytes": 1430,
+      "sha256": "0586bba08d79c13755eda9ed7b96dd49f965e31335c0cec24365acf32c54fe25"
     },
     {
       "path": "bank/configure-netlify.mjs",
@@ -208,28 +213,28 @@
     },
     {
       "path": "source/PUBLICATION-CHECKS.json",
-      "bytes": 2051,
-      "sha256": "fb36451eceb17019462e6bab2dee4c940e8e6808fafe643e051e96ff4e3c0623"
+      "bytes": 3267,
+      "sha256": "0e5fe663d0730b532d09681a16a36ccfb96b43fb15a2780a215a40ead43ec344"
     },
     {
       "path": "source/README.md",
-      "bytes": 2449,
-      "sha256": "d467b0cceda1d818891a1bd417c06f61798d4145e6f56d2e37bf5023d71d872c"
+      "bytes": 2485,
+      "sha256": "8a46e4de46a309e17882dfdce5c2aafca40c8b0ef7066b393e3bc2e4186c2eed"
     },
     {
       "path": "source/RUNBOOK.md",
-      "bytes": 4761,
-      "sha256": "3abd499321d3b4df9787756a96868641e432f7817032cc5fd347169a824bf018"
+      "bytes": 5506,
+      "sha256": "fd69ec9aedd8aad03411e8c2bea7be09cc34a45f8389ad24289dc2e267568bad"
     },
     {
       "path": "source/SOURCE-EXPORT.json",
-      "bytes": 213225,
-      "sha256": "114c56d0896fbbeab2047e2e7fb0e9427e924d78ba543cb48b12b387300aec79"
+      "bytes": 214226,
+      "sha256": "a48e8cdb27b02817c3498cf80e4749d8baeba99a95ffcbed3742043df694ed7f"
     },
     {
       "path": "source/TESTING.md",
-      "bytes": 1291,
-      "sha256": "bcf5206089c8f8da1f02bd3dd668fb563c9edb0f4db34a9e63726ef82d167a0d"
+      "bytes": 1791,
+      "sha256": "16c24eb1fdabb2f47e0adee0ab20476ca022834e63176450fac66c995fcf63c7"
     },
     {
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/.gitignore",
@@ -498,18 +503,18 @@
     },
     {
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/api/src/http.rs",
-      "bytes": 53075,
-      "sha256": "1a501185d2236f64645b7a3aace489ca3f4256ab420bccdc0865b343ff758fe6"
+      "bytes": 53240,
+      "sha256": "8e8cd38dc21fbef69c1f984568af085c54bad7a0df4df3c7e6684d3a0dbb6cc3"
     },
     {
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/api/src/http/agent.rs",
-      "bytes": 49402,
-      "sha256": "7646f184676464517370165549a922de0cbc5a4ae873953dc1359bca2ddb33f5"
+      "bytes": 49528,
+      "sha256": "8802d8b0fc0c862344f05be9e7ae23e2bfbcb45ca1f36f706a4f8182341a3d5a"
     },
     {
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/api/src/http/bank_conversation.rs",
-      "bytes": 7362,
-      "sha256": "ea2bb428a9c336a6d378bcd422a0850165742cd1f23239a417893f6425255320"
+      "bytes": 8889,
+      "sha256": "195360d95023caff68af047214a28635b223b1436ae90cd1bd1bc3e3d5a94963"
     },
     {
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/api/src/http/bank_read_conversation.rs",
@@ -623,8 +628,8 @@
     },
     {
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/api/src/http_bank_conversation_tests.rs",
-      "bytes": 52801,
-      "sha256": "ed29e13fd5453ab42529fcb2d121d800b15e10aed0bbbfd0d35bf46d80845ba3"
+      "bytes": 56487,
+      "sha256": "ac7df98d0411c0ae3fb3f1882befc5b571acd29a3daa4be2b1fb6145e59eef5a"
     },
     {
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/api/src/http_bank_independent_read_tests.rs",
@@ -1592,6 +1597,11 @@
       "sha256": "33a6ce28777dc203ea1f85d289f306d2d851ff4d9d85061eb1e38241c78a3bca"
     },
     {
+      "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/storage/src/chat_request_recovery.rs",
+      "bytes": 4697,
+      "sha256": "2fb47dc31d90e5379b252ac9f00a91625762022544c353f2f00f8dd2145c7e31"
+    },
+    {
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/storage/src/confirmation.rs",
       "bytes": 15040,
       "sha256": "d03333e57e63d317bb1427442c98e57d7583ab088845c2716d89b97b2644e77d"
@@ -1643,8 +1653,8 @@
     },
     {
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/storage/src/lib.rs",
-      "bytes": 4723,
-      "sha256": "efd583a70e5e3b2b2cf280e7d7bfd083d174e817eda825b5f32698d23429bdd5"
+      "bytes": 4751,
+      "sha256": "3e5e36408fbda9a272af38d18b856c9204ec49413f00789eb3610acc584f821f"
     },
     {
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/storage/src/lifecycle.rs",
@@ -1655,6 +1665,11 @@
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/storage/src/lifecycle/audit_source_tests.rs",
       "bytes": 17596,
       "sha256": "b08372a6eb011ae4783e94b9e78131459e3c49bf9324ad11982e84bd44b6c3d6"
+    },
+    {
+      "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/storage/src/lifecycle/chat_request_recovery_tests.rs",
+      "bytes": 4817,
+      "sha256": "59ee0bcbc1be82274848ee41f8ef1075a28b9d815bfd764d99d53062f537803e"
     },
     {
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/storage/src/lifecycle/execution.rs",
@@ -1668,8 +1683,8 @@
     },
     {
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/storage/src/lifecycle/execution_replay_tests.rs",
-      "bytes": 20741,
-      "sha256": "d7507f8a3a42e9dc76c411f09c8991a0a0937932826384eff8ffb809677535fa"
+      "bytes": 21419,
+      "sha256": "7a0e912085fa882046a58e28b164af56251706a9fc2f2c1d8c9d7e1839bdc4c5"
     },
     {
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/storage/src/lifecycle/intent.rs",
@@ -1688,8 +1703,8 @@
     },
     {
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/storage/src/lifecycle/service.rs",
-      "bytes": 43820,
-      "sha256": "09d60bad9a4c58b709c9907ed5862eb12ea0f462484af7c93cbaf384821c2586"
+      "bytes": 43897,
+      "sha256": "8910f27b9e2de795fe2d24782af6febf2019799adfdc1ad9a3dd0ca15160f268"
     },
     {
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/storage/src/lifecycle/sql_bridge.rs",
@@ -1873,8 +1888,8 @@
     },
     {
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/storage/src/planning_task_tests.rs",
-      "bytes": 30594,
-      "sha256": "d8de5a38dc2955876d38377c886bd8cd22c465543ea7197da179fb97e26d0f16"
+      "bytes": 30638,
+      "sha256": "7c5db3c057489f6142de7c937846575f01d181943f9d533864fcdd000d0db6da"
     },
     {
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/storage/src/public_execution_tests.rs",
@@ -1888,8 +1903,8 @@
     },
     {
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/storage/src/repository.rs",
-      "bytes": 69186,
-      "sha256": "f33f3aeb822fd478b80f38bbf2383b57334c83ffafb855a04feb5250435ee442"
+      "bytes": 69449,
+      "sha256": "fa0514c739ccf47a4555ed08633f23dcda816ef83f7a3cdc229c842d3e6e0849"
     },
     {
       "path": "source/artifacts/foundation-draft-lifecycle-2026-10-04/crates/storage/src/runtime_continuation.rs",
@@ -4047,6 +4062,11 @@
       "sha256": "062957f52429fbac6e7772d4b45b92d75ecea57ae6d87ccdf2817f1df95a692c"
     },
     {
+      "path": "source/frontend/e2e/orphan-chat-recovery.spec.ts",
+      "bytes": 8071,
+      "sha256": "34aa378ba01c7f2396752ad2962dd4c9fd82d1a90e03eaa1528b09b51c6977d5"
+    },
+    {
       "path": "source/frontend/e2e/payment-execution-state.spec.ts",
       "bytes": 7643,
       "sha256": "2e730122b7cd87ae9700da07c6a94f7aa849a94ff04327491059ed9324d4a457"
@@ -4353,8 +4373,8 @@
     },
     {
       "path": "source/frontend/src/runtime/BankConversation.tsx",
-      "bytes": 72809,
-      "sha256": "3e16d720c309fd315bcf1bc84683abc481d217dc1668664a752909ab89ea2941"
+      "bytes": 74811,
+      "sha256": "ed545096926ccef3ef8fa9389259218023747cbf04ade25ab1cefd7e6456a3e3"
     },
     {
       "path": "source/frontend/src/runtime/BillsFeedbackWorkspace.tsx",
@@ -4418,8 +4438,8 @@
     },
     {
       "path": "source/frontend/src/runtime/agent-client.ts",
-      "bytes": 27268,
-      "sha256": "eb1e3233d79aae68635d4eaabc11bd46b012b5adb05d41aaf5310c14e8b00439"
+      "bytes": 27323,
+      "sha256": "c5e388f718443e94bdabbc90ed73153593487b00a001b46019612f3a38fd63ca"
     },
     {
       "path": "source/frontend/src/runtime/agent.test.ts",
@@ -4438,8 +4458,8 @@
     },
     {
       "path": "source/frontend/src/runtime/bank-recovery.ts",
-      "bytes": 7640,
-      "sha256": "1c61f4f70162cf82eb9e77c7e60a2730c6f6c58b0ebfc194552b8e292eb9328c"
+      "bytes": 8972,
+      "sha256": "0b51abd5d4500b665d0db2bbf541337dc5dd8acc1eca1813c56a59c954724f48"
     },
     {
       "path": "source/frontend/src/runtime/billing-domain-audit.test.ts",
@@ -4640,6 +4660,11 @@
       "path": "source/frontend/src/runtime/main.tsx",
       "bytes": 183,
       "sha256": "26ab3b17ac14cac265f09e78ba20140f6e0860e6cf69c1c3302c324f901841ed"
+    },
+    {
+      "path": "source/frontend/src/runtime/orphan-chat-recovery.test.ts",
+      "bytes": 2261,
+      "sha256": "91db1ad0633f82c30eaac74a4342e2a02e2fa0e2b3ed69413faf5f8b96a3b9b9"
     },
     {
       "path": "source/frontend/src/runtime/payment-backend.fixture.json",

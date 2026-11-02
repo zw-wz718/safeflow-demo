@@ -70,6 +70,7 @@ enum TaskCreation {
 /// only in trusted backend assembly; do not expose it as a client/LLM Tool.
 #[derive(Clone)]
 pub struct PgRepository {
+    pub(crate) chat_requests: std::sync::Arc<crate::chat_request_recovery::ChatRequests>,
     pub(crate) pool: PgPool,
     pub(crate) lifecycle_time_pool: PgPool,
     pub(crate) subscription_read_pool: PgPool,
@@ -237,6 +238,7 @@ impl PgRepository {
             }
         }
         Ok(Self {
+            chat_requests: std::sync::Arc::new(crate::chat_request_recovery::ChatRequests::default()),
             pool,
             lifecycle_time_pool,
             subscription_read_pool,
@@ -766,6 +768,7 @@ impl PgRepository {
             completed_nodes: vec![],
         };
         let mut tx = guarded(guard, self.pool.begin()).await?;
+        self.check_chat_creation(&mut tx,owner,&task.task_id).await?;
         crate::permit::reject_billing_recovery_generic(&mut tx, &task).await?;
         let result = guarded(guard, sqlx::query("INSERT INTO tasks (task_id, owner_id, contract_version, state, revision, plan_version, facts_version, plan, creation_digest, checkpoint, completed_nodes) VALUES ($1,$2,$3,$4,1,$5,$6,$7,$8,$9,$10) ON CONFLICT (task_id) DO NOTHING")
             .bind(task.task_id.as_str()).bind(owner.as_str()).bind(PERSISTENCE_CONTRACT_VERSION as i16)

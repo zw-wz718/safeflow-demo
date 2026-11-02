@@ -138,3 +138,23 @@ export async function recoverPaymentTasks(
   });
   return { values, failures };
 }
+
+
+// A 404 or a missing directory entry is never this proof. Exact user context
+// and request namespace must match a fresh authenticated server response.
+const canonicalUuid = '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}';
+const chatRequest = new RegExp(`^bank_chat_(?:v2_${canonicalUuid}_)?${canonicalUuid}_[1-9][0-9]*$`);
+const uncreatedSchema = z.object({
+  contract_version: z.literal(1), scope: z.literal('UNCREATED_CHAT_REQUEST_FENCED'),
+  task_id: id, context_ref: z.string().regex(/^[a-f0-9]{64}$/),
+  creation_disabled: z.literal(true), task_created: z.literal(false), payment_cancelled: z.literal(false),
+  proof_source: z.enum(['COMPLETED_SERVER_TURN', 'RETIRED_REQUEST_NAMESPACE']),
+}).strict();
+export async function readUncreatedChatRequest(task: string, context: string, signal?: AbortSignal) {
+  if (!chatRequest.test(task)) throw Error('不支持的聊天原号，仍须核查原任务');
+  const proof = uncreatedSchema.parse(await read(`/api/bank/uncreated-chat-requests/${encodeURIComponent(task)}`, signal));
+  if (proof.task_id !== task || proof.context_ref !== context ||
+      proof.proof_source !== (task.startsWith('bank_chat_v2_') ? 'COMPLETED_SERVER_TURN' : 'RETIRED_REQUEST_NAMESPACE'))
+    throw Error('未创建请求的恢复证明不匹配');
+  return proof;
+}
