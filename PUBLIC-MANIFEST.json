@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "version": "2026-11-02-complete-source",
-  "scope": "Complete public repository inventory including full source export; Pages publication remains manually dispatched and allowlisted.",
+  "version": "2026-11-02-complete-source-demo-access",
+  "scope": "Complete public repository inventory including full application source and explicitly authorized shared website demo login. Provider, database and administration credentials remain private.",
   "excluded": [
     "PUBLIC-MANIFEST.json"
   ],
@@ -22,9 +22,14 @@
       "sha256": "ad910195b68c023285a9b3be5a6c7107408f1712ab8c1b414b473ad441033d99"
     },
     {
+      "path": "DEMO-ACCESS.md",
+      "bytes": 1368,
+      "sha256": "3ff67617ba10429a4501e6c0ab0d4c35a15998b434158d56009a5b18cf037095"
+    },
+    {
       "path": "README.md",
-      "bytes": 3942,
-      "sha256": "2e79400210937626dd8d06abce75743150fd2c30d720a0e76689bce3a2bf831e"
+      "bytes": 4136,
+      "sha256": "f180587eb1e1f4a841aa6d6480f92180693fa6d1bafbca5bc46ce29edb1e2d87"
     },
     {
       "path": "bank/configure-netlify.mjs",
@@ -208,8 +213,8 @@
     },
     {
       "path": "source/README.md",
-      "bytes": 2338,
-      "sha256": "8fe962de9f9b9a1c15f483c3015053ae7a920a00159ecebb832e8b667aa1de61"
+      "bytes": 2449,
+      "sha256": "d467b0cceda1d818891a1bd417c06f61798d4145e6f56d2e37bf5023d71d872c"
     },
     {
       "path": "source/RUNBOOK.md",
